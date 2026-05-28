@@ -4,7 +4,7 @@ import MediaKitContact from '@/features/press/media-kit/MediaKitContact'
 // Just a thin wrapper that passes press-page copy to the shared component.
 export default function PressCta() {
   return (
-    <MediaKitContact
+    <MediaKitContact aria-label="PressCta" role="region"
       id="press-cta"
       label="Media Enquiry"
       titleStart="Working On A"

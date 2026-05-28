@@ -49,7 +49,7 @@ export default function UniqueFeatures({
   useGLightbox('.uf-card.glightbox', [cards])
 
   return (
-    <section id="unique-features">
+    <section aria-label="UniqueFeatures" id="unique-features">
       <div className="container">
         <div className="uf-intro reveal">
           <div className="uf-intro-heading">

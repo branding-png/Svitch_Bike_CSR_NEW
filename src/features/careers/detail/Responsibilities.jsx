@@ -17,7 +17,7 @@ export default function Responsibilities({
   items = DEFAULT_ITEMS,
 }) {
   return (
-    <section className="card-base job-section">
+    <section aria-label="Responsibilities" className="card-base job-section">
       <h2><i className={`bi ${icon}`}></i> {title}</h2>
       <ul>
         {items.map((item, i) => <li key={i}>{item}</li>)}

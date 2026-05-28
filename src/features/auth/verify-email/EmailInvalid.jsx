@@ -3,7 +3,7 @@ import { PATHS } from '@/utils/routes'
 
 export default function EmailInvalid() {
   return (
-    <div className="auth-centered" id="veInvalid">
+    <div aria-label="EmailInvalid" role="region" className="auth-centered" id="veInvalid">
       <div className="auth-icon">
         <i className="bi bi-exclamation-triangle-fill" style={{ color: '#ef4444' }}></i>
       </div>

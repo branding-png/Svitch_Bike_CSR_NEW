@@ -102,7 +102,7 @@ export default function WarrantyRegister() {
   }
 
   return (
-    <section id="warranty-register">
+    <section aria-label="WarrantyRegister" id="warranty-register">
       <div className="container">
         <div className="register-wrap">
           <div className="register-content">

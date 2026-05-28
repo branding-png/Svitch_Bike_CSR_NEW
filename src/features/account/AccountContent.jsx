@@ -14,7 +14,7 @@ export default function AccountContent({ crumbs, crumbLabel, title, description,
   ]
 
   return (
-    <div className="account-main">
+    <div aria-label="AccountContent" role="region" className="account-main">
       <AccountMobilePills />
 
       <BreadCrumb items={trail} />

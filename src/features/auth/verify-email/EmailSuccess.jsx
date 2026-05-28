@@ -3,7 +3,7 @@ import { PATHS } from '@/utils/routes'
 
 export default function EmailSuccess({ name = 'Rider' }) {
   return (
-    <div className="auth-centered" id="veSuccess">
+    <div aria-label="EmailSuccess" role="region" className="auth-centered" id="veSuccess">
       <div className="auth-success-icon"><i className="bi bi-check2"></i></div>
       <h2>Email Verified!</h2>
       <p>

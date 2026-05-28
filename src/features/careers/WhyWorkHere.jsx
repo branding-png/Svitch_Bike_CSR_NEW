@@ -21,7 +21,7 @@ const STATS = [
 
 export default function WhyWorkHere({ benefits = BENEFITS, stats = STATS }) {
   return (
-    <section id="career-why">
+    <section aria-label="WhyWorkHere" id="career-why">
       <div className="container">
         <SectionHeader
           label="Life at Svitch"

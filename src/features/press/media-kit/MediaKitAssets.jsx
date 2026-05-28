@@ -53,7 +53,7 @@ export default function MediaKitAssets({
   fullKitHref = '#',
 }) {
   return (
-    <section id="mk-assets" className="section-pad">
+    <section aria-label="MediaKitAssets" id="mk-assets" className="section-pad">
       <div className="container">
         <SectionHeader
           label="Asset Library"

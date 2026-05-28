@@ -26,5 +26,5 @@ const ITEMS = [
 ]
 
 export default function PrivacyPolicyRelated() {
-  return <LegalRelated items={ITEMS} />
+  return <LegalRelated aria-label="PrivacyPolicyRelated" role="region" items={ITEMS} />
 }

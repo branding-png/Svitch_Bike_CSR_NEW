@@ -19,7 +19,7 @@ export default function SearchWidget({
   }
 
   return (
-    <div className="card-base widget">
+    <div aria-label="SearchWidget" role="region" className="card-base widget">
       <h3 className="widget-title">{title}</h3>
       <form className="widget-search" onSubmit={submit} role="search">
         <InputControl

@@ -27,7 +27,7 @@ export default function WishlistActions({ items }) {
   }
 
   return (
-    <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+    <div aria-label="WishlistActions" role="region" style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
       <button type="button" className="btn-csr secondary sm" onClick={share}>
         <i className="bi bi-share"></i> Share
       </button>

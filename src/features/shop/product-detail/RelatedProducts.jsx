@@ -29,7 +29,7 @@ export default function RelatedProducts({
   if (items.length === 0) return null
 
   return (
-    <section id="related-products" className="related-products-section">
+    <section aria-label="RelatedProducts" id="related-products" className="related-products-section">
       <div className="container">
         <SectionHeader className="section-header"
           label={label}

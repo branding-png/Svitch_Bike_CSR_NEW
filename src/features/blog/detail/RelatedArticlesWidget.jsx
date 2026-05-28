@@ -13,7 +13,7 @@ export default function RelatedArticlesWidget({
   items = DEFAULT_ITEMS,
 }) {
   return (
-    <div className="card-base widget">
+    <div aria-label="RelatedArticlesWidget" role="region" className="card-base widget">
       <h3 className="widget-title">{title}</h3>
       <div className="widget-related">
         {items.map((p) => (

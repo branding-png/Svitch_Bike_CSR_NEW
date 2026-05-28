@@ -16,7 +16,7 @@ export default function ResultsBar({
   onSortChange,
 }) {
   return (
-    <div className="shop-results-bar">
+    <div aria-label="ResultsBar" role="region" className="shop-results-bar">
       <span className="shop-results-count rajdhani-lbl-text-sm">
         {total === 0 ? (
           'No products match'

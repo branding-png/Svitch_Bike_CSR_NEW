@@ -1290,7 +1290,7 @@ body.page-index, body.page-index p, body.page-index span, body.page-index a, bod
     max-width: 100%;
   }
 }
-.footer-grid {
+/* .footer-grid {
   display: grid;
   grid-template-columns: 4fr repeat(4, 2fr);
   gap: 48px;
@@ -1309,7 +1309,7 @@ body.page-index, body.page-index p, body.page-index span, body.page-index a, bod
     grid-template-columns: 1fr;
     gap: 24px;
   }
-}
+} */
 .pr-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

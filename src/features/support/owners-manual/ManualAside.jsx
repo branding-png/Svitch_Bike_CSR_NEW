@@ -13,7 +13,7 @@ export default function ManualAside({ chapters = OWNERS_MANUAL_TOC }) {
   }
 
   return (
-    <aside className="rajdhani-lbl-text-sm card-base legal-toc manual-toc">
+    <aside aria-label="ManualAside" className="rajdhani-lbl-text-sm card-base legal-toc manual-toc">
       <h3>Chapters</h3>
       <ol>
         {chapters.map((c) => (

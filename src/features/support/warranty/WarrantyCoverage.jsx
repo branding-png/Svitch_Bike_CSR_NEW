@@ -32,7 +32,7 @@ const CARDS = [
 
 export default function WarrantyCoverage({ items = CARDS }) {
   return (
-    <section id="coverage">
+    <section aria-label="WarrantyCoverage" id="coverage">
       <div className="container">
         <div className="section-header">
           <span className="section-label">Coverage Duration</span>

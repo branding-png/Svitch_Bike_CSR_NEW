@@ -30,7 +30,7 @@ export default function CategoryFilter({ value = [], counts = {}, onChange }) {
         {CATEGORIES.map((c) => {
           const checked = c.id === 'all' ? isAllActive : value.includes(c.id)
           return (
-            <label key={c.id} className="filter-check">
+            <label aria-label="CategoryFilter" role="region" key={c.id} className="filter-check">
               <input
                 type="checkbox"
                 data-cat={c.id}

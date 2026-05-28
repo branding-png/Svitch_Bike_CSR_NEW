@@ -22,7 +22,7 @@ export default function ProfileSessions() {
   }
 
   return (
-    <div className="card-base checkout-section" id="sessions">
+    <div aria-label="ProfileSessions" role="region" className="card-base checkout-section" id="sessions">
       <h3><i className="bi bi-laptop"></i> Connected Sessions</h3>
       <p style={{ marginBottom: 8, color: 'var(--gray-400)', fontSize: 'var(--fs-sm)' }}>
         Devices currently signed in to your account.

@@ -28,5 +28,5 @@ const ITEMS = [
 ]
 
 export default function AccessibilityRelated() {
-  return <LegalRelated items={ITEMS} />
+  return <LegalRelated aria-label="AccessibilityRelated" role="region" items={ITEMS} />
 }

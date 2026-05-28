@@ -60,7 +60,7 @@ export default function GalleryGrid({ items = ITEMS, gallery = 'csr762' }) {
           {visible.map((it) => {
             const isVideo = it.cat === 'video'
             return (
-              <a
+              <a aria-label="GalleryGrid" role="region"
                 key={it.src}
                 className={'gl-item glightbox' + (isVideo ? ' gl-video' : '')}
                 href={it.src}

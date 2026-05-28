@@ -7,7 +7,7 @@ export default function InvoiceToolbar({
   onBulkDownload,
 }) {
   return (
-    <div className="inv-toolbar">
+    <div aria-label="InvoiceToolbar" role="region" className="inv-toolbar">
       <input
         type="search"
         placeholder="Search by invoice / order #"

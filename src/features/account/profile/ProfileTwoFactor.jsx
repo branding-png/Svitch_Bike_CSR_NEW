@@ -12,7 +12,7 @@ export default function ProfileTwoFactor() {
   const [smsOn, setSmsOn] = useState(true)
 
   return (
-    <div className="card-base checkout-section" id="security">
+    <div aria-label="ProfileTwoFactor" role="region" className="card-base checkout-section" id="security">
       <h3><i className="bi bi-shield-lock-fill"></i> Two-Factor Authentication</h3>
       <p style={{ marginBottom: 8, color: 'var(--gray-400)', fontSize: 'var(--fs-sm)' }}>
         Add an extra layer of security to your account.

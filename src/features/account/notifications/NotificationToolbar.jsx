@@ -2,7 +2,7 @@ import { NOTIFICATION_FILTERS } from '@/data/notifications-data'
 
 export default function NotificationToolbar({ active, onChange, onMarkAllRead }) {
   return (
-    <div className="nf-toolbar">
+    <div aria-label="NotificationToolbar" role="region" className="nf-toolbar">
       {NOTIFICATION_FILTERS.map((f) => (
         <button
           key={f.id}

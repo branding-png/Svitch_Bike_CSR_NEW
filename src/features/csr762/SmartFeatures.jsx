@@ -57,7 +57,7 @@ export default function SmartFeatures({
   features   = SMART_FEATURES,
 }) {
   return (
-    <section id="smart-features">
+    <section aria-label="SmartFeatures" id="smart-features">
       <div className="container">
         <div className="sf-heading reveal">
           <span className="section-label">{label}</span>

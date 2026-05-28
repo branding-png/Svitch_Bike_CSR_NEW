@@ -48,7 +48,7 @@ export default function ResetForm({ name = 'rider', resetToken, onReset }) {
   }
 
   return (
-    <div className="auth-centered" id="rpFormStep">
+    <div aria-label="ResetForm" role="region" className="auth-centered" id="rpFormStep">
       <div className="auth-icon"><i className="bi bi-lock-fill"></i></div>
       <h2>Reset Your Password</h2>
       <p>

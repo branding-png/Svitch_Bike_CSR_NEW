@@ -8,7 +8,7 @@ const STATS = [
 
 export default function DashboardStats() {
   return (
-    <div className="account-stats-grid">
+    <div aria-label="DashboardStats" role="region" className="account-stats-grid">
       {STATS.map((s) => (
         <div key={s.label} className="card-base account-stat-card">
           <i className={`bi bi-${s.icon}`}></i>

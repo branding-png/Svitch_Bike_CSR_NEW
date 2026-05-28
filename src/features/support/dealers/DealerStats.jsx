@@ -9,7 +9,7 @@ const STATS = [
 
 export default function DealerStats({ items = STATS }) {
   return (
-    <section id="dealers-stats">
+    <section aria-label="DealerStats" id="dealers-stats">
       <div className="container">
         <div className="dealers-stats-row">
           {items.map((s) => (

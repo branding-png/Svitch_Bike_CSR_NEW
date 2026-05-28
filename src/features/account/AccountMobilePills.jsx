@@ -18,7 +18,7 @@ const PILLS = [
 
 export default function AccountMobilePills() {
   return (
-    <div className="account-mobile-pills">
+    <div aria-label="AccountMobilePills" role="region" className="account-mobile-pills">
       {PILLS.map((p) => (
         <NavLink
           key={p.to}

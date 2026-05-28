@@ -30,7 +30,7 @@ const CHARGERS = [
 
 export default function ChargerTypes({ items = CHARGERS }) {
   return (
-    <section id="cn-types">
+    <section aria-label="ChargerTypes" id="cn-types">
       <div className="container">
         <div className="section-header">
           <span className="section-label">Charger Types</span>

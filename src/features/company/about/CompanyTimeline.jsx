@@ -57,7 +57,7 @@ const TIMELINE = [
 
 export default function CompanyTimeline({ items = TIMELINE }) {
   return (
-    <section id="timeline">
+    <section aria-label="CompanyTimeline" id="timeline">
       <div className="container">
         <SectionHeader
           label="Our Journey"

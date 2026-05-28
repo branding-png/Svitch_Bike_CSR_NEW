@@ -21,7 +21,7 @@ export default function OrderDetailCard({ order }) {
   }
 
   return (
-    <div className="card-base order-card" data-status={order.status}>
+    <div aria-label="OrderDetailCard" role="region" className="card-base order-card" data-status={order.status}>
       <div className="order-card-head">
         <div>
           <div className="order-id">Order #{order.id}</div>

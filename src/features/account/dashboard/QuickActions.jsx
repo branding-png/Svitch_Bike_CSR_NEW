@@ -12,7 +12,7 @@ const ACTIONS = [
 
 export default function QuickActions() {
   return (
-    <div className="account-section">
+    <div aria-label="QuickActions" role="region" className="account-section">
       <div className="account-section-head"><h3>Quick Actions</h3></div>
       <div className="quick-actions-grid">
         {ACTIONS.map((a) => (

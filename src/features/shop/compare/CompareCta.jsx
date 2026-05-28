@@ -4,7 +4,7 @@ import { PATHS } from '@/utils/routes'
 // Bottom CTA strip on the Compare page — mirrors CSR_New_web `.cmp-cta`.
 export default function CompareCta() {
   return (
-    <div className="cmp-cta">
+    <div aria-label="CompareCta" role="region" className="cmp-cta">
       <span className="cmp-cta-eyebrow">Total Savings Calculator</span>
       <h2>
         Switch &amp; save up to <span className="accent">₹2,10,000</span>

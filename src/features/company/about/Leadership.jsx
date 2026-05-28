@@ -37,7 +37,7 @@ export default function Leadership({
   leaders = LEADERS,
 }) {
   return (
-    <section id="leadership">
+    <section aria-label="Leadership" id="leadership">
       <div className="container">
         <SectionHeader
           label="Leadership"

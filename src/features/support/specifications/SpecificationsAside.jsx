@@ -26,7 +26,7 @@ export default function SpecificationsAside({ sections = SECTIONS }) {
   }
 
   return (
-    <aside className="rajdhani-lbl-text-sm card-base legal-toc specs-toc">
+    <aside aria-label="SpecificationsAside" className="rajdhani-lbl-text-sm card-base legal-toc specs-toc">
       <h3>On This Page</h3>
       <ol>
         {sections.map((s) => (

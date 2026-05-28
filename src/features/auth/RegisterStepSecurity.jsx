@@ -3,7 +3,7 @@ import PasswordStrength from './PasswordStrength'
 
 export default function RegisterStepSecurity({ form, errors, set, onBack, onNext }) {
   return (
-    <div className="step-panel is-active" data-panel="2">
+    <div aria-label="RegisterStepSecurity" role="region" className="step-panel is-active" data-panel="2">
       <div className="auth-form-fields">
         <div>
           <PasswordField

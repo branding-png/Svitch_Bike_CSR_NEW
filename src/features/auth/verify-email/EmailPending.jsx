@@ -14,7 +14,7 @@ export default function EmailPending({ email = 'your@email.com' }) {
   }
 
   return (
-    <div className="auth-centered" id="vePending">
+    <div aria-label="EmailPending" role="region" className="auth-centered" id="vePending">
       <div className="auth-icon"><i className="bi bi-envelope-check-fill"></i></div>
       <h2>Check your inbox</h2>
       <p>

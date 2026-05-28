@@ -18,7 +18,7 @@ export default function TicketReply({ ticket, onSend, onResolve }) {
   function emoji()  { show('Emoji picker coming soon.', 'info', 2500) }
 
   return (
-    <div className="tkt-reply">
+    <div aria-label="TicketReply" role="region" className="tkt-reply">
       <label className="tkt-reply-label" htmlFor="reply">Your Reply</label>
       <textarea
         id="reply"

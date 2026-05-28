@@ -84,7 +84,7 @@ export default function Testimonials({
   const loop = [...testimonials, ...testimonials]
 
   return (
-    <section id="testimonials">
+    <section aria-label="Testimonials" id="testimonials">
       <div className="container">
         <div className="ts-heading reveal">
           <span className="section-label">{label}</span>

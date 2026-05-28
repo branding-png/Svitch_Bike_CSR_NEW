@@ -65,7 +65,7 @@ const STEPS = [
 
 export default function WarrantyClaim({ steps = STEPS }) {
   return (
-    <section id="claim-process">
+    <section aria-label="WarrantyClaim" id="claim-process">
       <div className="container">
         <div className="section-header">
           <span className="section-label">How To Claim</span>

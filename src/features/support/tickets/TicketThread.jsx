@@ -4,7 +4,7 @@ import TicketMessage from './TicketMessage'
 // separator label; anything else is a `.msg` bubble.
 export default function TicketThread({ entries = [] }) {
   return (
-    <div className="tkt-thread">
+    <div aria-label="TicketThread" role="region" className="tkt-thread">
       {entries.map((entry, i) =>
         entry.day ? (
           <span key={`d-${i}`} className="tkt-day">{entry.day}</span>

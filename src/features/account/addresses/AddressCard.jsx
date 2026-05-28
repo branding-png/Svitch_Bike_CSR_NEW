@@ -11,7 +11,7 @@ export default function AddressCard({ address, onEdit, onMakeDefault, onRemove }
   const icon = TYPE_ICON[address.label] || 'geo-alt-fill'
 
   return (
-    <div className={`card-base address-card${address.isDefault ? ' is-default' : ''}`} data-address-id={address.id}>
+    <div aria-label="AddressCard" role="region" className={`card-base address-card${address.isDefault ? ' is-default' : ''}`} data-address-id={address.id}>
       <div className="address-card-head">
         <span className="address-type-icon"><i className={`bi bi-${icon}`}></i></span>
         <span className="address-type">{address.label}</span>

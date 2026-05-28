@@ -16,7 +16,7 @@ const SUFFIX_STYLE = {
 
 export default function SusStatRow({ items = STATS }) {
   return (
-    <div className="sus-stat-row">
+    <div aria-label="SusStatRow" role="region" className="sus-stat-row">
       {items.map((s) => (
         <div key={s.label} className="card-base sus-stat">
           <span className="sus-stat-num">

@@ -18,7 +18,7 @@ const STATS = [
 
 export default function BecomeDealerCta({ onApply }) {
   return (
-    <section id="become-dealer">
+    <section aria-label="BecomeDealerCta" id="become-dealer">
       <div className="container">
         <div className="card-base become-dealer-card">
           <div className="become-dealer-content">

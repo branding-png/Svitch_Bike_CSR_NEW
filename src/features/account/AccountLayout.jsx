@@ -8,7 +8,7 @@ import '@/styles/pages/shop.css'
 // header itself).
 export default function AccountLayout({ children }) {
   return (
-    <section id="account-main">
+    <section aria-label="AccountLayout" id="account-main">
       <div className="container">
         <div className="account-layout">
           <AccountAside />

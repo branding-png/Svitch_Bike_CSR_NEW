@@ -32,7 +32,7 @@ export default function Requirements({
   groups = DEFAULT_GROUPS,
 }) {
   return (
-    <section className="card-base job-section">
+    <section aria-label="Requirements" className="card-base job-section">
       <h2><i className={`bi ${icon}`}></i> {title}</h2>
       {groups.map((g) => (
         <div key={g.heading}>

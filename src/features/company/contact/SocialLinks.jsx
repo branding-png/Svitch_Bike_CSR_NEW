@@ -9,7 +9,7 @@ const SOCIALS = [
 
 export default function SocialLinks({ items = SOCIALS }) {
   return (
-    <section id="social">
+    <section aria-label="SocialLinks" id="social">
       <div className="container">
         <div className="social-wrap">
           <span className="section-label">Stay Connected</span>

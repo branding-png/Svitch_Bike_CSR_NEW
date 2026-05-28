@@ -7,7 +7,7 @@ const METHODS = [
 
 export default function DeliverySection({ form, onChange }) {
   return (
-    <div className="card-base checkout-section">
+    <div aria-label="DeliverySection" role="region" className="card-base checkout-section">
       <h3><i className="bi bi-box-seam"></i> Delivery Method</h3>
 
       <div className="delivery-methods">

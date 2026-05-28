@@ -13,7 +13,7 @@ export default function SavedJobCard({ job, onRemove }) {
   ]
 
   return (
-    <div className="card-base saved-job-card">
+    <div aria-label="SavedJobCard" role="region" className="card-base saved-job-card">
       <span className="saved-job-icon"><i className="bi bi-briefcase-fill"></i></span>
 
       <div className="saved-job-info">

@@ -5,7 +5,7 @@ export default function ProductDetailColorSelector({ colors = [], value, onChang
   const active = colors.find((c) => c.id === value) || colors[0]
 
   return (
-    <div className="pd-selector">
+    <div aria-label="ProductDetailColorSelector" role="region" className="pd-selector">
       <label className="pd-selector-label rajdhani-lbl-text-sm">
         Color: <strong>{active.name}</strong>
       </label>

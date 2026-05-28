@@ -109,7 +109,7 @@ export default function Comments({ initial = SEED }) {
   }
 
   return (
-    <div className="card-base comments-block">
+    <div aria-label="Comments" role="region" className="card-base comments-block">
       <h3>Comments ({comments.length})</h3>
 
       {comments.length === 0 && (

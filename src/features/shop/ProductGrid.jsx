@@ -14,7 +14,7 @@ export default function ProductGrid({
   }
 
   return (
-    <div className="product-grid-shop" id="productGrid">
+    <div aria-label="ProductGrid" role="region" className="product-grid-shop" id="productGrid">
       {products.map((p) => (
         <ProductCard key={p.id} product={p} onQuickView={onQuickView} />
       ))}

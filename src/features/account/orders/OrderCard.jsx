@@ -15,7 +15,7 @@ const STATUS_META = {
 export default function OrderCard({ order, actions }) {
   const status = STATUS_META[order.status] || STATUS_META.processing
   return (
-    <div className="card-base order-card" data-status={order.status}>
+    <div aria-label="OrderCard" role="region" className="card-base order-card" data-status={order.status}>
       <div className="order-card-head">
         <div>
           <div className="order-id">Order #{order.id}</div>

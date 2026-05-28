@@ -64,7 +64,7 @@ export default function TrackOrderForm({ onLookup }) {
   }, [urlOrder, urlEmail, user?.email])
 
   return (
-    <div className="card-base track-form-card">
+    <div aria-label="TrackOrderForm" role="region" className="card-base track-form-card">
       <h3>Track Order</h3>
       <form id="trackForm" noValidate onSubmit={submit}>
         <InputControl

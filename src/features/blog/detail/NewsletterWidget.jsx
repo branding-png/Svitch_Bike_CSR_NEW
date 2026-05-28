@@ -39,7 +39,7 @@ export default function NewsletterWidget({
   }
 
   return (
-    <div className="card-base widget">
+    <div aria-label="NewsletterWidget" role="region" className="card-base widget">
       <h3 className="widget-title">{title}</h3>
       <p style={{ marginBottom: 14 }}>{description}</p>
 

@@ -22,7 +22,7 @@ function Stars({ rating }) {
 
 export default function ReviewList({ items = REVIEWS }) {
   return (
-    <section id="reviews-list">
+    <section aria-label="ReviewList" id="reviews-list">
       <div className="container">
         <SectionHeader
           label="Owner Stories"

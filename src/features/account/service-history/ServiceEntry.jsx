@@ -6,7 +6,7 @@ const COST_COLOUR = {
 
 export default function ServiceEntry({ entry }) {
   return (
-    <div className="card-base svc-entry">
+    <div aria-label="ServiceEntry" role="region" className="card-base svc-entry">
       <div className="svc-entry-head">
         <div>
           <h4>{entry.title}</h4>

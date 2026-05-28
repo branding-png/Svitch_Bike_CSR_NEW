@@ -41,7 +41,7 @@ export default function ApplyBar({
   }
 
   return (
-    <div
+    <div aria-label="ApplyBar" role="region"
       className="card-base apply-bar"
       data-job-id={job.id}
       data-job-title={job.title}

@@ -41,7 +41,7 @@ function Cell({ type }) {
 
 export default function MaintenanceSchedule() {
   return (
-    <section id="schedule">
+    <section aria-label="MaintenanceSchedule" id="schedule">
       <div className="container">
         <div className="section-header">
           <span className="section-label rajdhani-lbl-text-sm">Maintenance Schedule</span>

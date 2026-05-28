@@ -97,7 +97,7 @@ export default function LegalBlocks({ blocks = [] }) {
 
           case 'table':
             return (
-              <div key={i} className="legal-table-wrap">
+              <div aria-label="LegalBlocks" role="region" key={i} className="legal-table-wrap">
                 <table className="legal-table">
                   <thead>
                     <tr>{b.headers.map((h, j) => <th key={j}>{h}</th>)}</tr>

@@ -13,7 +13,7 @@ const REASONS = [
 
 export default function PaymentFailedCard({ orderRef = 'SVC-2026-04812' }) {
   return (
-    <div className="card-base fail-card">
+    <div aria-label="PaymentFailedCard" role="region" className="card-base fail-card">
       <div className="fail-icon">
         <i className="bi bi-x-lg"></i>
       </div>

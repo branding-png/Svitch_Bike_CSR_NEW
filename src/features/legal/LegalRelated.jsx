@@ -11,7 +11,7 @@ export default function LegalRelated({
 }) {
   if (!items.length) return null
   return (
-    <section className="legal-related">
+    <section aria-label="LegalRelated" className="legal-related">
       <div className="container">
         <div className="section-header">
           <span className="section-label">{label}</span>

@@ -4,7 +4,7 @@
 export default function ProfileToggleRow({ title, desc, checked, onChange, asLabel = true, children }) {
   const Tag = asLabel ? 'label' : 'div'
   return (
-    <Tag className="toggle-switch rajdhani-lbl-text-sm">
+    <Tag aria-label="ProfileToggleRow" role="region" className="toggle-switch rajdhani-lbl-text-sm">
       <div className="toggle-switch-info">
         <strong>{title}</strong>
         {desc && <span>{desc}</span>}

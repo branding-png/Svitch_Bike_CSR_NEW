@@ -7,7 +7,7 @@ const STORY_STATS = [
 
 export default function OurStory() {
   return (
-    <section id="our-story">
+    <section aria-label="OurStory" id="our-story">
       <div className="container">
         <div className="story-wrap">
           <div className="story-image" />

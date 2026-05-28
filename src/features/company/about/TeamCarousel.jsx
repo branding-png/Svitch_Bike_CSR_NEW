@@ -20,7 +20,7 @@ const TEAM = [
 
 export default function TeamCarousel({ items = TEAM }) {
   return (
-    <section id="team">
+    <section aria-label="TeamCarousel" id="team">
       <div className="container">
         <SectionHeader
           label="Minds Behind Svitch"

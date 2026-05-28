@@ -44,7 +44,7 @@ export default function RideExperience({
   useGLightbox('#ride-experience .safety-card--zoom.glightbox', [cards])
 
   return (
-    <section id="ride-experience">
+    <section aria-label="RideExperience" id="ride-experience">
       <div className="container">
         <div className="re-heading reveal">
           <span className="section-label">{label}</span>

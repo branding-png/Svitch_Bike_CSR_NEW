@@ -8,7 +8,7 @@ export default function BackToAllJobs({
   to    = '/careers',
 }) {
   return (
-    <div className="card-base" style={{ padding: 18, textAlign: 'center' }}>
+    <div aria-label="BackToAllJobs" role="region" className="card-base" style={{ padding: 18, textAlign: 'center' }}>
       <Link to={to} className="rajdhani-lbl-text-sm btn-csr secondary sm full-w">
         <i className="bi bi-arrow-left"></i> {label}
       </Link>

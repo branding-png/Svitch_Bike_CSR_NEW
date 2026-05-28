@@ -10,7 +10,7 @@ const FACTS = [
 
 export default function MediaKitFacts({ facts = FACTS }) {
   return (
-    <section id="mk-facts" className="section-pad-alt">
+    <section aria-label="MediaKitFacts" id="mk-facts" className="section-pad-alt">
       <div className="container">
         <SectionHeader
           label="Fact Sheet"

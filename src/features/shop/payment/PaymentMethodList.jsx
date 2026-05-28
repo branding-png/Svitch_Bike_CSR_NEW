@@ -14,7 +14,7 @@ export default function PaymentMethodList({ value, onChange }) {
       {METHODS.map((m) => {
         const selected = value === m.id
         return (
-          <label
+          <label aria-label="PaymentMethodList" role="region"
             key={m.id}
             className={`pay-method-item${selected ? ' is-active' : ''}`}
             style={{

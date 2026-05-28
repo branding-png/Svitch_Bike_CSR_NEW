@@ -69,7 +69,7 @@ export default function Pricing({
   cards      = CARDS,
 }) {
   return (
-    <section id="pricing">
+    <section aria-label="Pricing" id="pricing">
       <div className="container">
         <div className="pr-heading reveal">
           <span className="section-label">{label}</span>

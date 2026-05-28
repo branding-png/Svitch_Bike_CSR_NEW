@@ -3,7 +3,7 @@ import { TERM_CONDITION_TOC } from '@/data/term-condition'
 
 export default function TermConditionAside() {
   return (
-    <aside className="rajdhani-lbl-text-sm card-base legal-toc">
+    <aside aria-label="TermConditionAside" className="rajdhani-lbl-text-sm card-base legal-toc">
       <LegalToc items={TERM_CONDITION_TOC} />
     </aside>
   )

@@ -4,7 +4,7 @@ const STEPS = ['Cart', 'Address', 'Payment', 'Confirmation']
 
 export default function CheckoutProgress({ step = 0, className = '' }) {
   return (
-    <div
+    <div aria-label="CheckoutProgress" role="region"
       className={`checkout-progress ${className}`}
       style={{ display: 'flex', gap: 8, margin: '20px 0 28px', flexWrap: 'wrap' }}
     >

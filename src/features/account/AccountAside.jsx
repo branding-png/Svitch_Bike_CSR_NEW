@@ -76,7 +76,7 @@ export default function AccountAside() {
   }
 
   return (
-    <aside className="rajdhani-lbl-text-sm account-sidebar">
+    <aside aria-label="AccountAside" className="rajdhani-lbl-text-sm account-sidebar">
       <div className="card-base account-sidebar-profile">
         <div className="account-avatar">{initial}</div>
         <h4>{name}</h4>

@@ -30,7 +30,7 @@ export default function ResetInvalid() {
   }
 
   return (
-    <div className="auth-centered" id="rpInvalidStep">
+    <div aria-label="ResetInvalid" role="region" className="auth-centered" id="rpInvalidStep">
       <div className="auth-icon">
         <i className="bi bi-exclamation-triangle-fill" style={{ color: '#ef4444' }}></i>
       </div>

@@ -24,7 +24,7 @@ export default function PressReleases({
   assets   = MEDIA_ASSETS,
 }) {
   return (
-    <section id="press-releases">
+    <section aria-label="PressReleases" id="press-releases">
       <div className="container">
         <div className="releases-layout">
           {/* LEFT — official releases */}

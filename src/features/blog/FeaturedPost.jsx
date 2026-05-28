@@ -7,7 +7,7 @@ import { getFeaturedPost } from '@/data/blog'
 export default function FeaturedPost({ post = getFeaturedPost() }) {
   if (!post) return null
   return (
-    <Link
+    <Link aria-label="FeaturedPost" role="region"
       to={`/blog/${post.slug}`}
       className="p-0 card-base featured-post"
       data-cat={post.cat}

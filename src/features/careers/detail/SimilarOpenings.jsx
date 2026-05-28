@@ -11,7 +11,7 @@ const DEFAULT_ITEMS = [
 
 export default function SimilarOpenings({ title = 'Similar Openings', items = DEFAULT_ITEMS }) {
   return (
-    <div className="card-base snapshot-widget">
+    <div aria-label="SimilarOpenings" role="region" className="card-base snapshot-widget">
       <h4>{title}</h4>
       <div className="similar-list">
         {items.map((j) => (

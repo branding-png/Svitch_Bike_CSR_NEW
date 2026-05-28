@@ -14,7 +14,7 @@ export default function FinalCta({
   ctas       = CTAS,
 }) {
   return (
-    <section id="final-cta">
+    <section aria-label="FinalCta" id="final-cta">
       <div className="cta-watermark">{watermark}</div>
       <div className="container cta-container">
         <div className="reveal">

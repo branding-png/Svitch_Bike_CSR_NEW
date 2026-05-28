@@ -10,7 +10,7 @@ const STATS = [
 
 export default function ReviewSummary({ items = STATS }) {
   return (
-    <section id="review-summary">
+    <section aria-label="ReviewSummary" id="review-summary">
       <div className="container">
         <SectionHeader
           label="By The Numbers"

@@ -2,7 +2,7 @@ import InputControl from '@/ui/InputControl'
 
 export default function RegisterStepPersonal({ form, errors, set, onNext }) {
   return (
-    <div className="step-panel is-active" data-panel="1">
+    <div aria-label="RegisterStepPersonal" role="region" className="step-panel is-active" data-panel="1">
       <div className="auth-form-fields">
         <div className="form-grid">
           <InputControl

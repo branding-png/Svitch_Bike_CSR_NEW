@@ -26,5 +26,5 @@ const ITEMS = [
 ]
 
 export default function CookiePolicyRelated() {
-  return <LegalRelated items={ITEMS} />
+  return <LegalRelated aria-label="CookiePolicyRelated" role="region" items={ITEMS} />
 }

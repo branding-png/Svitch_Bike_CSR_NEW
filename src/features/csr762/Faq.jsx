@@ -56,7 +56,7 @@ export default function Faq({
           {items.map((item, i) => {
             const isOpen = openIdx === i
             return (
-              <div key={item.q} className={`faq-item${isOpen ? ' open' : ''}`}>
+              <div aria-label="Faq" role="region" key={item.q} className={`faq-item${isOpen ? ' open' : ''}`}>
                 <button
                   type="button"
                   className="faq-question"

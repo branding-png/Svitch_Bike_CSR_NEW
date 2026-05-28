@@ -61,7 +61,7 @@ export default function TestRide({
   }
 
   return (
-    <section id="test-ride">
+    <section aria-label="TestRide" id="test-ride">
       <div className="container">
         <div className="tr-intro reveal">
           <div className="tr-intro-heading">

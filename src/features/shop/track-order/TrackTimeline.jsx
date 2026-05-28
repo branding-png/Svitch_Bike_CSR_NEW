@@ -31,7 +31,7 @@ export default function TrackTimeline({ stages = [] }) {
           const state = s.state || 'upcoming'
           const icon  = s.icon  || STATE_ICON[state]
           return (
-            <li key={i} className={`track-step is-${state}`}>
+            <li aria-label="TrackTimeline" role="region" key={i} className={`track-step is-${state}`}>
               <span className="track-dot">
                 <i className={`bi ${icon}`}></i>
               </span>

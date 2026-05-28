@@ -13,7 +13,7 @@ export default function SpecificationsContent({
   const { open: openBookNow } = useBookNow()
 
   return (
-    <div className="legal-content">
+    <div aria-label="SpecificationsContent" role="region" className="legal-content">
       {sections.map((s) => (
         <LegalCard
           key={s.id}

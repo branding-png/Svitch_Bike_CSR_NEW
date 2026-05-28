@@ -53,7 +53,7 @@ export default function ForgetNewPassword({ resetToken, onReset }) {
   }
 
   return (
-    <div className="auth-centered" id="fpStep3">
+    <div aria-label="ForgetNewPassword" role="region" className="auth-centered" id="fpStep3">
       <div className="auth-icon"><i className="bi bi-lock-fill"></i></div>
       <h2>New Password</h2>
       <p>Create a strong password. We recommend using 12+ characters with a mix of letters, numbers &amp; symbols.</p>

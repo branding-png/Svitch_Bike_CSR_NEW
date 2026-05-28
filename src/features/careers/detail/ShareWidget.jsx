@@ -35,7 +35,7 @@ export default function ShareWidget({
   const text = encodeURIComponent(shareTitle)
 
   return (
-    <div className="card-base snapshot-widget">
+    <div aria-label="ShareWidget" role="region" className="card-base snapshot-widget">
       <h4>{title}</h4>
       <div className="share-grid">
         <a

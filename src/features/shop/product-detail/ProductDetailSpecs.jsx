@@ -12,7 +12,7 @@ const DEFAULT_SPECS = [
 
 export default function ProductDetailSpecs({ specs = DEFAULT_SPECS }) {
   return (
-    <div className="pd-specs-grid">
+    <div aria-label="ProductDetailSpecs" role="region" className="pd-specs-grid">
       {specs.map((s) => (
         <div key={s.label} className="pd-spec-quick">
           <span className="rajdhani-lbl-text-sm pd-spec-label">{s.label}</span>

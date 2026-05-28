@@ -5,7 +5,7 @@ import { PATHS } from '@/utils/routes'
 // Parent owns the feedback modal — we just bubble the click up.
 export default function TestRideCompleted({ ride, onFeedback }) {
   return (
-    <div className="card-base order-card" data-status="completed">
+    <div aria-label="TestRideCompleted" role="region" className="card-base order-card" data-status="completed">
       <div className="order-card-head">
         <div>
           <div className="order-id">Booking #{ride.id}</div>

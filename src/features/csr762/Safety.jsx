@@ -75,7 +75,7 @@ export default function Safety({
             // Odd  index → image on the left  (body default)
             const imgRight = i % 2 === 0
             return (
-              <div
+              <div aria-label="Safety" role="region"
                 key={c.title}
                 className={`ride-card ride-card--split reveal delay-${i + 1}`}
               >

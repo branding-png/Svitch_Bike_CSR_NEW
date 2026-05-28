@@ -320,7 +320,7 @@ function SuccessPanel({ summary }) {
 
 function SummaryRow({ label, value, valueClass = '' }) {
   return (
-    <div className="tr-summary-row">
+    <div aria-label="BookTestRideForm" role="region" className="tr-summary-row">
       <span className="tr-summary-label">{label}</span>
       <span className={`tr-summary-val ${valueClass}`.trim()}>{value}</span>
     </div>

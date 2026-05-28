@@ -26,5 +26,5 @@ const ITEMS = [
 ]
 
 export default function ShippingPolicyRelated() {
-  return <LegalRelated items={ITEMS} />
+  return <LegalRelated aria-label="ShippingPolicyRelated" role="region" items={ITEMS} />
 }

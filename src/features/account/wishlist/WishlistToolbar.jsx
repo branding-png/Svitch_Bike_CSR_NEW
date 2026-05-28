@@ -1,6 +1,6 @@
 export default function WishlistToolbar({ count, onClear }) {
   return (
-    <div className="wishlist-toolbar">
+    <div aria-label="WishlistToolbar" role="region" className="wishlist-toolbar">
       <span className="rajdhani-lbl-text-sm">
         <strong style={{ color: 'var(--white)' }}>{count}</strong> item{count === 1 ? '' : 's'} saved
       </span>

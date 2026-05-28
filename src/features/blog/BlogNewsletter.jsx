@@ -35,7 +35,7 @@ export default function BlogNewsletter() {
     (state === 'done'    ? ' is-valid'   : '')
 
   return (
-    <section id="blog-newsletter">
+    <section aria-label="BlogNewsletter" id="blog-newsletter">
       <div className="container">
         <div className="newsletter-wrap">
           <div className="newsletter-content">

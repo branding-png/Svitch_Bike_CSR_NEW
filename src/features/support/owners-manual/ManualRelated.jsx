@@ -28,5 +28,5 @@ const ITEMS = [
 ]
 
 export default function ManualRelated() {
-  return <LegalRelated items={ITEMS} label="Related Resources" titleStart="Read" titleAccent="More" />
+  return <LegalRelated aria-label="ManualRelated" role="region" items={ITEMS} label="Related Resources" titleStart="Read" titleAccent="More" />
 }

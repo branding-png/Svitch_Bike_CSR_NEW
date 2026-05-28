@@ -25,7 +25,7 @@ export default function RangeBattery({
   stats        = BATTERY_STATS,
 }) {
   return (
-    <section id="range-battery">
+    <section aria-label="RangeBattery" id="range-battery">
       <div className="container">
         <div className="rb-heading reveal">
           <span className="section-label">{label}</span>

@@ -2,7 +2,7 @@ import { TICKET_FILTERS } from '@/data/tickets-data'
 
 export default function TicketFilterTabs({ active, onChange }) {
   return (
-    <div className="tkt-filter-tabs" role="tablist">
+    <div aria-label="TicketFilterTabs" className="tkt-filter-tabs" role="tablist">
       {TICKET_FILTERS.map((t) => (
         <button
           key={t.id}

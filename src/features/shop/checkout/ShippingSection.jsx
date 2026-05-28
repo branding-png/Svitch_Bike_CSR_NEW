@@ -66,7 +66,7 @@ export default function ShippingSection({ form, errors = {}, onChange }) {
   }
 
   return (
-    <div className="card-base checkout-section">
+    <div aria-label="ShippingSection" role="region" className="card-base checkout-section">
       <h3><i className="bi bi-truck"></i> Shipping Address</h3>
 
       {savedOptions && (

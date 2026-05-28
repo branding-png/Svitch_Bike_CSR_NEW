@@ -16,7 +16,7 @@ export default function JobBenefits({
   benefits = DEFAULT_BENEFITS,
 }) {
   return (
-    <section className="card-base job-section">
+    <section aria-label="JobBenefits" className="card-base job-section">
       <h2><i className={`bi ${icon}`}></i> {title}</h2>
       <div className="job-benefits">
         {benefits.map((b) => (

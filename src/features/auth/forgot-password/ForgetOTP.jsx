@@ -61,7 +61,7 @@ export default function ForgetOTP({ email, otpToken, onChangeEmail, onVerified }
   }
 
   return (
-    <div className="auth-centered" id="fpStep2">
+    <div aria-label="ForgetOTP" role="region" className="auth-centered" id="fpStep2">
       <div className="auth-icon"><i className="bi bi-shield-lock-fill"></i></div>
       <h2>Enter OTP</h2>
       <p>We sent a 6-digit code to <strong style={{ color: 'var(--white)' }}>{maskEmail(email)}</strong></p>

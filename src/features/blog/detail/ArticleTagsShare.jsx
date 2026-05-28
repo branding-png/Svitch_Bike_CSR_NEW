@@ -50,7 +50,7 @@ export default function ArticleTagsShare({
   ]
 
   return (
-    <div className="card-base article-tags-share">
+    <div aria-label="ArticleTagsShare" role="region" className="card-base article-tags-share">
       <div className="tag-list">
         <span className="tag-label rajdhani-lbl-text-sm">Tags:</span>
         {tags.map((tag) => (

@@ -84,7 +84,7 @@ export default function TwoFactorCard({ phone }) {
   }
 
   return (
-    <section id="tfa-main">
+    <section aria-label="TwoFactorCard" id="tfa-main">
       <div className="card-base tfa-card">
         <div className="tfa-icon"><i className="bi bi-shield-lock-fill"></i></div>
         <h2 style={{ marginBottom: 8 }}>Two-Factor Authentication</h2>

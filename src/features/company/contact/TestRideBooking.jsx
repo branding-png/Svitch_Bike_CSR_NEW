@@ -92,7 +92,7 @@ export default function TestRideBooking() {
   }
 
   return (
-    <section id="test-ride">
+    <section aria-label="TestRideBooking" id="test-ride">
       <div className="container">
         <div className="test-ride-wrap">
           <div className="test-ride-content">

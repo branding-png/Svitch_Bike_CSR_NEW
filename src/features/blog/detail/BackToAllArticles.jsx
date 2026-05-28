@@ -8,7 +8,7 @@ export default function BackToAllArticles({
   to    = '/blog',
 }) {
   return (
-    <div className="card-base widget" style={{ textAlign: 'center' }}>
+    <div aria-label="BackToAllArticles" role="region" className="card-base widget" style={{ textAlign: 'center' }}>
       <Link to={to} className="rajdhani-lbl-text-sm btn-csr secondary sm full-w">
         <i className="bi bi-arrow-left"></i> {label}
       </Link>

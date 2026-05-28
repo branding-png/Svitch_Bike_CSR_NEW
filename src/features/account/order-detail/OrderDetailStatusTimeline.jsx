@@ -41,7 +41,7 @@ export default function OrderDetailStatusTimeline({ order }) {
         {detailedTimeline.map((step, i) => {
           const state = step.final ? 'final' : (step.state || 'pending')
           return (
-            <li key={i} className={`track-step is-${state}`}>
+            <li aria-label="OrderDetailStatusTimeline" role="region" key={i} className={`track-step is-${state}`}>
               <span className="track-dot">
                 {STATE_ICON[state] && <i className={`bi bi-${STATE_ICON[state]}`}></i>}
               </span>

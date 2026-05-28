@@ -21,7 +21,7 @@ const PILLARS = [
 
 export default function Pillars({ items = PILLARS }) {
   return (
-    <section id="sus-pillars">
+    <section aria-label="Pillars" id="sus-pillars">
       <div className="container">
         <SectionHeader
           label="Our Approach"

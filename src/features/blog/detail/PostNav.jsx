@@ -14,7 +14,7 @@ export default function PostNav({
   },
 }) {
   return (
-    <div className="post-nav">
+    <div aria-label="PostNav" role="region" className="post-nav">
       {prev && (
         <Link to={`/blog/${prev.slug}`} className="rajdhani-lbl-text-sm card-base prev">
           <span className="nav-label rajdhani-lbl-text-sm">

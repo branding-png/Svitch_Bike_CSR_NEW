@@ -112,7 +112,7 @@ export default function ContactMain() {
   }
 
   return (
-    <section id="contact-main">
+    <section aria-label="ContactMain" id="contact-main">
       <div className="container">
         <div className="contact-grid">
           {/* Left: Form */}

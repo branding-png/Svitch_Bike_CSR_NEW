@@ -29,7 +29,7 @@ const ITEMS = [
 
 export default function SpecificationsRelated() {
   return (
-    <LegalRelated
+    <LegalRelated aria-label="SpecificationsRelated" role="region"
       items={ITEMS}
       label="Related Resources"
       titleStart="Explore"

@@ -3,7 +3,7 @@ import { PATHS } from '@/utils/routes'
 
 export default function ResetSuccess() {
   return (
-    <div className="auth-centered" id="rpSuccessStep">
+    <div aria-label="ResetSuccess" role="region" className="auth-centered" id="rpSuccessStep">
       <div className="auth-success-icon"><i className="bi bi-check2"></i></div>
       <h2>Password Reset!</h2>
       <p>Your password has been updated. Sign in with your new credentials to continue.</p>

@@ -61,7 +61,7 @@ function ProductCard({ product, onQuickView }) {
   const ctaDisabled = product.stock === 'coming-soon'
 
   return (
-    <div className="card-base product-card" data-id={product.id}>
+    <div aria-label="ProductCard" role="region" className="card-base product-card" data-id={product.id}>
       <div
         className="product-card-media"
         style={isIcon ? { background: product.bg, display: 'flex', alignItems: 'center', justifyContent: 'center' } : undefined}

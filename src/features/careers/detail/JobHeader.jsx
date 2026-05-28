@@ -14,7 +14,7 @@ export default function JobHeader({
   meta = DEFAULT_META,
 }) {
   return (
-    <div className="card-base job-header-card">
+    <div aria-label="JobHeader" role="region" className="card-base job-header-card">
       <span className="job-dept-tag">{dept}</span>
       <h1>{title}</h1>
       <div className="job-header-meta">

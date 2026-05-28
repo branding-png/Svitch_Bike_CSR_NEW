@@ -316,7 +316,7 @@ export default function FaqAccordion({ items = FAQS, categories = CATEGORIES }) 
             {visible.map((f) => {
               const isOpen = openIdx === f._origIndex
               return (
-                <div key={f._origIndex} className="accordion-item faq-item" data-cat={f.cat}>
+                <div aria-label="FaqAccordion" role="region" key={f._origIndex} className="accordion-item faq-item" data-cat={f.cat}>
                   <h3 className="accordion-header">
                     <button
                       type="button"

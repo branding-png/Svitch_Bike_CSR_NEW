@@ -6,7 +6,7 @@ const DEFAULT_ITEMS = [
 
 export default function ProductDetailTrust({ items = DEFAULT_ITEMS }) {
   return (
-    <div className="pd-trust">
+    <div aria-label="ProductDetailTrust" role="region" className="pd-trust">
       {items.map((item) => (
         <div key={item.label} className="pd-trust-item rajdhani-lbl-text-sm">
           <i className={`bi ${item.icon}`} aria-hidden="true" /> {item.label}

@@ -16,7 +16,7 @@ const PARTNERS = [
 export default function Partners({ items = PARTNERS }) {
   const track = [...items, ...items]
   return (
-    <section id="partners">
+    <section aria-label="Partners" id="partners">
       <div className="container">
         <SectionHeader
           label="Ecosystem"

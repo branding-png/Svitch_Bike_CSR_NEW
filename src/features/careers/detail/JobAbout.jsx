@@ -12,7 +12,7 @@ export default function JobAbout({
   paragraphs = DEFAULT_PARAGRAPHS,
 }) {
   return (
-    <section className="card-base job-section">
+    <section aria-label="JobAbout" className="card-base job-section">
       <h2><i className={`bi ${icon}`}></i> {title}</h2>
       {paragraphs.map((p, i) => <p key={i}>{p}</p>)}
     </section>

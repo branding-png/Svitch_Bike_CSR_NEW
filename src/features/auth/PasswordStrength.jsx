@@ -10,7 +10,7 @@ export function scorePassword(pw = '') {
 export default function PasswordStrength({ value }) {
   const level = scorePassword(value)
   return (
-    <div className="password-strength" data-level={level}>
+    <div aria-label="PasswordStrength" role="region" className="password-strength" data-level={level}>
       {[0, 1, 2, 3].map((i) => (
         <span key={i} className={i < level ? 'is-on' : ''} />
       ))}

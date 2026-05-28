@@ -8,7 +8,7 @@ const DEFAULT_SPECS = [
 
 export default function ProductDetailQuickSpecs({ specs = DEFAULT_SPECS }) {
   return (
-    <div className="pd-specs-quick">
+    <div aria-label="ProductDetailQuickSpecs" role="region" className="pd-specs-quick">
       {specs.map((s) => (
         <div key={s.label} className="pd-spec-quick">
           <i className={`bi ${s.icon}`} aria-hidden="true" />

@@ -15,7 +15,7 @@ export default function ColorFilter({ active = null, onChange }) {
   const toggle = (id) => onChange?.(active === id ? null : id)
 
   return (
-    <div className="card-base filter-widget">
+    <div aria-label="ColorFilter" role="region" className="card-base filter-widget">
       <h3 className="filter-title">Color</h3>
 
       <div className="filter-colors" id="colorFilters">

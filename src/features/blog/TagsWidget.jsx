@@ -14,7 +14,7 @@ export default function TagsWidget({
   onChange,
 }) {
   return (
-    <div className="card-base widget">
+    <div aria-label="TagsWidget" role="region" className="card-base widget">
       <h3 className="widget-title">{title}</h3>
       <div className="widget-tags">
         {tags.map((t) => (

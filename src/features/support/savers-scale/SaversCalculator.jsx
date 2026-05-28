@@ -166,7 +166,7 @@ function Row({ label, petrol, ev, save, fmt }) {
     ? (n) => '₹' + (Math.round(n * 100) / 100).toFixed(2)
     : inr
   return (
-    <tr>
+    <tr aria-label="SaversCalculator" role="region">
       <td>{label}</td>
       <td>{f(petrol)}</td>
       <td>{f(ev)}</td>

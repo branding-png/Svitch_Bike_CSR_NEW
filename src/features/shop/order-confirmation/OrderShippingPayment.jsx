@@ -23,7 +23,7 @@ export default function OrderShippingPayment({
   payment  = DEFAULTS.payment,
 }) {
   return (
-    <div className="oc-info-grid">
+    <div aria-label="OrderShippingPayment" role="region" className="oc-info-grid">
       {/* Shipping */}
       <div className="card-base oc-info-card">
         <div className="oc-info-head">

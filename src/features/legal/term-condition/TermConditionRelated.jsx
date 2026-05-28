@@ -26,5 +26,5 @@ const ITEMS = [
 ]
 
 export default function TermConditionRelated() {
-  return <LegalRelated items={ITEMS} />
+  return <LegalRelated aria-label="TermConditionRelated" role="region" items={ITEMS} />
 }

@@ -4,7 +4,7 @@ import { NEXT_SERVICE } from './service-history-data'
 
 export default function ServiceNext({ next = NEXT_SERVICE }) {
   return (
-    <div className="card-base svc-next">
+    <div aria-label="ServiceNext" role="region" className="card-base svc-next">
       <div className="svc-next-icon"><i className="bi bi-calendar-event"></i></div>
       <div className="svc-next-body">
         <h4 style={{ color: 'var(--white)', marginBottom: 4 }}>{next.title}</h4>

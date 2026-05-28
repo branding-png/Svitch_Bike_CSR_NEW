@@ -6,7 +6,7 @@ export default function ShopEmpty({ query = '', onReset, onSuggest }) {
   const isSearch = Boolean(query)
 
   return (
-    <div className="card-base account-empty" id="shopEmpty" style={{ marginTop: 20 }}>
+    <div aria-label="ShopEmpty" role="region" className="card-base account-empty" id="shopEmpty" style={{ marginTop: 20 }}>
       <i id="shopEmptyIcon" className={`bi ${isSearch ? 'bi-search' : 'bi-bag-x'}`}></i>
 
       <h3 id="shopEmptyTitle" style={{ color: 'var(--white)', marginBottom: 8 }}>

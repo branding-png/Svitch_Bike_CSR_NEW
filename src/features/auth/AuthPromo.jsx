@@ -15,7 +15,7 @@ export default function AuthPromo({
   footer       = '© 2026 Svitch Motocorp · Ahmedabad, India',
 }) {
   return (
-    <aside className="auth-promo">
+    <aside aria-label="AuthPromo" className="auth-promo">
       <span className="auth-promo-brand">{brand}</span>
 
       <div>

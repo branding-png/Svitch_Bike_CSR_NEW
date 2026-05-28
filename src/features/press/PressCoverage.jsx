@@ -68,7 +68,7 @@ const ARTICLES = [
 
 export default function PressCoverage({ articles = ARTICLES }) {
   return (
-    <section id="press-coverage">
+    <section aria-label="PressCoverage" id="press-coverage">
       <div className="container">
         <SectionHeader
           label="Latest Coverage"

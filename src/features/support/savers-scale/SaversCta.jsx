@@ -8,7 +8,7 @@ export default function SaversCta() {
   const { open: openBookNow } = useBookNow()
 
   return (
-    <section id="savers-cta">
+    <section aria-label="SaversCta" id="savers-cta">
       <div className="container">
         <div className="savers-cta-card">
           <div>

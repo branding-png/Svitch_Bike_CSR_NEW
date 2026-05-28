@@ -28,7 +28,7 @@ export default function CheckoutProgress({ step = 0 }) {
           active ? 'is-active' : '',
         ].filter(Boolean).join(' ')
         return (
-          <div key={s.num} className={cls}>
+          <div aria-label="CheckoutProgress" role="region" key={s.num} className={cls}>
             <span className="step-num">
               {done ? <i className="bi bi-check2" aria-hidden="true" /> : s.num}
             </span>

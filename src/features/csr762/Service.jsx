@@ -22,7 +22,7 @@ export default function Service({
   cards      = SERVICE_CARDS,
 }) {
   return (
-    <section id="service">
+    <section aria-label="Service" id="service">
       <div className="container">
         <div className="sv-heading reveal">
           <span className="section-label">{label}</span>

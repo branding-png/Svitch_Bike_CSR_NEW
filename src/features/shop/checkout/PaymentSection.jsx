@@ -43,7 +43,7 @@ export default function PaymentSection({ form, errors = {}, onChange }) {
         {METHODS.map((m) => {
           const isActive = form.payment === m.id
           return (
-            <div
+            <div aria-label="PaymentSection"
               key={m.id}
               className={`payment-method${isActive ? ' is-active' : ''}`}
               data-pay={m.id}

@@ -59,7 +59,7 @@ export default function CostCompare({
   }, [animate])
 
   return (
-    <section id="cost-compare" ref={sectionRef}>
+    <section aria-label="CostCompare" id="cost-compare" ref={sectionRef}>
       <div className="container">
         <div className="cc-intro reveal">
           <div className="cc-intro-heading">

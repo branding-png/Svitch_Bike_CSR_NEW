@@ -15,7 +15,7 @@ export default function AvailabilityFilter({ active = [], counts = {}, onChange 
   }
 
   return (
-    <div className="card-base filter-widget">
+    <div aria-label="AvailabilityFilter" role="region" className="card-base filter-widget">
       <h3 className="filter-title">Availability</h3>
 
       <div className="filter-list" id="stockFilters">

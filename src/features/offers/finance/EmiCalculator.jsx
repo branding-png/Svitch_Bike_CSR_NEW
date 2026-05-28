@@ -138,7 +138,7 @@ export default function EmiCalculator() {
 
 function ResultTile({ value, label }) {
   return (
-    <div>
+    <div aria-label="EmiCalculator" role="region">
       <span className="fin-result-num">{value}</span>
       <span className="fin-result-lbl">{label}</span>
     </div>

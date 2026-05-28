@@ -31,7 +31,7 @@ const GOALS = [
 
 export default function Goals({ items = GOALS }) {
   return (
-    <section id="sus-goals">
+    <section aria-label="Goals" id="sus-goals">
       <div className="container">
         <SectionHeader
           label="2030 Targets"

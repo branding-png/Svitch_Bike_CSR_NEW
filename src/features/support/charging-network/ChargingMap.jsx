@@ -388,7 +388,7 @@ export default function ChargingMap() {
   }, [listQ])
 
   return (
-    <section id="cn-map">
+    <section aria-label="ChargingMap" id="cn-map">
       <div className="container">
         <div className="section-header">
           <span className="section-label">Find a Charger</span>

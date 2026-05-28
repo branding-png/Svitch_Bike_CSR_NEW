@@ -60,7 +60,7 @@ export default function JobOpenings({ jobs = JOBS, depts = DEPTS }) {
           {visible.map((j) => {
             const isSaved = has(j.slug)
             return (
-              <div key={j.slug} className={`card-base job-card${isSaved ? ' is-saved' : ''}`} data-dept={j.dept}>
+              <div aria-label="JobOpenings" role="region" key={j.slug} className={`card-base job-card${isSaved ? ' is-saved' : ''}`} data-dept={j.dept}>
                 <div className="job-card-main">
                   <div className="job-card-tags">
                     <span className="job-dept-tag">{j.deptLabel}</span>

@@ -22,7 +22,7 @@ const STEPS = [
 
 export default function HowItWorks({ steps = STEPS }) {
   return (
-    <section id="ref-how">
+    <section aria-label="HowItWorks" id="ref-how">
       <div className="container">
         <SectionHeader
           label="How it works"

@@ -9,7 +9,7 @@ export default function PromoWidget({
   to          = '/shop',
 }) {
   return (
-    <div className="card-base widget widget-promo">
+    <div aria-label="PromoWidget" role="region" className="card-base widget widget-promo">
       <h3>{title}</h3>
       <p>{description}</p>
       <Link to={to} className="rajdhani-lbl-text-sm btn-csr primary sm full-w">

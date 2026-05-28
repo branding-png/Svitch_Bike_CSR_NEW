@@ -21,7 +21,7 @@ export default function EnvironmentalImpact({
   const { fuelLitres, co2Kg, trees } = compute(inputs)
 
   return (
-    <section id="environmental">
+    <section aria-label="EnvironmentalImpact" id="environmental">
       <div className="container">
         <div className="section-header">
           <span className="section-label rajdhani-lbl-text-sm">Beyond Savings</span>

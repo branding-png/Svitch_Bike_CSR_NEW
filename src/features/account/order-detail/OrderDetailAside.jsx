@@ -59,7 +59,7 @@ function Payment({ payment }) {
 
 export default function OrderDetailAside({ order }) {
   return (
-    <aside className="rajdhani-lbl-text-sm od-col-side">
+    <aside aria-label="OrderDetailAside" className="rajdhani-lbl-text-sm od-col-side">
       <PriceSummary  summary={order.summary} />
       <ShippingAddress address={order.address} />
       <Payment payment={order.payment} />

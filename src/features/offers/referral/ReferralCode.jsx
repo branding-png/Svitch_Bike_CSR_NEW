@@ -55,7 +55,7 @@ export default function ReferralCode({ code = 'SVITCH-RIDER-7X42' }) {
   }
 
   return (
-    <section id="ref-code">
+    <section aria-label="ReferralCode" id="ref-code">
       <div className="container">
         <SectionHeader
           label="Your Code"

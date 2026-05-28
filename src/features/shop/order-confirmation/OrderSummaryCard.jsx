@@ -25,7 +25,7 @@ export default function OrderSummaryCard({
   const total    = subtotal + shipping + gst
 
   return (
-    <div className="card-base" style={{ padding: 32 }}>
+    <div aria-label="OrderSummaryCard" role="region" className="card-base" style={{ padding: 32 }}>
       <div className="account-section-head">
         <h3>Order Summary</h3>
         <Link to={PATHS.orders} className="rajdhani-lbl-text-sm">

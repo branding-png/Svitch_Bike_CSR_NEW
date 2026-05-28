@@ -74,7 +74,7 @@ export default function ArticleBody({ blocks = FALLBACK_BLOCKS, children }) {
     return <article className="rajdhani-lbl-text-sm card-base article-body">{children}</article>
   }
   return (
-    <article className="card-base article-body">
+    <article aria-label="ArticleBody" className="card-base article-body">
       {blocks.map((b, i) => <Block key={i} block={b} />)}
     </article>
   )

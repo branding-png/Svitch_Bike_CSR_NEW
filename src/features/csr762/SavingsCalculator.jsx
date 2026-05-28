@@ -134,7 +134,7 @@ function SliderRow({ id, label, value, onChange, min, max, step = 1, prefix = ''
 
 function ResultTile({ value, label }) {
   return (
-    <div className="calc-result-item">
+    <div aria-label="SavingsCalculator" role="region" className="calc-result-item">
       <span className="calc-result-val">{value}</span>
       <span className="calc-result-label">{label}</span>
     </div>

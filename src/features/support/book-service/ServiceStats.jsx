@@ -8,7 +8,7 @@ const STATS = [
 
 export default function ServiceStats({ items = STATS, className = '' }) {
   return (
-    <section id="service-stats" className={className}>
+    <section aria-label="ServiceStats" id="service-stats" className={className}>
       <div className="container">
         <div className="service-stats-row">
           {items.map((s) => (

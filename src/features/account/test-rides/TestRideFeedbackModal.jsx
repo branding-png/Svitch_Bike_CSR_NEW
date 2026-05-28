@@ -46,7 +46,7 @@ export default function TestRideFeedbackModal({ isOpen, onClose, bookingId }) {
             {[1, 2, 3, 4, 5].map((n) => {
               const filled = (hover || rating) >= n
               return (
-                <i
+                <i aria-label="TestRideFeedbackModal"
                   key={n}
                   className={`bi ${filled ? 'bi-star-fill is-active' : 'bi-star'}`}
                   role="radio"

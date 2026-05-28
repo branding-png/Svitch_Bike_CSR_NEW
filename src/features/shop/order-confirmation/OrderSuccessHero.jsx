@@ -8,7 +8,7 @@ export default function OrderSuccessHero({
   orderNo  = '#SVT-847291',
 }) {
   return (
-    <section className="page-hero grad-tc" style={{ paddingBottom: 40 }}>
+    <section aria-label="OrderSuccessHero" className="page-hero grad-tc" style={{ paddingBottom: 40 }}>
       <div className="container">
         <div className="page-hero-inner" style={{ textAlign: 'center', margin: 'auto' }}>
           <div

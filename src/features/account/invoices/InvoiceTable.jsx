@@ -17,7 +17,7 @@ export default function InvoiceTable({ invoices, onAction }) {
   }
 
   return (
-    <div style={{ overflowX: 'auto' }}>
+    <div aria-label="InvoiceTable" role="region" style={{ overflowX: 'auto' }}>
       <table className="inv-table">
         <thead>
           <tr>

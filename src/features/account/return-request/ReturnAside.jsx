@@ -14,7 +14,7 @@ const STEPS = [
 
 export default function ReturnAside() {
   return (
-    <aside className="card-base rr-aside">
+    <aside aria-label="ReturnAside" className="card-base rr-aside">
       <h5>How it works</h5>
       <ul>
         {STEPS.map((s, i) => (

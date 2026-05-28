@@ -38,7 +38,7 @@ export default function ForgetEmail({ email, setEmail, onSubmit }) {
   }
 
   return (
-    <div className="auth-centered" id="fpStep1">
+    <div aria-label="ForgetEmail" role="region" className="auth-centered" id="fpStep1">
       <div className="auth-icon"><i className="bi bi-key-fill"></i></div>
       <h2>Forgot Password?</h2>
       <p>No worries. Enter your email and we&apos;ll send a 6-digit one-time password to reset it.</p>

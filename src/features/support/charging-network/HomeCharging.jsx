@@ -24,7 +24,7 @@ const COST_ROWS = [
 
 export default function HomeCharging() {
   return (
-    <section id="cn-home">
+    <section aria-label="HomeCharging" id="cn-home">
       <div className="container">
         <div className="section-header">
           <span className="section-label">Home Charging</span>

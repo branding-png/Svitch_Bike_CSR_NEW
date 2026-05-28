@@ -14,7 +14,7 @@ export default function MediaKitContact({
 }) {
   const email = EMAILS[emailKey]
   return (
-    <section id={id}>
+    <section aria-label="MediaKitContact" id={id}>
       <div className="container">
         <div className="cta-box">
           <div className="cta-content">

@@ -48,7 +48,7 @@ export default function RecentOrders() {
       {ORDERS.map((o) => {
         const status = STATUS_MAP[o.status]
         return (
-          <div key={o.id} className="card-base order-card">
+          <div aria-label="RecentOrders" role="region" key={o.id} className="card-base order-card">
             <div className="order-item-row">
               <div className="order-item-img">
                 <img src={o.img} alt={o.alt} loading="lazy" decoding="async" />

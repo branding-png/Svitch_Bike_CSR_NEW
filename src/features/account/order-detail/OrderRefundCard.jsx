@@ -53,7 +53,7 @@ export default function OrderRefundCard({ refund }) {
           else                              state = 'pending'
 
           return (
-            <li key={step.title} className={`refund-step is-${state}`}>
+            <li aria-label="OrderRefundCard" role="region" key={step.title} className={`refund-step is-${state}`}>
               <span className="refund-step-num">
                 {state === 'done' || state === 'final'
                   ? <i className="bi bi-check2"></i>

@@ -33,7 +33,7 @@ const ANSWER_STYLE  = { margin: '12px 0 0' }
 
 export default function InsuranceFaq({ faqs = FAQS }) {
   return (
-    <section className="section-pad-alt faq-sec">
+    <section aria-label="InsuranceFaq" className="section-pad-alt faq-sec">
       <div className="container" style={{ maxWidth: 760 }}>
         <SectionHeader
           label="Common Questions"

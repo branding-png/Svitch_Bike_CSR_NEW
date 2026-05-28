@@ -14,7 +14,7 @@ const SPECS = [
 
 export default function SpecsStrip({ specs = SPECS }) {
   return (
-    <section id="specs-strip">
+    <section aria-label="SpecsStrip" id="specs-strip">
       <div className="container">
         <div className="specs-grid">
           {specs.map((s, i) => (

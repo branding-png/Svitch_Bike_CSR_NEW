@@ -27,7 +27,7 @@ export default function TestRidePastRides() {
   const [activeBookingId, setActiveBookingId] = useState(null)
 
   return (
-    <div className="account-section">
+    <div aria-label="TestRidePastRides" role="region" className="account-section">
       <div className="account-section-head"><h3>Past Rides</h3></div>
       {PAST.map((r) => (
         <TestRideCompleted key={r.id} ride={r} onFeedback={setActiveBookingId} />

@@ -1,7 +1,7 @@
 // Sidebar — reset-all-filters button. Mirrors CSR_New_web `#resetAllFilters`.
 export default function FilterReset({ onClick }) {
   return (
-    <div className="card-base filter-widget" style={{ textAlign: 'center' }}>
+    <div aria-label="FilterReset" role="region" className="card-base filter-widget" style={{ textAlign: 'center' }}>
       <button
         type="button"
         id="resetAllFilters"

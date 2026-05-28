@@ -110,7 +110,7 @@ export default function DealerFinder({ dealers = DEALERS }) {
                 const st = STATUS_LABEL[d.status]
                 const hasTestRide = d.services.includes('Test Ride')
                 return (
-                  <button
+                  <button aria-label="DealerFinder" role="region"
                     type="button"
                     key={d.id}
                     data-id={d.id}

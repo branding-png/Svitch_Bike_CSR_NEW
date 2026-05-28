@@ -66,7 +66,7 @@ export default function EventList({ items = EVENTS, filters = FILTERS }) {
   )
 
   return (
-    <section id="ev-main">
+    <section aria-label="EventList" id="ev-main">
       <div className="container">
         <div className="ev-tabs">
           {filters.map((f) => (

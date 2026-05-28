@@ -18,7 +18,7 @@ export default function TicketDetail({ ticket, thread = [], onSendReply, onResol
   }
 
   return (
-    <div className="card-base tkt-detail">
+    <div aria-label="TicketDetail" role="region" className="card-base tkt-detail">
       <TicketDetailHead ticket={ticket} />
       <TicketThread entries={thread} />
       <TicketReply

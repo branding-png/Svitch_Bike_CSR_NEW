@@ -7,7 +7,7 @@ export default function ProfilePrivacy() {
   const [prefs, setPrefs] = useState({ telemetry: true, ads: false })
 
   return (
-    <div className="card-base checkout-section" id="privacy">
+    <div aria-label="ProfilePrivacy" role="region" className="card-base checkout-section" id="privacy">
       <h3><i className="bi bi-eye-slash"></i> Privacy &amp; Data</h3>
       <p style={{ marginBottom: 8, color: 'var(--gray-400)', fontSize: 'var(--fs-sm)' }}>
         Control what data Svitch stores about you.

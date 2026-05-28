@@ -66,7 +66,7 @@ export default function AddressModal({ isOpen, onClose, address, onSave }) {
   }
 
   return (
-    <Modal
+    <Modal aria-label="AddressModal" role="region"
       isOpen={isOpen}
       onClose={onClose}
       size="lg"

@@ -4,7 +4,7 @@ export default function SearchBanner({ query, count = 0, onClear }) {
   if (!query) return null
 
   return (
-    <div className="shop-search-banner" id="shopSearchBanner">
+    <div aria-label="SearchBanner" role="region" className="shop-search-banner" id="shopSearchBanner">
       <div className="shop-search-banner-info">
         <span className="rajdhani-lbl-text-sm shop-search-banner-label">
           Search results for

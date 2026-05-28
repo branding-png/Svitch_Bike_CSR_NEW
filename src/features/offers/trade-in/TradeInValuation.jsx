@@ -91,7 +91,7 @@ export default function TradeInValuation() {
   }
 
   return (
-    <section id="trade-in-valuation" className="section-pad">
+    <section aria-label="TradeInValuation" id="trade-in-valuation" className="section-pad">
       <div className="container" style={{ maxWidth: 760 }}>
         <div className="card-base" style={{ padding: 36 }}>
           <div className="trade-sec-head">

@@ -12,7 +12,7 @@ const checkStyle = { textTransform: 'none' }
 
 export default function RegisterStepPreferences({ form, errors, set, busy, onBack }) {
   return (
-    <div className="step-panel is-active" data-panel="3">
+    <div aria-label="RegisterStepPreferences" role="region" className="step-panel is-active" data-panel="3">
       <div className="auth-form-fields">
         <InputControl
           label="City"

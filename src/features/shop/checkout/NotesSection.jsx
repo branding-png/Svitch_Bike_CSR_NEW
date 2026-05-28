@@ -3,7 +3,7 @@ import InputControl from '@/ui/InputControl'
 // Checkout — Order Notes (optional) section.
 export default function NotesSection({ form, onChange }) {
   return (
-    <div className="card-base checkout-section">
+    <div aria-label="NotesSection" role="region" className="card-base checkout-section">
       <h3><i className="bi bi-journal-text"></i> Order Notes (Optional)</h3>
       <InputControl
         as="textarea"

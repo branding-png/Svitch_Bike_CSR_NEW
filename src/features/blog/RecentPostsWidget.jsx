@@ -11,7 +11,7 @@ export default function RecentPostsWidget({
 }) {
   const list = posts || getRecentPosts(limit, excludeSlug)
   return (
-    <div className="card-base widget">
+    <div aria-label="RecentPostsWidget" role="region" className="card-base widget">
       <h3 className="widget-title">{title}</h3>
       <div className="widget-recent">
         {list.map((p) => (

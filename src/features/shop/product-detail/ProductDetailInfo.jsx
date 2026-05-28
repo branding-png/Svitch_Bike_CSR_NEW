@@ -65,7 +65,7 @@ export default function ProductDetailInfo({
   }
 
   return (
-    <div className="pd-info">
+    <div aria-label="ProductDetailInfo" role="region" className="pd-info">
       <span className="product-tagline">{tagline}</span>
       <h2>{productName}{activeColor ? ` — ${activeColor.name}` : ''}</h2>
 

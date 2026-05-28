@@ -143,7 +143,7 @@ export default function Performance({
   useGLightbox('#performance .uf-card.glightbox', [cards])
 
   return (
-    <section id="performance">
+    <section aria-label="Performance" id="performance">
       <div className="container">
         <div className="perf-intro reveal">
           <div className="perf-intro-heading">

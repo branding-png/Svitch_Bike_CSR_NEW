@@ -8,7 +8,7 @@ export default function CartTable() {
   const { items, updateQty, removeItem, clear } = useCart()
 
   return (
-    <div className="card-base cart-table">
+    <div aria-label="CartTable" role="region" className="card-base cart-table">
       <div className="cart-table-head rajdhani-lbl-text-sm">
         <span>Product</span>
         <span>Quantity</span>

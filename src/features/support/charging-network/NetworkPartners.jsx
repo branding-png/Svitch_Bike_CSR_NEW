@@ -12,7 +12,7 @@ const PARTNERS = [
 
 export default function NetworkPartners({ items = PARTNERS }) {
   return (
-    <section id="cn-partners">
+    <section aria-label="NetworkPartners" id="cn-partners">
       <div className="container">
         <div className="section-header">
           <span className="section-label">Network Partners</span>

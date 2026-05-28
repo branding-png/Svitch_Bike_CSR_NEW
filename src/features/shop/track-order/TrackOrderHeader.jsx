@@ -39,7 +39,7 @@ export default function TrackOrderHeader({ order }) {
 
 function Cell({ label, value }) {
   return (
-    <div className="track-meta-cell">
+    <div aria-label="TrackOrderHeader" role="region" className="track-meta-cell">
       <span className="track-meta-label rajdhani-lbl-text-sm">{label}</span>
       <span className="track-meta-val">{value}</span>
     </div>

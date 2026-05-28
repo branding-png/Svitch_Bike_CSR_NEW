@@ -12,7 +12,7 @@ export default function ServiceTimeline({ entries }) {
   }
 
   return (
-    <div className="svc-timeline">
+    <div aria-label="ServiceTimeline" role="region" className="svc-timeline">
       {entries.map((e, i) => <ServiceEntry key={`${e.when}-${i}`} entry={e} />)}
     </div>
   )

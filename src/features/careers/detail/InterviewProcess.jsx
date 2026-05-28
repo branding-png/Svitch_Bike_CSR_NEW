@@ -14,7 +14,7 @@ export default function InterviewProcess({
   steps = DEFAULT_STEPS,
 }) {
   return (
-    <section className="card-base job-section">
+    <section aria-label="InterviewProcess" className="card-base job-section">
       <h2><i className={`bi ${icon}`}></i> {title}</h2>
       <div className="process-steps">
         {steps.map((s, i) => (

@@ -20,7 +20,7 @@ export default function TicketAside({ tickets, activeId, onNewTicket, onSelect }
   }, [tickets, filter, query])
 
   return (
-    <aside className="tkt-aside">
+    <aside aria-label="TicketAside" className="tkt-aside">
       <button type="button" className="btn-csr primary new-tkt-btn" onClick={onNewTicket}>
         <i className="bi bi-plus-lg"></i> Raise New Ticket
       </button>

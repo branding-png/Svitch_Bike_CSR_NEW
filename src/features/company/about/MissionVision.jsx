@@ -18,7 +18,7 @@ const MV_CARDS = [
 
 export default function MissionVision() {
   return (
-    <section id="mission-vision">
+    <section aria-label="MissionVision" id="mission-vision">
       <div className="container">
         <SectionHeader
           label="What Drives Us"

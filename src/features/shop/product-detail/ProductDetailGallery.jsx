@@ -18,7 +18,7 @@ export default function ProductDetailGallery({ images = [], productName = '' }) 
   const main = images[active]
 
   return (
-    <div className="pd-gallery">
+    <div aria-label="ProductDetailGallery" role="region" className="pd-gallery">
       <div className="pd-gallery-main">
         <img
           id="pdMainImg"

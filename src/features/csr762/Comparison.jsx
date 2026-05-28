@@ -66,7 +66,7 @@ export default function Comparison({
   useGLightbox('#comparison .cmp-zoom-trigger', [rows, columns])
 
   return (
-    <section id="comparison">
+    <section aria-label="Comparison" id="comparison">
       <div className="container">
         <div className="cmp-heading reveal">
           <span className="section-label">{label}</span>

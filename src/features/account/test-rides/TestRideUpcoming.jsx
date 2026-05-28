@@ -37,7 +37,7 @@ export default function TestRideUpcoming() {
   function cancel(id) { show(`Booking ${id} cancelled.`, 'success', 3000) }
 
   return (
-    <div className="account-section">
+    <div aria-label="TestRideUpcoming" role="region" className="account-section">
       <div className="account-section-head">
         <h3>Upcoming</h3>
         <Link className="rajdhani-lbl-text-sm" to={PATHS.bookTestRide}>Book another</Link>

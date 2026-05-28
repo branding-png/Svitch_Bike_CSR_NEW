@@ -39,7 +39,7 @@ export default function ApplyCta({
   }
 
   return (
-    <div className="card-base apply-cta">
+    <div aria-label="ApplyCta" role="region" className="card-base apply-cta">
       <h4>{title}</h4>
       <p>{description}</p>
       <a href={applyHref} className="btn-csr primary sm">

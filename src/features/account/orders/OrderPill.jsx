@@ -8,7 +8,7 @@ const PILLS = [
 
 export default function OrderPill({ active, onChange }) {
   return (
-    <div className="filter-pills" role="tablist">
+    <div aria-label="OrderPill" className="filter-pills" role="tablist">
       {PILLS.map((p) => (
         <button
           key={p.id}

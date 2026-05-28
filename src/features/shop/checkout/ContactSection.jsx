@@ -4,7 +4,7 @@ import InputControl from '@/ui/InputControl'
 // Controlled: parent owns `form`/`errors` and passes `onChange(key, value)`.
 export default function ContactSection({ form, errors = {}, onChange }) {
   return (
-    <div className="card-base checkout-section">
+    <div aria-label="ContactSection" role="region" className="card-base checkout-section">
       <h3><i className="bi bi-person-vcard"></i> Contact Information</h3>
 
       <div className="form-grid">

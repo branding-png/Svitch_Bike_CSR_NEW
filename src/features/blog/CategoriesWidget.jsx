@@ -18,7 +18,7 @@ export default function CategoriesWidget({
   }
 
   return (
-    <div className="card-base widget">
+    <div aria-label="CategoriesWidget" role="region" className="card-base widget">
       <h3 className="widget-title">{title}</h3>
       <div className="widget-cats">
         {categories.map((c) => (

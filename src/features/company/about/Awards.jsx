@@ -14,7 +14,7 @@ const AWARDS = [
 
 export default function Awards({ items = AWARDS }) {
   return (
-    <section id="awards">
+    <section aria-label="Awards" id="awards">
       <div className="container">
         <SectionHeader
           label="Trusted & Certified"

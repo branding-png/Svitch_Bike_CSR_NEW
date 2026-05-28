@@ -10,7 +10,7 @@ export default function ManualContent({
   pdfHref  = '/docs/csr-762-owners-manual.pdf',
 }) {
   return (
-    <div className="legal-content">
+    <div aria-label="ManualContent" role="region" className="legal-content">
       {sections.map((s) => (
         <LegalCard
           key={s.id}

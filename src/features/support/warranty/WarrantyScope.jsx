@@ -55,7 +55,7 @@ const COLUMNS = [
 
 export default function WarrantyScope({ columns = COLUMNS }) {
   return (
-    <section id="scope">
+    <section aria-label="WarrantyScope" id="scope">
       <div className="container">
         <div className="section-header">
           <span className="section-label">Warranty Scope</span>

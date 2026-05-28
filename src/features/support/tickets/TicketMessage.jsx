@@ -21,7 +21,7 @@ export default function TicketMessage({ msg }) {
   )
 
   return (
-    <div className={`msg ${msg.side}`}>
+    <div aria-label="TicketMessage" role="region" className={`msg ${msg.side}`}>
       {msg.side === 'them' ? (
         <>
           <div className="msg-avatar">{avatar}</div>

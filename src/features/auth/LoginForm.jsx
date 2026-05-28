@@ -85,7 +85,7 @@ export default function LoginForm() {
   }
 
   return (
-    <div className="auth-form">
+    <div aria-label="LoginForm" role="region" className="auth-form">
       <img
         src="/images/logos/Svitch-LOGO-white.png"
         alt="Svitch"

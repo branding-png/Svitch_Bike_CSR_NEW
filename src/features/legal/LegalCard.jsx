@@ -20,7 +20,7 @@ export default function LegalCard({
   children,
 }) {
   return (
-    <section id={id} className="card-base legal-card">
+    <section aria-label="LegalCard" id={id} className="card-base legal-card">
       <h2>
         {icon && (
           <span className="ch-icon"><i className={`bi ${icon}`}></i></span>

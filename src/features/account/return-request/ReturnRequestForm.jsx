@@ -160,7 +160,7 @@ export default function ReturnRequestForm() {
   }
 
   return (
-    <div className="card-base form-card">
+    <div aria-label="ReturnRequestForm" role="region" className="card-base form-card">
       <h3 className="form-card-title">Return Request</h3>
 
       <form ref={formRef} id="returnForm" noValidate onSubmit={submit}>

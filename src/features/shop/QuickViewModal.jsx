@@ -75,6 +75,7 @@ export default function QuickViewModal({ product, onClose }) {
       onClick={(e) => { if (e.target === e.currentTarget) onClose?.() }}
       role="dialog"
       aria-modal="true"
+      aria-label="QuickViewModal"
     >
       <div className="csr-modal qv-modal">
         <button

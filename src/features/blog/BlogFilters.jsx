@@ -16,7 +16,7 @@ export default function BlogFilters({
   categories = BLOG_CATEGORIES,
 }) {
   return (
-    <div className="blog-filters" role="tablist">
+    <div aria-label="BlogFilters" className="blog-filters" role="tablist">
       {categories.map((c) => (
         <button
           key={c.id}

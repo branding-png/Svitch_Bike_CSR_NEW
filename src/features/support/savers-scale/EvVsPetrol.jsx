@@ -62,7 +62,7 @@ export default function EvVsPetrol() {
 
 function VsCard({ column }) {
   return (
-    <div className={`card-base vs-card ${column.cls}`}>
+    <div aria-label="EvVsPetrol" role="region" className={`card-base vs-card ${column.cls}`}>
       <div className="vs-head">
         <div className="vs-head-icon"><i className={`bi ${column.icon}`}></i></div>
         <div>

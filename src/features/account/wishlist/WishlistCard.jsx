@@ -8,7 +8,7 @@ export default function WishlistCard({ product, onRemove, onMoveToCart, onNotify
   const detailPath = PATHS.productDetail.replace(':id', product.id)
 
   return (
-    <div className="card-base product-card" data-stock={product.stock}>
+    <div aria-label="WishlistCard" role="region" className="card-base product-card" data-stock={product.stock}>
       <div className="product-card-media">
         {product.badge && (
           <span className={`product-badge${product.badge.cls ? ` ${product.badge.cls}` : ''}`}>

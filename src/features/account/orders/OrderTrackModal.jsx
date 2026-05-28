@@ -13,7 +13,7 @@ const STATE_ICON = {
 export default function OrderTrackModal({ isOpen, onClose, order }) {
   const steps = order ? TRACK_TIMELINE[order.status] || [] : []
   return (
-    <Modal
+    <Modal aria-label="OrderTrackModal" role="region"
       isOpen={isOpen}
       onClose={onClose}
       title="Track Your Order"

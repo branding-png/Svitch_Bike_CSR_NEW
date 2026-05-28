@@ -244,7 +244,7 @@ export default function ApplyForm({ jobTitle = 'Senior Electrical Engineer' }) {
 
 function SuccessState({ appId, jobTitle }) {
   return (
-    <div
+    <div aria-label="ApplyForm" role="region"
       className="card-base"
       style={{
         display: 'flex',

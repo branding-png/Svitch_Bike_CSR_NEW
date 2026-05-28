@@ -16,7 +16,7 @@ function actionHref(item) {
 export default function ReturnCard({ item }) {
   const showReasonPrefix = item.status !== 'refunded' && item.status !== 'rejected'
   return (
-    <div className="card-base return-card" data-status={item.status}>
+    <div aria-label="ReturnCard" role="region" className="card-base return-card" data-status={item.status}>
       <img src={item.image} alt={item.alt || item.item} loading="lazy" decoding="async" />
 
       <div>

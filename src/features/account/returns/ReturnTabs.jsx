@@ -6,7 +6,7 @@ import { RETURN_TABS } from '@/data/returns-data'
 // Counts come from the parent so they reflect the current dataset.
 export default function ReturnTabs({ active, onChange, counts = {} }) {
   return (
-    <div className="returns-tabs">
+    <div aria-label="ReturnTabs" role="region" className="returns-tabs">
       {RETURN_TABS.map((t) => (
         <button
           key={t.id}

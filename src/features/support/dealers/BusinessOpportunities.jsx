@@ -46,7 +46,7 @@ const SLIDES = [
 
 export default function BusinessOpportunities({ slides = SLIDES }) {
   return (
-    <section id="business-opportunities">
+    <section aria-label="BusinessOpportunities" id="business-opportunities">
       <div className="container">
         <div className="section-header business-opp-header">
           <span className="section-label">Business Opportunities</span>

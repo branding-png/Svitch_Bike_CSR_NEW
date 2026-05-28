@@ -23,7 +23,7 @@ export default function KeySkills({
   skills = DEFAULT_SKILLS,
 }) {
   return (
-    <section className="card-base job-section">
+    <section aria-label="KeySkills" className="card-base job-section">
       <h2><i className={`bi ${icon}`}></i> {title}</h2>
       <div className="skills-wrap">
         {skills.map((s) => (

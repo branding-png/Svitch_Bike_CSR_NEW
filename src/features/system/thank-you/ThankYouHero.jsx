@@ -115,7 +115,7 @@ export default function ThankYouHero({ summary = SUMMARY_DEFAULTS }) {
 
 function Row({ label, value, valueClass = '' }) {
   return (
-    <div className="ty-summary-row">
+    <div aria-label="ThankYouHero" role="region" className="ty-summary-row">
       <span className="ty-summary-label">{label}</span>
       <span className={`ty-summary-val ${valueClass}`.trim()}>{value}</span>
     </div>

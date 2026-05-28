@@ -99,6 +99,7 @@ export default function BookNowModal() {
       role="dialog"
       aria-modal="true"
       aria-labelledby="bookNowModalLabel"
+      aria-label="BookNowModal"
     >
       <div className="csr-modal">
         <div className="csr-modal-header">

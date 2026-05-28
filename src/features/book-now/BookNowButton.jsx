@@ -10,7 +10,7 @@ export default function BookNowButton({
 }) {
   const { open } = useBookNow()
   return (
-    <button
+    <button aria-label="BookNowButton" role="region"
       type="button"
       className={className}
       onClick={open}

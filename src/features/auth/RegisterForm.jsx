@@ -174,7 +174,7 @@ export default function RegisterForm() {
   }
 
   return (
-    <div className="auth-form">
+    <div aria-label="RegisterForm" role="region" className="auth-form">
       <img
         src="/images/logos/Svitch-LOGO-white.png"
         alt="Svitch"

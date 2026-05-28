@@ -30,7 +30,7 @@ export default function CartSummary() {
   }
 
   return (
-    <aside className="rajdhani-lbl-text-sm card-base cart-summary">
+    <aside aria-label="CartSummary" className="rajdhani-lbl-text-sm card-base cart-summary">
       <h3>Order Summary</h3>
 
       <div className="summary-row">

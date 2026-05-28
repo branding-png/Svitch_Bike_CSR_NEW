@@ -14,7 +14,7 @@ export default function FeaturedProductWidget({
   onBuyClick,
 }) {
   return (
-    <div className="card-base widget widget-product">
+    <div aria-label="FeaturedProductWidget" role="region" className="card-base widget widget-product">
       <span className="widget-product-label">{label}</span>
       <img src={image} alt={alt} loading="lazy" decoding="async" />
       <h4>{name}</h4>

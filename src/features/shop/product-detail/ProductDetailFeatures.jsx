@@ -10,7 +10,7 @@ const DEFAULT_FEATURES = [
 
 export default function ProductDetailFeatures({ features = DEFAULT_FEATURES }) {
   return (
-    <ul className="pd-features-list">
+    <ul aria-label="ProductDetailFeatures" role="region" className="pd-features-list">
       {features.map((f) => (
         <li key={f.title} className="pd-feature-list-item">
           <i className="bi bi-check-circle-fill pd-feature-icon" aria-hidden="true" />

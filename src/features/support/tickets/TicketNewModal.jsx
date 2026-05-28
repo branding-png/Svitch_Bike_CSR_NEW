@@ -89,7 +89,7 @@ export default function TicketNewModal({ isOpen, onClose, onSubmit }) {
   }
 
   return (
-    <Modal
+    <Modal aria-label="TicketNewModal" role="region"
       isOpen={isOpen}
       onClose={onClose}
       title="Raise New Ticket"

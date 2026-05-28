@@ -3,7 +3,7 @@ import AddressAddCard from './AddressAddCard'
 
 export default function AddressGrid({ addresses, onEdit, onAdd, onMakeDefault, onRemove }) {
   return (
-    <div className="address-grid">
+    <div aria-label="AddressGrid" role="region" className="address-grid">
       {addresses.map((a) => (
         <AddressCard
           key={a.id}

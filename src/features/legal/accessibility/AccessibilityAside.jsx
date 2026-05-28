@@ -6,7 +6,7 @@ import { ACCESSIBILITY_TOC } from '@/data/accessibility'
 // the section IDs rendered by <AccessibilityContent />.
 export default function AccessibilityAside() {
   return (
-    <aside className="rajdhani-lbl-text-sm card-base legal-toc">
+    <aside aria-label="AccessibilityAside" className="rajdhani-lbl-text-sm card-base legal-toc">
       <LegalToc items={ACCESSIBILITY_TOC} />
     </aside>
   )

@@ -12,7 +12,7 @@ const DEFAULT_ROWS = [
 
 export default function JobSnapshot({ title = 'Job Snapshot', rows = DEFAULT_ROWS }) {
   return (
-    <div className="card-base snapshot-widget">
+    <div aria-label="JobSnapshot" role="region" className="card-base snapshot-widget">
       <h4>{title}</h4>
       <div className="snapshot-rows">
         {rows.map((r) => (

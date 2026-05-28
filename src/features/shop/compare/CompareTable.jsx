@@ -107,7 +107,7 @@ export default function CompareTable() {
                       isCsrCol ? 'cmp-csr-col' : '',
                       isWinner ? 'winner'      : '',
                     ].filter(Boolean).join(' ')
-                    return <td key={i} className={cls || undefined}>{v}</td>
+                    return <td aria-label="CompareTable" role="region" key={i} className={cls || undefined}>{v}</td>
                   })}
                 </tr>
               ))}

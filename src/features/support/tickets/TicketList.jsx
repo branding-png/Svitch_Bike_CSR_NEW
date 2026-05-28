@@ -13,7 +13,7 @@ export default function TicketList({ tickets, activeId, onSelect }) {
     )
   }
   return (
-    <div className="tkt-list">
+    <div aria-label="TicketList" role="region" className="tkt-list">
       {tickets.map((t) => (
         <TicketItem
           key={t.id}

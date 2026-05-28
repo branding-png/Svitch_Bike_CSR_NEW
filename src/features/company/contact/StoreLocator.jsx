@@ -122,7 +122,7 @@ export default function StoreLocator({ dealers = DEALERS }) {
                 filtered.map((d) => {
                   const isActive = d.name === activeName
                   return (
-                    <div
+                    <div aria-label="StoreLocator"
                       key={d.name}
                       className={'card-base dealer-card' + (isActive ? ' active' : '')}
                       onClick={() => setActiveName(d.name)}

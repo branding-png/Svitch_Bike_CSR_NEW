@@ -38,7 +38,7 @@ const TERMS = [
 
 export default function RewardTiers({ tiers = TIERS, terms = TERMS }) {
   return (
-    <section id="ref-tiers">
+    <section aria-label="RewardTiers" id="ref-tiers">
       <div className="container">
         <SectionHeader
           label="Reward Tiers"

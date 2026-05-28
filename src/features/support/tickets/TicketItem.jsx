@@ -12,7 +12,7 @@ export default function TicketItem({ ticket, isActive, onSelect }) {
   const priIcon = PRIORITY_ICON[ticket.priority]
 
   return (
-    <div
+    <div aria-label="TicketItem"
       className={cls}
       data-id={ticket.id}
       data-filter={ticket.status}

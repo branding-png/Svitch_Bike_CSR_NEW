@@ -3,7 +3,7 @@
 // warn (red), ok (green), info (blue), undefined (neutral grey).
 export default function NotificationItem({ item, onToggleRead }) {
   return (
-    <div
+    <div aria-label="NotificationItem"
       className={`card-base nf-item${item.unread ? ' unread' : ''}`}
       data-cat={item.cat}
       onClick={() => onToggleRead?.(item)}

@@ -4,7 +4,7 @@ import { PATHS } from '@/utils/routes'
 // "Who's covered?" eligibility card — mirrors CSR_New_web `.eligibility-card`.
 export default function RsaEligibility() {
   return (
-    <section className="section-pad">
+    <section aria-label="RsaEligibility" className="section-pad">
       <div className="container">
         <div className="card-base rsa-eligibility">
           <h3>Who&apos;s covered?</h3>

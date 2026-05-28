@@ -81,7 +81,7 @@ export default function PressArticleBody({ blocks = [], image, imageAlt }) {
               const email = EMAILS[b.emailKey]
               const phone = PHONES[b.phoneKey]
               return (
-                <div key={i} style={{ marginTop: 36 }}>
+                <div aria-label="PressArticleBody" role="region" key={i} style={{ marginTop: 36 }}>
                   <h4>Media Contact</h4>
                   <p>
                     {b.name}

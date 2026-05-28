@@ -48,7 +48,7 @@ const PLANS = [
 
 export default function InsurancePlans({ plans = PLANS }) {
   return (
-    <section className="section-pad insurance-sec">
+    <section aria-label="InsurancePlans" className="section-pad insurance-sec">
       <div className="container">
         <SectionHeader
           label="Choose Your Plan"

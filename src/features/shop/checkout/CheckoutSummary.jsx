@@ -34,7 +34,7 @@ export default function CheckoutSummary({
   }
 
   return (
-    <aside className="card-base cart-summary">
+    <aside aria-label="CheckoutSummary" className="card-base cart-summary">
       <h3>{title}</h3>
 
       {items.map((it) => (

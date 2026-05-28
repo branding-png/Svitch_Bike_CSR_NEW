@@ -18,7 +18,7 @@ export default function AuthorBio({
   ),
 }) {
   return (
-    <div className="card-base author-bio">
+    <div aria-label="AuthorBio" role="region" className="card-base author-bio">
       <span className="author-avatar rajdhani-lbl-text-sm">{initials(name)}</span>
       <div className="author-bio-body">
         <h4>{name}</h4>

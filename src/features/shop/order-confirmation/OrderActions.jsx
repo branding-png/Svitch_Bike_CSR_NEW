@@ -14,7 +14,7 @@ export default function OrderActions({ orderId = 'SVT-847291' }) {
   }
 
   return (
-    <div className="order-actions-row">
+    <div aria-label="OrderActions" role="region" className="order-actions-row">
       <Link
         to={`${PATHS.trackOrder}?id=${orderId}`}
         className="btn-csr primary"

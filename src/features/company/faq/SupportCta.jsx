@@ -14,7 +14,7 @@ export default function SupportCta({
   phoneTel    = '+911800123456',
 }) {
   return (
-    <section id={id}>
+    <section aria-label="SupportCta" id={id}>
       <div className="container">
         <div className="support-cta">
           <div className="support-cta-icon">

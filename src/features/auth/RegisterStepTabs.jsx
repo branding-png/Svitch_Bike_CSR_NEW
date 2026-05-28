@@ -29,7 +29,7 @@ export default function RegisterStepTabs({ step }) {
           const done = step > s.num
           const active = step === s.num
           return (
-            <div
+            <div aria-label="RegisterStepTabs" role="region"
               key={s.num}
               className={
                 'step-tab rajdhani-lbl-text-sm' +

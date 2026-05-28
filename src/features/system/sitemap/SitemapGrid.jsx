@@ -160,7 +160,7 @@ export const TOTAL_GROUPS = GROUPS.length
 
 export default function SitemapGrid({ groups = GROUPS }) {
   return (
-    <section id="sitemap-main"  style={{ background: 'var(--gray-900)' }}>
+    <section aria-label="SitemapGrid" id="sitemap-main"  style={{ background: 'var(--gray-900)' }}>
       <div className="container">
         <div className="sitemap-grid">
           {groups.map((g) => (

@@ -9,7 +9,7 @@ const FACTS = [
 
 export default function BatteryResponsibility({ facts = FACTS }) {
   return (
-    <section id="sus-battery">
+    <section aria-label="BatteryResponsibility" id="sus-battery">
       <div className="container">
         <div className="battery-layout">
           <div>

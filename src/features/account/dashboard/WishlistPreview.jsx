@@ -12,7 +12,7 @@ export default function WishlistPreview({ extraCount = 1 }) {
   const productPath = PATHS.productDetail.replace(':id', 'csr-762')
 
   return (
-    <div className="account-section">
+    <div aria-label="WishlistPreview" role="region" className="account-section">
       <div className="account-section-head">
         <h3>Wishlist Preview</h3>
         <Link to={PATHS.wishlist}>View All</Link>

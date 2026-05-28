@@ -2,7 +2,7 @@ import WishlistCard from './WishlistCard'
 
 export default function WishlistGrid({ items, onRemove, onMoveToCart, onNotify }) {
   return (
-    <div className="wishlist-grid">
+    <div aria-label="WishlistGrid" role="region" className="wishlist-grid">
       {items.map((p) => (
         <WishlistCard
           key={p.id}

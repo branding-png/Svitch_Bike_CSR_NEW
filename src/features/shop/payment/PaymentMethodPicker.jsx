@@ -48,7 +48,7 @@ export default function PaymentMethodPicker({
         {METHODS.map((m) => {
           const isActive = value === m.id
           return (
-            <div
+            <div aria-label="PaymentMethodPicker"
               key={m.id}
               className={`payment-method${isActive ? ' is-active' : ''}`}
               data-pay={m.id}

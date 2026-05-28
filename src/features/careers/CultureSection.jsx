@@ -7,7 +7,7 @@ const IMAGES = [
 
 export default function CultureSection({ images = IMAGES }) {
   return (
-    <section id="career-culture">
+    <section aria-label="CultureSection" id="career-culture">
       <div className="container">
         <div className="culture-layout">
           <div className="culture-copy">

@@ -36,7 +36,7 @@ export default function ValueProposition({
   cards = VALUE_CARDS,
 }) {
   return (
-    <section id="value">
+    <section aria-label="ValueProposition" id="value">
       <div className="container">
         <div className="value-intro reveal">
           <div className="value-intro-heading">

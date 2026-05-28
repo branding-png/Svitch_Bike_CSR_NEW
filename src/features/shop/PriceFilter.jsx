@@ -10,7 +10,7 @@ export default function PriceFilter({
   onChange,
 }) {
   return (
-    <div className="card-base filter-widget">
+    <div aria-label="PriceFilter" role="region" className="card-base filter-widget">
       <h3 className="filter-title">Price Range</h3>
 
       <input

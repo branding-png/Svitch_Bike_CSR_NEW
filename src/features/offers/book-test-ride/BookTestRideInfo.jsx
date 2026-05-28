@@ -24,7 +24,7 @@ const INFO_CARDS = [
 
 export default function BookTestRideInfo({ items = INFO_CARDS }) {
   return (
-    <aside className="tr-info-list">
+    <aside aria-label="BookTestRideInfo" className="tr-info-list">
       {items.map((c) => (
         <div key={c.title} className="card-base tr-info-card">
           <span className="card-base-icon"><i className={`bi ${c.icon}`}></i></span>

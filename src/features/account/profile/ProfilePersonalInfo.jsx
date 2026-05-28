@@ -77,7 +77,7 @@ export default function ProfilePersonalInfo() {
   }
 
   return (
-    <div className="card-base checkout-section">
+    <div aria-label="ProfilePersonalInfo" role="region" className="card-base checkout-section">
       <h3><i className="bi bi-person-vcard"></i> Personal Information</h3>
       <form onSubmit={save} noValidate>
         <div className="form-row">

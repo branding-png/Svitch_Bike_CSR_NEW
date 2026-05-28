@@ -132,6 +132,7 @@ export default function DealerApplyModal({ open, onClose }) {
       role="dialog"
       aria-modal="true"
       aria-labelledby="dealerApplyModalLabel"
+      aria-label="DealerApplyModal"
     >
       <div className="csr-modal" style={{ maxWidth: 760 }}>
         <div className="csr-modal-header">

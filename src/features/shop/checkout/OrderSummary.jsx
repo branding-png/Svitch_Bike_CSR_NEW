@@ -63,7 +63,7 @@ export default function OrderSummary({
 
 function Row({ label, value, strong }) {
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0' }}>
+    <div aria-label="OrderSummary" role="region" style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0' }}>
       <span className="rajdhani-lbl-text-sm" style={{ color: strong ? 'var(--white)' : 'var(--gray-400)' }}>{label}</span>
       <strong style={{ color: 'var(--white)', fontWeight: strong ? 700 : 400 }}>{value}</strong>
     </div>

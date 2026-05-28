@@ -11,7 +11,7 @@ const STEPS = [
 
 export default function Lifecycle({ items = STEPS }) {
   return (
-    <section id="sus-lifecycle">
+    <section aria-label="Lifecycle" id="sus-lifecycle">
       <div className="container">
         <SectionHeader
           label="Product Lifecycle"

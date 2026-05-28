@@ -12,7 +12,7 @@ const COVERAGE = [
 
 export default function RsaCoverage({ items = COVERAGE }) {
   return (
-    <section className="section-pad onspot-sec">
+    <section aria-label="RsaCoverage" className="section-pad onspot-sec">
       <div className="container">
         <div className="onspot-head">
           <span className="section-label">What&apos;s Covered</span>

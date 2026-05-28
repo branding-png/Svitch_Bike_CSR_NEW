@@ -23,7 +23,7 @@ const SUMMARY = [
 
 export default function CompareSummary({ items = SUMMARY }) {
   return (
-    <div className="cmp-summary-grid">
+    <div aria-label="CompareSummary" role="region" className="cmp-summary-grid">
       {items.map((s) => (
         <div key={s.label} className="card-base cmp-summary-card">
           <div className="cmp-summary-icon">

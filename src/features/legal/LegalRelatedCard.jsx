@@ -24,6 +24,6 @@ export default function LegalRelatedCard({
     return <a href={href} className="card-base legal-related-card">{inner}</a>
   }
   return (
-    <Link to={to} className="card-base legal-related-card">{inner}</Link>
+    <Link aria-label="LegalRelatedCard" role="region" to={to} className="card-base legal-related-card">{inner}</Link>
   )
 }

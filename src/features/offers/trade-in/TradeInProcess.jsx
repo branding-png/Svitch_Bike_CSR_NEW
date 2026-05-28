@@ -19,7 +19,7 @@ const COPY_STYLE = { margin: 0 }
 
 export default function TradeInProcess({ steps = STEPS }) {
   return (
-    <section id="trade-in-process" className="section-pad trade-sec">
+    <section aria-label="TradeInProcess" id="trade-in-process" className="section-pad trade-sec">
       <div className="container">
         <div style={GRID_STYLE}>
           {steps.map((s, i) => (

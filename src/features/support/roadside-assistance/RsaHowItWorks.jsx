@@ -28,7 +28,7 @@ export default function RsaHowItWorks() {
   ]
 
   return (
-    <section className="section-pad-alt">
+    <section aria-label="RsaHowItWorks" className="section-pad-alt">
       <div className="container">
         <div className="rsa-how-head">
           <span className="section-label">How It Works</span>

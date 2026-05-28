@@ -8,7 +8,7 @@ export default function OpenApplicationCta({
   note    = 'We review every application within 5 business days.',
 }) {
   return (
-    <section id="career-cta">
+    <section aria-label="OpenApplicationCta" id="career-cta">
       <div className="container">
         <div className="cta-box">
           <div className="cta-content">
