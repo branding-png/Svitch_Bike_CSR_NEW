@@ -1,0 +1,184 @@
+/* ==============================================================
+ CSR 762 - GALLERY PAGE STYLESHEET
+ Page-specific styles for gallery.html
+ ============================================================== */
+
+#gl-main {
+  padding: var(--section-pad) 0;
+  background: var(--gray-900);
+}
+
+/* Filter strip — buttons use the global `.filter-pill` class (components.css) */
+.gl-filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ============================================================
+ GRID — 3 columns desktop / 2 tablet / 1 mobile
+============================================================ */
+.gl-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* ============================================================
+ ITEM — image tile, clickable, opens GLightbox
+============================================================ */
+.gl-item {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 3;
+  background: var(--gray-900);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+.gl-item:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+}
+.gl-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition:
+    transform 0.6s ease,
+    filter 0.4s ease;
+}
+.gl-item:hover img {
+  transform: scale(1.06);
+  filter: brightness(1.05);
+}
+
+/* Always-visible caption strip (bottom gradient) */
+.gl-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 16px 18px 14px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.4) 60%,
+    transparent 100%
+  );
+  color: var(--white);
+  transition: padding-bottom 0.3s ease;
+  z-index: 2;
+}
+
+.gl-caption small {
+  display: block;
+  margin-top: 2px;
+  font-family: var(--font-label);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gray-300);
+}
+.gl-item:hover .gl-caption {
+  padding-bottom: 18px;
+}
+
+/* Zoom-in icon — appears on hover */
+.gl-item::after {
+  content: '\F520'; /* Bootstrap Icons: zoom-in */
+  font-family: 'bootstrap-icons';
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid var(--border-bright);
+  color: var(--white);
+  font-size: 16px;
+  opacity: 0;
+  transform: scale(0.85);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  z-index: 2;
+}
+.gl-item:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Video variant — play icon overlay + dark scrim */
+.gl-item.gl-video::before {
+  content: '\F4F4'; /* Bootstrap Icons: play-circle-fill */
+  font-family: 'bootstrap-icons';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 56px;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+.gl-item.gl-video:hover::before {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+.gl-item.gl-video img {
+  filter: brightness(0.65);
+}
+.gl-item.gl-video:hover img {
+  filter: brightness(0.8);
+}
+
+/* Override the zoom-icon corner badge with a 'video' label on video tiles */
+.gl-item.gl-video::after {
+  content: '\F4F1'; /* Bootstrap Icons: play-btn */
+}
+
+/* NOTE: GLightbox skin overrides (.glightbox-clean .gslide-title /
+   .gslide-desc / .gslide-description / arrows / close) live in
+   src/styles/base/components.css so EVERY page that calls useGLightbox
+   (gallery, USP grid, CSR 762 Unique Features, etc.) renders the
+   lightbox identically. Do not redeclare them here. */
+
+/* ============================================================
+ RESPONSIVE
+============================================================ */
+@media (max-width: 767px) {
+  .gl-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .gl-caption {
+    padding: 12px 14px 10px;
+  }
+  .gl-caption strong {
+    font-size: var(--fs-md);
+  }
+}
+@media (max-width: 575px) {
+  .gl-grid {
+    grid-template-columns: 1fr;
+  }
+}

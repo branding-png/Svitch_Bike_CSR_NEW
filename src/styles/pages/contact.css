@@ -1,0 +1,501 @@
+/* =====================================================
+ CSR 762 — CONTACT PAGE STYLESHEET
+ Page-specific styles for contact.html
+ ============================================================== */
+
+/* ============================================================
+ CONTACT FORM + INFO CARDS
+============================================================ */
+#contact-main {
+  padding: var(--section-pad) 0;
+  background: var(--gray-950);
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+.contact-form-title {
+  font-weight: var(--fw-black);
+  margin: 12px 0 12px;
+}
+.contact-form-sub {
+  font-size: var(--fs-lg);
+  margin-bottom: 32px;
+}
+.contact-form-main .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.contact-form-main .form-group {
+  margin-bottom: 18px;
+}
+.contact-form-main label {
+  display: block;
+  margin-bottom: 8px;
+}
+.contact-form-main input,
+.contact-form-main select,
+.contact-form-main textarea {
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--gray-900);
+  border: 1px solid var(--border);
+  color: var(--white);
+  font-size: var(--fs-md);
+  outline: none;
+  transition:
+    border-color 0.3s,
+    background 0.3s;
+  resize: vertical;
+}
+.contact-form-main textarea {
+  height: 100px;
+}
+.contact-form-main input:focus,
+.contact-form-main select:focus,
+.contact-form-main textarea:focus {
+  border-color: var(--accent);
+  background: var(--gray-800);
+}
+/* select arrow & option bg inherit from components.css global rule */
+/* .form-check-group styles moved to components.css for global use */
+.form-feedback {
+  margin-top: 16px;
+}
+.form-feedback.success {
+  color: var(--success);
+}
+.form-feedback.error {
+  color: var(--danger);
+}
+
+/* Info Cards (right column) */
+.contact-info-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.contact-info-card {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+.contact-info-icon {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-bright);
+  font-size: var(--fs-xl);
+  color: var(--accent);
+}
+.contact-info-body {
+  flex: 1;
+  min-width: 0;
+}
+.contact-info-label {
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 4px;
+  font-weight: var(--fw-semibold);
+}
+.contact-info-title {
+  margin-bottom: 10px;
+}
+.contact-info-card p a {
+  transition: color 0.3s;
+}
+.contact-info-card p a:hover {
+  color: var(--white);
+}
+.contact-info-meta {
+  display: block;
+  margin-top: 4px;
+}
+.contact-info-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  color: var(--accent);
+  transition: gap 0.3s;
+}
+.contact-info-link:hover {
+  gap: 10px;
+  color: var(--white);
+}
+
+/* ============================================================
+ STORE LOCATOR
+============================================================ */
+#store-locator {
+  padding: var(--section-pad) 0;
+  background: var(--black);
+}
+.locator-wrap {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 24px;
+  margin-top: 48px;
+}
+.locator-map {
+  height: 640px;
+  overflow: hidden;
+  padding: 0;
+}
+.locator-map iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: grayscale(80%) contrast(1.1) invert(0.92);
+  transition: filter 0.4s;
+}
+.locator-map:hover iframe {
+  filter: grayscale(0%) contrast(1) invert(0);
+}
+.locator-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 640px;
+}
+.locator-search {
+  position: relative;
+  margin-bottom: 4px;
+}
+.locator-search i {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: var(--fs-lg);
+  pointer-events: none;
+}
+.locator-search input {
+  width: 100%;
+  padding: 14px 16px 14px 44px;
+  background: var(--gray-900);
+  border: 1px solid var(--border);
+  color: var(--white);
+  font-size: var(--fs-md);
+  outline: none;
+  transition: border-color 0.3s;
+}
+.locator-search input:focus {
+  border-color: var(--accent);
+}
+.dealer-list {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 4px;
+}
+.dealer-card {
+  padding: 20px;
+  cursor: pointer;
+}
+.dealer-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.dealer-head h4 {
+  margin: 0;
+}
+/* .dealer-status lives in components.css */
+.dealer-addr {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.dealer-addr i {
+  color: var(--accent);
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+.dealer-meta {
+  display: flex;
+  gap: 20px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+.dealer-meta a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.3s;
+}
+.dealer-meta a:hover {
+  color: var(--white);
+}
+
+/* ============================================================
+ TEST RIDE BOOKING
+============================================================ */
+#test-ride {
+  padding: var(--section-pad) 0;
+  background: var(--gray-950);
+}
+.test-ride-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.test-ride-content .section-title {
+  margin-bottom: 20px;
+}
+.test-ride-content .section-desc {
+  max-width: none;
+  margin-bottom: 28px;
+  text-align: left;
+}
+.test-ride-perks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.test-ride-perks li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: var(--fs-lg);
+}
+.test-ride-perks i {
+  color: var(--accent);
+  font-size: var(--fs-xl);
+  flex-shrink: 0;
+}
+.test-ride-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.test-ride-form .form-group {
+  margin-bottom: 16px;
+}
+.test-ride-form label {
+  display: block;
+  margin-bottom: 8px;
+}
+.test-ride-form input,
+.test-ride-form select {
+  width: 100%;
+  padding: 12px 14px;
+  background: var(--gray-800);
+  border: 1px solid var(--border);
+  color: var(--white);
+  font-size: var(--fs-md);
+  outline: none;
+  transition:
+    border-color 0.3s,
+    background 0.3s;
+}
+.test-ride-form input:focus,
+.test-ride-form select:focus {
+  border-color: var(--accent);
+  background: var(--gray-900);
+}
+/* .test-ride-form select arrow inherits from components.css global rule */
+/* date input inherits global color-scheme + calendar icon from components.css */
+.test-ride-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 14px 0 0;
+}
+.test-ride-note i {
+  color: var(--accent);
+}
+
+/* ============================================================
+ SOCIAL LINKS
+============================================================ */
+#social {
+  padding: var(--section-pad) 0;
+  background: var(--black);
+}
+.social-wrap {
+  text-align: center;
+}
+.social-wrap .section-desc {
+  margin: 20px auto 40px;
+}
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 22px;
+  text-align: left;
+  position: relative;
+}
+.social-link > i:first-child {
+  font-size: 28px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-bright);
+  color: var(--white);
+  flex-shrink: 0;
+  transition:
+    background 0.3s,
+    color 0.3s,
+    border-color 0.3s;
+}
+.social-meta {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.social-meta h6 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+.social-meta p {
+  font-family: var(--font-label);
+  color: var(--gray-400);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+}
+.social-arrow {
+  font-size: var(--fs-lg);
+  opacity: 0;
+  transform: translateX(-6px);
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
+  flex-shrink: 0;
+}
+.social-link:hover .social-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+/* Brand accents on hover */
+.social-instagram:hover > i:first-child {
+  background: linear-gradient(
+    135deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  border-color: transparent;
+  color: var(--white);
+}
+.social-youtube:hover > i:first-child {
+  background: #ff0000;
+  border-color: #ff0000;
+  color: var(--white);
+}
+.social-twitter:hover > i:first-child {
+  background: var(--white);
+  border-color: var(--white);
+  color: var(--black);
+}
+.social-facebook:hover > i:first-child {
+  background: #1877f2;
+  border-color: #1877f2;
+  color: var(--white);
+}
+.social-linkedin:hover > i:first-child {
+  background: #0a66c2;
+  border-color: #0a66c2;
+  color: var(--white);
+}
+
+/* ============================================================
+ RESPONSIVE
+============================================================ */
+@media (max-width: 1199px) {
+  .social-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 767px) {
+  .social-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 991px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .locator-wrap {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .locator-map {
+    height: 420px;
+  }
+  .locator-list {
+    max-height: none;
+  }
+  .test-ride-wrap {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .contact-form-main .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .test-ride-form .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .contact-info-card {
+    gap: 14px;
+  }
+  .contact-info-icon {
+    width: 44px;
+    height: 44px;
+    font-size: var(--fs-lg);
+  }
+  .dealer-head {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+@media (max-width: 575px) {
+  .social-grid {
+    grid-template-columns: 1fr;
+  }
+}

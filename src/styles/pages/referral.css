@@ -1,0 +1,300 @@
+/* =====================================================
+   CSR 762 — REFER & EARN PAGE STYLESHEET
+   Used by: referral.html
+   Follows the same page-hero / section-header pattern as
+   press.html, sustainability.html, career.html.
+   ============================================================== */
+
+/* ---------- HERO extras ---------- */
+#ref-hero .page-hero-desc {
+  max-width: 560px;
+}
+.ref-hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+.ref-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 26px;
+  margin-top: 36px;
+  background: var(--gray-950);
+  border: 1px solid var(--border-bright);
+}
+.ref-badge-amt {
+  font-family: var(--font-display);
+  font-size: var(--fs-4xl);
+  font-weight: var(--fw-bold);
+  color: var(--white);
+  line-height: 1;
+}
+
+/* ==============================================================
+   YOUR CODE SECTION
+   ============================================================== */
+#ref-code {
+  padding: var(--section-pad) 0;
+  background: var(--gray-950);
+}
+
+/* CODE CARD */
+.code-card {
+  margin: 0 auto;
+  max-width: 620px;
+  padding: 36px 36px 32px;
+  text-align: center;
+}
+.code-row {
+  display: flex;
+  align-items: stretch;
+  background: var(--gray-900);
+  border: 1px solid var(--border-bright);
+  overflow: hidden;
+}
+.code-text {
+  flex: 1;
+  padding: 14px 20px;
+  font-family: var(--font-display);
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-bold);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: all;
+}
+.code-copy-btn {
+  padding: 12px 22px;
+  background: var(--white);
+  color: var(--black);
+  border: none;
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.code-copy-btn:hover {
+  background: var(--gray-100);
+}
+.code-msg {
+  display: block;
+  margin-top: 14px;
+  transition: color 0.2s;
+}
+.code-msg.success {
+  color: var(--accent);
+  font-weight: var(--fw-semibold);
+}
+
+.share-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 22px;
+}
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: 1px solid var(--border-bright);
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--gray-300);
+  transition: var(--transition);
+}
+.share-btn:hover {
+  border-color: var(--white);
+  color: var(--white);
+}
+
+/* ==============================================================
+   HOW IT WORKS
+   ============================================================== */
+#ref-how {
+  padding: var(--section-pad) 0;
+  background: var(--gray-900);
+}
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 48px;
+}
+.how-card {
+  text-align: center;
+  transition: var(--transition);
+}
+.how-card:hover {
+  border-color: var(--border-bright);
+}
+
+.how-card h3 {
+  margin-bottom: 10px;
+}
+.how-card p {
+  line-height: 1.6;
+}
+.how-reward {
+  display: block;
+  margin-top: 18px;
+  font-family: var(--font-display);
+  font-size: var(--fs-4xl);
+  font-weight: var(--fw-bold);
+  color: var(--white);
+}
+
+/* ==============================================================
+   REWARD TIERS
+   ============================================================== */
+#ref-tiers {
+  padding: var(--section-pad) 0;
+  background: var(--black);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 48px;
+}
+.tier-card {
+  text-align: center;
+  transition: var(--transition);
+}
+.tier-card:hover {
+  border-color: var(--border-bright);
+  transform: translateY(-4px);
+}
+
+/* Base badge — colour comes from .tier-{name} variants below */
+.tier-badge {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-bright);
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 18px;
+}
+.tier-num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--fs-6xl);
+  font-weight: var(--fw-black);
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+/* ---------- TIER BADGE COLOUR VARIANTS (badge only) ---------- */
+/* Starter — muted grey */
+.tier-starter .tier-badge {
+  background: rgba(136, 136, 136, 0.12);
+  border-color: var(--gray-300);
+}
+/* Champion — brand white */
+.tier-champion .tier-badge {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--white);
+  color: var(--white);
+}
+/* Elite — amber gold */
+.tier-elite .tier-badge {
+  background: var(--warning-tint);
+  border-color: var(--warning-border);
+  color: var(--warning);
+}
+/* Legend — crimson pink */
+.tier-legend .tier-badge {
+  background: rgba(236, 72, 153, 0.12);
+  border-color: rgba(236, 72, 153, 0.45);
+  color: #ec4899;
+}
+.tier-reward {
+  line-height: 1.6;
+}
+
+/* T&C CARD */
+.tc-card {
+  margin-top: 48px;
+}
+.tc-card h3 {
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.tc-card h3::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--accent);
+}
+.tc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.tc-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  line-height: 1.6;
+}
+.tc-item i {
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 3px;
+  font-size: 14px;
+}
+
+/* ==============================================================
+   RESPONSIVE
+   ============================================================== */
+@media (max-width: 991px) {
+  .tiers-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 767px) {
+  .how-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .tiers-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 575px) {
+  .how-grid {
+    grid-template-columns: 1fr;
+  }
+  .tiers-grid {
+    grid-template-columns: 1fr;
+  }
+  .code-row {
+    flex-direction: column;
+  }
+  .code-copy-btn {
+    width: 100%;
+    border-top: 1px solid var(--border-bright);
+  }
+  .code-text {
+    padding: 16px;
+  }
+}

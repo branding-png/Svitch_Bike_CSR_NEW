@@ -1,0 +1,120 @@
+/* =====================================================
+ CSR 762 — SPECIFICATIONS PAGE STYLESHEET
+ Builds on top of legal.css — adds TOC icons + key/value spec table
+ ============================================================== */
+
+/* ── Replace counter number with a Bootstrap icon in the TOC ── */
+.legal-toc.specs-toc ol {
+  counter-reset: none;
+}
+.legal-toc.specs-toc ol li a {
+  align-items: center;
+  gap: 12px;
+}
+.legal-toc.specs-toc ol li a::before {
+  content: none;
+}
+.legal-toc.specs-toc ol li a i {
+  font-size: 16px;
+  color: var(--accent);
+  flex-shrink: 0;
+  width: 20px;
+  text-align: center;
+  transition: color 0.2s;
+}
+.legal-toc.specs-toc ol li a:hover i,
+.legal-toc.specs-toc ol li a.is-active i {
+  color: var(--black);
+}
+
+/* ── h2 chapter-icon chip ── */
+.legal-content h2 .ch-icon {
+  font-size: 0.85em;
+  color: var(--accent);
+  flex-shrink: 0;
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--gray-900);
+  border: 1px solid var(--border-bright);
+}
+
+/* ==============================================================
+ Key/value spec table — appears inside each .legal-card section
+ ============================================================== */
+.spec-kv-wrap {
+  margin: 8px 0 4px;
+  border: 1px solid var(--border);
+  background: var(--gray-900);
+  overflow-x: auto;
+}
+.spec-kv {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 420px;
+}
+.spec-kv tr {
+  transition: background 0.2s;
+}
+.spec-kv tr + tr td {
+  border-top: 1px solid var(--border);
+}
+.spec-kv tr:hover td {
+  background: rgba(255, 255, 255, 0.025);
+}
+.spec-kv td {
+  padding: 14px 20px;
+  font-size: var(--fs-md);
+  line-height: 1.5;
+  vertical-align: middle;
+}
+.spec-kv td:first-child {
+  width: 50%;
+  font-family: var(--font-label);
+  color: var(--gray-400);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  border-right: 1px solid var(--border);
+}
+.spec-kv td:last-child {
+  color: var(--white);
+  font-weight: var(--fw-semibold);
+  text-align: right;
+}
+
+/* Disclaimer + CTA strip at bottom of warranty card */
+.spec-cta {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 991px) {
+  /* Override legal.css's 2-column TOC grid — keep it a single flex column
+ so a long flat list reads top-to-bottom on tablet. */
+  .legal-toc.specs-toc ol {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: none;
+  }
+}
+@media (max-width: 767px) {
+  .legal-content h2 .ch-icon {
+    width: 30px;
+    height: 30px;
+  }
+  .spec-kv td {
+    padding: 12px 14px;
+  }
+  .spec-cta .btn-csr {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+}

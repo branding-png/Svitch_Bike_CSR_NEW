@@ -1,0 +1,87 @@
+/* ==============================================================
+ CSR 762 - NOTIFICATIONS PAGE STYLESHEET
+ Page-specific styles for notifications.html
+ ============================================================== */
+
+#nf-main {
+  padding: var(--section-pad) 0;
+}
+.nf-toolbar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.nf-filter {
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  font-family: var(--font-label);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: var(--fs-sm);
+  cursor: pointer;
+  color: var(--gray-300);
+  background: transparent;
+}
+.nf-filter.active {
+  background: var(--accent);
+  color: var(--black);
+  border-color: var(--accent);
+}
+.nf-item {
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  gap: 16px;
+  padding: 18px 22px;
+  margin-bottom: 10px;
+  align-items: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.nf-item.unread {
+  border-left: 3px solid var(--accent);
+}
+.nf-item:hover {
+  border-color: var(--border-bright);
+}
+.nf-icon {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  color: var(--accent);
+  font-size: 18px;
+}
+.nf-icon.warn {
+  color: var(--warning);
+  border-color: var(--warning);
+}
+.nf-icon.ok {
+  color: var(--success);
+  border-color: var(--success);
+}
+.nf-icon.info {
+  color: #60a5fa;
+  border-color: #60a5fa;
+}
+.nf-icon.err {
+  color: var(--danger);
+  border-color: var(--danger);
+}
+.nf-body strong {
+  color: var(--white);
+  display: block;
+}
+.nf-body p {
+  font-size: var(--fs-sm);
+  color: var(--gray-400);
+  margin: 2px 0 0;
+}
+.nf-time {
+  font-size: var(--fs-xs);
+  color: var(--gray-500);
+  white-space: nowrap;
+}

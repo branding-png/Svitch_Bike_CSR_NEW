@@ -1,0 +1,1772 @@
+/* ===================================================
+ ACCOUNT PAGES (dashboard, profile, orders, wishlist, addresses, saved-jobs)
+ Full-viewport layout — scroll happens INSIDE #account-main, not on body.
+============================================================ */
+/* Lock outer scroll when account page is present — #account-main handles its own scroll */
+.wrapper-body:has(#account-main) {
+  overflow: hidden;
+  height: 100%;
+}
+
+/* ------------------------------------------------------------------
+ Account layout height math
+ Navbar is position:fixed and on account pages starts with .scrolled:
+ Desktop: 60px logo + 20px padding = 80px
+ Mobile : 40px logo + 20px padding = 60px
+ We subtract that from 100dvh (falls back to 100vh) so #account-main
+ fills exactly the area beneath the fixed navbar — no gap, no clip.
+------------------------------------------------------------------ */
+#account-main {
+  padding: 0;
+  background: var(--black);
+  margin-top: 92px; /* clear fixed navbar (scrolled state = 80px) */
+  height: calc(100vh - 92px); /* fallback */
+  height: calc(100dvh - 92px); /* modern: tracks mobile URL bar */
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+#account-main > .container {
+  max-width: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.account-layout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 30px;
+  align-items: start;
+  /* Single source of padding for the inner account area. Sidebar + main
+    no longer pad themselves — everything breathes from this container. */
+  padding: 30px 30px 60px;
+}
+.account-sidebar {
+  position: sticky;
+  top: 30px; /* matches .account-layout padding-top */
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  /* Fits the visible account area: viewport − navbar (92) − layout top padding (30) − bottom breathing (30) */
+  max-height: calc(100vh - 152px); /* fallback */
+  max-height: calc(100dvh - 152px); /* modern */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  padding-right: 8px; /* small inset so scrollbar doesn't kiss the cards */
+}
+.account-sidebar-profile {
+  padding: 24px 22px;
+  text-align: center;
+}
+.account-avatar {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--font-display);
+  font-size: var(--fs-4xl);
+  font-weight: var(--fw-black);
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+}
+.account-sidebar-profile h4 {
+  font-size: var(--fs-xl);
+  color: var(--white);
+  margin-bottom: 4px;
+  text-transform: none;
+}
+.account-sidebar-profile .email {
+  display: block;
+  margin-bottom: 10px;
+  word-break: break-all;
+}
+.account-member-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-bright);
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.account-nav {
+  padding: 10px 0;
+}
+.account-nav-group {
+  padding: 14px 0 16px;
+  border-bottom: 1px solid var(--border);
+}
+.account-nav-group:first-child {
+  padding-top: 8px;
+}
+.account-nav-group:last-child {
+  border-bottom: none;
+  padding-bottom: 8px;
+}
+.account-nav-title {
+  display: block;
+  padding: 6px 22px 10px;
+  margin: 0;
+  font-family: var(--font-label);
+  font-size: 11px;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gray-500);
+}
+.account-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 22px;
+  text-transform: uppercase;
+  font-weight: var(--fw-semibold);
+  border-left: 2px solid transparent;
+  transition: var(--transition);
+}
+.account-nav-link i {
+  font-size: 16px;
+}
+.account-nav-link:hover {
+  background: var(--gray-900);
+  color: var(--white);
+  border-left-color: var(--border-bright);
+}
+.account-nav-link.is-active {
+  background: var(--white);
+  color: var(--black);
+  border-left-color: var(--accent);
+}
+.account-nav-link.is-active i {
+  color: var(--black);
+}
+.account-nav-link .badge-count {
+  margin-left: auto;
+  min-width: 22px;
+  height: 20px;
+  padding: 0 6px;
+  background: var(--accent);
+  color: var(--black);
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  line-height: 20px;
+  text-align: center;
+}
+.account-nav-link.is-active .badge-count {
+  background: var(--black);
+  color: var(--accent);
+}
+.account-sidebar-signout {
+  padding: 22px;
+}
+.account-sidebar-signout .btn-csr {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Mobile account pills */
+.account-mobile-pills {
+  display: none;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 0 20px;
+  margin-bottom: 10px;
+  scrollbar-width: none;
+}
+.account-mobile-pills::-webkit-scrollbar {
+  display: none;
+}
+.account-mobile-pills a {
+  flex-shrink: 0;
+  padding: 10px 16px;
+  background: var(--gray-900);
+  border: 1px solid var(--border);
+}
+.account-mobile-pills a.is-active {
+  background: var(--white);
+  color: var(--black);
+  border-color: var(--white);
+}
+
+/* Account main content — padding comes from .account-layout, just guard min-width */
+.account-main {
+  min-width: 0;
+}
+.account-header {
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+.account-header h1 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 6px;
+  font-weight: var(--fw-bold);
+}
+.account-header p {
+  margin: 0;
+}
+.account-breadcrumb a:hover {
+  color: var(--white);
+}
+.account-breadcrumb i {
+  font-size: 10px;
+  color: var(--gray-600);
+}
+.account-breadcrumb strong {
+  color: var(--accent);
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+/* Dashboard stats grid */
+.account-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.account-stat-card {
+  text-align: center;
+}
+.account-stat-card i {
+  font-size: 26px;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: inline-block;
+}
+.account-stat-card h3 {
+  font-size: var(--fs-4xl);
+  color: var(--white);
+  margin: 6px 0 4px;
+  text-transform: none;
+  line-height: 1;
+}
+
+/* Dashboard section heads */
+.account-section {
+  margin-bottom: 32px;
+}
+.account-section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.account-section-head h3 {
+  margin: 0 0 0px;
+  position: relative;
+  padding-bottom: 12px;
+}
+.account-section-head h3::after {
+  content: '';
+  position: absolute;
+  bottom: -11px;
+  left: 0px;
+  width: 30px;
+  height: 2px;
+  background: var(--accent);
+}
+.account-section-head a {
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Quick actions */
+.quick-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.quick-action {
+  padding: 20px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: inherit;
+  text-decoration: none !important;
+  transition: var(--transition);
+}
+.quick-action:hover {
+  background: var(--gray-900);
+  border-color: var(--border-bright);
+}
+.quick-action i {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  color: var(--accent);
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.quick-action div {
+  display: flex;
+  flex-direction: column;
+}
+.quick-action strong {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  color: var(--white);
+  font-size: var(--fs-md);
+  text-transform: uppercase;
+}
+.quick-action span {
+  font-weight: var(--fw-semibold);
+}
+
+/* Order cards */
+.order-card {
+  margin-bottom: 14px;
+}
+.order-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-bottom: 14px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.order-card-head::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0px;
+  width: 30px;
+  height: 2px;
+  background: var(--accent);
+}
+.order-id {
+  color: var(--white);
+}
+.order-status.delivered {
+  background: rgba(34, 197, 94, 0.15);
+  color: var(--success);
+  border: 1px solid var(--success);
+}
+.order-status.shipped {
+  background: rgba(59, 130, 246, 0.15);
+  color: var(--info);
+  border: 1px solid var(--info);
+}
+.order-status.processing {
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--warning);
+  border: 1px solid var(--warning);
+}
+.order-status.cancelled {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--danger);
+  border: 1px solid var(--danger);
+}
+.order-item-row {
+  display: grid;
+  grid-template-columns: 70px 1fr auto;
+  gap: 16px;
+  align-items: center;
+  padding: 12px 0;
+}
+.order-item-img {
+  width: 70px;
+  height: 70px;
+  background: var(--gray-900);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.order-item-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.order-item-info h4 {
+  color: var(--white);
+  margin: 0 0 4px;
+  text-transform: none;
+}
+.order-item-info span {
+  font-family: var(--font-label);
+  color: var(--gray-400);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+}
+.order-item-price {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  color: var(--white);
+}
+.order-card-foot {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+.order-total {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  color: var(--white);
+}
+.order-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.order-actions .btn-csr {
+  padding: 8px 14px;
+}
+
+/* Cancel-action variant (used in test-rides cards) — red outline */
+.order-actions .tr-btn-cancel {
+  color: var(--danger);
+  border-color: var(--danger);
+}
+.order-actions .tr-btn-cancel:hover {
+  background: var(--danger);
+  color: #fff;
+  border-color: var(--danger);
+}
+
+/* Feedback modal — star-rating widget */
+.feedback-stars {
+  display: flex;
+  gap: 8px;
+  padding: 8px 0 4px;
+  font-size: 28px;
+  color: var(--gray-500);
+}
+.feedback-stars i {
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    color 0.15s ease;
+}
+.feedback-stars i:hover {
+  transform: scale(1.15);
+  color: var(--warning);
+}
+.feedback-stars i.is-active {
+  color: var(--warning);
+}
+.feedback-stars i:focus-visible {
+  outline: 2px solid var(--accent, var(--warning));
+  outline-offset: 2px;
+}
+
+/* Filter pills (orders) */
+.filter-pills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+/* .filter-pill — base + state styling now lives in components.css
+   (the single global filter-pill class for blog / career / account). */
+
+/* Wishlist mini preview */
+.wishlist-preview {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+.wishlist-preview-item {
+  aspect-ratio: 1 / 1;
+  background: var(--gray-900);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  position: relative;
+}
+.wishlist-preview-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.wishlist-preview-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+}
+
+/* Address cards */
+.address-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+.address-card {
+  position: relative;
+}
+.address-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.address-type-icon {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-bright);
+  color: var(--accent);
+  font-size: 18px;
+}
+.address-type {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  color: var(--white);
+}
+.address-default-badge {
+  margin-left: auto;
+  padding: 3px 8px;
+  background: var(--accent);
+  color: var(--black);
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+}
+.address-card strong {
+  display: block;
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  margin-bottom: 8px;
+}
+.address-card p {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+.address-card .phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  font-family: var(--font-label);
+  color: var(--gray-400);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+}
+.address-card .phone i {
+  color: var(--accent);
+}
+.address-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+.address-actions .btn-csr {
+  padding: 7px 12px;
+}
+.address-add {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  border: 2px dashed var(--border-bright) !important;
+  background: transparent;
+  cursor: pointer;
+  text-decoration: none !important;
+  transition: var(--transition);
+  min-height: 220px;
+}
+.address-add:hover {
+  color: var(--white);
+  border-color: var(--accent) !important;
+}
+.address-add i {
+  font-size: 40px;
+  color: var(--accent);
+}
+
+/* Saved jobs list */
+.saved-jobs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.saved-job-card {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  gap: 16px;
+  align-items: center;
+}
+.saved-job-icon {
+  width: 56px;
+  height: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid var(--success);
+  color: var(--success);
+  font-size: 24px;
+}
+.saved-job-info h4 {
+  font-size: var(--fs-xl);
+  color: var(--white);
+  margin: 0 0 8px;
+  text-transform: none;
+}
+.saved-job-pills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.job-pill i {
+  color: var(--accent);
+  font-size: 12px;
+}
+.saved-job-meta {
+  font-family: var(--font-label);
+  color: var(--gray-400);
+  font-size: var(--fs-sm);
+  margin-top: 8px;
+  font-weight: var(--fw-semibold);
+}
+.saved-job-meta strong {
+  color: var(--accent);
+  font-family: inherit;
+  font-weight: inherit;
+}
+.saved-job-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.saved-job-actions .btn-csr {
+  padding: 8px 14px;
+  min-width: 120px;
+  justify-content: center;
+}
+
+/* Profile — toggle switch + avatar upload */
+.profile-hero {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.profile-avatar-wrap {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+}
+.profile-avatar-wrap .account-avatar {
+  width: 100%;
+  height: 100%;
+  font-size: var(--fs-5xl);
+  margin: 0;
+}
+.profile-avatar-upload {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 32px;
+  height: 32px;
+  background: var(--accent);
+  color: var(--black);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 2px solid var(--gray-950);
+}
+.profile-hero-info h2 {
+  margin: 0 0 4px;
+  font-size: var(--fs-3xl);
+  color: var(--white);
+}
+.profile-hero-info span {
+  display: block;
+  font-family: var(--font-label);
+  color: var(--gray-400);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+}
+.toggle-switch {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  background: var(--gray-900);
+  border: 1px solid var(--border);
+  margin-bottom: 10px;
+}
+.toggle-switch-info strong {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  color: var(--white);
+  font-size: var(--fs-md);
+  margin-bottom: 2px;
+}
+.toggle-switch-info span {
+  font-family: var(--font-label);
+  color: var(--gray-400);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+}
+.toggle-switch input[type='checkbox'] {
+  appearance: none;
+  width: 46px;
+  height: 26px;
+  background: var(--gray-500);
+  position: relative;
+  cursor: pointer;
+  transition: background 0.25s;
+  border-radius: 13px;
+  flex-shrink: 0;
+}
+.toggle-switch input[type='checkbox']::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background: var(--white);
+  border-radius: 50%;
+  transition: transform 0.25s;
+}
+.toggle-switch input[type='checkbox']:checked {
+  background: var(--accent);
+}
+.toggle-switch input[type='checkbox']:checked::after {
+  transform: translateX(20px);
+  background: var(--black);
+}
+
+/* ==============================================================
+   ADDRESS-TYPE TOGGLE BUTTONS (Address modal)
+   Segmented button group — Home / Work / Other
+   ============================================================== */
+.addr-type-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.addr-type-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 16px;
+  background: var(--gray-900);
+  border: 1px solid var(--border);
+  color: var(--gray-300);
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition);
+  margin: 0;
+  user-select: none;
+}
+.addr-type-btn i {
+  font-size: 18px;
+  transition: var(--transition);
+}
+.addr-type-btn:hover {
+  background: var(--gray-800);
+  border-color: var(--border-bright);
+  color: var(--white);
+}
+.addr-type-btn:hover i {
+  color: var(--white);
+}
+/* Hide native radio — label is the whole button */
+.addr-type-btn input[type='radio'] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+}
+/* Active (selected) state — accent border + accent icon, subtle tinted fill */
+.addr-type-btn.is-active {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--white);
+  color: var(--white);
+}
+.addr-type-btn.is-active i {
+  color: var(--accent);
+}
+/* Keyboard focus ring on the hidden radio — show on the label */
+.addr-type-btn:has(input[type='radio']:focus-visible) {
+  box-shadow: 0 0 0 2px var(--accent);
+}
+@media (max-width: 575px) {
+  .addr-type-group {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .addr-type-btn {
+    padding: 12px 14px;
+    justify-content: flex-start;
+  }
+}
+
+.danger-zone {
+  padding: 22px 24px;
+  border: 1px solid var(--danger) !important;
+  background: rgba(239, 68, 68, 0.06);
+}
+.danger-zone h4 {
+  color: var(--danger);
+  margin-bottom: 10px;
+  text-transform: none;
+}
+.danger-zone .btn-csr {
+  background: var(--danger);
+  color: var(--white);
+  border-color: var(--danger);
+}
+.danger-zone .btn-csr:hover {
+  background: transparent;
+  color: var(--danger);
+}
+
+/* Account empty state */
+.account-empty {
+  text-align: center;
+}
+.account-empty i {
+  font-size: 64px;
+  color: var(--gray-600);
+  margin-bottom: 16px;
+}
+.account-empty h3 {
+  color: var(--white);
+  margin-bottom: 8px;
+  text-transform: none;
+}
+.account-empty p {
+  margin-bottom: 20px;
+}
+
+/* Wishlist toolbar (reuses product-grid from shop) */
+.wishlist-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 14px 18px;
+  background: var(--gray-900);
+  border: 1px solid var(--border);
+}
+.wishlist-toolbar .btn-csr {
+  padding: 8px 14px;
+}
+
+/* Responsive for account */
+@media (max-width: 991px) {
+  .account-layout {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 20px 20px 40px;
+  }
+  .account-sidebar {
+    position: static;
+    display: none;
+    padding-right: 0;
+  }
+  .account-mobile-pills {
+    display: flex;
+  }
+  .account-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .quick-actions-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .address-grid {
+    grid-template-columns: 1fr;
+  }
+  .wishlist-preview {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 767px) {
+  /* Mobile navbar is 60px (40px logo + 20px padding) */
+  #account-main {
+    margin-top: 60px;
+    height: calc(100vh - 60px);
+    height: calc(100dvh - 60px);
+  }
+  .account-layout {
+    padding: 16px 14px 40px;
+    gap: 12px;
+  }
+  .account-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .quick-actions-grid {
+    grid-template-columns: 1fr;
+  }
+  .saved-job-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .saved-job-icon {
+    margin: 0 auto;
+  }
+  .saved-job-actions {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .order-item-row {
+    grid-template-columns: 60px 1fr;
+  }
+  .order-item-price {
+    grid-column: 1 / -1;
+    text-align: right;
+    font-size: var(--fs-lg);
+  }
+  .wishlist-preview {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 575px) {
+  .account-layout {
+    padding: 12px 12px 32px;
+  }
+}
+
+/* ==============================================================
+   TRACK ORDER MODAL — timeline UI
+   Used by: orders.html — shown when user clicks the Track button
+   ============================================================== */
+#trackOrderModal .modal-dialog {
+  max-width: 560px;
+}
+#trackOrderModal .modal-content {
+  background: var(--gray-950);
+  border: 1px solid var(--border-bright);
+  color: var(--gray-300);
+}
+#trackOrderModal .modal-header {
+  padding: 22px 26px 18px;
+  border-bottom: 1px solid var(--border);
+  align-items: flex-start;
+}
+#trackOrderModal .modal-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-bold);
+  color: var(--white);
+  text-transform: uppercase;
+  margin: 0;
+}
+#trackOrderModal .modal-subtitle {
+  display: block;
+  margin-top: 4px;
+  font-family: var(--font-label);
+  color: var(--gray-400);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+}
+#trackOrderModal .modal-body {
+  padding: 8px 26px 26px;
+}
+#trackOrderModal .btn-close {
+  filter: invert(1);
+  opacity: 0.7;
+}
+
+/* Order meta strip inside modal */
+.track-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 18px 0;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+}
+.track-meta-cell .track-meta-label {
+  display: block;
+  margin-bottom: 4px;
+}
+.track-meta-cell .track-meta-val {
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  color: var(--white);
+  font-weight: var(--fw-semibold);
+}
+
+/* ─── Timeline ────────────────────────────────────────────────────────
+   Colour key:
+     done      → green   (var(--success))
+     final     → green   + ring (delivered terminal step)
+     current   → blue    (var(--info)) with pulse
+     pending   → gray-600 outline
+     cancelled → red     (var(--danger))
+─────────────────────────────────────────────────────────────────────── */
+.track-timeline {
+  position: relative;
+  margin: 0;
+  padding: 10px 0 0 0;
+  list-style: none;
+}
+.track-step {
+  position: relative;
+  padding: 0 0 28px 48px; /* space for dot + connector */
+}
+.track-step:last-child {
+  padding-bottom: 0;
+}
+
+/* Vertical connector line — centered under the dot (dot center at 8+9=17, so line at left:16) */
+.track-step::before {
+  content: '';
+  position: absolute;
+  left: 16px;
+  top: 24px;
+  bottom: -4px;
+  width: 2px;
+  background: var(--gray-800);
+}
+.track-step:last-child::before {
+  display: none;
+}
+.track-step.is-done::before,
+.track-step.is-final::before {
+  background: var(--success);
+}
+.track-step.is-current::before {
+  background: linear-gradient(to bottom, var(--warning) 50%, var(--gray-800) 50%);
+}
+.track-step.is-cancelled::before {
+  background: var(--danger);
+}
+
+/* Dot */
+.track-dot {
+  position: absolute;
+  left: 8px;
+  top: 4px;
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--gray-950);
+  border: 2px solid var(--gray-600);
+  color: transparent;
+  transition: var(--transition);
+  z-index: 1;
+}
+.track-dot i {
+  font-size: 9px;
+  transition: transform 0.15s ease;
+  transform: scale(0);
+}
+
+/* done — solid green */
+.track-step.is-done .track-dot {
+  background: var(--success);
+  border-color: var(--success);
+  color: var(--white);
+}
+.track-step.is-done .track-dot i {
+  transform: scale(1);
+}
+
+/* final — solid green + outer ring (delivered terminal step) */
+.track-step.is-final .track-dot {
+  background: var(--success);
+  border-color: var(--success);
+  color: var(--white);
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.25);
+}
+.track-step.is-final .track-dot i {
+  transform: scale(1);
+  font-size: 10px;
+}
+
+/* current — amber with pulse (matches `.order-status.processing` colour) */
+.track-step.is-current .track-dot {
+  background: var(--warning);
+  border-color: var(--warning);
+  color: var(--white);
+  animation: trackPulse 1.8s ease-in-out infinite;
+}
+.track-step.is-current .track-dot i {
+  transform: scale(1);
+  font-size: 9px;
+}
+
+/* cancelled — red with x */
+.track-step.is-cancelled .track-dot {
+  background: var(--danger);
+  border-color: var(--danger);
+  color: var(--white);
+}
+.track-step.is-cancelled .track-dot i {
+  transform: scale(1);
+  font-size: 10px;
+}
+
+@keyframes trackPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 7px rgba(245, 158, 11, 0.1);
+  }
+}
+
+/* Step text */
+.track-step h5 {
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  margin: 0 0 4px;
+  color: var(--gray-500); /* pending default */
+}
+.track-step.is-done h5,
+.track-step.is-final h5 {
+  color: var(--success);
+}
+.track-step.is-current h5 {
+  color: var(--warning);
+}
+.track-step.is-cancelled h5 {
+  color: var(--danger);
+}
+
+.track-step-date {
+  font-family: var(--font-label);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--gray-400);
+  margin: 2px 0 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+.track-step.is-done .track-step-date,
+.track-step.is-final .track-step-date {
+  color: var(--success);
+  opacity: 0.85;
+}
+.track-step.is-current .track-step-date {
+  color: var(--warning);
+}
+.track-step.is-cancelled .track-step-date {
+  color: var(--danger);
+}
+
+.track-step-desc {
+  line-height: 1.55;
+  margin: 0;
+  color: var(--gray-400);
+}
+.track-step.is-pending .track-step-desc,
+.track-step.is-upcoming .track-step-desc {
+  color: var(--gray-600);
+}
+
+/* `.is-upcoming` is a legacy alias for `.is-pending` (used by the
+   track-order page's TrackTimeline). Apply the same muted treatment. */
+.track-step.is-upcoming::before {
+  background: var(--gray-800);
+}
+.track-step.is-upcoming .track-dot {
+  background: var(--gray-950);
+  border-color: var(--gray-600);
+  color: transparent;
+}
+.track-step.is-upcoming .track-dot i {
+  transform: scale(0);
+}
+.track-step.is-upcoming h5 {
+  color: var(--gray-500);
+}
+.track-step.is-upcoming .track-step-date,
+.track-step.is-upcoming .track-step-when {
+  color: var(--gray-500);
+}
+
+/* ============================================================
+   REFUND CARD (order-detail page, only shown for cancelled orders)
+   Status colours match the app's order-status family:
+   green  = done / final
+   amber  = current
+   red    = error / cancelled
+   gray   = pending
+============================================================ */
+.refund-card {
+  margin-bottom: 14px;
+}
+
+/* Headline meta grid */
+.refund-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: 18px 0;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+}
+.refund-meta-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.refund-meta-label {
+  font-family: var(--font-label);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--gray-500);
+}
+.refund-meta-val {
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  color: var(--white);
+  font-weight: var(--fw-semibold);
+}
+.refund-meta-val.refund-amount {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  color: var(--warning);
+  font-weight: var(--fw-bold);
+}
+
+/* Progress steps */
+.refund-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.refund-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 16px;
+  padding: 12px 0 20px 0;
+}
+.refund-step:last-child {
+  padding-bottom: 0;
+}
+
+/* Vertical connector */
+.refund-step::before {
+  content: '';
+  position: absolute;
+  left: 17px;
+  top: 36px;
+  bottom: -8px;
+  width: 2px;
+  background: var(--gray-800);
+}
+.refund-step:last-child::before {
+  display: none;
+}
+.refund-step.is-done::before,
+.refund-step.is-final::before {
+  background: var(--success);
+}
+.refund-step.is-current::before {
+  background: linear-gradient(to bottom, var(--warning) 50%, var(--gray-800) 50%);
+}
+
+/* Number bubble */
+.refund-step-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-md);
+  background: var(--gray-950);
+  border: 2px solid var(--gray-600);
+  color: var(--gray-500);
+  z-index: 1;
+  transition: var(--transition);
+}
+.refund-step.is-done .refund-step-num,
+.refund-step.is-final .refund-step-num {
+  background: var(--success);
+  border-color: var(--success);
+  color: var(--white);
+}
+.refund-step.is-final .refund-step-num {
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.25);
+}
+.refund-step.is-current .refund-step-num {
+  background: var(--warning);
+  border-color: var(--warning);
+  color: var(--white);
+  animation: trackPulse 1.8s ease-in-out infinite;
+}
+
+/* Body */
+.refund-step-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 6px;
+}
+.refund-step-body strong {
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  text-transform: uppercase;
+  color: var(--gray-500);
+}
+.refund-step-body span {
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--gray-500);
+}
+.refund-step.is-done .refund-step-body strong,
+.refund-step.is-final .refund-step-body strong {
+  color: var(--success);
+}
+.refund-step.is-current .refund-step-body strong {
+  color: var(--warning);
+}
+.refund-step.is-done .refund-step-body span,
+.refund-step.is-final .refund-step-body span,
+.refund-step.is-current .refund-step-body span {
+  color: var(--gray-300);
+}
+
+/* Footer */
+.refund-foot {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 575px) {
+  .refund-meta {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding-bottom: 14px;
+    margin-bottom: 14px;
+  }
+}
+
+/* Footer chip row */
+.track-foot {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.track-courier strong {
+  color: var(--white);
+  font-family: var(--font-body);
+  font-weight: var(--fw-semibold);
+  text-transform: none;
+}
+
+@media (max-width: 575px) {
+  .track-meta {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  #trackOrderModal .modal-body {
+    padding: 8px 18px 22px;
+  }
+}
+
+/* ============================================================
+   REFER & EARN PROMO CARD (dashboard)
+   ============================================================ */
+.referral-promo {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  overflow: hidden;
+}
+
+.referral-promo-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold, 700);
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.referral-promo-title {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.4vw, 26px);
+  font-weight: var(--fw-bold, 700);
+  margin: 0 0 8px;
+  line-height: 1.2;
+}
+.referral-promo-desc {
+  margin: 0;
+  line-height: 1.6;
+  max-width: 540px;
+}
+
+/* Code row */
+.referral-promo-code {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.referral-promo-code-label {
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold, 600);
+  text-transform: uppercase;
+  color: var(--gray-500);
+}
+.referral-promo-code-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  background: var(--gray-950);
+  border: 1px dashed var(--border-bright);
+}
+.referral-promo-code-row code {
+  font-family: var(--font-display);
+  font-size: clamp(16px, 2vw, 20px);
+  font-weight: var(--fw-bold, 700);
+  color: var(--white);
+  background: transparent;
+  flex: 1 1 auto;
+  word-break: break-all;
+}
+#dashCopyCode.is-copied {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--black);
+}
+
+/* Inline stats */
+.referral-promo-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+}
+.referral-promo-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.referral-promo-stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.8vw, 28px);
+  font-weight: var(--fw-bold, 700);
+  color: var(--white);
+  line-height: 1;
+}
+.referral-promo-stat-lbl {
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold, 600);
+  text-transform: uppercase;
+  color: var(--gray-500);
+}
+
+/* Action row */
+.referral-promo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+@media (max-width: 767px) {
+  .referral-promo {
+    gap: 18px;
+  }
+  .referral-promo-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 575px) {
+  .referral-promo-stats {
+    grid-template-columns: 1fr;
+  }
+  .referral-promo-actions .btn-csr {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+}
+
+/* ============================================================
+   ORDER DETAIL PAGE
+   Reuses .card-base.order-card / .order-card-head / .order-item-row
+   from the orders.html design — only adds page-specific bits below.
+   ============================================================ */
+
+/* Back link */
+.account-back-link:hover {
+  color: var(--white);
+  gap: 12px;
+}
+.account-back-link i {
+  font-size: 12px;
+}
+
+/* 2-col layout: items + timeline on the left, summary stack on the right */
+.od-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 20px;
+  align-items: start;
+}
+@media (max-width: 991px) {
+  .od-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.od-col-side {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: sticky;
+  top: 20px;
+}
+@media (max-width: 991px) {
+  .od-col-side {
+    position: static;
+  }
+}
+
+/* Vertical status timeline — sits inside an existing .order-card */
+.od-timeline {
+  list-style: none;
+  margin: 14px 0 0;
+  position: relative;
+}
+.od-timeline::before {
+  content: '';
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  bottom: 12px;
+  width: 2px;
+  background: var(--border);
+}
+.od-timeline li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 26px 1fr;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 10px 0;
+}
+.od-tl-dot {
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gray-900);
+  border: 2px solid var(--gray-600);
+  color: var(--gray-500);
+  font-size: 14px;
+  border-radius: 50%;
+  z-index: 1;
+}
+.od-timeline li.is-done .od-tl-dot {
+  background: rgba(34, 197, 94, 0.18);
+  border-color: var(--success);
+  color: var(--success);
+}
+.od-timeline li.is-final .od-tl-dot {
+  background: var(--success);
+  border-color: var(--success);
+  color: var(--black);
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.18);
+}
+.od-tl-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 2px;
+}
+.od-tl-body strong {
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  color: var(--white);
+}
+.od-tl-body span {
+  font-family: var(--font-label);
+  color: var(--gray-400);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+}
+
+/* Price-summary rows — sit inside an .order-card */
+.od-sum-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.od-sum-row span:last-child {
+  color: var(--gray-200);
+  font-weight: var(--fw-semibold);
+}
+.od-sum-row.od-sum-total {
+  margin-top: 6px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  color: var(--white);
+}
+.od-sum-row.od-sum-total span:last-child {
+  color: var(--accent);
+  font-weight: var(--fw-bold);
+}
+.od-free {
+  color: var(--success) !important;
+  font-weight: var(--fw-bold) !important;
+}
+
+/* ============================================================
+   TRACK ORDER PAGE — extends `.track-section` / `.track-meta` /
+   `.track-timeline` from account.css with the page-level wrappers.
+============================================================ */
+.track-container {
+  max-width: 760px;
+}
+.track-form-card {
+  padding: 36px;
+}
+.track-form-card {
+  padding: 36px;
+}
+.track-form-card h3 {
+  flex: 1;
+  position: relative;
+  margin: 0 0 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.track-form-card h3::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: -0px;
+  width: 30px;
+  height: 2px;
+  background: var(--accent);
+}
+.track-form-card .btn-csr.full-w {
+  justify-content: center;
+}
+.track-form-signin {
+  margin-top: 20px;
+  text-align: center;
+}
+.track-form-signin a {
+  color: var(--white);
+}
+
+.track-result {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.track-live {
+  font-family: var(--font-label);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: yellow; /* matches legacy track-order.html — pure CSS yellow */
+}
+
+/* Help / actions strip — Card 3 of the tracking result */
+.track-help-strip {
+  padding: 22px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.track-help-strip-text h3 {
+  display: block;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+.track-help-strip-cta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.form-group {
+  margin-bottom: 16px;
+}

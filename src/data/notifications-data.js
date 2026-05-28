@@ -1,0 +1,76 @@
+// Sample notifications for the account/notifications page.
+// `tone` drives the icon-circle colour: 'warn' | 'ok' | 'info' | undefined (neutral).
+export const NOTIFICATIONS = [
+  {
+    id:     'NT-1001',
+    cat:    'security',
+    tone:   'warn',
+    icon:   'shield-exclamation',
+    title:  'New sign-in detected',
+    body:   "MacBook · Safari · Pune at 16:42 IST. If this wasn't you, change your password.",
+    time:   '2 min ago',
+    unread: true,
+  },
+  {
+    id:     'NT-1000',
+    cat:    'order',
+    tone:   'ok',
+    icon:   'truck',
+    title:  'Order #SVC-2026-04812 dispatched',
+    body:   'Your CSR 762 is on its way. ETA: 2026-05-15. Track shipment for live updates.',
+    time:   '1 hr ago',
+    unread: true,
+  },
+  {
+    id:     'NT-0999',
+    cat:    'service',
+    tone:   'info',
+    icon:   'tools',
+    title:  'Service reminder',
+    body:   '10,000 KM checkup due by 2026-06-15. Book early to lock your preferred slot.',
+    time:   'Yesterday',
+    unread: true,
+  },
+  {
+    id:     'NT-0998',
+    cat:    'offer',
+    icon:   'gift',
+    title:  'You earned ₹2,000 referral credit',
+    body:   'Rohan signed up using your code. Credit applied to your wallet.',
+    time:   '3 days ago',
+  },
+  {
+    id:     'NT-0997',
+    cat:    'security',
+    tone:   'ok',
+    icon:   'check-circle',
+    title:  'Password changed successfully',
+    body:   "If you didn't make this change, contact support immediately.",
+    time:   '2026-05-04',
+  },
+  {
+    id:     'NT-0996',
+    cat:    'order',
+    tone:   'info',
+    icon:   'arrow-counterclockwise',
+    title:  'Refund processed: ₹2,499',
+    body:   'Refund for order #SVC-2026-04201 credited to HDFC ••• 4421.',
+    time:   '2026-04-22',
+  },
+  {
+    id:     'NT-0995',
+    cat:    'offer',
+    icon:   'calendar-event',
+    title:  'Test Ride Camp in Bengaluru',
+    body:   '22 May 2026 at Cubbon Park. Reserve a slot to skip the queue.',
+    time:   '2026-04-18',
+  },
+]
+
+export const NOTIFICATION_FILTERS = [
+  { id: 'all',      label: 'All' },
+  { id: 'order',    label: 'Orders' },
+  { id: 'service',  label: 'Service' },
+  { id: 'security', label: 'Security' },
+  { id: 'offer',    label: 'Offers' },
+]

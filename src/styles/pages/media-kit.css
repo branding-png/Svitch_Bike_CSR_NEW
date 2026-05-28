@@ -1,0 +1,169 @@
+/* ==============================================================
+ CSR 762 - MEDIA KIT PAGE STYLESHEET
+ Page-specific styles for media-kit.html
+ ============================================================== */
+/* ============================================================
+ SECTION BACKGROUNDS — three stacked sections on this page
+============================================================ */
+#mk-assets {
+  background: var(--gray-950);
+}
+#mk-facts {
+  background: var(--gray-900);
+}
+#mk-contact {
+  background: var(--black);
+}
+
+/* Download-the-whole-kit primary CTA — sits inside the section-header */
+.mk-hero-cta {
+  margin-top: 8px;
+}
+
+/* ============================================================
+ ASSET-PACK CARD GRID
+============================================================ */
+.mk-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.mk-card {
+  padding: 28px 26px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: var(--transition);
+}
+.mk-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-bright);
+}
+
+.mk-card-icon {
+  width: 52px;
+  height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-size: 22px;
+  transition: var(--transition);
+}
+.mk-card:hover .mk-card-icon {
+  background: var(--accent);
+  color: var(--black);
+}
+
+.mk-card h3 {
+  line-height: 1.25;
+  margin: 0;
+}
+.mk-card p {
+  line-height: 1.55;
+  margin: 0;
+  flex: 1;
+}
+.mk-card-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-label);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gray-400);
+}
+
+/* Download CTA — full-width at the card's bottom with a top separator */
+.mk-card .btn-csr {
+  width: calc(100% + 52px);
+  margin: 14px -26px 0;
+  padding: 16px 26px;
+  justify-content: space-between;
+  border-top: 1px solid var(--border);
+  border-radius: 0;
+  background: transparent;
+  color: var(--gray-300);
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+.mk-card .btn-csr:hover {
+  background: var(--white);
+  color: var(--black);
+  transform: none;
+  border-color: var(--border);
+}
+.mk-card .btn-csr i {
+  font-size: 18px;
+  transition: transform 0.25s ease;
+}
+.mk-card .btn-csr:hover i {
+  transform: translateX(3px);
+}
+
+/* ============================================================
+ FACT GRID — small stat tiles below the asset cards
+============================================================ */
+.mk-fact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 30px;
+}
+.mk-fact {
+  padding: 26px 22px;
+  text-align: center;
+}
+.mk-fact strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--fs-6xl);
+  color: var(--white);
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.mk-fact span {
+  display: block;
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gray-400);
+}
+
+/* ============================================================
+ RESPONSIVE
+============================================================ */
+@media (max-width: 991px) {
+  .mk-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .mk-fact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 575px) {
+  .mk-grid {
+    grid-template-columns: 1fr;
+  }
+  .mk-card {
+    padding: 24px 22px 0;
+  }
+  .mk-card .btn-csr {
+    width: calc(100% + 44px);
+    margin: 14px -22px 0;
+    padding: 14px 22px;
+  }
+}
+
+/* Press-contact CTA uses the shared `.cta-box` component (components.css). */

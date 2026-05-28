@@ -1,0 +1,118 @@
+/* ==============================================================
+ UTILITY CLASSES
+ Tiny, single-purpose helpers for the few inline-style patterns
+ that recurred enough to be worth a class. Keep this file lean —
+ if you need more than 30 utilities, you probably need a component.
+ ============================================================== */
+
+/* ── Layout ─────────────────────────────────────────────────────── */
+.full-w-center {
+  width: 100%;
+  justify-content: center;
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.stack-sm {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.stack-md {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Spacing (margin only — padding is usually layout-specific) ── */
+.mt-sm {
+  margin-top: 8px;
+}
+.mt-md {
+  margin-top: 16px;
+}
+.mt-lg {
+  margin-top: 24px;
+}
+.mb-sm {
+  margin-bottom: 8px;
+}
+.mb-md {
+  margin-bottom: 16px;
+}
+.mb-lg {
+  margin-bottom: 24px;
+}
+
+/* ── Text ───────────────────────────────────────────────────────── */
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-white {
+  color: var(--white);
+}
+.text-accent {
+  color: var(--accent);
+}
+.text-muted {
+  color: var(--gray-500);
+}
+.text-sm {
+  font-size: var(--fs-sm);
+}
+.text-xs {
+  font-size: var(--fs-xs);
+}
+
+/* ── Display ────────────────────────────────────────────────────── */
+.is-hidden {
+  display: none !important;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Touch-target floor on small phones ─────────────────────────
+   iOS HIG + WCAG recommend ≥ 44×44px for interactive controls.
+   Bump every standard button class up to the minimum on phones. */
+@media (max-width: 991px) and (pointer: coarse) {
+}
+@media (max-width: 575px) and (pointer: coarse) {
+  .btn-csr:not(.sm):not(.lg) {
+    min-height: 44px;
+  }
+  .btn-csr.sm {
+    min-height: 40px;
+  }
+  .nav-icon-btn,
+  .product-wishlist,
+  .password-toggle,
+  .pw-toggle {
+    min-width: 34px;
+    min-height: 34px;
+  }
+  .nav-actions a.rajdhani-lbl-text-sm.btn-csr.primary.sm {
+    min-height: 34px;
+  }
+}

@@ -1,0 +1,143 @@
+/* ==============================================================
+ CSR 762 - EMI & FINANCE CALCULATOR PAGE STYLESHEET
+ Page-specific styles for finance.html
+ ============================================================== */
+
+/* ============================================================
+ LAYOUT — calculator grid (sliders on left, result card on right)
+============================================================ */
+.fin-sec {
+  background: var(--gray-900);
+}
+.fin-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 24px;
+}
+@media (max-width: 767px) {
+  .fin-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.fin-card {
+  padding: 32px;
+}
+.fin-card-head {
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.fin-card-head::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--accent);
+}
+/* ============================================================
+ SLIDER ROWS — labelled range inputs
+============================================================ */
+.fin-slider-row {
+  margin: 18px 0;
+}
+
+.fin-slider-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+.fin-slider-name {
+  font-family: var(--font-label);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.fin-slider-val {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  color: var(--white);
+}
+
+.fin-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  background: var(--gray-800);
+  border-radius: 2px;
+  outline: none;
+}
+.fin-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: var(--accent);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.fin-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: var(--accent);
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+/* ============================================================
+ RESULT ROW — total payable / interest breakdown
+============================================================ */
+.fin-result-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.fin-result-row > div {
+  padding: 18px;
+  background: var(--gray-950);
+}
+.fin-result-num {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.4vw, 26px);
+  color: var(--white);
+  font-weight: var(--fw-bold);
+  display: block;
+}
+.fin-result-lbl {
+  font-family: var(--font-label);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+ EMI BIG-NUMBER CARD — primary readout on the right
+============================================================ */
+.fin-emi-card {
+  padding: 32px;
+  text-align: center;
+}
+.fin-emi-num {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 6vw, 64px);
+  font-weight: var(--fw-black);
+  color: var(--accent);
+  display: block;
+  line-height: 1;
+}
+.fin-emi-lbl {
+  font-family: var(--font-label);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}

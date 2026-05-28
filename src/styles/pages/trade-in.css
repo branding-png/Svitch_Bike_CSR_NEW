@@ -1,0 +1,25 @@
+/* ==============================================================
+ CSR 762 - TRADE-IN PAGE STYLESHEET
+ Page-specific styles for trade-in.html
+ ============================================================== */
+.trade-sec h3 {
+  margin-bottom: 10px;
+}
+.trade-sec {
+  background: var(--gray-900);
+}
+.trade-sec-head {
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.trade-sec-head::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--accent);
+}

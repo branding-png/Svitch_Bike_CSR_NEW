@@ -1,0 +1,3195 @@
+/* =====================================================
+ CSR 762 — COMPONENTS STYLESHEET
+ Buttons, Cards, Navbar, Forms, Preloader
+ ============================================================== */
+
+
+/* ==============================================================
+ PRELOADER
+ ============================================================== */
+#csr-preloader {
+  position: fixed;
+  inset: 0;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+.preloader-content {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition:
+    transform 0.9s cubic-bezier(0.19, 1, 0.22, 1),
+    opacity 0.7s ease;
+}
+.logo-svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 4;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+}
+.border-path {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+}
+.preloader-logo {
+  width: 150px;
+  height: auto;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 1s ease 0.5s;
+}
+.percentage-text {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--accent);
+  font-size: 1.2rem;
+  font-weight: var(--fw-bold);
+  margin-top: 20px;
+}
+.loading-bar-container {
+  width: 80px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  margin-top: 10px;
+  border-radius: 0;
+  overflow: hidden;
+}
+.loading-bar {
+  width: 0%;
+  height: 100%;
+  background: var(--accent);
+}
+.preloader-finish {
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease;
+}
+.preloader-finish .preloader-content {
+  transform: scale(4);
+  opacity: 0;
+}
+
+/* ==============================================================
+ BUTTONS
+ ============================================================== */
+.btn-csr {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-label);
+  color: var(--gray-400);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-base);
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: 0;
+  transition: var(--transition);
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+.btn-csr.primary {
+  background: var(--white);
+  color: var(--black);
+  border-color: var(--white);
+}
+.btn-csr.primary:hover {
+  background: transparent;
+  color: var(--white);
+  border-color: var(--white);
+  transform: translateY(-2px);
+}
+.btn-csr.secondary {
+  background: transparent;
+  color: var(--white);
+  border-color: var(--border-bright);
+}
+.btn-csr.secondary:hover {
+  border-color: var(--white);
+  transform: translateY(-2px);
+}
+.btn-csr.sm {
+  padding: 10px 20px;
+}
+.btn-csr.full-w {
+  width: 100%;
+  justify-content: center;
+}
+
+/* ==============================================================
+ NAVBAR
+ ============================================================== */
+.navbar-csr {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 16px 0;
+  transition: var(--transition);
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 3px 3px 8px rgba(255, 255, 255, 0.1);
+}
+.navbar-csr.scrolled {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 10px 0;
+}
+.nav-inner {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+@media (max-width: 767px) {
+  .nav-inner {
+    padding: 0 16px;
+  }
+}
+.nav-logo img {
+  height: 60px;
+}
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+.nav-links a.rajdhani-lbl-text-sm {
+  transition: color 0.3s;
+  position: relative;
+  padding: 8px 0px;
+  color: var(--gray-300);
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--white) !important;
+}
+.nav-links a.active::after {
+  width: 100%;
+}
+.nav-links a i {
+  font-size: 10px;
+  margin-left: 2px;
+}
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Dropdown */
+.has-dropdown {
+  position: relative;
+}
+.nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 200px;
+  padding: 12px 0;
+  margin-top: 16px;
+  background: var(--gray-900);
+  border: 1px solid var(--border);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.25s ease,
+    margin-top 0.25s ease;
+  z-index: 100;
+}
+.nav-dropdown > a.rajdhani-lbl-text-sm {
+  padding: 8px 12px;
+}
+/* Invisible bridge — covers the gap between the nav link and the dropdown
+    so the hover state stays alive while the cursor moves down into the menu. */
+.nav-dropdown::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -20px;
+  height: 20px;
+}
+.has-dropdown:hover .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  margin-top: 8px;
+}
+.has-dropdown.active {
+  color: var(--white) !important;
+}
+.has-dropdown.active > a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s;
+}
+.has-dropdown.active > a::after {
+  width: 100%;
+}
+.nav-dropdown a {
+  display: block;
+  padding: 10px 20px;
+  font-family: var(--font-label);
+  color: var(--gray-400);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  text-transform: none;
+  transition:
+    color 0.2s,
+    background 0.2s;
+}
+.nav-dropdown a:hover {
+  color: var(--white);
+  background: var(--gray-800);
+}
+.nav-dropdown a::after {
+  display: none;
+}
+
+/* Mobile Submenu */
+.mobile-has-sub {
+  position: relative;
+}
+.mobile-sub-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 14px 14px;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    color 0.3s,
+    padding-left 0.3s;
+}
+.mobile-sub-toggle:hover {
+  color: var(--white);
+  padding-left: 14px;
+}
+.mobile-sub-toggle i {
+  font-size: 10px;
+  margin-left: 6px;
+  transition: transform 0.3s;
+}
+.mobile-has-sub.open .mobile-sub-toggle i {
+  transform: rotate(180deg);
+}
+.mobile-sub {
+  display: none;
+  list-style: none;
+  margin: 4px 14px 8px;
+  padding: 6px 0 6px 14px;
+  border-left: 2px solid var(--accent);
+}
+.mobile-has-sub.open .mobile-sub {
+  display: block;
+}
+.mobile-sub li {
+  margin: 0 !important;
+  border-bottom: none !important;
+}
+.mobile-sub a {
+  display: block;
+  padding: 8px 6px;
+  font-size: var(--fs-sm);
+  transition:
+    color 0.2s,
+    padding-left 0.2s;
+}
+.mobile-sub a:hover {
+  color: var(--white);
+  padding-left: 12px !important;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  width: 28px;
+  height: 20px;
+  position: relative;
+}
+.hamburger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--white);
+  transition: var(--transition);
+}
+.hamburger span:nth-child(1) {
+  top: 0;
+}
+.hamburger span:nth-child(2) {
+  top: 9px;
+}
+.hamburger span:nth-child(3) {
+  top: 18px;
+}
+.hamburger.open span:nth-child(1) {
+  top: 9px;
+  transform: rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  top: 9px;
+  transform: rotate(-45deg);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(20px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 80px 32px 32px;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+  overflow-y: auto;
+}
+.mobile-menu.open {
+  opacity: 1;
+  visibility: visible;
+}
+.mobile-menu > ul {
+  text-align: left;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.mobile-menu > ul > li {
+  margin: 0;
+  border-bottom: 1px solid var(--border);
+}
+.mobile-menu > ul > li:last-child {
+  border-bottom: none;
+}
+.mobile-menu a {
+  display: block;
+  padding: 14px 14px;
+  font-family: var(--font-label);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  color: var(--gray-300);
+  transition:
+    color 0.3s,
+    padding-left 0.3s,
+    background 0.3s;
+}
+.mobile-menu a:hover,
+.mobile-menu a.active {
+  color: var(--white);
+  padding-left: 24px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* ==============================================================
+ FORMS
+ ============================================================== */
+.contact-form {
+  background: var(--gray-900);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 36px;
+}
+/* ── Form group — universal wrapper, used on EVERY form site-wide ── */
+.form-group {
+  margin-bottom: 16px;
+}
+
+/* Label — one single global rule so every form label looks identical */
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* Base — identical for every input, select, textarea */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 18px;
+  background-color: var(--gray-800);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--white);
+  font-size: var(--fs-base);
+  outline: none;
+  box-shadow: none;
+  /* Transition only colour/border/shadow — NOT the background shorthand.
+ Using `background` here animates background-image + background-position
+ too, which made the select chevron slide/fade on hover/focus. */
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* Textarea-only tweaks */
+.form-group textarea {
+  resize: vertical;
+  min-height: 96px;
+  line-height: 1.5;
+}
+
+/* Hover — subtle lift across all controls */
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+  border-color: var(--border-bright);
+  background-color: var(--gray-900);
+}
+
+/* Focus — accent border + subtle glow */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--accent);
+  background-color: var(--gray-900);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
+/* Placeholder */
+/* Disabled */
+.form-group input:disabled,
+.form-group select:disabled,
+.form-group textarea:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Select arrow — same style in every state (default, hover, focus, disabled).
+ Applies to every <select> on the site. Brighter gray for visibility
+ against the dark gray-800 background. */
+select,
+.form-group select,
+.form-group select:hover,
+.form-group select:focus,
+.form-group select:active,
+.form-group select:disabled {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 16 16' fill='none' stroke='%23bbbbbb' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='4 6 8 10 12 6'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 16px center !important;
+  background-size: 14px !important;
+  padding-right: 44px !important;
+}
+/* Brighter chevron when the select is hovered / focused */
+.form-group select:hover,
+.form-group select:focus {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 16 16' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='4 6 8 10 12 6'/%3E%3C/svg%3E") !important;
+}
+select::-ms-expand,
+.form-group select::-ms-expand {
+  display: none;
+}
+.form-group select option,
+select option {
+  background: var(--gray-900);
+  color: var(--white);
+}
+
+/* ── Consent / Checkbox Form Group ── */
+.form-group.form-check-group,
+.form-check-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.form-check-group input[type='checkbox'] {
+  width: 18px !important;
+  height: 18px !important;
+  margin-top: 3px;
+  padding: 0 !important;
+  flex-shrink: 0;
+  accent-color: var(--white);
+  cursor: pointer;
+  background: transparent !important;
+  border: none !important;
+}
+.form-check-group label {
+  font-family: var(--font-body) !important;
+  text-transform: none !important;
+  font-weight: var(--fw-regular) !important;
+  margin: 0 !important;
+  cursor: pointer;
+  line-height: 1.5;
+}
+.form-check-group a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.form-check-group a:hover {
+  color: var(--white);
+}
+
+/* ==============================================================
+ GLOBAL FORM CONTROLS — Consistent across every form on the site
+ Applies to: any <input>, <select>, <textarea> inside any form
+ on the site (contact, test-ride, book-now, newsletter, etc.)
+ ============================================================== */
+
+/* Native-dark colour scheme so date/time pickers render dark */
+input[type='date'],
+input[type='time'],
+input[type='datetime-local'],
+input[type='month'],
+input[type='week'] {
+  color-scheme: dark;
+}
+
+/* Native date/time indicators — always white across every form on the site */
+input[type='date']::-webkit-calendar-picker-indicator,
+input[type='time']::-webkit-calendar-picker-indicator,
+input[type='datetime-local']::-webkit-calendar-picker-indicator,
+input[type='month']::-webkit-calendar-picker-indicator,
+input[type='week']::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 1;
+  padding: 2px;
+  width: 18px;
+  height: 18px;
+  transition: transform 0.25s ease;
+}
+
+/* Slight zoom when the indicator itself is hovered — stays white */
+input[type='date']::-webkit-calendar-picker-indicator:hover,
+input[type='time']::-webkit-calendar-picker-indicator:hover,
+input[type='datetime-local']::-webkit-calendar-picker-indicator:hover,
+input[type='month']::-webkit-calendar-picker-indicator:hover,
+input[type='week']::-webkit-calendar-picker-indicator:hover {
+  transform: scale(1.12);
+}
+/* Reduce right-side padding for date/time inputs so the native icon sits comfortably */
+.form-group input[type='date'],
+.form-group input[type='time'],
+.form-group input[type='datetime-local'],
+.form-group input[type='month'],
+.form-group input[type='week'] {
+  padding-right: 14px;
+}
+
+/* Remove default spin buttons on number inputs for a cleaner look */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+/* Autofill — keep the dark theme (override default yellow/blue) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-text-fill-color: var(--white);
+  -webkit-box-shadow: 0 0 0 1000px var(--gray-800) inset;
+  caret-color: var(--white);
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Placeholder color — consistent everywhere */
+input::placeholder,
+textarea::placeholder {
+  opacity: 1;
+}
+
+/* Invalid state — ONLY triggered by the JS-driven `.form-group.is-invalid`
+ class (see block further down), NOT by any native `:invalid` /
+ `:user-invalid` pseudo-class. That keeps required <select>s and empty
+ inputs from showing the error border before the user has interacted. */
+
+/* MetaRow primitive — icon + label strip used across job/order/service
+   cards. Two variants. */
+.meta-inline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 16px;
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--gray-400);
+}
+.meta-inline > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.meta-inline i {
+  color: var(--accent);
+  font-size: 13px;
+}
+
+.meta-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: var(--gray-900);
+  border: 1px solid var(--border);
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--gray-300);
+}
+.meta-pill i {
+  color: var(--accent);
+  font-size: 12px;
+}
+
+/* Form row — two (or more) form-groups side by side.
+ Single global rule used by every form on the site. */
+.form-row,
+.cf-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.form-row > .form-group,
+.cf-row > .form-group {
+  flex: 1 1 calc(50% - 8px);
+  min-width: 0; /* prevent blowout on narrow modals */
+}
+
+/* ==============================================================
+ BOOK NOW MODAL
+ ============================================================== */
+.csr-modal {
+  background: var(--gray-900);
+  border: 1px solid var(--border-bright);
+  border-radius: var(--radius);
+  color: var(--white);
+}
+.csr-modal-header {
+  border-bottom: 1px solid var(--border);
+  padding: 24px 28px 16px;
+}
+.csr-modal-header .modal-title {
+  font-size: var(--fs-4xl);
+}
+.csr-modal-subtitle {
+  margin: 4px 0 0;
+}
+.csr-modal-body {
+  padding: 24px 28px 28px;
+  overflow-y: auto;
+  max-height: 70vh;
+}
+
+.csr-modal-footer {
+  padding: 18px 28px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  background: var(--gray-900);
+}
+/* Neutralise Bootstrap's .modal-footer > * auto-margin so our `gap` is the only spacing. */
+.csr-modal-footer > * {
+  margin: 0;
+}
+.csr-modal-footer .btn-csr {
+  min-width: 140px;
+  justify-content: center;
+}
+
+/* Keep Bootstrap's scrollable-dialog behaviour tidy when our body scrolls */
+.modal-dialog-scrollable .csr-modal-body {
+  max-height: none;
+  overflow-y: auto;
+}
+@media (max-width: 575px) {
+  .csr-modal-footer {
+    padding: 14px 20px;
+  }
+  .csr-modal-footer .btn-csr {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+  .csr-modal-body {
+    max-height: 60vh;
+  }
+}
+
+.required-star {
+  color: var(--danger);
+}
+
+/* Validation states — overrides base hover/focus for clear feedback.
+ Applied to .form-group parent via JS when validateField() runs. */
+.form-group.is-invalid input,
+.form-group.is-invalid select,
+.form-group.is-invalid textarea {
+  border-color: var(--danger) !important;
+  background-color: var(--gray-800) !important;
+  box-shadow: 0 0 0 1px rgba(239, 68, 68, 0.35) !important;
+}
+.form-group.is-valid input,
+.form-group.is-valid select,
+.form-group.is-valid textarea {
+  border-color: var(--success) !important;
+  background-color: var(--gray-800) !important;
+  box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.3) !important;
+}
+/* Keep focus accent visible even with is-valid/is-invalid classes */
+.form-group.is-invalid input:focus,
+.form-group.is-invalid select:focus,
+.form-group.is-invalid textarea:focus,
+.form-group.is-valid input:focus,
+.form-group.is-valid select:focus,
+.form-group.is-valid textarea:focus {
+  background-color: var(--gray-900) !important;
+}
+.invalid-feedback {
+  display: none;
+  color: var(--danger);
+  margin-top: 4px;
+}
+.form-group.is-invalid .invalid-feedback {
+  display: block;
+}
+.form-hint {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--font-label);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  color: var(--gray-500);
+  line-height: 1.4;
+}
+
+/* Form row — two (or more) form-groups side by side.
+   Single global rule used by every form on the site. */
+.form-row,
+.cf-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.form-row > .form-group,
+.form-row > .pw-field,
+.cf-row > .form-group,
+.cf-row > .pw-field {
+  flex: 1 1 calc(50% - 8px);
+  min-width: 0; /* prevent blowout on narrow modals */
+}
+
+/* ── Password field with visibility toggle (eye icon) ──
+   Usage: wrap input + button inside a .pw-field div that sits inside a .form-group.
+   <div class="form-group">
+     <label for="…">Password</label>
+     <div class="pw-field">
+       <input type="password" id="…" />
+       <button type="button" class="pw-toggle" data-target="…"><i class="bi bi-eye"></i></button>
+     </div>
+     <div class="invalid-feedback">…</div>
+   </div>
+*/
+.pw-field {
+  position: relative;
+}
+.pw-field input {
+  padding-right: 48px;
+}
+/* Eye toggle. Default layout (just <input>): centre vertically. When the
+   .pw-field wraps a .form-group (label above + input + 16px margin below),
+   we anchor to the input row explicitly. */
+.pw-toggle {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--gray-400);
+  font-size: 18px;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+  z-index: 2;
+}
+.pw-toggle:hover,
+.pw-toggle:focus-visible {
+  color: var(--accent);
+  background: rgba(255, 255, 255, 0.06);
+  outline: none;
+}
+/* When wrapped around a .form-group:
+   label = ~14px + 6px margin-bottom = ~20px
+   input ≈ 46px tall (padding 14 top/bottom + line)
+   form-group margin-bottom = 16px
+   → input top is ~20px from .pw-field top; input height 46px; toggle 36px.
+   Toggle top = 20 + (46-36)/2 = 25px (no transform). */
+.pw-field:has(.form-group) .pw-toggle {
+  top: 35px;
+  transform: none;
+}
+
+/* Caps Lock warning — amber chip under the password field */
+.pw-caps-warning {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  padding: 4px 10px;
+  background: var(--warning-tint);
+  border: 1px solid var(--warning);
+  color: var(--warning);
+  font-family: var(--font-label);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+.pw-caps-warning i {
+  font-size: 12px;
+}
+
+/* Live password-rules checklist — grey by default, green when satisfied */
+.pw-rules {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 16px;
+}
+.pw-rules li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-label);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  color: var(--gray-500);
+  transition: color 0.2s;
+}
+.pw-rules li i {
+  font-size: 12px;
+}
+.pw-rules li.is-ok {
+  color: var(--success);
+}
+@media (max-width: 575px) {
+  .pw-rules {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Spinner animation */
+.spin-icon {
+  display: inline-block;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==============================================================
+ TOAST NOTIFICATION
+ ============================================================== */
+.csr-toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  pointer-events: none;
+}
+.csr-toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--gray-900);
+  border: 1px solid var(--success);
+  border-radius: var(--radius-sm);
+  padding: 18px 22px;
+  min-width: 340px;
+  max-width: 420px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  pointer-events: auto;
+  transform: translateX(120%);
+  opacity: 0;
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.4s ease;
+}
+.csr-toast.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+.csr-toast-icon {
+  font-size: 24px;
+  color: var(--success);
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+/* Error variant — red icon + red left border */
+.csr-toast.toast-error {
+  border-left: 3px solid var(--danger);
+}
+.csr-toast.toast-error .csr-toast-icon {
+  color: var(--danger);
+}
+.csr-toast-body strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  color: var(--white);
+  margin-bottom: 4px;
+}
+.csr-toast-body p {
+  line-height: 1.5;
+}
+.csr-toast-close {
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+  margin-left: auto;
+  flex-shrink: 0;
+  transition: color 0.2s;
+}
+.csr-toast-close:hover {
+  color: var(--white);
+}
+
+/* ==============================================================
+ BACK TO TOP
+ ============================================================== */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 100;
+  width: 44px;
+  height: 44px;
+  border-radius: 0;
+  background: var(--white);
+  color: var(--black);
+  font-size: var(--fs-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+}
+#backToTop.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+#backToTop:hover {
+  transform: translateY(-4px);
+  background: var(--gray-200);
+}
+
+/* ==============================================================
+ CARD BASE — Applied to every card via class="card-base" in HTML.
+ Usage: <div class="card-base [specific-card-class]">
+ Example: <div class="card-base award-badge">
+ ============================================================== */
+
+.card-base {
+  padding: 28px;
+  background: var(--gray-950);
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.card-base:hover {
+  border-color: var(--border-bright);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(255, 255, 255, 0.08);
+}
+.card-base-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-bright);
+  color: var(--accent);
+  font-size: 22px;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+  margin-bottom: 18px;
+}
+.card-base-icon-center {
+  margin: 0 auto 18px;
+}
+h3.card-base-title {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+p.card-base-desc {
+  line-height: 1.65;
+  margin: 0;
+}
+.card-base:hover .card-base-icon {
+  background: var(--accent);
+  color: var(--black);
+}
+.rajdhani-lbl-text-sm {
+  font-family: var(--font-label);
+  text-transform: uppercase;
+  font-weight: var(--fw-semibold);
+  color: var(--gray-400);
+  font-size: var(--fs-sm);
+}
+.rajdhani-lbl-text-xs {
+  font-family: var(--font-label);
+  text-transform: uppercase;
+  font-weight: var(--fw-semibold);
+  color: var(--gray-400);
+  font-size: var(--fs-xs);
+}
+
+/* ==============================================================
+ LAYOUT RESTORATION — Layout-only properties for elements that also
+ carry .rajdhani-lbl-text-sm on the HTML for font/color/weight/size.
+ Pills, meta rows, links, form labels, etc.
+ ============================================================== */
+
+/* — Status pills (small dot icon + text) — */
+.dealer-status,
+.detail-badge,
+.dealer-chip,
+.legend-item,
+.coverage-date,
+.legal-hero-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: var(--gray-900);
+  border: 1px solid var(--border);
+}
+
+/* — Filter / clickable pills — */
+.filter-pill,
+.skill-tag,
+.skill-chip,
+.job-pill,
+.job-meta-pill,
+.step-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: var(--gray-900);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+/* — Meta rows (date · author · read-time) — */
+.post-meta,
+.media-item-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+.article-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: center;
+  padding: 14px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin: 20px 0;
+}
+.article-meta-row > * {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.job-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+.goal-progress-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+/* — Links / back navigation — */
+.account-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition:
+    gap 0.3s,
+    color 0.3s;
+}
+.account-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+/* BreadCrumb component (.breadcrumb-csr) — shared style across the app */
+.breadcrumb-csr {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  color: var(--gray-400);
+}
+.breadcrumb-csr .crumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.breadcrumb-csr a {
+  color: var(--gray-400);
+  transition: color 0.2s;
+}
+.breadcrumb-csr a:hover {
+  color: var(--white);
+}
+.breadcrumb-csr .crumb-sep {
+  font-size: 10px;
+  color: var(--gray-600);
+}
+.breadcrumb-csr .crumb.is-current,
+.breadcrumb-csr .crumb.is-current span {
+  color: var(--white);
+}
+.dealer-item-view,
+.detail-hint,
+.detail-info-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* — Reset / inline action buttons — */
+.faq-reset,
+.finder-reset {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px 8px;
+  transition: color 0.3s;
+}
+
+/* — Form labels — */
+.form-group label,
+.form-field label,
+.test-ride-form label,
+.contact-form-main label,
+.book-service-form label,
+.calc-slider-group label,
+.checkout-progress-step .step-label,
+.pd-selector-label,
+.detail-info-label,
+.calc-result-label,
+.cost-label,
+.code-label,
+.how-reward-lbl,
+.scope-label,
+.charger-spec-unit,
+.contact-strip-label,
+.hero-stat-label,
+.review-summary-lbl,
+.oc-info-highlight-label,
+.account-nav-title,
+.order-date,
+.track-step-when,
+.track-courier {
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* — Form check (checkbox + label row) — */
+.form-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+}
+
+/* — Pre-styled small labels (inline) — */
+.tag-label,
+.share-label {
+  display: inline-block;
+  margin-right: 6px;
+}
+.product-variant {
+  display: inline-block;
+  padding: 4px 10px;
+  background: var(--gray-900);
+  border: 1px solid var(--border);
+}
+.tier-label {
+  display: inline-block;
+  padding: 4px 10px;
+  background: var(--gray-900);
+  border: 1px solid var(--border);
+  margin-bottom: 12px;
+}
+
+/* — Order status (state-colored, modifiers in account.css set bg/border) — */
+.order-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+}
+.order-status i {
+  font-size: 12px;
+  line-height: 1;
+}
+
+/* — Article specific — */
+.article-hero-caption {
+  display: block;
+  padding: 12px 16px;
+  background: var(--gray-900);
+  border-left: 2px solid var(--accent);
+  margin-top: 12px;
+}
+.article-quote cite {
+  display: block;
+  margin-top: 12px;
+}
+.article-figure figcaption {
+  padding: 8px 0;
+  text-align: center;
+}
+.post-nav .nav-label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* — Spec disclaimer block — */
+.spec-disclaimer {
+  display: block;
+  padding: 16px 18px;
+  background: var(--gray-900);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  margin-top: 24px;
+}
+
+/* — Shop tabs — */
+.pd-tab {
+  padding: 12px 18px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  position: relative;
+  transition: color 0.3s;
+  color: var(--gray-400);
+  text-transform: uppercase;
+  font-family: var(--font-display);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 1px;
+}
+.pd-trust-item,
+.summary-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* — Cart table head — */
+.cart-table-head {
+  display: grid;
+  grid-template-columns: 2fr 140px 120px 40px;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: var(--fs-lg);
+}
+
+/* — Range / filter labels — */
+.filter-range-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+/* — Color/option selector buttons — */
+.rotate-color-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  background: var(--gray-900);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: var(--transition);
+  gap: 8px;
+}
+.rotate-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  position: absolute;
+  bottom: 0;
+}
+
+/* — Step numbers — */
+.tr-step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--border);
+  background: var(--gray-900);
+  margin-right: 10px;
+  white-space: nowrap;
+}
+
+/* — Auth helpers — */
+.auth-promo-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.auth-divider {
+  position: relative;
+  text-align: center;
+  margin: 20px 0;
+}
+.auth-footer-link {
+  text-align: center;
+  margin-top: 16px;
+}
+.otp-countdown {
+  text-align: center;
+  margin: 16px 0;
+}
+
+/* — Charging / sustainability — */
+.cn-stat-item .cn-stat-l {
+  display: block;
+  margin-top: 6px;
+}
+.map-placeholder p {
+  text-align: center;
+  line-height: 1.8;
+}
+.split-stat p {
+  display: block;
+}
+
+/* — Misc widgets — */
+.widget-tags a {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  background: var(--gray-900);
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+.share-grid a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 18px;
+  background: var(--gray-900);
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+.widget-related a span {
+  display: block;
+  margin-top: 4px;
+}
+.account-mobile-pills a {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  background: var(--gray-900);
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+#trackOrderModal .modal-subtitle {
+  display: block;
+  margin-top: 4px;
+}
+
+/* ==============================================================
+ PAGE HERO — Shared hero banner for all inner pages
+ Usage: <section class="page-hero"> → .page-hero-inner → .page-hero-title + .page-hero-desc
+ Modifiers: .page-hero.grad-tl | .grad-tc | .grad-br (changes gradient origin)
+ ============================================================== */
+.page-hero {
+  position: relative;
+  padding: 160px 0 80px;
+  background: var(--black);
+  overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at top right, rgba(255, 255, 255, 0.05), transparent 50%);
+  pointer-events: none;
+}
+.page-hero.grad-tl::before {
+  background: radial-gradient(ellipse at top left, rgba(255, 255, 255, 0.05), transparent 50%);
+}
+.page-hero.grad-tc::before {
+  background: radial-gradient(ellipse at top center, rgba(255, 255, 255, 0.05), transparent 50%);
+}
+.page-hero.grad-br::before {
+  background: radial-gradient(ellipse at bottom right, rgba(255, 255, 255, 0.05), transparent 50%);
+}
+.page-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 820px;
+}
+.page-hero-title {
+  font-size: var(--fs-banner);
+  margin: 12px 0 20px;
+}
+.page-hero-desc {
+  font-size: var(--fs-xl);
+}
+.page-hero-desc a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.page-hero-desc a:hover {
+  color: var(--white);
+}
+
+@media (max-width: 767px) {
+  .page-hero {
+    padding: 120px 0 60px;
+  }
+}
+
+/* ==============================================================
+ FORM CARD — Shared panel wrapper for page-level forms
+ Usage: <div class="card-base form-card"> with .form-card-title inside
+ ============================================================== */
+.form-card-title {
+  font-size: var(--fs-4xl);
+  line-height: 1.1;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.form-card-title::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--accent);
+}
+@media (max-width: 767px) {
+}
+
+/* ==============================================================
+ FAQ ACCORDION — Reusable component
+ Usage: <section id="faq"> with .faq-accordion, .faq-btn,
+ .faq-num, .faq-body inside Bootstrap accordion markup.
+ ============================================================== */
+#faq,
+#savings-faq {
+  padding: var(--section-pad) 0;
+  background: var(--black);
+}
+.faq-accordion {
+  max-width: 880px;
+  margin: 48px auto 0;
+}
+.faq-accordion .accordion-item {
+  background: var(--gray-950);
+  border: 1px solid var(--border);
+  margin-bottom: 12px;
+  border-radius: 0;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+.faq-accordion .accordion-item:hover {
+  border-color: var(--border-bright);
+}
+.faq-btn {
+  width: 100%;
+  padding: 24px 60px 24px 28px;
+  background: transparent;
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+  font-weight: var(--fw-semibold);
+  text-align: left;
+  border: none;
+  outline: none;
+  box-shadow: none !important;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  line-height: 1.3;
+  position: relative;
+  letter-spacing: 1px;
+}
+.faq-btn:not(.collapsed) {
+  background: var(--gray-900);
+  color: var(--white);
+}
+.faq-btn::after,
+.faq-btn:not(.collapsed)::after {
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  width: 28px;
+  height: 28px;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 16 16' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='4 6 8 10 12 6'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  transition: transform 0.3s ease;
+}
+.faq-btn::after {
+  transform: translateY(-50%);
+}
+.faq-btn:not(.collapsed)::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+.faq-num {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-black);
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.faq-body {
+  padding: 8px 28px 28px 65px;
+  font-size: var(--fs-lg);
+  line-height: 1.8;
+  color: var(--gray-400);
+}
+.faq-body strong {
+  color: var(--gray-200);
+  font-weight: var(--fw-medium);
+}
+
+@media (max-width: 767px) {
+  .faq-btn {
+    font-size: var(--fs-lg);
+    padding: 20px 52px 20px 22px;
+    gap: 14px;
+  }
+  .faq-btn::after {
+    width: 20px;
+    height: 20px;
+  }
+  .faq-body {
+    font-size: var(--fs-md);
+    padding: 8px 22px 22px 60px;
+  }
+}
+@media (max-width: 575px) {
+  .faq-num {
+    font-size: var(--fs-md);
+  }
+  .faq-body {
+    padding: 8px 22px 22px 22px;
+  }
+}
+
+/* ==============================================================
+ RESPONSIVE — Navbar, modal, toast
+ ============================================================== */
+@media (max-width: 1399px) {
+  .nav-links {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  .btn-csr.sm.nav-book {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .navbar-csr {
+    padding: 10px 0;
+  }
+  .nav-logo img {
+    height: 40px !important;
+  }
+  .nav-actions .headBooknowbtn {
+    display: none !important;
+  }
+  .nav-actions > .btn-csr.sm {
+    padding: 4px 12px;
+  }
+  .preloader-content {
+    width: 250px;
+  }
+  .preloader-logo {
+    width: 130px;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 575px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .csr-modal-body .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  .cf-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  .csr-modal-header {
+    padding: 18px 20px 12px;
+  }
+  .csr-modal-body {
+    padding: 18px 20px 22px;
+  }
+  .csr-toast {
+    min-width: auto;
+    max-width: calc(100vw - 48px);
+  }
+}
+@media (max-width: 460px) {
+  .hamburger {
+    width: 20px;
+    height: 16px;
+  }
+  .hamburger span:nth-child(2) {
+    top: 7px;
+  }
+  .hamburger span:nth-child(3) {
+    top: 14px;
+  }
+  .hamburger.open span:nth-child(1) {
+    top: 7px;
+  }
+  .hamburger.open span:nth-child(3) {
+    top: 7px;
+  }
+
+  /* Modals go near-full-screen on phones so the form has room and the
+    primary footer button stays in thumb reach. */
+  .modal-dialog,
+  .modal-dialog.modal-lg {
+    margin: 0;
+    max-width: 100%;
+    min-height: 100dvh;
+  }
+  .modal-content.csr-modal {
+    min-height: 100dvh;
+    border-radius: 0;
+  }
+  .csr-modal-body {
+    max-height: none;
+  }
+}
+
+/* ==============================================================
+ HEADING HIGHLIGHT — Outlined stroke effect on <span class="highlight"> inside headings
+ ============================================================== */
+h1 .highlight,
+h2 .highlight,
+h3 .highlight {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--white);
+  transition: all 0.3s ease;
+}
+
+/* ==============================================================
+ DEALER STATUS PILL — Shared between store-locator and dealer pages
+ ============================================================== */
+.dealer-status i {
+  font-size: 8px;
+}
+.dealer-status.open {
+  color: var(--success);
+}
+.dealer-status.closed {
+  color: var(--warning);
+}
+.dealer-status.opening {
+  color: #60a5fa;
+}
+
+/* ==============================================================
+ SITE FOOTER — Shared across every page
+ ============================================================== */
+#footer {
+  padding: 0 0 30px;
+  background: var(--gray-950);
+}
+/* Contact info strip — sits above the footer-grid, full-width */
+.footer-contact-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin: 0 0 60px;
+  padding: 28px 0;
+
+  border-bottom: 1px solid var(--border);
+}
+.contact-strip-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 28px;
+  text-decoration: none;
+  transition: color 0.3s;
+  border-right: 1px solid var(--border);
+}
+.contact-strip-item:last-child {
+  border-right: none;
+}
+.contact-strip-item:hover {
+  color: var(--white);
+}
+.contact-strip-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-bright);
+  color: var(--accent);
+  font-size: var(--fs-xl);
+  transition:
+    background 0.3s,
+    border-color 0.3s;
+}
+.contact-strip-item:hover .contact-strip-icon {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--black);
+}
+.contact-strip-body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.contact-strip-body strong {
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-medium);
+  color: var(--white);
+  line-height: 1.3;
+  word-break: break-word;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.6fr) /* Brand — wider for logo + tagline + socials */
+    minmax(0, 1fr) /* Shop */
+    minmax(0, 1.25fr) /* Support — accommodates longer labels (Register Bike & Warranty) */
+    minmax(0, 1fr); /* Company */
+  gap: 28px;
+  margin-bottom: 40px;
+}
+.footer-links a.active,
+.footer-legal a.active {
+  color: var(--white);
+  font-weight: var(--fw-semibold);
+}
+.footer-brand img {
+  margin-bottom: 16px;
+  height: auto;
+}
+.footer-brand p {
+  font-size: var(--fs-base);
+  margin-bottom: 20px;
+  max-width: 300px;
+}
+.footer-social {
+  display: flex;
+  gap: 12px;
+}
+.footer-social a {
+  width: 40px;
+  height: 40px;
+  border-radius: 0;
+  background: var(--gray-800);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-lg);
+  transition: var(--transition);
+}
+.footer-social a:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--black);
+}
+.footer-links h5 {
+  font-size: var(--fs-base);
+  margin-bottom: 16px;
+}
+.footer-links a {
+  display: block;
+  font-size: var(--fs-base);
+  padding: 4px 0;
+  transition: color 0.3s;
+}
+.footer-links a:hover {
+  color: var(--white);
+}
+.footer-bottom {
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  font-size: var(--fs-sm);
+}
+.footer-legal {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.footer-legal li {
+  position: relative;
+}
+.footer-legal li + li::before {
+  content: '';
+  position: absolute;
+  left: -12px;
+  top: 50%;
+  width: 1px;
+  height: 12px;
+  background: var(--border-bright);
+  transform: translateY(-50%);
+}
+.footer-legal a {
+  font-family: var(--font-label);
+  color: var(--gray-400);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  transition: color 0.3s ease;
+}
+.footer-legal a:hover {
+  color: var(--white);
+}
+@media (max-width: 1199px) {
+  .footer-grid {
+    grid-template-columns:
+      minmax(0, 1.5fr)
+      minmax(0, 1fr)
+      minmax(0, 1fr)
+      minmax(0, 1.2fr);
+    gap: 24px;
+  }
+  .footer-grid .footer-links:nth-child(6) {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 32px;
+  }
+  .footer-contact-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .contact-strip-item:nth-child(2n) {
+    border-right: none;
+  }
+  .contact-strip-item:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--border);
+  }
+}
+@media (max-width: 991px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 28px;
+  }
+  .footer-grid .footer-brand {
+    grid-column: 1 / -1;
+  }
+  .footer-grid .footer-links:nth-child(6) {
+    grid-column: auto;
+    display: block;
+  }
+}
+@media (max-width: 767px) {
+  #footer {
+    padding: 0 0 30px;
+  }
+  .footer-contact-strip {
+    grid-template-columns: 1fr;
+    margin-bottom: 40px;
+    padding: 18px 0;
+  }
+  .contact-strip-item {
+    border-right: none !important;
+    border-bottom: 1px solid var(--border);
+    padding: 14px 16px;
+  }
+  .contact-strip-item:last-child {
+    border-bottom: none;
+  }
+  .contact-strip-icon {
+    width: 42px;
+    height: 42px;
+    font-size: var(--fs-lg);
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .footer-grid .footer-brand {
+    grid-column: auto;
+  }
+  .footer-bottom {
+    justify-content: center;
+    text-align: center;
+  }
+  .footer-legal {
+    justify-content: center;
+    gap: 18px;
+  }
+  .footer-legal li + li::before {
+    left: -9px;
+  }
+}
+@media (max-width: 575px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* ==============================================================
+ SHARED STAT PAIR — unified style for "big number + small label"
+ Used on: career.html, dealers.html, service.html, savers-scale.html
+
+ Canonical classes:
+ .stat-value — the big display number
+ .stat-value small — accent-colored "+/%/unit" suffix
+ .stat-label — the small uppercase caption beneath
+
+ Legacy per-page selectors are kept here as aliases so existing
+ HTML (using `.dealer-stat > h3`, `.service-stat > strong`, etc.)
+ continues to render identically with a single source of truth.
+ ============================================================== */
+.stat-value,
+.dealer-stat > h3,
+.savers-stat > strong,
+.service-stat > strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--fs-6xl);
+  font-weight: var(--fw-bold);
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 6px;
+  text-transform: none;
+}
+.stat-value small,
+.dealer-stat > h3 small,
+.savers-stat > strong small,
+.service-stat > strong small {
+  font-size: 0.55em;
+  color: var(--accent);
+  font-weight: var(--fw-bold);
+  margin-left: 2px;
+}
+.dealer-stat > span,
+.savers-stat > span {
+  border-color: var(--white);
+  font-family: var(--font-label);
+  text-transform: uppercase;
+}
+
+/* — Stat caption ("Team Members", "Departments", "Glassdoor Rating", etc.) — */
+.stat-label,
+.dealer-stat > span,
+.savers-stat > span,
+.service-stat > span {
+  display: block;
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gray-400);
+  margin: 0;
+}
+.stat-cell > .stat-label {
+  color: inherit;
+  background-color: inherit;
+}
+
+/* ==============================================================
+ GLOBAL FILTER PILL — `.filter-pill`
+ One canonical class for every filter-button surface on the site:
+   - blog.html (category filters)
+   - careers/career.html (department filters)
+   - account/orders.html, returns.html, notifications.html (dashboard)
+ Base shape (padding, bg, border, cursor) is defined in the
+ "Filter / clickable pills" group higher in this file (line ~755).
+ Below: state styling — resting, hover, active.
+ ============================================================== */
+
+/* — Resting — */
+.filter-pill {
+  color: var(--gray-300);
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* — Hover — accent border + 1px lift — */
+.filter-pill:hover {
+  background: var(--gray-800);
+  border-color: var(--border-bright);
+  color: var(--white);
+  transform: translateY(-1px);
+}
+
+/* — Active (currently selected) — solid white fill — */
+.filter-pill.is-active {
+  background: var(--white);
+  border-color: var(--white);
+  color: var(--black);
+}
+.filter-pill.is-active:hover {
+  background: var(--white);
+  color: var(--black);
+  transform: none;
+}
+
+.filter-pill i {
+  font-size: 14px;
+}
+/* =================================================================
+   NAVBAR SHOP ICONS — moved from pages/shop.css so account + auth
+   pages also render the user dropdown + search drawer correctly.
+   Used site-wide on every page that has the shop icons in the navbar.
+   ================================================================= */
+/* ============================================================
+ NAVBAR SHOP ICONS (search · cart · user)
+============================================================ */
+.nav-shop-icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 8px;
+}
+.nav-icon-btn {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--border-bright);
+  color: var(--gray-200);
+  font-size: 16px;
+  transition: var(--transition);
+  cursor: pointer;
+  text-decoration: none;
+}
+.nav-icon-btn:hover {
+  background: var(--gray-900);
+  border-color: var(--white);
+  color: var(--white);
+}
+.nav-icon-btn .cart-count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  background: var(--accent);
+  color: var(--black);
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  line-height: 18px;
+  text-align: center;
+}
+/* User dropdown */
+.nav-user {
+  position: relative;
+}
+.nav-user-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: transparent;
+  border: 1px solid var(--border-bright);
+  color: var(--gray-200);
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.nav-user-toggle:hover {
+  background: var(--gray-900);
+  border-color: var(--white);
+  color: var(--white);
+}
+.nav-user-toggle i {
+  font-size: 16px;
+}
+.nav-user-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 200px;
+  background: var(--gray-900);
+  border: 1px solid var(--border-bright);
+  padding: 8px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: var(--transition);
+  z-index: 100;
+}
+.nav-user.is-open .nav-user-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.nav-user-menu a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.nav-user-menu a:hover {
+  background: var(--gray-800);
+  color: var(--white);
+}
+.nav-user-menu a i {
+  font-size: 14px;
+  color: var(--accent);
+}
+.nav-user-menu hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 6px 0;
+}
+/* ──────────────────────────────────────────────────────────────
+   .nav-actions — unified button sizing
+   Every interactive child (search/cart/sign-in icons, user dropdown,
+   BookNow, E-Bicycle CTA) shares one height per breakpoint via the
+   `--nav-btn-h` custom property. Text buttons get horizontal padding;
+   icon-only buttons get a square aspect (width === height).
+   The hamburger is excluded — its inner spans depend on a fixed 20px
+   box, so it stays self-sized and vertically centred by flex.
+   ────────────────────────────────────────────────────────────── */
+.nav-actions {
+  --nav-btn-h: 38px;
+  --nav-btn-px: 16px;
+}
+.nav-actions .nav-icon-btn,
+.nav-actions .nav-user-toggle,
+.nav-actions .btn-csr,
+.nav-actions > a.btn-csr {
+  height: var(--nav-btn-h);
+  min-height: var(--nav-btn-h);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.nav-actions .nav-icon-btn {
+  width: var(--nav-btn-h);
+  padding: 0;
+}
+.nav-actions .btn-csr,
+.nav-actions > a.btn-csr {
+  padding: 0 var(--nav-btn-px);
+  line-height: 1;
+}
+.nav-actions .nav-user-toggle {
+  padding: 0 var(--nav-btn-px);
+}
+
+/* Medium desktops (1400–1440px): compact nav-links so they fit alongside shop-icons + buttons */
+@media (max-width: 1440px) and (min-width: 1400px) {
+  .nav-inner {
+    padding: 0 24px;
+    gap: 16px;
+  }
+  .nav-links {
+    gap: 20px;
+  }
+  .nav-actions {
+    gap: 10px;
+    --nav-btn-h: 36px;
+    --nav-btn-px: 14px;
+  }
+  .nav-shop-icons {
+    margin-right: 0;
+    gap: 4px;
+  }
+  .nav-icon-btn {
+    font-size: 14px;
+  }
+}
+/* Tablet / small-desktop (768–1399px): hamburger takes over the link bar */
+@media (max-width: 1399px) and (min-width: 768px) {
+  .nav-actions {
+    gap: 12px;
+    --nav-btn-h: 36px;
+    --nav-btn-px: 14px;
+  }
+  .nav-shop-icons {
+    gap: 6px;
+  }
+  .nav-icon-btn {
+    font-size: 15px;
+  }
+  .nav-actions .btn-csr.sm {
+    font-size: 13px;
+  }
+}
+/* Mobile: compact icons + hide name in user dropdown + keep E-Bicycle visible */
+@media (max-width: 767px) {
+  .nav-actions {
+    gap: 8px;
+    --nav-btn-h: 34px;
+    --nav-btn-px: 12px;
+  }
+  .nav-shop-icons {
+    margin-right: 0;
+    gap: 4px;
+  }
+  .nav-icon-btn {
+    font-size: 14px;
+  }
+  .nav-actions .btn-csr.sm {
+    font-size: 12px;
+  }
+  .nav-user-toggle {
+    gap: 3px;
+  }
+  .nav-user-toggle #navUserName {
+    display: none;
+  }
+  .nav-user-toggle i.bi-person-circle {
+    font-size: 14px;
+    margin: 0;
+  }
+  .nav-user-toggle .bi-chevron-down {
+    font-size: 10px !important;
+  }
+  .nav-user-menu {
+    right: 0;
+    min-width: 180px;
+  }
+}
+/* Small mobile (<576px): tighten the gap a hair, keep all buttons visible */
+@media (max-width: 575px) {
+  .nav-actions {
+    gap: 6px;
+  }
+}
+@media (max-width: 575px) {
+  .nav-actions {
+    --nav-btn-h: 32px;
+    --nav-btn-px: 10px;
+  }
+  .nav-shop-icons {
+    gap: 2px;
+  }
+  .nav-icon-btn {
+    font-size: 13px;
+  }
+}
+/* Search drawer — positioned dynamically by JS right below the navbar
+ (handles desktop 92px / scrolled 80px / tablet 80px / mobile 60px)
+ Fallback top values below cover each breakpoint if JS is disabled. */
+.nav-search-drawer {
+  position: fixed;
+  top: 92px; /* desktop default state (non-scrolled) */
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 18px 0;
+  background: var(--gray-950);
+  border-bottom: 1px solid var(--border-bright);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  transform: translateY(-120%);
+  transition: transform 0.35s ease;
+  z-index: 999; /* below navbar (1000) — navbar stays on top */
+  visibility: hidden;
+}
+.nav-search-drawer.is-open {
+  transform: translateY(0);
+  visibility: visible;
+}
+.nav-search-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.nav-search-inner input {
+  flex: 1;
+  min-width: 0; /* allow input to shrink inside flex */
+  padding: 14px 18px;
+  background: var(--gray-900);
+  border: 1px solid var(--border);
+  color: var(--white);
+  font-size: var(--fs-lg);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.nav-search-inner input:focus {
+  border-color: var(--border-bright);
+}
+.nav-search-close {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  background: transparent;
+  border: 1px solid var(--border-bright);
+  color: var(--white);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.nav-search-close:hover {
+  background: var(--white);
+  color: var(--black);
+  border-color: var(--white);
+}
+
+/* Tablet + scrolled desktop state (navbar ≈ 80px) */
+@media (max-width: 1399px) {
+  .nav-search-drawer {
+    top: 80px;
+    padding: 16px 0;
+  }
+  .nav-search-inner {
+    padding: 0 20px;
+  }
+}
+
+/* Mobile (navbar = 60px) */
+@media (max-width: 767px) {
+  .nav-search-drawer {
+    top: 60px;
+    padding: 12px 0;
+  }
+  .nav-search-inner {
+    padding: 0 14px;
+    gap: 8px;
+  }
+  .nav-search-inner input {
+    padding: 12px 14px;
+    font-size: var(--fs-md);
+  }
+  .nav-search-close {
+    width: 40px;
+    height: 40px;
+  }
+}
+.track-section {
+  padding: var(--section-pad) 0;
+  background: var(--gray-900);
+}
+/* Responsive */
+@media (max-width: 991px) {
+  .track-section {
+    padding: var(--section-pad) 0;
+  }
+}
+@media (max-width: 575px) {
+  .track-section {
+    padding: var(--section-pad) 0;
+  }
+}
+/* ==============================================================
+   BENEFIT CARDS — generic 4-up icon+title+desc grid
+   Used by: pages/careers/career.html, pages/shop/order-confirmation.html,
+   and any other page that needs a marketing-style "benefits" row.
+   Pattern: .card-base.benefit-card with a square .benefit-icon at top.
+   ============================================================== */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+.benefit-card {
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+  text-align: center;
+}
+
+.benefit-card:hover .card-base-icon {
+  background: var(--accent);
+  color: var(--black);
+}
+
+@media (max-width: 991px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 575px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+
+/* ==============================================================
+ GLIGHTBOX THEME — prominent arrows + close button
+ Applied site-wide so the lightbox feels native to the dark
+ monochrome brand instead of GLightbox's neutral default chrome.
+ ============================================================== */
+
+/* Darker, deeper backdrop */
+.glightbox-clean .gcontainer,
+.gcontainer .goverlay {
+  background: rgba(0, 0, 0, 0.94) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* ── Arrow buttons (prev / next) ── */
+.glightbox-clean .gnext,
+.glightbox-clean .gprev {
+  width: 56px;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 0;
+  opacity: 1;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+.glightbox-clean .gnext {
+  right: 24px;
+}
+.glightbox-clean .gprev {
+  left: 24px;
+}
+.glightbox-clean .gnext:hover,
+.glightbox-clean .gprev:hover {
+  background: var(--white);
+  border-color: var(--white);
+  transform: scale(1.08);
+}
+.glightbox-clean .gnext svg,
+.glightbox-clean .gprev svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--white);
+  stroke-width: 2.5;
+  transition: stroke 0.25s ease;
+}
+.glightbox-clean .gnext:hover svg,
+.glightbox-clean .gprev:hover svg {
+  stroke: var(--black);
+}
+
+/* ── Close button (top-right) ── */
+.glightbox-clean .gclose {
+  top: 24px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 0;
+  opacity: 1;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+.glightbox-clean .gclose:hover {
+  background: var(--danger);
+  border-color: var(--danger);
+  transform: rotate(90deg);
+}
+.glightbox-clean .gclose svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--white);
+  stroke-width: 2.5;
+}
+
+/* ── Caption / title block under the image ── */
+.glightbox-clean .gslide-title {
+  font-family: var(--font-display) !important;
+  font-size: var(--fs-2xl) !important;
+  font-weight: var(--fw-bold) !important;
+  color: var(--white) !important;
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+.glightbox-clean .gslide-desc {
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  color: var(--gray-300);
+  line-height: 1.55;
+  max-width: 575px;
+}
+.glightbox-clean .gslide-description {
+  padding: 16px 20px;
+  background: var(--gray-900) !important;
+  border: 1px solid var(--border);
+  max-width: min(700px, 90vw);
+}
+
+/* Slide counter (e.g. "3 / 12") — bottom-left */
+.glightbox-clean .gslide-counter {
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  letter-spacing: 1.5px;
+  color: var(--accent);
+  opacity: 0.9;
+}
+.glightbox-clean .gprev,
+.glightbox-clean .gnext,
+.glightbox-clean .gclose {
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 0px !important;
+}
+/* Mobile — keep controls tappable but tighten */
+@media (max-width: 767px) {
+  .glightbox-clean .gnext,
+  .glightbox-clean .gprev {
+    width: 44px;
+    height: 44px;
+  }
+  .glightbox-clean .gnext {
+    right: 12px;
+  }
+  .glightbox-clean .gprev {
+    left: 12px;
+  }
+  .glightbox-clean .gclose {
+    width: 40px;
+    height: 40px;
+    top: 12px;
+    right: 12px;
+  }
+  .glightbox-clean .gslide-title {
+    font-size: var(--fs-lg);
+  }
+}
+
+/* ==============================================================
+ SKIP-TO-MAIN-CONTENT LINK (a11y)
+ Hidden by default, visible when focused via Tab key.
+ ============================================================== */
+.skip-to-main {
+  position: fixed;
+  top: -100px;
+  left: 12px;
+  z-index: 9999;
+  padding: 12px 22px;
+  background: var(--accent);
+  color: var(--black);
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid var(--accent);
+  transition: top 0.2s ease;
+}
+.skip-to-main:focus,
+.skip-to-main:focus-visible {
+  top: 12px;
+  outline: 2px solid var(--white);
+  outline-offset: 2px;
+}
+
+/* ==============================================================
+ COOKIE CONSENT BANNER — site-wide, injected by main.js
+ Bottom-anchored slide-up. Dark glassy bg + accent top-border.
+ DPDP Act 2023 + GDPR compliant: explicit accept/reject, link to
+ cookie policy, stores choice in localStorage.
+ ============================================================== */
+.cookie-consent {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1080;
+  background: rgba(10, 10, 10, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 2px solid var(--accent);
+  transform: translateY(100%);
+  transition: transform 0.32s ease;
+}
+.cookie-consent.is-open {
+  transform: translateY(0);
+}
+.cookie-consent-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.cookie-consent-text {
+  flex: 1 1 420px;
+  min-width: 0;
+}
+.cookie-consent-title {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.cookie-consent-desc {
+  color: var(--gray-300);
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+  margin: 0;
+}
+.cookie-consent-link {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.cookie-consent-link:hover {
+  color: var(--accent);
+}
+.cookie-consent-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+@media (max-width: 767px) {
+  .cookie-consent-inner {
+    padding: 16px;
+    gap: 14px;
+  }
+  .cookie-consent-actions {
+    width: 100%;
+  }
+  .cookie-consent-actions .btn-csr {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+}
+
+/* ==============================================================
+ INQUIRY / CONTACT CTA BOX — reusable bottom-of-page panel
+ Used on: press.html (Media Enquiry), media-kit.html (Press Inquiries),
+ and any future "talk to us" surface. Each page wraps it in its own
+ <section id="…"> for a page-specific background tier.
+ ============================================================== */
+.cta-box {
+  padding: 60px;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+.cta-content {
+  flex: 1;
+}
+.cta-heading {
+  font-family: var(--font-display);
+  font-size: var(--fs-split);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  color: var(--white);
+  line-height: 1.1;
+  margin: 12px 0;
+}
+.cta-heading .accent {
+  color: var(--accent);
+}
+.cta-desc {
+  max-width: 400px;
+  margin: 0;
+}
+.cta-action {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.cta-action .btn-csr {
+  white-space: nowrap;
+}
+.cta-note {
+  display: block;
+  margin-top: 10px;
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  color: var(--gray-400);
+}
+.btn-csr > span {
+  display: flex;
+  gap: 8px;
+}
+@media (max-width: 991px) {
+  .cta-box {
+    flex-direction: column;
+    gap: 32px;
+    padding: 40px 30px;
+    text-align: center;
+  }
+  .cta-desc {
+    max-width: 100%;
+  }
+  .cta-action {
+    align-items: center;
+  }
+}
+@media (max-width: 575px) {
+  .cta-box {
+    padding: 32px 24px;
+  }
+  .cta-action .btn-csr {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.swiper-pagination {
+  position: inherit !important;
+}
+
+/* ============================================================
+   GLOBAL MODAL CHROME — shared by every portal modal in the app
+   (BookNowModal, QuickViewModal, future modals).
+   Markup convention:
+     <div class="csr-modal-backdrop">
+       <div class="csr-modal">
+         <div class="csr-modal-header">…<button class="csr-modal-close" /></div>
+         <div class="csr-modal-body">…</div>
+       </div>
+     </div>
+============================================================ */
+@keyframes csrBookFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes csrBookSlideDown {
+  from {
+    opacity: 0;
+    transform: translate(0, -50px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+.csr-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  animation: csrBookFadeIn 0.15s linear;
+}
+
+.csr-modal {
+  position: relative;
+  background: var(--gray-900, #111);
+  border: 1px solid var(--border, #2a2a2a);
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+  animation: csrBookSlideDown 0.3s ease-out;
+}
+
+.csr-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border, #2a2a2a);
+}
+.csr-modal-header .modal-title {
+  font-family: var(--font-display);
+  color: var(--white);
+  margin: 0 0 4px;
+}
+.csr-modal-subtitle {
+  margin: 0;
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  color: var(--gray-400);
+}
+
+.csr-modal-body {
+  padding: 20px 24px;
+}
+
+.csr-modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-left: 16px;
+  background: transparent;
+  border: 1px solid var(--border, #2a2a2a);
+  color: var(--gray-200, #ddd);
+  font-size: 16px;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    transform 0.2s;
+  flex-shrink: 0;
+}
+.csr-modal-close:hover {
+  background: var(--white, #fff);
+  color: var(--black, #000);
+  transform: rotate(90deg);
+}
+
+/* ============================================================
+   QUICK VIEW MODAL — product-specific body inside .csr-modal
+============================================================ */
+.qv-modal {
+  max-width: 920px;
+}
+.qv-close-float {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  margin: 0 !important;
+}
+.qv-body {
+  padding: 0;
+}
+
+.qv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.qv-media {
+  background: var(--gray-950);
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.qv-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.qv-media-icon-glyph {
+  font-size: 140px;
+  color: var(--accent);
+}
+
+.qv-details {
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.qv-tagline {
+  margin-bottom: 8px;
+}
+.qv-title {
+  font-size: var(--fs-3xl);
+  color: var(--white);
+  text-transform: none;
+  margin-bottom: 12px;
+}
+.qv-rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.qv-reviews {
+  color: var(--gray-400);
+}
+.qv-price {
+  margin-bottom: 16px;
+}
+.qv-stock-row {
+  margin-bottom: 14px;
+}
+.qv-desc {
+  margin-bottom: 20px;
+  line-height: 1.7;
+  color: var(--gray-300);
+}
+
+.qv-qty-row {
+  margin-bottom: 14px;
+}
+.qv-qty-label {
+  display: block;
+  margin-bottom: 6px;
+}
+.qv-qty-controls {
+  display: flex;
+  align-items: stretch;
+  gap: 0px;
+  margin-bottom: 8px;
+}
+.qv-qty-input {
+  width: 96px;
+  height: 46px;
+}
+.qv-qty-input .form-group {
+  margin-bottom: 0;
+}
+.qv-qty-input .form-group input {
+  height: 46px;
+}
+.qv-qty-btn {
+  width: 42px;
+  background: var(--gray-900);
+  border: 1px solid var(--border, #2a2a2a);
+  color: var(--white);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.qv-qty-btn:hover {
+  background: var(--gray-800);
+}
+
+.qv-stock-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  font-family: var(--font-label);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.qv-stock-pill.in-stock {
+  background: rgba(34, 197, 94, 0.15);
+  color: var(--success);
+}
+.qv-stock-pill.pre-order {
+  background: rgba(234, 179, 8, 0.15);
+  color: var(--rating-star);
+}
+.qv-stock-pill.coming-soon {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--danger);
+}
+
+.qv-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+.qv-actions .btn-csr {
+  padding: 10px 14px;
+  font-size: var(--fs-sm);
+}
+.qv-cta-primary,
+.qv-cta-secondary {
+  flex: 1;
+  justify-content: center;
+}
+.qv-cta-primary {
+  min-width: 140px;
+}
+.qv-cta-secondary {
+  min-width: 120px;
+}
+.qv-cta-wishlist {
+  flex: 0 0 42px;
+  width: 42px;
+  min-width: 42px;
+  padding: 0;
+  justify-content: center;
+}
+
+@media (max-width: 767px) {
+  .qv-grid {
+    grid-template-columns: 1fr;
+  }
+  .qv-media {
+    aspect-ratio: 16/10;
+  }
+}
+
+/* Generic CTA strip beneath a .page-hero — flex row of buttons that wraps on
+   small screens. Match the page-specific variants (.cn-hero-ctas /
+   .press-hero-ctas / .ref-hero-ctas) but available globally. */
+.page-hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 24px;
+  justify-content: flex-start;
+}

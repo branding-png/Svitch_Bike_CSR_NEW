@@ -1,0 +1,159 @@
+/* ==============================================================
+ INVOICES & GST PAGE
+ ============================================================== */
+
+#inv-main {
+  padding: var(--section-pad) 0;
+}
+
+.inv-toolbar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 22px;
+}
+.inv-toolbar input,
+.inv-toolbar select {
+  padding: 10px 14px;
+  background: var(--gray-900);
+  border: 1px solid var(--border);
+  color: var(--white);
+}
+
+.inv-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--gray-950);
+  border: 1px solid var(--border);
+}
+.inv-table th,
+.inv-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.inv-table th {
+  font-family: var(--font-label);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: var(--fs-sm);
+  color: var(--accent);
+  background: var(--gray-900);
+}
+.inv-table tbody tr:hover {
+  background: var(--gray-900);
+}
+.inv-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.inv-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.inv-actions a,
+.inv-actions button {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--gray-300);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.inv-actions a:hover,
+.inv-actions button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.gst-card {
+  padding: 24px;
+  margin-bottom: 28px;
+}
+.gst-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+.gst-cell h6 {
+  color: var(--gray-400);
+  margin-bottom: 6px;
+  font-size: var(--fs-sm);
+}
+.gst-cell strong {
+  color: var(--white);
+  font-size: var(--fs-lg);
+}
+
+@media (max-width: 991px) {
+  .gst-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── Phone: collapse the table into stacked cards ─────────────────
+   Each <tr> becomes a card. <td>s lose their column layout and
+   become flex rows showing `data-label` + value. Tap targets keep
+   their full size — every action button is ≥ 32px. */
+@media (max-width: 575px) {
+  .inv-table,
+  .inv-table thead,
+  .inv-table tbody,
+  .inv-table tr,
+  .inv-table td {
+    display: block;
+    width: 100%;
+  }
+  .inv-table {
+    border: none;
+    background: transparent;
+  }
+  .inv-table thead {
+    position: absolute;
+    left: -9999px;
+  } /* sr-only-ish */
+  .inv-table tr {
+    background: var(--gray-950);
+    border: 1px solid var(--border);
+    margin-bottom: 12px;
+    padding: 14px 16px;
+  }
+  .inv-table tbody tr:hover {
+    background: var(--gray-950);
+  }
+  .inv-table td {
+    border: none;
+    padding: 6px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    font-size: var(--fs-sm);
+  }
+  .inv-table td::before {
+    content: attr(data-label);
+    flex-shrink: 0;
+    font-family: var(--font-label);
+    font-weight: var(--fw-semibold);
+    font-size: var(--fs-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--gray-500);
+  }
+  /* Actions row shouldn't show a "Actions:" label */
+  .inv-table td[data-label='Actions']::before {
+    display: none;
+  }
+  .inv-table td[data-label='Actions'] {
+    border-top: 1px solid var(--border);
+    margin-top: 8px;
+    padding-top: 12px;
+    justify-content: flex-start;
+  }
+}

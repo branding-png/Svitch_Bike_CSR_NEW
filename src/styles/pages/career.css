@@ -1,0 +1,789 @@
+/* =====================================================
+ CSR 762 — CAREERS STYLESHEET
+ Shared by: career.html · career-detail.html
+ ============================================================== */
+
+/* ============================================================
+ 1. WHY WORK HERE — Benefits grid
+============================================================ */
+#career-why {
+  padding: var(--section-pad) 0;
+  background: var(--gray-950);
+}
+/* .benefits-grid / .benefit-card / .benefit-icon now live in components.css
+   so other pages (e.g. order-confirmation) can reuse the same pattern. */
+
+/* ============================================================
+ 2. STATS STRIP
+============================================================ */
+.career-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 52px;
+  border: 1px solid var(--border);
+  background: var(--gray-900);
+}
+.stat-cell {
+  padding: 36px 24px;
+  text-align: center;
+  border-right: 1px solid var(--border);
+}
+.stat-cell:last-child {
+  border-right: none;
+}
+.stat-value {
+  font-family: var(--font-display);
+  font-size: var(--fs-6xl);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+/* ============================================================
+ 3. CULTURE SECTION
+============================================================ */
+#career-culture {
+  padding: var(--section-pad) 0;
+  background: var(--black);
+}
+.culture-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.culture-copy h2 {
+  margin-bottom: 22px;
+}
+.culture-copy p {
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+.culture-media {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 180px);
+  gap: 12px;
+}
+.culture-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: var(--gray-900);
+  border: 1px solid var(--border);
+}
+.culture-media img:first-child {
+  grid-column: 1 / -1;
+}
+
+/* ============================================================
+ 4. OPEN POSITIONS
+============================================================ */
+#career-jobs {
+  padding: var(--section-pad) 0;
+  background: var(--gray-950);
+}
+.dept-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 0 auto 44px;
+  max-width: 900px;
+}
+/* Filter buttons inside .dept-filters use the global `.filter-pill` class
+   defined in components.css. */
+
+/* Job grid */
+.jobs-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+.job-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  align-items: start; /* Top-align both columns so the tag row + actions sit at the top */
+}
+.job-card-main {
+  min-width: 0;
+}
+.job-card-main h3 {
+  font-family: var(--font-display);
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+/* Wrapper for dept tag + status pill in the job card head */
+.job-card-tags {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+/* Green "Saved" pill — appears when the role is bookmarked */
+.job-status-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid var(--success);
+  color: var(--success);
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 12px;
+}
+.job-status-tag i {
+  font-size: 12px;
+}
+
+/* Save toggle buttons (listing + apply-bar + apply-cta) when active */
+.job-save-toggle.is-saved,
+.js-save-job.is-saved {
+  background: var(--success-tint);
+  border-color: var(--success);
+  color: var(--success);
+}
+.job-save-toggle.is-saved i,
+.js-save-job.is-saved i {
+  color: var(--success);
+}
+.job-save-toggle.is-saved:hover,
+.js-save-job.is-saved:hover {
+  background: var(--success);
+  color: var(--black);
+  border-color: var(--success);
+}
+.job-save-toggle.is-saved:hover i,
+.js-save-job.is-saved:hover i {
+  color: var(--black);
+}
+
+/* Subtle green outline on a saved job card */
+.job-card.is-saved {
+  border-color: rgba(34, 197, 94, 0.35);
+}
+
+.job-dept-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  background: var(--gray-800);
+  border: 1px solid var(--border-bright);
+  color: var(--accent);
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.job-meta {
+  margin-bottom: 8px;
+}
+.job-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.job-meta i {
+  color: var(--accent);
+  font-size: 13px;
+}
+.job-card p {
+  margin-bottom: 20px;
+}
+.job-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.job-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-self: center;
+}
+.job-card-actions .btn-csr {
+  min-width: 140px;
+  justify-content: center;
+}
+
+/* ============================================================
+ 5. OPEN APPLICATION CTA (matches #newsletter layout)
+============================================================ */
+#career-cta {
+  padding: 0;
+  background: var(--black);
+}
+.cta-box {
+  padding: 100px 0px;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+.cta-content {
+  flex: 1;
+}
+.cta-heading {
+  font-family: var(--font-display);
+  font-size: var(--fs-split);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  color: var(--white);
+  line-height: 1.1;
+  margin: 12px 0;
+}
+.cta-desc {
+  max-width: 400px;
+  margin: 0;
+}
+.cta-action {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.cta-action .btn-csr {
+  white-space: nowrap;
+}
+.cta-note {
+  display: block;
+  margin-top: 10px;
+  font-weight: var(--fw-medium);
+}
+
+/* ============================================================
+ 6. JOB DETAIL — Header card
+============================================================ */
+.job-header-card {
+  margin-bottom: 32px;
+}
+.job-header-card .job-dept-tag {
+  margin-bottom: 18px;
+}
+.job-header-card h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: var(--fw-black);
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 22px;
+}
+.job-header-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.job-meta-pill i {
+  color: var(--accent);
+  font-size: 13px;
+}
+
+/* ============================================================
+ 7. JOB DETAIL — Layout (main + sidebar)
+============================================================ */
+.job-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 40px;
+  align-items: start;
+}
+
+/* ── Content sections ── */
+.job-section {
+  padding: 32px 36px;
+  margin-bottom: 20px;
+}
+.job-section h2 {
+  font-family: var(--font-display);
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-bold);
+  color: var(--white);
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.job-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 36px;
+  height: 2px;
+  background: var(--accent);
+}
+.job-section h2 i {
+  color: var(--accent);
+  font-size: 22px;
+}
+.job-section h3 {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  color: var(--white);
+  margin: 22px 0 12px;
+}
+.job-section p {
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+.job-section p:last-child {
+  margin-bottom: 0;
+}
+.job-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.job-section ul li {
+  position: relative;
+  padding: 6px 0 6px 26px;
+  font-size: var(--fs-md);
+}
+.job-section ul li::before {
+  content: '\F287'; /* check2 from bootstrap-icons */
+  font-family: 'bootstrap-icons';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  color: var(--accent);
+  font-size: 14px;
+}
+.job-section strong {
+  color: var(--white);
+  font-weight: var(--fw-semibold);
+}
+
+/* Key skills tag list */
+.skills-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.skill-chip.is-must {
+  background: var(--white);
+  color: var(--black);
+  border-color: var(--white);
+}
+
+/* ============================================================
+ 8. BENEFITS GRID (inside job detail)
+============================================================ */
+.job-benefits {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+.job-benefit {
+  padding: 18px 20px;
+  background: var(--gray-900);
+  border: 1px solid var(--border);
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.job-benefit i {
+  color: var(--accent);
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.job-benefit h5 {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  color: var(--white);
+  margin: 0 0 4px;
+}
+.job-benefit p {
+  line-height: 1.55;
+}
+
+/* ============================================================
+ 9. INTERVIEW PROCESS STEPS
+============================================================ */
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.process-step {
+  display: flex;
+  gap: 20px;
+  padding: 20px 0;
+  position: relative;
+}
+.process-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 21px;
+  top: 58px;
+  bottom: -6px;
+  width: 1px;
+  background: var(--border-bright);
+}
+.process-num {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  background: var(--gray-900);
+  border: 1px solid var(--border-bright);
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-black);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.process-body h5 {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  color: var(--white);
+  margin-bottom: 6px;
+}
+/* ============================================================
+ 10. APPLY FORM — Custom file-upload widget
+ The form itself uses the site's global .form-group / .form-row /
+ .form-check-group / validation classes from components.css.
+============================================================ */
+
+/* Required-star colour (matches the site's red error tone) */
+.required-star {
+  color: var(--danger);
+  font-weight: var(--fw-bold);
+}
+
+/* Drop-zone style file upload (sits inside a .form-group) */
+.file-upload-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 22px 18px;
+  background-color: var(--gray-800);
+  border: 1px dashed var(--border-bright);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-base);
+  cursor: pointer;
+  text-align: center;
+  transition:
+    border-color 0.25s,
+    background-color 0.25s,
+    color 0.25s;
+}
+.file-upload-wrap i {
+  color: var(--accent);
+  font-size: 22px;
+  flex-shrink: 0;
+}
+.file-upload-wrap:hover {
+  border-color: var(--accent);
+  background-color: var(--gray-900);
+  color: var(--white);
+}
+.file-upload-wrap.has-file {
+  background-color: var(--gray-900);
+  border-style: solid;
+  border-color: var(--success);
+  color: var(--white);
+}
+.file-upload-wrap.has-file i {
+  color: var(--success);
+}
+
+/* When the parent .form-group is in error/valid state, mirror it on
+ the drop-zone so users get the same red/green border feedback. */
+.form-group.is-invalid .file-upload-wrap {
+  border-color: var(--danger) !important;
+  background-color: var(--gray-800) !important;
+  color: var(--danger);
+}
+.form-group.is-invalid .file-upload-wrap i {
+  color: var(--danger);
+}
+.form-group.is-valid .file-upload-wrap {
+  border-color: var(--success) !important;
+  border-style: solid;
+  background-color: var(--gray-900) !important;
+}
+.form-group.is-valid .file-upload-wrap i {
+  color: var(--success);
+}
+
+/* Checkbox group label override — keep the consent text readable
+ (the global .form-check-group handles the rest). */
+.form-check-group .invalid-feedback {
+  flex-basis: 100%;
+}
+
+/* ============================================================
+ 11. JOB DETAIL SIDEBAR
+============================================================ */
+.job-sidebar {
+  position: sticky;
+  top: 210px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.snapshot-widget h4 {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  color: var(--white);
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.snapshot-widget h4::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: var(--accent);
+}
+.snapshot-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.snapshot-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.snapshot-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.snapshot-row span:last-child {
+  color: var(--white);
+  font-weight: var(--fw-semibold);
+  text-align: right;
+}
+
+/* Apply CTA widget */
+.apply-cta {
+  text-align: center;
+}
+.apply-cta h4 {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  color: var(--white);
+  margin-bottom: 10px;
+}
+.apply-cta p {
+  margin-bottom: 20px;
+}
+.apply-cta .btn-csr {
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+/* Similar openings */
+.similar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.similar-item {
+  display: flex;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.similar-item:last-child {
+  border-bottom: none;
+}
+.similar-item:hover {
+  opacity: 0.85;
+}
+.similar-item i {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gray-800);
+  color: var(--accent);
+  flex-shrink: 0;
+  font-size: 15px;
+  border: 1px solid var(--border);
+}
+.similar-body h5 {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  color: var(--white);
+  margin-bottom: 3px;
+}
+.similar-body span {
+  display: block;
+  font-family: var(--font-label);
+  color: var(--gray-400);
+  font-size: var(--fs-sm);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Share widget */
+.share-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.share-grid a {
+  flex: 1 1 calc(50% - 6px);
+  padding: 10px;
+  background: var(--gray-900);
+  border: 1px solid var(--border);
+  text-align: center;
+  transition: var(--transition);
+}
+.share-grid a:hover {
+  background: var(--white);
+  color: var(--black);
+  border-color: var(--white);
+}
+.share-grid a i {
+  margin-right: 6px;
+}
+
+/* Sticky apply bar (top of detail page) */
+.apply-bar {
+  position: sticky;
+  top: 80px;
+  z-index: 50;
+  background: var(--gray-900);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.apply-bar-info h5 {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  color: var(--white);
+  margin-bottom: 2px;
+}
+.apply-bar-info span {
+  font-family: var(--font-label);
+  color: var(--gray-400);
+  font-size: var(--fs-sm);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.apply-bar-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* ============================================================
+ 12. RESPONSIVE
+============================================================ */
+@media (max-width: 991px) {
+  /* .benefits-grid responsive cols handled in components.css */
+}
+@media (max-width: 991px) {
+  .job-layout {
+    grid-template-columns: 1fr;
+  }
+  .job-sidebar {
+    position: static;
+  }
+  .career-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .stat-cell {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .stat-cell:nth-child(2) {
+    border-right: 1px solid var(--border);
+  }
+  .stat-cell:nth-last-child(-n + 2) {
+    border-bottom: none;
+  }
+  .culture-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .job-card {
+    grid-template-columns: 1fr;
+  }
+  .job-card-actions {
+    flex-direction: row;
+  }
+  .job-card-actions .btn-csr {
+    flex: 1;
+    min-width: 0;
+  }
+  .apply-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    position: static;
+  }
+  .apply-bar-actions {
+    width: 100%;
+  }
+  .apply-bar-actions .btn-csr {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .cta-box {
+    flex-direction: column;
+    gap: 32px;
+    padding: 75px 0px;
+    text-align: center;
+  }
+  .cta-desc {
+    max-width: 100%;
+  }
+  .cta-action {
+    align-items: center;
+  }
+}
+@media (max-width: 767px) {
+  /* .benefits-grid 1-col handled in components.css at 575px breakpoint */
+  .career-stats {
+    grid-template-columns: 1fr;
+  }
+  .stat-cell {
+    border-right: none !important;
+    border-bottom: 1px solid var(--border) !important;
+  }
+  .stat-cell:last-child {
+    border-bottom: none !important;
+  }
+  .job-section {
+    padding: 24px 22px;
+  }
+  .job-benefits {
+    grid-template-columns: 1fr;
+  }
+  .cta-box {
+    padding: 50px 0px;
+  }
+  .cta-action .btn-csr {
+    width: 100%;
+    justify-content: center;
+  }
+}

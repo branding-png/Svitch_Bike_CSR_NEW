@@ -1,0 +1,928 @@
+/* =====================================================
+ CSR 762 — DEALERS PAGE STYLESHEET
+ Page-specific styles for dealers.html
+ ============================================================== */
+
+/* ============================================================
+ STATS STRIP
+============================================================ */
+#dealers-stats {
+  padding: 0 0 40px;
+  background: var(--black);
+}
+.dealers-stats-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+.dealer-stat {
+  text-align: center;
+}
+
+/* ── CTA card (white, links to Become A Dealer) ── */
+.dealer-stat.is-cta {
+  background: var(--white);
+  border-color: var(--white);
+  text-decoration: none !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--black) !important;
+  transition: var(--transition);
+}
+.dealer-stat.is-cta > h3 {
+  color: var(--black) !important;
+}
+.dealer-stat.is-cta > i {
+  font-size: var(--fs-4xl);
+  color: var(--black);
+  line-height: 1;
+}
+.dealer-stat.is-cta strong {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-black);
+  color: var(--black);
+  line-height: 1;
+  margin-bottom: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-transform: uppercase;
+}
+.dealer-stat.is-cta strong i {
+  font-size: 0.7em;
+  transition: transform 0.3s;
+}
+.dealer-stat.is-cta span {
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  color: var(--gray-600);
+}
+.dealer-stat.is-cta:hover {
+  background: var(--gray-100);
+  border-color: var(--gray-100);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(255, 255, 255, 0.15);
+}
+.dealer-stat.is-cta:hover h3 i {
+  transform: translateX(4px);
+}
+/* .dealer-stat h3 / span / h3 small — now defined centrally via .stat-value / .stat-label
+ in components.css (shared with .service-stat, .savers-stat, .stat-value) */
+
+/* ============================================================
+ DEALER FINDER — Main layout
+============================================================ */
+#dealer-finder {
+  background: var(--gray-950);
+  padding: var(--section-pad) 0;
+}
+.finder-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: 24px;
+  margin-top: 48px;
+  align-items: start;
+}
+
+/* ── Sidebar (left) ── */
+.finder-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: sticky;
+  top: 90px;
+  max-height: calc(100vh - 120px);
+}
+.finder-filters {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 10px;
+}
+.finder-search,
+.finder-state {
+  position: relative;
+}
+.finder-search i {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: var(--fs-lg);
+  pointer-events: none;
+}
+.finder-search input {
+  width: 100%;
+  padding: 14px 16px 14px 44px;
+  background: var(--gray-900);
+  border: 1px solid var(--border);
+  color: var(--white);
+  font-size: var(--fs-md);
+  outline: none;
+  transition: border-color 0.3s;
+}
+.finder-search input:focus {
+  border-color: var(--accent);
+}
+.finder-state select {
+  width: 100%;
+  padding: 14px 40px 14px 16px;
+  background: var(--gray-900);
+  border: 1px solid var(--border);
+  color: var(--white);
+  font-size: var(--fs-md);
+  outline: none;
+  transition: border-color 0.3s;
+  /* appearance, arrow icon, option bg inherit from components.css */
+}
+.finder-state select:focus {
+  border-color: var(--accent);
+}
+
+.finder-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 2px;
+}
+.finder-reset:hover {
+  color: var(--white);
+}
+
+/* Dealer result list */
+.dealer-results {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-right: 4px;
+}
+/* Dealer result item — button-style card with left thumb + right content */
+.dealer-item-thumb {
+  flex-shrink: 0;
+  position: relative;
+  width: 110px;
+  align-self: stretch;
+  overflow: hidden;
+  background: var(--gray-950);
+  cursor: pointer;
+}
+.dealer-item-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.dealer-item-thumb:hover img,
+.dealer-item-thumb:focus-visible img {
+  transform: scale(1.06);
+}
+.dealer-item-thumb-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 22px;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.55));
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.dealer-item-thumb-overlay i {
+  color: var(--accent);
+}
+.dealer-item-thumb:hover .dealer-item-thumb-overlay,
+.dealer-item-thumb:focus-visible .dealer-item-thumb-overlay {
+  opacity: 1;
+}
+.dealer-item-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 575px) {
+  .dealer-item-thumb {
+    width: 90px;
+  }
+}
+
+/* Right-panel hero photo — sits between detail-header and detail-map */
+.detail-photo {
+  margin: 0 0 18px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--gray-950);
+  aspect-ratio: 16 / 9;
+}
+.detail-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.detail-photo:hover img {
+  transform: scale(1.03);
+}
+
+.dealer-item {
+  width: 100%;
+  padding: 16px;
+  text-align: left;
+  cursor: pointer;
+  position: relative;
+  color: inherit;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 14px;
+  gap: 12px;
+}
+.dealer-item.is-active {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 1px var(--accent);
+}
+.dealer-item.is-active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--accent);
+}
+.dealer-item-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+.dealer-item-title {
+  flex: 1;
+  min-width: 0;
+}
+.dealer-city-tag {
+  display: inline-block;
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: var(--fw-semibold);
+  margin-bottom: 4px;
+}
+.dealer-item-title h3 {
+  margin: 0 0 8px;
+}
+.dealer-item-addr {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.5;
+  margin: 0 0 8px;
+  font-weight: var(--fw-semibold);
+}
+.dealer-item-addr i {
+  color: var(--accent);
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+.dealer-item-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.dealer-chip i {
+  font-size: 11px;
+}
+.dealer-chip.chip-accent {
+  color: var(--accent);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.dealer-item:hover .dealer-item-view {
+  gap: 10px;
+  color: var(--white);
+}
+
+/* .dealer-status lives in components.css (shared across pages) */
+
+/* Empty state */
+.dealer-empty {
+  text-align: center;
+  padding: 48px 24px;
+  background: var(--gray-900);
+  border: 1px dashed var(--border-bright);
+}
+.dealer-empty i {
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+.dealer-empty h4 {
+  font-size: var(--fs-xl);
+  margin-bottom: 6px;
+}
+/* ============================================================
+ DETAIL PANEL (right)
+============================================================ */
+.finder-detail {
+  padding: 40px;
+  min-height: 640px;
+  position: sticky;
+  top: 90px;
+}
+
+/* Empty state */
+.detail-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 560px;
+}
+.detail-empty-icon {
+  width: 88px;
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-bright);
+  color: var(--accent);
+  font-size: 36px;
+  margin-bottom: 24px;
+}
+.detail-empty h3 {
+  font-size: var(--fs-section);
+  line-height: 1.1;
+  margin-bottom: 14px;
+}
+.detail-empty p {
+  font-size: var(--fs-lg);
+  max-width: 480px;
+  margin-bottom: 24px;
+}
+.detail-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  color: var(--gray-400);
+}
+.detail-hint i {
+  color: var(--accent);
+  font-size: 14px;
+}
+
+/* Populated state */
+.detail-header {
+  margin-bottom: 24px;
+}
+.detail-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+.detail-city {
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: var(--fw-semibold);
+}
+.detail-name {
+  font-family: var(--font-display);
+  font-size: var(--fs-5xl);
+  font-weight: var(--fw-black);
+  text-transform: uppercase;
+  color: var(--white);
+  line-height: 1.1;
+  margin: 0 0 12px;
+}
+.detail-addr {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: var(--fs-md);
+  margin: 0;
+}
+.detail-addr i {
+  color: var(--accent);
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+/* ── Embedded Map Preview ── */
+.detail-map {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  margin-bottom: 28px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  background: var(--gray-900);
+}
+.detail-map iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: grayscale(70%) contrast(1.05) invert(0.88);
+  transition: filter 0.4s ease;
+}
+.detail-map:hover iframe {
+  filter: grayscale(0%) contrast(1) invert(0);
+}
+.detail-map-expand {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.75);
+  border: 1px solid var(--border-bright);
+  color: var(--white);
+  font-size: var(--fs-base);
+  text-decoration: none;
+  transition:
+    background 0.25s,
+    color 0.25s,
+    border-color 0.25s,
+    transform 0.25s;
+}
+.detail-map-expand:hover {
+  background: var(--white);
+  color: var(--black);
+  border-color: var(--white);
+  transform: translateY(-2px);
+}
+
+.detail-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+.detail-badge.badge-accent {
+  color: var(--accent);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+.detail-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 28px;
+  margin-bottom: 28px;
+}
+.detail-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.detail-info-label i {
+  color: var(--accent);
+}
+.detail-info-val {
+  font-size: var(--fs-md);
+  color: var(--white);
+  font-weight: var(--fw-semibold);
+  word-break: break-word;
+  text-decoration: none;
+}
+a.detail-info-val:hover {
+  color: var(--accent);
+}
+
+.detail-services {
+  margin-bottom: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.detail-services h4 {
+  font-size: var(--fs-xl);
+  margin-bottom: 16px;
+}
+.detail-services ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 20px;
+}
+.detail-services li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--fs-md);
+}
+.detail-services li i {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.detail-actions .btn-csr {
+  flex: 1;
+  min-width: 160px;
+  justify-content: center;
+}
+.btn-csr.ghost {
+  background: transparent;
+  border-color: var(--border-bright);
+}
+.btn-csr.ghost:hover {
+  color: var(--white);
+  border-color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+ BUSINESS OPPORTUNITIES — Header in container, 50/50 full-bleed
+============================================================ */
+#business-opportunities {
+  padding: var(--section-pad) 0;
+  background: var(--black);
+}
+.business-opp-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+/* Full-bleed wrapper — edge-to-edge */
+.business-opp-fluid {
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Exact 50 / 50 grid across the entire viewport, no gap */
+.business-opp-split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  align-items: stretch;
+  width: 100%;
+  min-height: 580px;
+}
+
+/* LEFT 50% — Image (edge-to-edge left side) */
+.business-opp-media {
+  position: relative;
+  overflow: hidden;
+  background: var(--gray-900);
+  border: none;
+  min-height: 580px;
+  min-width: 0; /* prevent grid blowout */
+}
+.business-opp-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.8s ease;
+}
+.business-opp-media:hover img {
+  transform: scale(1.03);
+}
+
+/* RIGHT 50% — Slider column */
+.business-opp-slider-wrap {
+  position: relative;
+  min-width: 0; /* prevent grid blowout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px clamp(24px, 4vw, 64px);
+}
+.business-opp-swiper {
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 44px; /* space for pagination */
+}
+.business-opp-swiper .swiper-wrapper {
+  align-items: center;
+}
+.business-opp-swiper .swiper-slide {
+  height: auto;
+  width: 100% !important;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.business-opp-slide {
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  position: relative;
+  overflow: visible;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.business-opp-slide h3 {
+  line-height: 1.15;
+  margin: 0 0 26px;
+}
+.business-opp-slide ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+.business-opp-slide ul li {
+  position: relative;
+  padding-left: 26px;
+  font-size: var(--fs-md);
+  line-height: 1.65;
+}
+.business-opp-slide ul li::before {
+  content: '\F272'; /* bi-check2 */
+  font-family: 'bootstrap-icons';
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+}
+.business-opp-slide ul li strong {
+  color: var(--white);
+  font-weight: var(--fw-semibold);
+}
+
+/* Pagination */
+.business-opp-pagination {
+  position: absolute !important;
+  bottom: 16px !important;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+.business-opp-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: var(--white);
+  opacity: 0.3;
+  border-radius: 0;
+  transition:
+    opacity 0.3s,
+    width 0.3s;
+  margin: 0 4px !important;
+}
+.business-opp-pagination .swiper-pagination-bullet-active {
+  opacity: 1;
+  width: 28px;
+  background: var(--accent);
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .business-opp-split {
+    grid-template-columns: 1fr;
+    gap: 0;
+    min-height: 0;
+  }
+  .business-opp-media {
+    min-height: 360px;
+  }
+  .business-opp-slider-wrap {
+    padding: 40px 24px;
+  }
+}
+@media (max-width: 767px) {
+  .business-opp-slide h4 {
+    font-size: var(--fs-2xl);
+  }
+  .business-opp-media {
+    min-height: 280px;
+  }
+  .business-opp-slider-wrap {
+    padding: 32px 20px;
+  }
+}
+
+/* ============================================================
+ BECOME A DEALER CTA
+============================================================ */
+#become-dealer {
+  padding: var(--section-pad) 0;
+  background: var(--black);
+}
+.become-dealer-card {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  align-items: stretch;
+  overflow: hidden;
+}
+.become-dealer-content {
+  padding: 60px 56px;
+}
+.become-dealer-content h2 {
+  font-weight: var(--fw-extrabold);
+  line-height: 1.05;
+  margin: 12px 0 20px;
+}
+.become-dealer-content > p {
+  font-size: var(--fs-lg);
+  margin-bottom: 28px;
+}
+.become-dealer-perks {
+  list-style: none;
+  margin: 0 0 32px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 24px;
+}
+.become-dealer-perks li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--fs-md);
+}
+.become-dealer-perks i {
+  color: var(--accent);
+  font-size: var(--fs-lg);
+  flex-shrink: 0;
+}
+.become-dealer-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.become-dealer-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--black);
+  border-left: 1px solid var(--border);
+}
+.become-stat {
+  padding: 40px 28px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: background 0.3s;
+}
+.become-stat:nth-child(odd) {
+  border-right: 1px solid var(--border);
+}
+.become-stat:nth-child(n + 3) {
+  border-bottom: none;
+}
+.become-stat:hover {
+  background: var(--gray-950);
+}
+.become-stat h3 {
+  font-size: var(--fs-7xl);
+  line-height: 1;
+  margin-bottom: 8px;
+  text-transform: none;
+}
+.become-stat h3 small {
+  font-size: 0.45em;
+  color: var(--accent);
+  font-weight: var(--fw-bold);
+  margin-left: 2px;
+}
+
+/* ============================================================
+ RESPONSIVE
+============================================================ */
+@media (max-width: 1199px) {
+  .finder-wrap {
+    grid-template-columns: 1fr;
+  }
+  .finder-sidebar {
+    position: static;
+    max-height: none;
+  }
+  .dealer-results {
+    max-height: 560px;
+  }
+  .finder-detail {
+    position: static;
+  }
+  .dealers-stats-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 991px) {
+  .dealers-stats-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .become-dealer-card {
+    grid-template-columns: 1fr;
+  }
+  .become-dealer-stats {
+    border-left: none;
+    border-top: 1px solid var(--border);
+  }
+  .become-stat:nth-child(n + 3) {
+    border-bottom: none;
+  }
+}
+@media (max-width: 767px) {
+  .finder-filters {
+    grid-template-columns: 1fr;
+  }
+  .finder-detail {
+    padding: 28px 22px;
+    min-height: auto;
+  }
+  .detail-empty {
+    min-height: 380px;
+  }
+  .detail-info-grid {
+    grid-template-columns: 1fr;
+  }
+  .detail-services ul {
+    grid-template-columns: 1fr;
+  }
+  .detail-actions .btn-csr {
+    flex: 1 1 100%;
+  }
+  .become-dealer-content {
+    padding: 40px 28px;
+  }
+  .become-dealer-perks {
+    grid-template-columns: 1fr;
+  }
+  .dealer-item-head {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .dealer-stat h3 {
+    font-size: var(--fs-5xl);
+  }
+  .become-stat {
+    padding: 28px 20px;
+  }
+  .become-stat h3 {
+    font-size: var(--fs-6xl);
+  }
+  .detail-map {
+    height: 220px;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 575px) {
+  .dealers-stats-row {
+    grid-template-columns: 1fr;
+  }
+  .become-dealer-stats {
+    grid-template-columns: 1fr;
+  }
+  .become-stat:nth-child(odd) {
+    border-right: none;
+  }
+  .become-stat {
+    border-bottom: 1px solid var(--border) !important;
+  }
+  .become-stat:last-child {
+    border-bottom: none !important;
+  }
+}

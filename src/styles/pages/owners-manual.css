@@ -1,0 +1,115 @@
+/* ==============================================================
+ CSR 762 — OWNER'S MANUAL PAGE STYLESHEET
+ Builds on top of legal.css — adds TOC icons + warning callout
+ ============================================================== */
+
+/* ── Replace counter number with a Bootstrap icon ── */
+.legal-toc.manual-toc ol {
+  counter-reset: none;
+}
+.legal-toc.manual-toc ol li a {
+  align-items: center;
+  gap: 12px;
+}
+.legal-toc.manual-toc ol li a::before {
+  content: none;
+}
+.legal-toc.manual-toc ol li a i {
+  font-size: 16px;
+  color: var(--accent);
+  flex-shrink: 0;
+  width: 20px;
+  text-align: center;
+  transition: color 0.2s;
+}
+.legal-toc.manual-toc ol li a:hover i,
+.legal-toc.manual-toc ol li a.is-active i {
+  color: var(--black);
+}
+
+/* ── h2 chapter icon chip ── */
+.legal-content h2 .ch-icon {
+  font-size: 0.85em;
+  color: var(--accent);
+  flex-shrink: 0;
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--gray-900);
+  border: 1px solid var(--border-bright);
+}
+
+/* ── Warning variant of the shared .legal-callout ── */
+.legal-content .legal-callout.is-warning {
+  border-left-color: #ff5b5b;
+}
+.legal-content .legal-callout.is-warning i {
+  color: #ff5b5b;
+}
+
+/* ── Drive-mode pills — inline badge before mode description ── */
+.mode-row {
+  display: flex;
+  gap: 14px;
+  align-items: baseline;
+  padding: 14px 16px;
+  background: var(--gray-900);
+  border: 1px solid var(--border);
+  margin-bottom: 10px;
+}
+.mode-row:last-child {
+  margin-bottom: 0;
+}
+.mode-pill {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 58px;
+  padding: 4px 10px;
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+}
+.mode-row p strong {
+  color: var(--white);
+}
+
+/* ── Download Manual CTA ── */
+.manual-download-cta {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0 8px;
+}
+.manual-download-meta {
+  font-family: var(--font-label);
+  color: var(--gray-400);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold, 600);
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-left: 4px;
+  padding-left: 10px;
+  border-left: 1px solid currentColor;
+}
+
+/* ── Responsive ── */
+@media (max-width: 767px) {
+  .legal-content h2 .ch-icon {
+    width: 30px;
+    height: 30px;
+  }
+  .mode-row {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px 14px;
+  }
+  .manual-download-meta {
+    display: none;
+  }
+}

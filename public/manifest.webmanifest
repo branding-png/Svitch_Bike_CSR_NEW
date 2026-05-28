@@ -1,0 +1,25 @@
+{
+  "name": "Svitch Motocorp — CSR 762",
+  "short_name": "Svitch",
+  "description": "Svitch CSR 762 — India's bold electric motorcycle. Shop, book a test ride, manage your account.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/images/icons/favicon-1.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/icons/favicon-1.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

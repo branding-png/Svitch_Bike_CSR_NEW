@@ -1,0 +1,97 @@
+/* ==============================================================
+ SYSTEM — OFFLINE
+ Same centered template as coming-soon / maintenance.
+ ============================================================== */
+
+#off-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 48px 24px;
+  background: var(--black);
+}
+
+.off-wrap {
+  max-width: 560px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.off-logo {
+  display: inline-block;
+  margin-bottom: 28px;
+}
+.off-logo img {
+  display: block;
+  height: 36px;
+  margin: 0 auto;
+}
+
+.off-icon {
+  width: 88px;
+  height: 88px;
+  margin: 0 auto 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gray-900);
+  border: 1px solid var(--border-bright);
+  border-radius: 50%;
+  color: var(--gray-400);
+  font-size: 36px;
+}
+
+.off-title {
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  margin: 12px 0 14px;
+}
+.off-lead {
+  font-size: var(--fs-md);
+  max-width: 460px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.off-retry {
+  margin-top: 28px;
+}
+.off-back {
+  margin-top: 22px;
+  font-size: var(--fs-sm);
+}
+.off-back a {
+  color: var(--accent);
+}
+
+@media (max-width: 575px) {
+  #off-main {
+    padding: 28px 16px;
+  }
+  .off-logo {
+    margin-bottom: 18px;
+  }
+  .off-logo img {
+    height: 28px;
+  }
+  .off-icon {
+    width: 64px;
+    height: 64px;
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+  .off-title {
+    margin: 8px 0 10px;
+  }
+  .off-lead {
+    font-size: var(--fs-sm);
+  }
+  .off-retry {
+    margin-top: 20px;
+  }
+  .off-back {
+    margin-top: 16px;
+  }
+}

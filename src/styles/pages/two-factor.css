@@ -1,0 +1,55 @@
+/* ==============================================================
+ CSR 762 - TWO-FACTOR AUTH PAGE STYLESHEET
+ Page-specific styles for two-factor.html
+ ============================================================== */
+
+#tfa-main {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+}
+.tfa-card {
+  max-width: 460px;
+  width: 100%;
+  padding: 40px;
+  text-align: center;
+}
+.tfa-icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-size: 30px;
+}
+.otp-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 24px 0;
+}
+.otp-row input {
+  width: 52px;
+  height: 60px;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 800;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--white);
+}
+.otp-row input:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+.tfa-timer {
+  font-size: var(--fs-sm);
+  color: var(--gray-400);
+  margin: 14px 0;
+}

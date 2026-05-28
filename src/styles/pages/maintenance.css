@@ -1,0 +1,122 @@
+/* ==============================================================
+ SYSTEM — MAINTENANCE
+ Same centered template as coming-soon. Scrolls when needed.
+ ============================================================== */
+
+#mt-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 48px 24px;
+  background: var(--black);
+}
+
+.mt-wrap {
+  max-width: 640px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.mt-logo {
+  display: inline-block;
+  margin-bottom: 28px;
+}
+.mt-logo img {
+  display: block;
+  height: 36px;
+  margin: 0 auto;
+}
+
+.mt-icon {
+  width: 88px;
+  height: 88px;
+  margin: 0 auto 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  color: var(--accent);
+  font-size: 36px;
+}
+.mt-spin {
+  animation: mt-spin 4s linear infinite;
+}
+@keyframes mt-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.mt-title {
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  margin: 12px 0 14px;
+}
+.mt-lead {
+  font-size: var(--fs-md);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.mt-meta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 28px;
+}
+.mt-meta div {
+  padding: 12px 20px;
+  background: var(--gray-950);
+  border: 1px solid var(--border);
+  font-size: var(--fs-sm);
+}
+.mt-meta strong {
+  color: var(--white);
+  display: block;
+}
+
+.mt-footer {
+  margin-top: 28px;
+  font-size: var(--fs-sm);
+}
+
+@media (max-width: 575px) {
+  #mt-main {
+    padding: 28px 16px;
+  }
+  .mt-logo {
+    margin-bottom: 18px;
+  }
+  .mt-logo img {
+    height: 28px;
+  }
+  .mt-icon {
+    width: 64px;
+    height: 64px;
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+  .mt-title {
+    margin: 8px 0 10px;
+  }
+  .mt-lead {
+    font-size: var(--fs-sm);
+  }
+  .mt-meta {
+    gap: 8px;
+    margin-top: 18px;
+    flex-direction: column;
+  }
+  .mt-meta div {
+    padding: 10px 14px;
+    width: 100%;
+  }
+  .mt-footer {
+    margin-top: 18px;
+  }
+}

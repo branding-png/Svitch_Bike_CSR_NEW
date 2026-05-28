@@ -1,0 +1,491 @@
+/* =====================================================
+ CSR 762 — PRESS PAGE STYLESHEET
+ Used by: press.html
+ ============================================================== */
+
+/* ---------- HERO extras ---------- */
+#press-hero .page-hero-desc {
+  max-width: 575px;
+}
+.press-hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
+}
+/* ============================================================
+   PRESS DETAIL — article body (renders blocks from PressArticleBody.jsx)
+============================================================ */
+/* Hero image rendered inside .blog-article — sits within the 760px
+   content column above the first paragraph. */
+.press-detail-hero-img {
+  margin: 0 0 32px;
+}
+.press-detail-hero-img img {
+  width: 100%;
+  max-height: 460px;
+  object-fit: cover;
+  display: block;
+  border: 1px solid var(--border);
+}
+@media (max-width: 767px) {
+  .press-detail-hero-img {
+    margin-bottom: 24px;
+  }
+  .press-detail-hero-img img {
+    max-height: 320px;
+  }
+}
+
+.blog-article {
+  background: var(--gray-900);
+}
+.blog-article > .container {
+  padding-top: 8px;
+}
+
+/* Press-detail hero label — outlet logo + "Press Release · date" */
+.press-detail-label {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.press-detail-outlet-logo {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  background: var(--gray-900);
+  border: 1px solid var(--border);
+  height: 36px;
+}
+.press-detail-outlet-logo img {
+  height: 32px;
+  width: auto;
+  max-width: 140px;
+  display: block;
+  object-fit: contain;
+}
+
+/* Paragraphs */
+.blog-article p {
+  font-size: var(--fs-md);
+  line-height: 1.85;
+  color: var(--gray-300);
+  margin: 0 0 22px;
+}
+.blog-article p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Headings inside the article */
+.blog-article h3,
+.blog-article h4 {
+  line-height: 1.25;
+}
+.blog-article h3 {
+  margin: 44px 0 16px;
+  padding-top: 8px;
+}
+.blog-article h4 {
+  font-size: var(--fs-xl);
+  margin: 36px 0 12px;
+}
+.blog-article h3:first-child,
+.blog-article h4:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Blockquote — inline rule already sets borders/colors; tighten margins */
+.blog-article blockquote {
+  margin: 36px 0 !important;
+  font-size: var(--fs-lg);
+  line-height: 1.7;
+}
+
+/* Download CTA card spacing */
+.blog-article .card-base {
+  margin: 40px 0 !important;
+}
+.blog-article .card-base strong {
+  font-size: var(--fs-md);
+  color: var(--white);
+  margin-bottom: 4px;
+}
+.blog-article .card-base span {
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  color: var(--gray-400);
+}
+
+/* Media-contact block */
+.blog-article h4 + p {
+  margin-top: 8px;
+  font-size: var(--fs-md);
+  color: var(--gray-200);
+}
+.blog-article h4 + p a {
+  color: var(--accent);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+.blog-article h4 + p a:hover {
+  border-bottom-color: var(--accent);
+}
+
+/* Back-to-list button — push down from the last block */
+.blog-article .btn-csr.secondary {
+  display: inline-flex;
+  margin-top: 48px !important;
+}
+
+/* Responsive — tighten on phones */
+@media (max-width: 575px) {
+  .blog-article p {
+    font-size: var(--fs-base);
+    line-height: 1.75;
+    margin-bottom: 18px;
+  }
+  .blog-article h3 {
+    font-size: var(--fs-xl);
+    margin: 32px 0 12px;
+  }
+  .blog-article h4 {
+    font-size: var(--fs-lg);
+    margin: 28px 0 10px;
+  }
+  .blog-article blockquote {
+    margin: 28px 0 !important;
+    padding: 14px 18px !important;
+    font-size: var(--fs-md);
+  }
+  .blog-article .card-base {
+    margin: 28px 0 !important;
+    padding: 20px !important;
+  }
+}
+/* ============================================================
+ 1. COVERAGE GRID — "As Featured In"
+============================================================ */
+#press-coverage {
+  padding: var(--section-pad) 0;
+  background: var(--gray-950);
+}
+.coverage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+.coverage-card {
+  /* Whole card is now an <a> — strip default anchor styling */
+  display: flex;
+  flex-direction: column;
+  text-decoration: none !important;
+  color: inherit;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0;
+}
+.coverage-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+}
+.coverage-card:hover .coverage-headline {
+  color: var(--accent);
+}
+.coverage-card:hover .coverage-read i {
+  transform: translate(3px, -3px);
+}
+.coverage-card:hover .coverage-media img {
+  transform: scale(1.05);
+}
+.coverage-read i {
+  transition: transform 0.25s ease;
+}
+
+/* Image / outlet badge */
+.coverage-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--gray-900);
+  border-bottom: 1px solid var(--border);
+}
+.coverage-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.coverage-outlet-tag {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  padding: 4px 10px;
+  margin: 0 0 12px;
+  background: transparent;
+  border: 1px solid var(--accent);
+  font-family: var(--font-label);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--accent);
+}
+/* Logo variant — image-only pill, no border/padding, light bg behind logo */
+.coverage-outlet-tag.has-logo {
+  padding: 6px 10px;
+  background: var(--gray-900);
+  border-color: var(--border);
+  height: 32px;
+}
+.coverage-outlet-tag.has-logo img {
+  height: 30px;
+  width: auto;
+  max-width: 120px;
+  display: block;
+  object-fit: contain;
+}
+
+/* Body */
+.coverage-body {
+  display: flex;
+  flex-direction: column;
+  padding: 22px 24px 24px;
+  flex: 1;
+}
+.coverage-outlet {
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  color: var(--gray-300);
+  margin-bottom: 12px;
+}
+.coverage-date {
+  color: var(--gray-400);
+  margin: 8px 0 12px;
+  display: inline-block;
+}
+.coverage-headline {
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+.coverage-excerpt {
+  font-size: var(--fs-base);
+  margin-bottom: 24px;
+  flex: 1;
+}
+.coverage-read {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  color: var(--white);
+  border-bottom: 1px solid var(--border-bright);
+  padding-bottom: 4px;
+  align-self: flex-start;
+  transition: var(--transition);
+}
+.coverage-read:hover {
+  color: var(--white);
+  border-bottom-color: var(--white);
+  gap: 10px;
+}
+
+/* ============================================================
+ 2. RELEASES + MEDIA KIT (two-column)
+============================================================ */
+#press-releases {
+  padding: var(--section-pad) 0;
+  background: var(--black);
+}
+.releases-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.releases-col .section-title,
+.media-col .section-title {
+  margin-top: 6px;
+}
+
+/* ---- Release list ---- */
+.release-list {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+}
+.release-row {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.release-row:last-child {
+  border-bottom: none;
+}
+.release-title {
+  font-size: var(--fs-md);
+  color: var(--white);
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+.release-dl {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  color: var(--white);
+  white-space: nowrap;
+  padding: 8px 14px;
+  border: 1px solid var(--border-bright);
+  transition: var(--transition);
+}
+.release-dl:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
+/* ---- Media kit list ---- */
+.media-desc {
+  font-size: var(--fs-base);
+  margin: 24px 0;
+}
+.media-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.media-item {
+  background: var(--gray-950);
+  border: 1px solid var(--border);
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  transition: var(--transition);
+}
+.media-item:hover {
+  border-color: var(--border-bright);
+}
+.media-item-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.media-item-icon {
+  font-size: 22px;
+  color: var(--white);
+  width: 36px;
+  display: flex;
+  justify-content: center;
+}
+.media-item-title {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semibold);
+  color: var(--white);
+  line-height: 1.3;
+}
+.media-item-dl {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  color: var(--white);
+  white-space: nowrap;
+  padding: 8px 14px;
+  border: 1px solid var(--border-bright);
+  transition: var(--transition);
+}
+.media-item-dl:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
+/* ---- Press-contact card ---- */
+.press-contact-card {
+  /* background + transition inherit from .card-base; override border to bright */
+  margin-top: 32px;
+  border: 1px solid var(--border-bright);
+}
+.press-contact-card h3 {
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+.press-contact-name {
+  font-size: var(--fs-base);
+  margin-bottom: 12px;
+}
+.press-contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  align-items: center;
+}
+.press-contact-row a {
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  color: var(--white);
+  border-bottom: 1px solid var(--border-bright);
+  padding-bottom: 2px;
+  transition: var(--transition);
+}
+.press-contact-row a:hover {
+  border-bottom-color: var(--white);
+}
+
+/* ============================================================
+ 3. INQUIRY CTA — section wrapper only; .cta-box layout now lives
+ in components.css so other pages (e.g. media-kit.html) can reuse it.
+============================================================ */
+#press-cta {
+  padding: 0;
+  background: var(--gray-900);
+}
+
+/* ============================================================
+ 4. RESPONSIVE
+============================================================ */
+@media (max-width: 991px) {
+  .coverage-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .releases-layout {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+}
+@media (max-width: 575px) {
+  .coverage-grid {
+    grid-template-columns: 1fr;
+  }
+  .release-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .media-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+}
