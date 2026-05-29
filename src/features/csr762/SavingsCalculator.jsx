@@ -92,7 +92,7 @@ export default function SavingsCalculator({
           </div>
 
           {/* BREAKDOWN — 4 stat tiles */}
-          <div className="calc-results">
+          <div className="sc-calc-results">
             <ResultTile value={formatINR(results.monthly)} label="Monthly Saving" />
             <ResultTile value={formatINR(results.annual)}  label="Yearly Saving" />
             <ResultTile value={`${results.co2Tonnes.toFixed(2)} T`} label="CO₂ Saved/Year" />

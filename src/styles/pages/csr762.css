@@ -3,6 +3,32 @@
    Companion to src/routes/CSR762.jsx (mostly inline-styled).
    Only the responsive collapses for the inline grids live here.
    ============================================================== */
+
+/* Rotate360 — white-on-black inverted theme, CSR 762 page only */
+.rotate360-light #rotate360 {
+  background: var(--white);
+  color: var(--black);
+}
+.rotate360-light #rotate360 .section-label,
+.rotate360-light #rotate360 .section-title,
+.rotate360-light #rotate360 .section-title-p,
+.rotate360-light #rotate360 h1,
+.rotate360-light #rotate360 h2,
+.rotate360-light #rotate360 h3,
+.rotate360-light #rotate360 p,
+.rotate360-light #rotate360 span {
+  color: var(--black);
+}
+.rotate360-light #rotate360 .rotate-color-btn{
+  color: var(--gray-300);
+}
+.rotate360-light #rotate360 .rotate-color-btn {
+  border-color: var(--black);
+}
+.rotate360-light #rotate360 .rotate-color-btn.active {
+  background: var(--black);
+  color: var(--white);
+}
 :root{
   --number-opacity: 0.08;
 }
@@ -1415,7 +1441,7 @@ body.page-index, body.page-index p, body.page-index span, body.page-index a, bod
 .calc-slider::-webkit-slider-thumb:hover {
   transform: scale(1.3);
 }
-.calc-results {
+.sc-calc-results {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1px;
@@ -1447,7 +1473,7 @@ body.page-index, body.page-index p, body.page-index span, body.page-index a, bod
   font-weight: 600;
 }
 @media (max-width: 991px) {
-  .calc-results {
+  .sc-calc-results {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -1460,7 +1486,7 @@ body.page-index, body.page-index p, body.page-index span, body.page-index a, bod
   }
 }
 @media (max-width: 575px) {
-  .calc-results {
+  .sc-calc-results {
     grid-template-columns: 1fr;
   }
 }

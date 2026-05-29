@@ -19,6 +19,7 @@ import Faq from '@/features/csr762/Faq'
 import FinalCta from '@/features/csr762/FinalCta'
 import SvitchFamily from '@/features/home/SvitchFamily'
 import VideoBanner from '@/features/home/VideoBanner'
+import Rotate360 from '@/features/home/Rotate360'
 import { useVideoBanner } from '@/hooks/useVideoBanner'
 import { PATHS } from '@/utils/routes'
 import '@/styles/pages/index.css'
@@ -108,6 +109,8 @@ export default function CSR762() {
       {/* ─── SAVINGS CALCULATOR — Calculate Your Savings ──────────── */}
       <SavingsCalculator />
 
+{/* ─── 360° ROTATE — interactive product viewer (Rotate360 component) ─ */}
+      <div className="rotate360-light"><Rotate360 /></div>
       {/* ─── DESIGN & STYLE — Visual Desire gallery ───────────────── */}
       <DesignStyle />
 
