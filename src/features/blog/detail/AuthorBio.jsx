@@ -1,4 +1,4 @@
-﻿// Author bio card â€” mirrors CSR_New_web `.author-bio`.
+﻿// Author bio card — mirrors CSR_New_web `.author-bio`.
 // Sits below the article in the content column. Avatar initials are derived
 // from the author name so any byline renders consistently.
 function initials(name = '') {
@@ -7,8 +7,8 @@ function initials(name = '') {
 
 export default function AuthorBio({
   name  = 'Svitch Editorial Team',
-  role  = 'Svitch Bikes â€” Official Blog',
-  email = 'media@svitch.bike',
+  role  = 'Svitch Bikes — Official Blog',
+  email = 'hello@svitch.bike',
   bio = (
     <>
       The Svitch Editorial Team covers product launches, rider stories, e-bike

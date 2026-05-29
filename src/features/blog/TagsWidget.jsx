@@ -1,4 +1,4 @@
-﻿// Blog sidebar "Popular Tags" widget â€” mirrors CSR_New_web `.widget-tags`.
+﻿// Blog sidebar "Popular Tags" widget — mirrors CSR_New_web `.widget-tags`.
 // Optionally controlled: pass `active` + `onChange` to make a tag selectable
 // (e.g. to filter the post list). Without those props it just renders inert
 // chip-style links.

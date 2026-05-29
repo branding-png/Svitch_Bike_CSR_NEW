@@ -1,6 +1,6 @@
 ﻿import { Link } from 'react-router-dom'
 
-// Blog sidebar promo card â€” mirrors CSR_New_web `.widget-promo`.
+// Blog sidebar promo card — mirrors CSR_New_web `.widget-promo`.
 export default function PromoWidget({
   title       = 'Ready to Ride?',
   description = 'Explore our full range of premium electric motorcycles and e-bicycles.',

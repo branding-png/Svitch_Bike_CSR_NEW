@@ -125,10 +125,7 @@ export default function EventList({ items = EVENTS, filters = FILTERS }) {
         <div style={{ textAlign: 'center', marginTop: 40 }}>
           <p>
             Hosting an EV event?{' '}
-            <Link className="accent" to="/company/contact">Invite us</Link>
-            {' · '}
-            Subscribe to event alerts in your{' '}
-            <Link className="accent" to="/account/notifications">notification settings</Link>.
+            <Link className="accent" to="/company/contact">Invite us</Link>.
           </p>
         </div>
       </div>

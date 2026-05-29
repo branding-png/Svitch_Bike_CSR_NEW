@@ -1,4 +1,4 @@
-﻿// Sidebar â€” colour-swatch filter. Mirrors CSR_New_web `#colorFilters`.
+﻿// Sidebar — colour-swatch filter. Mirrors CSR_New_web `#colorFilters`.
 // Controlled: parent owns `active` (color id or null) and passes `onChange(id)`.
 // Click an active swatch to clear.
 const COLORS = [

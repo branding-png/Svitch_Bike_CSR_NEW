@@ -1,9 +1,4 @@
-﻿import { useToast } from '@/contexts/ToastContext'
-import { useSavedJobs } from '@/contexts/SavedJobsContext'
-
-// Sticky apply bar â€” mirrors CSR_New_web `.apply-bar`.
-// "Save Job" toggles the role in the shared SavedJobs store so it shows up
-// instantly under Account â†’ Saved Jobs.
+// Sticky apply bar — mirrors CSR_New_web `.apply-bar`.
 export default function ApplyBar({
   job = {
     id:         'senior-electrical-engineer',
@@ -11,35 +6,11 @@ export default function ApplyBar({
     department: 'Engineering',
     location:   'Ahmedabad, Gujarat',
     type:       'Full Time',
-    experience: '3â€“6 Years',
+    experience: '3-6 Years',
     deadline:   'Apr 25, 2026',
   },
   applyHref = '#job-apply',
 }) {
-  const { show } = useToast()
-  const { has, toggle } = useSavedJobs()
-
-  // Bridge the local job-shape to what the store expects (slug/deptLabel/exp).
-  const slug = job.slug || job.id
-  const saved = has(slug)
-
-  function toggleSave() {
-    toggle({
-      slug,
-      title:     job.title,
-      deptLabel: job.department || job.deptLabel,
-      location:  job.location,
-      type:      job.type,
-      exp:       job.experience || job.exp,
-      applyBy:   job.deadline   || job.applyBy,
-    })
-    show(
-      saved ? 'Removed from saved jobs' : 'Job saved. Check Account â†’ Saved Jobs.',
-      saved ? 'info' : 'success',
-      2500,
-    )
-  }
-
   return (
     <div aria-label="ApplyBar"
       className="card-base apply-bar"
@@ -53,18 +24,9 @@ export default function ApplyBar({
     >
       <div className="apply-bar-info">
         <h5>{job.title}</h5>
-        <span>{job.department} Â· {job.location} Â· {job.type}</span>
+        <span>{job.department} · {job.location} · {job.type}</span>
       </div>
       <div className="apply-bar-actions">
-        <button
-          type="button"
-          className={`btn-csr secondary sm js-save-job${saved ? ' is-saved' : ''}`}
-          onClick={toggleSave}
-          aria-pressed={saved}
-        >
-          <i className={`bi ${saved ? 'bi-bookmark-check-fill' : 'bi-bookmark'}`}></i>{' '}
-          <span className="save-label">{saved ? 'Saved' : 'Save Job'}</span>
-        </button>
         <a href={applyHref} className="rajdhani-lbl-text-sm btn-csr primary sm">
           <i className="bi bi-send-fill"></i> Apply Now
         </a>

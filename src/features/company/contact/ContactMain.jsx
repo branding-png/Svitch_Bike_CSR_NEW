@@ -36,8 +36,8 @@ const INFO_CARDS = [
     title: 'Sales & Support',
     body: (
       <>
-        <a href="tel:+911800123456">+91 1800-123-456</a> (Toll Free)<br />
-        <a href="tel:+917940123456">+91 79 4012 3456</a> (Head Office)<br />
+        <a href="tel:+916351272002">+91 63512 72002</a> (Toll Free)<br />
+        <a href="tel:+916351272002">+91 63512 72002</a> (Head Office)<br />
         <span className="contact-info-meta">Mon–Sat · 10:00 AM – 7:00 PM IST</span>
       </>
     ),
@@ -50,7 +50,7 @@ const INFO_CARDS = [
       <>
         <a href="mailto:hello@svitch.bike">hello@svitch.bike</a> (General)<br />
         <a href="mailto:support@svitch.bike">support@svitch.bike</a> (Support)<br />
-        <a href="mailto:dealers@svitch.bike">dealers@svitch.bike</a> (Dealerships)
+        <a href="mailto:support@svitch.bike">support@svitch.bike</a> (Dealerships)
       </>
     ),
   },

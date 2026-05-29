@@ -1,4 +1,4 @@
-﻿// Color swatch picker â€” controlled by parent via `value` + `onChange`.
+﻿// Color swatch picker — controlled by parent via `value` + `onChange`.
 // Keeps legacy .pd-color / .is-active markup so existing CSS keeps working.
 export default function ProductDetailColorSelector({ colors = [], value, onChange }) {
   if (!colors.length) return null

@@ -1,6 +1,6 @@
-﻿// Sidebar â€” availability filter. Mirrors CSR_New_web `#stockFilters`.
+﻿// Sidebar — availability filter. Mirrors CSR_New_web `#stockFilters`.
 // Multi-select: parent owns `active` (array of stock ids) and passes
-// `onChange(nextArray)`. `counts` is optional â€” per-status count badge.
+// `onChange(nextArray)`. `counts` is optional — per-status count badge.
 const STATUSES = [
   { id: 'in-stock',    label: 'In Stock'    },
   { id: 'pre-order',   label: 'Pre-Order'   },

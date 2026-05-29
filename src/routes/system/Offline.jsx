@@ -3,7 +3,7 @@ import { PATHS } from '@/utils/routes'
 import '@/styles/pages/offline.css'
 
 // Offline / no-network screen. Mirrors CSR_New_web `offline.html`.
-// Renders inside a standalone route — no Navbar, no AuthLayout chrome.
+// Renders inside a standalone route — no Navbar / Footer chrome.
 export default function Offline() {
   return (
     <div id="off-main">

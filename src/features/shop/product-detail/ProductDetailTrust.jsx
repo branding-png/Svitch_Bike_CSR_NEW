@@ -1,4 +1,4 @@
-﻿// Trust strip â€” free delivery, warranty, returns. Matches legacy .pd-trust markup.
+﻿// Trust strip — free delivery, warranty, returns. Matches legacy .pd-trust markup.
 const DEFAULT_ITEMS = [
   { icon: 'bi-shield-check',           label: '3-Year Warranty' },
   { icon: 'bi-speedometer2',           label: '30,000 km Warranty' },

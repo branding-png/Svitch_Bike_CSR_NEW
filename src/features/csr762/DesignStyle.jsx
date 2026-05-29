@@ -64,7 +64,7 @@ export default function DesignStyle({
           </div>
         </div>
 
-        <div className="gallery-grid reveal">
+        <div className="ds-gallery-grid reveal">
           {cells.map((c) => {
             const isVideo = c.type === 'video'
             return (

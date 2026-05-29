@@ -1,7 +1,7 @@
 ﻿import { Link } from 'react-router-dom'
 import { getRecentPosts } from '@/data/blog'
 
-// Blog sidebar "Recent Posts" â€” mirrors CSR_New_web `.widget-recent`.
+// Blog sidebar "Recent Posts" — mirrors CSR_New_web `.widget-recent`.
 // Pulls the top N posts from the shared blog data (default 3).
 export default function RecentPostsWidget({
   title       = 'Recent Posts',

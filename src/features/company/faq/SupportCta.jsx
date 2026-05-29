@@ -10,8 +10,8 @@ export default function SupportCta({
   titleAccent = 'Help',
   description = "Can't find what you're looking for? Our support team answers within 24 hours on email, or live on chat & phone Mon–Sat, 10AM–7PM IST.",
   contactHref = '/company/contact',
-  phone       = '+91 1800-123-456',
-  phoneTel    = '+911800123456',
+  phone       = '+91 63512 72002',
+  phoneTel    = '+916351272002',
 }) {
   return (
     <section aria-label="SupportCta" id={id}>

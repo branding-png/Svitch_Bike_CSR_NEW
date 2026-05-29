@@ -1,4 +1,4 @@
-﻿// Price block â€” current price, struck-through MRP, and a savings badge.
+﻿// Price block — current price, struck-through MRP, and a savings badge.
 // All values are passed in so the same component works for any variant.
 export default function ProductDetailPriceRow({ price, oldPrice, savings }) {
   return (

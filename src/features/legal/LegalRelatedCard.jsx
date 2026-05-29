@@ -1,6 +1,6 @@
 ﻿import { Link } from 'react-router-dom'
 
-// Single "Related Policies" card â€” mirrors CSR_New_web `.legal-related-card`.
+// Single "Related Policies" card — mirrors CSR_New_web `.legal-related-card`.
 // `to` is required (router path). External / mailto / tel can use `href` instead.
 export default function LegalRelatedCard({
   to,

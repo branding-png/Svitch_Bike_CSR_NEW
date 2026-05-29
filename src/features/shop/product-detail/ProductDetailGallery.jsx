@@ -1,6 +1,6 @@
 ﻿import { useState } from 'react'
 
-// Product detail gallery â€” main image + clickable thumbnail strip.
+// Product detail gallery — main image + clickable thumbnail strip.
 // Controlled by the parent via `images` prop; the active thumbnail is local
 // since it only matters inside this component.
 //

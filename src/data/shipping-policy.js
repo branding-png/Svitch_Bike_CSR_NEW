@@ -143,7 +143,7 @@ const SHIPPING_POLICY_SECTIONS = [
     title: 'International Shipping',
     blocks: [
       { type: 'p', text: 'We currently do not ship CSR 762 vehicles outside India. International accessories and merchandise may be available via Svitch resellers in select markets.' },
-      { type: 'p', text: 'For commercial / fleet enquiries outside India, write to international@svitch.bike with quantity, country, and intended use. Our partnerships team will respond within 5 working days.' },
+      { type: 'p', text: 'For commercial / fleet enquiries outside India, write to support@svitch.bike with quantity, country, and intended use. Our partnerships team will respond within 5 working days.' },
     ],
   },
   {

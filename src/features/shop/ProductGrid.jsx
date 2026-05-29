@@ -1,7 +1,7 @@
 ﻿import ProductCard from './ProductCard'
 import ShopEmpty   from './ShopEmpty'
 
-// Shop product-grid â€” renders cards or the empty state when `products` is [].
+// Shop product-grid — renders cards or the empty state when `products` is [].
 export default function ProductGrid({
   products = [],
   query    = '',

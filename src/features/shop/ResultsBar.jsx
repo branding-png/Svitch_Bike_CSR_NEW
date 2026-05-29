@@ -1,9 +1,9 @@
-﻿// Shop results / sort bar â€” mirrors CSR_New_web `.shop-results-bar`.
+﻿// Shop results / sort bar — mirrors CSR_New_web `.shop-results-bar`.
 // Parent provides paging info (`start`, `end`, `total`) and sort state.
 const SORTS = [
   { id: 'featured',  label: 'Featured'              },
-  { id: 'price-asc', label: 'Price â€” Low to High'   },
-  { id: 'price-desc', label: 'Price â€” High to Low'  },
+  { id: 'price-asc', label: 'Price — Low to High'   },
+  { id: 'price-desc', label: 'Price — High to Low'  },
   { id: 'newest',    label: 'Newest First'          },
   { id: 'rated',     label: 'Best Rated'            },
 ]
@@ -22,7 +22,7 @@ export default function ResultsBar({
           'No products match'
         ) : (
           <>
-            Showing <strong>{start}â€“{end}</strong> of <strong>{total}</strong> products
+            Showing <strong>{start}–{end}</strong> of <strong>{total}</strong> products
           </>
         )}
       </span>

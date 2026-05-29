@@ -283,7 +283,7 @@ body.page-index, body.page-index p, body.page-index span, body.page-index a, bod
  margin: 0;
 }
 
-/* Intro row â€” heading left, supporting copy right */
+/* Intro row — heading left, supporting copy right */
 .value-intro {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1446,10 +1446,23 @@ body.page-index, body.page-index p, body.page-index span, body.page-index a, bod
   color: var(--gray-500);
   font-weight: 600;
 }
-@media (max-width:767px){
-#calculator {
-  padding: 50px 0;
+@media (max-width: 991px) {
+  .calc-results {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
+@media (max-width: 767px) {
+  #calculator {
+    padding: 50px 0;
+  }
+  .calc-result-item {
+    padding: 22px 14px;
+  }
+}
+@media (max-width: 575px) {
+  .calc-results {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ──────────────────────────────────────────
@@ -1459,12 +1472,32 @@ body.page-index, body.page-index p, body.page-index span, body.page-index a, bod
   background: var(--gray-950);
   padding: var(--section-pad) 0;
 }
-.gallery-grid {
+.ds-gallery-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   grid-template-rows: 280px 280px;
   gap: 8px;
   margin-bottom: 32px;
+}
+@media (max-width: 991px) {
+  .ds-gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 220px 220px 220px;
+  }
+  .gallery-cell:first-child {
+    grid-column: span 2;
+    grid-row: auto;
+  }
+}
+@media (max-width: 575px) {
+  .ds-gallery-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 200px);
+    gap: 10px;
+  }
+  .gallery-cell:first-child {
+    grid-column: auto;
+  }
 }
 .gallery-cell {
   background: var(--gray-900);
@@ -1846,6 +1879,16 @@ body.page-index, body.page-index p, body.page-index span, body.page-index a, bod
   gap: 1px;
   background: var(--border);
   border: 1px solid var(--border);
+}
+@media (max-width: 991px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 575px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
 }
 .feature-item {
   background: var(--black);
@@ -2230,10 +2273,27 @@ body.page-index, body.page-index p, body.page-index span, body.page-index a, bod
   color: var(--gray-500);
   font-size: var(--fs-base);
 }
-@media(max-width:767px){
+@media (max-width: 767px) {
   #comparison {
-  padding: 50px 0;
+    padding: 50px 0;
+  }
+  .compare-table {
+    min-width: 560px;
+  }
+  .compare-table th,
+  .compare-table td {
+    padding: 12px 12px;
+    font-size: var(--fs-xs);
+  }
 }
+@media (max-width: 575px) {
+  .compare-table th,
+  .compare-table td {
+    padding: 10px 10px;
+  }
+  .compare-table td.feature-name {
+    letter-spacing: 1px;
+  }
 }
 /* ──────────────────────────────────────────
    14. PRICING

@@ -1,16 +1,16 @@
-﻿// Job detail header card â€” mirrors CSR_New_web `.job-header-card`.
+﻿// Job detail header card — mirrors CSR_New_web `.job-header-card`.
 // Pass `meta` as an array of { icon, text } so the pill list stays data-driven.
 const DEFAULT_META = [
   { icon: 'bi-geo-alt-fill',  text: 'Ahmedabad, Gujarat'    },
   { icon: 'bi-clock-fill',    text: 'Full Time'             },
-  { icon: 'bi-award-fill',    text: '3â€“6 Years Experience' },
+  { icon: 'bi-award-fill',    text: '3–6 Years Experience' },
   { icon: 'bi-calendar-event', text: 'Posted March 25, 2026' },
   { icon: 'bi-people-fill',   text: '2 Openings'            },
 ]
 
 export default function JobHeader({
   dept = 'Engineering',
-  title = 'Senior Electrical Engineer â€” E-Bike Systems',
+  title = 'Senior Electrical Engineer — E-Bike Systems',
   meta = DEFAULT_META,
 }) {
   return (

@@ -1,4 +1,4 @@
-﻿// Sidebar â€” category filter widget. Mirrors CSR_New_web `#categoryFilters`.
+﻿// Sidebar — category filter widget. Mirrors CSR_New_web `#categoryFilters`.
 // Multi-select: parent owns `value` (array of category ids, empty == "all")
 // and gets the new array via `onChange(next)`. Selecting "All Products" clears
 // every other tick; ticking any specific category un-ticks "All".

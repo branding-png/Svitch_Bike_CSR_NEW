@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { PATHS } from '@/utils/routes'
-import UserDropdown from './UserDropdown'
 import NavSearchDrawer from './NavSearchDrawer'
 import MobileMenu from './MobileMenu'
 import BookNowButton from '@/features/book-now/BookNowButton'
@@ -59,7 +58,6 @@ export default function Navbar() {
               >
                 <i className="bi bi-search"></i>
               </button>
-              <UserDropdown />
             </div>
             <BookNowButton />
             <a href="https://svitchbike.com/" className="rajdhani-lbl-text-sm btn-csr primary sm">

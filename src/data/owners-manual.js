@@ -146,9 +146,9 @@ const OWNERS_MANUAL_SECTIONS = [
       },
 
       { type: 'callout', icon: 'bi-calendar-check-fill', text: [
-        { tag: 'strong', text: 'Book service:' },
-        { text: ' Schedule a workshop visit anytime on our ' },
-        link('service booking page', PATHS.bookService),
+        { tag: 'strong', text: 'Find a dealer:' },
+        { text: ' Schedule a workshop visit at your nearest ' },
+        link('authorised dealer', PATHS.dealers),
         { text: ' — doorstep pickup is available in major cities.' },
       ] },
     ],
@@ -185,7 +185,7 @@ const OWNERS_MANUAL_SECTIONS = [
         { text: '. ' },
         link('Contact support', PATHS.contact),
         { text: ' or call ' },
-        { tag: 'a', text: '+91 1800-123-456', href: 'tel:+911800123456' },
+        { tag: 'a', text: '+91 63512 72002', href: 'tel:+916351272002' },
         { text: '.' },
       ] },
     ],

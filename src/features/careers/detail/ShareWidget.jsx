@@ -1,6 +1,6 @@
 ﻿import { useToast } from '@/contexts/ToastContext'
 
-// Sidebar "Share This Job" widget â€” mirrors CSR_New_web `.share-grid`.
+// Sidebar "Share This Job" widget — mirrors CSR_New_web `.share-grid`.
 // WhatsApp / LinkedIn / Twitter open in new tabs with the current URL prefilled;
 // "Copy Link" writes the URL to the clipboard and fires a toast.
 export default function ShareWidget({
@@ -26,7 +26,7 @@ export default function ShareWidget({
       await navigator.clipboard.writeText(getUrl())
       show('Link copied to clipboard', 'success', 2500)
     } catch {
-      show('Could not copy link â€” please copy it manually.', 'error', 3000)
+      show('Could not copy link — please copy it manually.', 'error', 3000)
     }
   }
 

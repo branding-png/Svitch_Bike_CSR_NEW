@@ -5,10 +5,10 @@ import Footer from './Footer'
 import CookieConsent from './CookieConsent'
 import SkipToMain from './SkipToMain'
 import Preloader from './Preloader'
+import BackToTop from './BackToTop'
 import { useReveal } from '@/hooks/useReveal'
 
-// Standard chrome wrapper for every public-facing route. Auth/system pages
-// can opt out by using <AuthLayout> instead.
+// Standard chrome wrapper for every public-facing route.
 export default function AppLayout() {
   const { pathname } = useLocation()
 
@@ -34,6 +34,7 @@ export default function AppLayout() {
         <Outlet />
       </main>
       <Footer />
+      <BackToTop />
       <CookieConsent />
     </div>
   )

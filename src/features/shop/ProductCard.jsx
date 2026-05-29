@@ -1,7 +1,5 @@
 ﻿import { memo } from 'react'
 import { Link } from 'react-router-dom'
-import { useWishlist } from '@/contexts/WishlistContext'
-import { useToast } from '@/contexts/ToastContext'
 import { useBookNow } from '@/contexts/BookNowContext'
 import { formatCurrency } from '@/utils/formatCurrency'
 
@@ -14,7 +12,7 @@ const BADGES = {
   spicy:         { label: 'Spicy',       className: 'sale' },
 }
 
-// 0â€“5 rating renderer using Bootstrap-Icon stars.
+// 0–5 rating renderer using Bootstrap-Icon stars.
 function Stars({ value = 0 }) {
   const full = Math.floor(value)
   const half = value - full >= 0.5
@@ -29,26 +27,12 @@ function Stars({ value = 0 }) {
 }
 
 function ProductCard({ product, onQuickView }) {
-  const { has, toggle } = useWishlist()
-  const { show }        = useToast()
   const { open: openBookNow } = useBookNow()
 
-  const wished = has(product.id)
   const badge  = product.badge ? BADGES[product.badge] : null
   const isIcon = typeof product.image === 'string' && product.image.startsWith('ICON:')
   const iconName = isIcon ? product.image.slice(5) : null
   const detailPath = `/shop/product/${product.id}`
-
-  const handleWishlist = (e) => {
-    e.preventDefault()
-    e.stopPropagation()
-    toggle(product)
-    show(
-      wished ? 'Removed from wishlist.' : 'Added to wishlist.',
-      wished ? 'info' : 'success',
-      2500,
-    )
-  }
 
   const handleBookNow = (e) => {
     e.preventDefault()
@@ -67,16 +51,6 @@ function ProductCard({ product, onQuickView }) {
         style={isIcon ? { background: product.bg, display: 'flex', alignItems: 'center', justifyContent: 'center' } : undefined}
       >
         {badge && <span className={`product-badge ${badge.className}`.trim()}>{badge.label}</span>}
-
-        <button
-          type="button"
-          className={`product-wishlist${wished ? ' is-active' : ''}`}
-          aria-label="Wishlist"
-          aria-pressed={wished}
-          onClick={handleWishlist}
-        >
-          <i className={`bi ${wished ? 'bi-heart-fill' : 'bi-heart'}`}></i>
-        </button>
 
         <Link to={detailPath} className="product-card-link">
           {isIcon ? (
@@ -120,6 +94,6 @@ function ProductCard({ product, onQuickView }) {
   )
 }
 
-// Memoised â€” Shop re-renders on every filter/sort tick, but each card only
+// Memoised — Shop re-renders on every filter/sort tick, but each card only
 // cares about its own product + handlers.
 export default memo(ProductCard)

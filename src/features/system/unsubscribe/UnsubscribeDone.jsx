@@ -1,7 +1,7 @@
 ﻿import { Link } from 'react-router-dom'
 import { PATHS } from '@/utils/routes'
 
-// "You're unsubscribed" confirmation card â€” mirrors CSR_New_web `#unsubDone`.
+// "You're unsubscribed" confirmation card — mirrors CSR_New_web `#unsubDone`.
 export default function UnsubscribeDone({ email }) {
   return (
     <div aria-label="UnsubscribeDone" className="card-base unsub-card">
@@ -14,8 +14,8 @@ export default function UnsubscribeDone({ email }) {
         You&apos;ll still get essential transactional emails.
       </p>
       <p className="unsub-rejoin">
-        Changed your mind? You can re-subscribe anytime from your{' '}
-        <Link to={PATHS.dashboard}>account dashboard</Link>.
+        Changed your mind? You can re-subscribe anytime from our{' '}
+        <Link to={PATHS.home}>home page</Link>.
       </p>
       <Link to={PATHS.home} className="btn-csr secondary unsub-home">
         <i className="bi bi-arrow-left"></i> Back to Home

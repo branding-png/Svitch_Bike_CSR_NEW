@@ -2,7 +2,7 @@
 import { PATHS } from '@/utils/routes'
 import { useToast } from '@/contexts/ToastContext'
 
-// Thank-you booking confirmation hero â€” mirrors CSR_New_web `.ty-hero`.
+// Thank-you booking confirmation hero — mirrors CSR_New_web `.ty-hero`.
 // All booking fields are prop-driven so the route can wire real data later.
 const STEPS = [
   { num: 'Step 1', icon: 'bi-phone',         title: 'Check your SMS',     text: 'Dealer address and contact details within 10 minutes.' },
@@ -12,9 +12,9 @@ const STEPS = [
 
 const SUMMARY_DEFAULTS = {
   bookingId: 'SVT-2026-00000',
-  customer:  'â€”',
+  customer:  '—',
   model:     'CSR 762',
-  rideDate:  'â€”',
+  rideDate:  '—',
   location:  'Svitch Dealer, Ahmedabad',
   status:    'Confirmed',
 }
@@ -48,7 +48,7 @@ export default function ThankYouHero({ summary = SUMMARY_DEFAULTS }) {
         </h1>
         <p className="ty-sub">
           Your test ride has been booked successfully. A confirmation SMS and
-          email are on their way â€” our team will call within 2 hours to lock
+          email are on their way — our team will call within 2 hours to lock
           your slot.
         </p>
 
@@ -82,13 +82,10 @@ export default function ThankYouHero({ summary = SUMMARY_DEFAULTS }) {
 
         {/* Action CTAs */}
         <div className="ty-btns">
-          <Link to={PATHS.testRides} className="rajdhani-lbl-text-sm btn-csr primary">
-            <i className="bi bi-list-check"></i> View My Test Rides
-          </Link>
           <Link to={PATHS.dealers} className="rajdhani-lbl-text-sm btn-csr secondary">
             <i className="bi bi-map"></i> Find Dealer
           </Link>
-          <Link to={PATHS.home} className="rajdhani-lbl-text-sm btn-csr secondary">
+          <Link to={PATHS.home} className="rajdhani-lbl-text-sm btn-csr primary">
             <i className="bi bi-house-fill"></i> Back to Home
           </Link>
         </div>

@@ -1,1 +1,0 @@
-var e=new Intl.NumberFormat(`en-IN`,{style:`currency`,currency:`INR`,maximumFractionDigits:0});function t(t){return t==null||Number.isNaN(Number(t))?`—`:e.format(Number(t))}export{t};

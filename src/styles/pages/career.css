@@ -122,53 +122,6 @@
   flex-wrap: wrap;
   margin-bottom: 8px;
 }
-/* Green "Saved" pill — appears when the role is bookmarked */
-.job-status-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 10px;
-  background: rgba(34, 197, 94, 0.15);
-  border: 1px solid var(--success);
-  color: var(--success);
-  font-family: var(--font-label);
-  font-size: var(--fs-sm);
-  font-weight: var(--fw-semibold);
-  text-transform: uppercase;
-  letter-spacing: 0.6px;
-  margin-bottom: 12px;
-}
-.job-status-tag i {
-  font-size: 12px;
-}
-
-/* Save toggle buttons (listing + apply-bar + apply-cta) when active */
-.job-save-toggle.is-saved,
-.js-save-job.is-saved {
-  background: var(--success-tint);
-  border-color: var(--success);
-  color: var(--success);
-}
-.job-save-toggle.is-saved i,
-.js-save-job.is-saved i {
-  color: var(--success);
-}
-.job-save-toggle.is-saved:hover,
-.js-save-job.is-saved:hover {
-  background: var(--success);
-  color: var(--black);
-  border-color: var(--success);
-}
-.job-save-toggle.is-saved:hover i,
-.js-save-job.is-saved:hover i {
-  color: var(--black);
-}
-
-/* Subtle green outline on a saved job card */
-.job-card.is-saved {
-  border-color: rgba(34, 197, 94, 0.35);
-}
-
 .job-dept-tag {
   display: inline-block;
   padding: 4px 10px;

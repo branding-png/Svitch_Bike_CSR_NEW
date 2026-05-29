@@ -5,7 +5,7 @@ import { PATHS } from '@/utils/routes'
 // NavLink (not Link) gives us native active-link highlighting — the `active`
 // class lands on the current page's footer entry, picked up by
 // `.footer-links a.active` / `.footer-legal a.active` in components.css.
-// `end` is on every link so e.g. /shop/cart doesn't also light up "All Products".
+// `end` is on every link so e.g. /shop/product/:id doesn't also light up "All Products".
 export default function Footer() {
   return (
     <footer id="footer">
@@ -16,7 +16,7 @@ export default function Footer() {
             <span className="contact-strip-icon"><i className="bi bi-telephone-fill"></i></span>
             <div className="contact-strip-body">
               <span className="contact-strip-label rajdhani-lbl-text-sm">Call Us</span>
-              <strong>+91 635 127 2002</strong>
+              <strong>+91 63512 72002</strong>
             </div>
           </a>
           <a href="mailto:support@svitch.bike" className="contact-strip-item">
@@ -64,7 +64,6 @@ export default function Footer() {
             <h5>Shop</h5>
             <NavLink end to={PATHS.shop}>Products</NavLink>
             <NavLink end to={PATHS.saversScale}>Saver&apos;s Scale</NavLink>
-            <NavLink end to={PATHS.finance}>EMI Calculator</NavLink>
           </div>
           
           <div className="footer-links">

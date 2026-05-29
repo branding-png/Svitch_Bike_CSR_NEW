@@ -1,6 +1,6 @@
 ﻿import { Link } from 'react-router-dom'
 
-// Sidebar "View All Openings" link â€” mirrors CSR_New_web inline card at the
+// Sidebar "View All Openings" link — mirrors CSR_New_web inline card at the
 // bottom of the career-detail sidebar. Single-purpose, but kept here so the
 // sidebar is composed of consistently named feature components.
 export default function BackToAllJobs({

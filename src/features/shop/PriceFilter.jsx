@@ -1,7 +1,7 @@
 ﻿import { formatCurrency } from '@/utils/formatCurrency'
 
-// Sidebar â€” price-range filter. Mirrors CSR_New_web `#priceRange`.
-// Controlled: parent owns `value` (max price â‚¹) and passes `onChange(value)`.
+// Sidebar — price-range filter. Mirrors CSR_New_web `#priceRange`.
+// Controlled: parent owns `value` (max price ₹) and passes `onChange(value)`.
 export default function PriceFilter({
   min = 100,
   max = 200000,

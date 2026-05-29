@@ -1,1 +1,0 @@
-function e(e){if(!e)return`+91 ••••• •••••`;let t=String(e).replace(/\D/g,``).slice(-10);return t.length<5?`+91 ••••• •••••`:`+91 ••••• ${t.slice(-5)}`}function t(e=``){let[t,n]=e.split(`@`);return n?`${t.slice(0,2)}${`*`.repeat(Math.max(0,t.length-2))}@${n}`:e}export{e as n,t};

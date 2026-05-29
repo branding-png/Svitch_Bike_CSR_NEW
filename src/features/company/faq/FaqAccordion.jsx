@@ -1,7 +1,7 @@
 ﻿import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-// FAQ accordion + search + category filter â€” mirrors CSR_New_web `#faq-main`.
+// FAQ accordion + search + category filter — mirrors CSR_New_web `#faq-main`.
 // Pure-React replacement for the Bootstrap collapse + JS filter logic.
 const CATEGORIES = [
   { id: 'all',         label: 'All',                   icon: 'bi-grid-fill'             },
@@ -13,7 +13,7 @@ const CATEGORIES = [
 ]
 
 const FAQS = [
-  // â”€â”€ GENERAL â”€â”€
+  // ── GENERAL ──
   {
     cat: 'general',
     q: 'What makes the CSR 762 different from other electric motorcycles?',
@@ -23,7 +23,7 @@ const FAQS = [
         The CSR 762 is built on a <strong>lion-inspired lattice space-frame chassis</strong>,
         delivering exceptional stability and a lightweight feel. It offers a{' '}
         <strong>7-inch Android console</strong>, dual swappable batteries, 6 riding modes,
-        and IP68-rated weather protection â€” all designed specifically for Indian roads,
+        and IP68-rated weather protection — all designed specifically for Indian roads,
         rain, and long commutes.
       </>
     ),
@@ -49,20 +49,20 @@ const FAQS = [
         You'll need a <strong>valid two-wheeler driving licence</strong>,{' '}
         <strong>Aadhaar card</strong>, <strong>PAN card</strong>, and{' '}
         <strong>address proof</strong>. Our dealer handles RTO registration, insurance,
-        and FAME II subsidy paperwork on your behalf â€” just sign and ride.
+        and FAME II subsidy paperwork on your behalf — just sign and ride.
       </>
     ),
   },
 
-  // â”€â”€ BATTERY & CHARGING â”€â”€
+  // ── BATTERY & CHARGING ──
   {
     cat: 'battery',
     q: 'How long does it take to fully charge the battery?',
     keywords: 'charging time full battery hours home socket',
     a: (
       <>
-        A full charge from 0â€“100% takes <strong>5.5 hours</strong> on a standard 15A home
-        socket. With the optional fast charger, you can go from 20â€“80% in about{' '}
+        A full charge from 0–100% takes <strong>5.5 hours</strong> on a standard 15A home
+        socket. With the optional fast charger, you can go from 20–80% in about{' '}
         <strong>90 minutes</strong>.
       </>
     ),
@@ -104,7 +104,7 @@ const FAQS = [
     ),
   },
 
-  // â”€â”€ PERFORMANCE & RANGE â”€â”€
+  // ── PERFORMANCE & RANGE ──
   {
     cat: 'performance',
     q: 'What is the real-world range of the CSR 762?',
@@ -125,7 +125,7 @@ const FAQS = [
     a: (
       <>
         The CSR 762 has a <strong>top speed of 110 km/h</strong>, powered by a 6.5 kW
-        peak-power PMSM motor delivering <strong>55 Nm of instant torque</strong>. 0â€“60 km/h
+        peak-power PMSM motor delivering <strong>55 Nm of instant torque</strong>. 0–60 km/h
         takes just <strong>6 seconds</strong>.
       </>
     ),
@@ -143,7 +143,7 @@ const FAQS = [
     ),
   },
 
-  // â”€â”€ WARRANTY & SERVICE â”€â”€
+  // ── WARRANTY & SERVICE ──
   {
     cat: 'service',
     q: 'What warranty comes with the CSR 762?',
@@ -152,7 +152,7 @@ const FAQS = [
       <>
         Every CSR 762 is covered by our{' '}
         <strong>3-year / 30,000 km comprehensive warranty</strong> on the vehicle,
-        battery (Li-NMC), and PMSM motor â€” among the most industry-leading warranties in
+        battery (Li-NMC), and PMSM motor — among the most industry-leading warranties in
         India.
       </>
     ),
@@ -163,11 +163,11 @@ const FAQS = [
     keywords: 'service maintenance cost oil petrol diy',
     a: (
       <>
-        EVs need drastically less maintenance than petrol bikes â€” no oil changes, no
+        EVs need drastically less maintenance than petrol bikes — no oil changes, no
         spark plugs, no clutch adjustments. Our network of{' '}
         <strong>500+ service centres</strong> nationwide provides periodic checks,
         doorstep pickup, and OTA updates that improve your bike over time.{' '}
-        <Link to="/support/book-service">See service plans â†’</Link>
+        <Link to="/support/dealers">Find a service centre →</Link>
       </>
     ),
   },
@@ -184,15 +184,15 @@ const FAQS = [
     ),
   },
 
-  // â”€â”€ PRICING & BOOKING â”€â”€
+  // ── PRICING & BOOKING ──
   {
     cat: 'pricing',
     q: 'What is the booking amount?',
     keywords: 'booking amount pre-order pre-booking refundable 999',
     a: (
       <>
-        Reserve your CSR 762 with a fully-refundable deposit of just <strong>â‚¹999</strong>.
-        You can cancel any time before delivery for a full refund â€” no questions asked.
+        Reserve your CSR 762 with a fully-refundable deposit of just <strong>₹999</strong>.
+        You can cancel any time before delivery for a full refund — no questions asked.
       </>
     ),
   },
@@ -203,7 +203,7 @@ const FAQS = [
     a: (
       <>
         Yes. We've partnered with <strong>leading banks and NBFCs</strong> to offer
-        flexible EMI plans starting at just <strong>â‚¹3,999/month</strong> with tenures up
+        flexible EMI plans starting at just <strong>₹3,999/month</strong> with tenures up
         to 48 months. Zero-cost EMI is available on select cards.
       </>
     ),

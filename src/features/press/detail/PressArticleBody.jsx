@@ -2,7 +2,7 @@
 import { EMAILS, PHONES } from '@/data/contact-info'
 import { PATHS } from '@/utils/routes'
 
-// Press-release article body â€” block renderer for entries in data/press.js.
+// Press-release article body — block renderer for entries in data/press.js.
 // Block types: p (with optional `lead`), h3, quote, download, contact.
 export default function PressArticleBody({ blocks = [], image, imageAlt }) {
   return (
@@ -40,12 +40,12 @@ export default function PressArticleBody({ blocks = [], image, imageAlt }) {
                     color: 'var(--gray-300)',
                   }}
                 >
-                  â€œ{b.text}â€
+                  “{b.text}”
                   {b.author && (
                     <>
                       <br />
                       <strong style={{ display: 'block', marginTop: 10, fontStyle: 'normal', color: 'var(--white)' }}>
-                        â€” {b.author}
+                        — {b.author}
                       </strong>
                     </>
                   )}
@@ -91,7 +91,7 @@ export default function PressArticleBody({ blocks = [], image, imageAlt }) {
                         {email.address}
                       </a>
                     )}
-                    {email && phone && ' Â· '}
+                    {email && phone && ' · '}
                     {phone && <a href={`tel:${phone.tel}`}>{phone.phone}</a>}
                   </p>
                 </div>

@@ -1,6 +1,6 @@
 ﻿import { Link } from 'react-router-dom'
 
-// Blog detail sidebar "Related Articles" â€” mirrors CSR_New_web `.widget-related`.
+// Blog detail sidebar "Related Articles" — mirrors CSR_New_web `.widget-related`.
 const DEFAULT_ITEMS = [
   { slug: '10-tips-maximize-battery-life',  title: '10 Tips to Maximize Your E-Bike Battery Life',     date: 'Mar 20, 2026' },
   { slug: 'ahmedabad-to-vadodara-lite-xe',  title: 'Riding Ahmedabad to Vadodara on the Lite XE',      date: 'Mar 15, 2026' },

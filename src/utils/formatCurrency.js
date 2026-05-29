@@ -1,4 +1,4 @@
-// Indian-locale currency formatter — used across cart, checkout, PDP, summary.
+// Indian-locale currency formatter — used across the shop list, PDP, and pricing UI.
 const formatter = new Intl.NumberFormat('en-IN', {
   style: 'currency',
   currency: 'INR',

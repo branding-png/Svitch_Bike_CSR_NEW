@@ -1,4 +1,4 @@
-﻿// Horizontal press-logo marquee â€” mirrors CSR_New_web `.news-logo-slider`.
+﻿// Horizontal press-logo marquee — mirrors CSR_New_web `.news-logo-slider`.
 // The CSS animates `.news-track` via translateX, so we duplicate the array
 // in render to make the loop seamless when the animation hits 50%.
 //

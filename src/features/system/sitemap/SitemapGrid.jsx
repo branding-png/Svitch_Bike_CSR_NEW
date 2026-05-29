@@ -22,43 +22,6 @@ const GROUPS = [
     links: [
       ['All Products',         PATHS.shop],
       ['Product Detail',       '/shop/product/csr-762-black'],
-      ['Compare Bikes',        PATHS.compare],
-      ['Cart',                 PATHS.cart],
-      ['Checkout',             PATHS.checkout],
-      ['Payment Failed',       PATHS.paymentFailed, true],
-      ['Order Confirmation',   PATHS.orderConfirmation],
-      ['Track Order',          PATHS.trackOrder],
-    ],
-  },
-  {
-    icon: 'bi-person-fill',
-    title: 'Account',
-    links: [
-      ['Dashboard',         PATHS.dashboard],
-      ['Profile',           PATHS.profile],
-      ['Notifications',     PATHS.notifications, true],
-      ['My Orders',         PATHS.orders],
-      ['Order Detail',      '/account/orders/SVT-847291'],
-      ['Invoices & GST',    PATHS.invoices, true],
-      ['Returns',           PATHS.returns, true],
-      ['Request a Return',  PATHS.returnRequest, true],
-      ['Service History',   PATHS.serviceHistory, true],
-      ['My Test Rides',     PATHS.testRides],
-      ['Wishlist',          PATHS.wishlist],
-      ['Addresses',         PATHS.addresses],
-      ['Saved Jobs',        PATHS.savedJobs],
-    ],
-  },
-  {
-    icon: 'bi-shield-lock-fill',
-    title: 'Authentication',
-    links: [
-      ['Sign In',           PATHS.login],
-      ['Create Account',    PATHS.register],
-      ['Forgot Password',   PATHS.forgotPassword],
-      ['Reset Password',    PATHS.resetPassword],
-      ['Verify Email',      PATHS.verifyEmail],
-      ['Two-Factor Auth',   PATHS.twoFactor, true],
     ],
   },
   {
@@ -66,10 +29,7 @@ const GROUPS = [
     title: 'Support',
     links: [
       ['Find a Dealer',         PATHS.dealers],
-      ['Support Tickets',       PATHS.ticket, true],
-      ['Book Service',          PATHS.bookService],
       ['Warranty',              PATHS.warranty],
-      ['Roadside Assistance',   PATHS.roadsideAssistance],
       ['Charging Network',      PATHS.chargingNetwork],
       ["Saver's Scale",         PATHS.saversScale],
       ['Specifications',        PATHS.specifications],
@@ -95,13 +55,9 @@ const GROUPS = [
   },
   {
     icon: 'bi-gift-fill',
-    title: 'Offers & Finance',
+    title: 'Offers',
     links: [
       ['Book Test Ride',           PATHS.bookTestRide],
-      ['Refer & Earn',             PATHS.referral],
-      ['EMI & Finance Calculator', PATHS.finance],
-      ['Trade-In Old Bike',        PATHS.tradeIn],
-      ['Insurance Plans',          PATHS.insurance],
       ['Booking Confirmed',        PATHS.thankYou],
     ],
   },
@@ -111,7 +67,6 @@ const GROUPS = [
     links: [
       ['Sitemap',           PATHS.sitemap],
       ['Email Unsubscribe', PATHS.unsubscribe],
-      ['Extra Sections',    '/extra-section'],
       ['Coming Soon',       PATHS.comingSoon, true],
       ['Maintenance',       PATHS.maintenance, true],
       ['Offline (PWA)',     PATHS.offline, true],
@@ -133,8 +88,8 @@ const GROUPS = [
     icon: 'bi-exclamation-triangle-fill',
     title: 'Error Pages',
     links: [
-      // PATHS.notFound is the '*' catch-all selector; link to a real bad
-      // URL so the 404 page actually renders.
+      // The 404 route is a catch-all ('*'); link to a real bad URL so the
+      // 404 page actually renders.
       ['404 — Not Found', '/this-page-does-not-exist'],
     ],
   },

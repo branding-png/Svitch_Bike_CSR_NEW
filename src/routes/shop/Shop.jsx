@@ -10,7 +10,6 @@ import FilterReset        from '@/features/shop/FilterReset'
 import SearchBanner       from '@/features/shop/SearchBanner'
 import ResultsBar         from '@/features/shop/ResultsBar'
 import ProductGrid        from '@/features/shop/ProductGrid'
-import QuickViewModal     from '@/features/shop/QuickViewModal'
 import {
   PRODUCTS, categoryCounts, stockCounts, filterProducts, sortProducts,
 } from '@/data/products'
@@ -36,7 +35,6 @@ export default function Shop() {
   const [stock, setStock]       = useState(DEFAULTS.stock)
   const [sort, setSort]         = useState(DEFAULTS.sort)
   const [page, setPage]         = useState(1)
-  const [quickViewProduct, setQuickViewProduct] = useState(null)
   const [filtersOpen, setFiltersOpen] = useState(false)
 
   useEffect(() => {
@@ -143,7 +141,6 @@ export default function Shop() {
                 query={query}
                 onReset={() => { resetAll(); clearSearch() }}
                 onSuggest={quickSearch}
-                onQuickView={setQuickViewProduct}
               />
 
               <Pagination
@@ -156,11 +153,6 @@ export default function Shop() {
           </div>
         </div>
       </section>
-
-      <QuickViewModal
-        product={quickViewProduct}
-        onClose={() => setQuickViewProduct(null)}
-      />
     </>
   )
 }

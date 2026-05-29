@@ -56,7 +56,7 @@ const BLOGS = [
 
     author:   'Svitch Editorial Team',
     role:     'Svitch Bikes — Official Blog',
-    email:    'media@svitch.bike',
+    email:    'hello@svitch.bike',
     views:    '12,400 views',
     comments: '24 comments',
 
@@ -126,7 +126,7 @@ const BLOGS = [
     heroCaption: 'Treat your Li-ion pack well and it will treat you to thousands of kilometres of clean miles.',
     author:   'Svitch Editorial Team',
     role:     'Svitch Bikes — Official Blog',
-    email:    'media@svitch.bike',
+    email:    'hello@svitch.bike',
     views:    '4,820 views',
     comments: '11 comments',
 
@@ -205,7 +205,7 @@ const BLOGS = [
     heroImage:  '/images/blog/csr-762-red.webp',
     heroAlt:    'Highway ride',
     heroCaption: '100 km between Ahmedabad and Vadodara — one rider, one Lite XE, no support van.',
-    author: 'Svitch Editorial Team', role: 'Svitch Bikes — Official Blog', email: 'media@svitch.bike',
+    author: 'Svitch Editorial Team', role: 'Svitch Bikes — Official Blog', email: 'hello@svitch.bike',
     views: '6,210 views', comments: '14 comments',
     body: [
       { type: 'p', text: "We left Sindhu Bhavan at 6:00 AM and pointed the Lite XE down NH-48 toward Vadodara — a 102 km run we'd never attempted on a single charge." },
@@ -262,7 +262,7 @@ const BLOGS = [
     readTime: '5 min',
     excerpt:  "The shift to electric two-wheelers is accelerating. Here's how Svitch riders are collectively saving thousands of tonnes of CO2 every year.",
     heroImage: '/images/blog/csr-762-gray-1.webp', heroAlt: 'CO2 savings',
-    author: 'Svitch Editorial Team', role: 'Svitch Bikes — Official Blog', email: 'media@svitch.bike',
+    author: 'Svitch Editorial Team', role: 'Svitch Bikes — Official Blog', email: 'hello@svitch.bike',
     views: '3,470 views', comments: '6 comments',
     body: [
       { type: 'p', text: 'Every km on a Svitch displaces roughly 60 g of CO₂ compared to an equivalent petrol two-wheeler — at scale, that adds up fast.' },
@@ -313,7 +313,7 @@ const BLOGS = [
     date:     'Feb 28, 2026', longDate: 'February 28, 2026', readTime: '7 min',
     excerpt:  "A deep dive into the Bafang 250W BLDC motor powering Svitch e-bikes — how it works, why it's superior, and what makes it so smooth.",
     heroImage: '/images/blog/csr-762-gray-Swappable-Battery.webp', heroAlt: 'BLDC',
-    author: 'Svitch Editorial Team', role: 'Svitch Bikes — Official Blog', email: 'media@svitch.bike',
+    author: 'Svitch Editorial Team', role: 'Svitch Bikes — Official Blog', email: 'hello@svitch.bike',
     views: '5,140 views', comments: '9 comments',
     body: [
       { type: 'p', text: 'Choosing a hub motor architecture is the single most consequential decision in e-bike engineering. Here is why every Svitch ships with a BLDC.' },
@@ -359,7 +359,7 @@ const BLOGS = [
     date:     'Feb 20, 2026', longDate: 'February 20, 2026', readTime: '3 min',
     excerpt:  'Svitch Motocorp has officially entered Pune by partnering with DAK Automotives — giving Pune riders their first dedicated experience centre.',
     heroImage: '/images/blog/csr-762-red-1.webp', heroAlt: 'Pune launch',
-    author: 'Svitch Editorial Team', role: 'Svitch Bikes — Official Blog', email: 'media@svitch.bike',
+    author: 'Svitch Editorial Team', role: 'Svitch Bikes — Official Blog', email: 'hello@svitch.bike',
     views: '2,800 views', comments: '4 comments',
     body: [
       { type: 'p', text: 'We are thrilled to announce our Pune flagship in partnership with DAK Automotives. The showroom on FC Road opens its doors March 1.' },
@@ -410,7 +410,7 @@ const BLOGS = [
     date:     'Feb 12, 2026', longDate: 'February 12, 2026', readTime: '4 min',
     excerpt:  "Svitch bikes have three riding modes. Here's the real-world guide to knowing when to use each one for maximum range and enjoyment.",
     heroImage: '/images/blog/CSR-762-3D-Helmet-Video.webp', heroAlt: 'Modes',
-    author: 'Svitch Editorial Team', role: 'Svitch Bikes — Official Blog', email: 'media@svitch.bike',
+    author: 'Svitch Editorial Team', role: 'Svitch Bikes — Official Blog', email: 'hello@svitch.bike',
     views: '3,920 views', comments: '7 comments',
     body: [
       { type: 'p', text: 'Three modes, three personalities. Pick the right one and you transform the ride — pick the wrong one and you waste range or arrive sweaty.' },
@@ -464,7 +464,7 @@ const BLOGS = [
     date:     'Feb 5, 2026', longDate: 'February 5, 2026', readTime: '6 min',
     excerpt:  'Take a walk through our Ahmedabad production line — from frame welding to final QC — and see the craftsmanship behind every Svitch.',
     heroImage: '/images/blog/hero-factory-media.webp', heroAlt: 'Factory floor',
-    author: 'Svitch Editorial Team', role: 'Svitch Bikes — Official Blog', email: 'media@svitch.bike',
+    author: 'Svitch Editorial Team', role: 'Svitch Bikes — Official Blog', email: 'hello@svitch.bike',
     views: '4,260 views', comments: '5 comments',
     body: [
       { type: 'p', text: 'Our Ahmedabad plant sits on 42,000 sqft of solar-powered floor space — every Svitch is built here, end to end.' },
@@ -522,7 +522,7 @@ const BLOGS = [
     date:     'Jan 30, 2026', longDate: 'January 30, 2026', readTime: '5 min',
     excerpt:  'Murdered-out styling, upgraded electronics, and an exclusive matte finish — everything you need to know about the CSR 762 Black Edition.',
     heroImage: '/images/blog/csr-762-black.webp', heroAlt: 'CSR Black',
-    author: 'Svitch Editorial Team', role: 'Svitch Bikes — Official Blog', email: 'media@svitch.bike',
+    author: 'Svitch Editorial Team', role: 'Svitch Bikes — Official Blog', email: 'hello@svitch.bike',
     views: '6,840 views', comments: '12 comments',
     body: [
       { type: 'p', text: 'Limited to 200 units. Available in March. Here is what makes the Black Edition special — and why it sold out in 11 hours.' },
@@ -572,7 +572,7 @@ const BLOGS = [
     date:     'Jan 22, 2026', longDate: 'January 22, 2026', readTime: '6 min',
     excerpt:  'Indian monsoons are unforgiving — and EVs need a different prep routine than ICE bikes. Here is the exact list our service techs use.',
     heroImage: '/images/blog/csr-762-gray-1.webp', heroAlt: 'CSR 762 in rain',
-    author: 'Svitch Service Desk', role: 'Field Service — Maintenance', email: 'service@svitch.bike',
+    author: 'Svitch Service Desk', role: 'Field Service — Maintenance', email: 'support@svitch.bike',
     views: '4,210 views', comments: '8 comments',
     body: [
       { type: 'p', text: 'The IPX rating on the dash is not a free pass. Battery contacts, chain lube, brake pads, and tyre tread all need attention before the first heavy rain.' },
@@ -598,7 +598,7 @@ const BLOGS = [
     date:     'Jan 18, 2026', longDate: 'January 18, 2026', readTime: '4 min',
     excerpt:  'Our biggest software drop of the year ships this week to all connected Svitch bikes. Here is what changes — and how to update.',
     heroImage: '/images/blog/Svitch_OS_540x.webp', heroAlt: 'Svitch OS dashboard',
-    author: 'Svitch Software Team', role: 'Connected Vehicle — Engineering', email: 'os@svitch.bike',
+    author: 'Svitch Software Team', role: 'Connected Vehicle — Engineering', email: 'support@svitch.bike',
     views: '8,920 views', comments: '31 comments',
     body: [
       { type: 'p', text: 'Svitch OS 2.2 starts rolling out today. The update is delta-only (~32 MB) and installs in under 4 minutes via Wi-Fi when the bike is parked.' },
@@ -626,7 +626,7 @@ const BLOGS = [
     date:     'Jan 10, 2026', longDate: 'January 10, 2026', readTime: '7 min',
     excerpt:  '83 km of Expressway, ghats, and one breakfast stop. We took the CSR 762 from Bandra to Lonavla and back on a single battery. Here is how it went.',
     heroImage: '/images/blog/csr-762-red-1.webp', heroAlt: 'Riding in the Western Ghats',
-    author: 'Karan Mehta', role: 'Contributing Rider', email: 'karan@svitch.bike',
+    author: 'Karan Mehta', role: 'Contributing Rider', email: 'hello@svitch.bike',
     views: '5,640 views', comments: '17 comments',
     body: [
       { type: 'p', text: 'I left Bandra at 6:12 AM with a full battery and a hungry stomach. By 8:40 AM I was eating misal pav at a roadside stall halfway up the ghat — and the bike still showed 41 % SOC.' },
@@ -650,7 +650,7 @@ const BLOGS = [
     date:     'Dec 28, 2025', longDate: 'December 28, 2025', readTime: '6 min',
     excerpt:  '94 % of every retired Svitch battery is recovered and re-used. Here is the full pipeline, the partner facility, and what still needs work.',
     heroImage: '/images/blog/csr-762-gray-Swappable-Battery.webp', heroAlt: 'Battery recovery line',
-    author: 'Svitch Sustainability Team', role: 'ESG & Circularity', email: 'sustain@svitch.bike',
+    author: 'Svitch Sustainability Team', role: 'ESG & Circularity', email: 'support@svitch.bike',
     views: '3,180 views', comments: '6 comments',
     body: [
       { type: 'p', text: 'We promised transparency on what happens to a battery after it leaves your bike. This is that report — numbers, partners, and the gaps we still need to close.' },
@@ -674,7 +674,7 @@ const BLOGS = [
     date:     'Dec 15, 2025', longDate: 'December 15, 2025', readTime: '4 min',
     excerpt:  'After 11 months of iOS exclusivity, the Svitch app finally lands on Google Play. The Android version also debuts 7 features that will come to iOS next quarter.',
     heroImage: '/images/blog/CSR-762-3D-Helmet-Video.webp', heroAlt: 'Svitch app on Android',
-    author: 'Svitch Editorial Team', role: 'Svitch Bikes — Official Blog', email: 'media@svitch.bike',
+    author: 'Svitch Editorial Team', role: 'Svitch Bikes — Official Blog', email: 'hello@svitch.bike',
     views: '11,250 views', comments: '42 comments',
     body: [
       { type: 'p', text: 'It is here. The Svitch mobile app is now available on Google Play for every Android 11+ device, and it brings real feature parity with the iOS app — plus seven extras.' },
@@ -704,7 +704,7 @@ const BLOGS = [
     date:     'Dec 02, 2025', longDate: 'December 2, 2025', readTime: '5 min',
     excerpt:  'Regen looks like free range — but used wrong it costs you brake pads and comfort. Here is what each of the three modes actually does.',
     heroImage: '/images/blog/csr-762-red.webp', heroAlt: 'Brake lever closeup',
-    author: 'Svitch Engineering', role: 'Powertrain — Engineering', email: 'eng@svitch.bike',
+    author: 'Svitch Engineering', role: 'Powertrain — Engineering', email: 'hello@svitch.bike',
     views: '6,470 views', comments: '14 comments',
     body: [
       { type: 'p', text: 'Regenerative braking turns your motor into a generator when you decelerate. The energy recovered is fed back into the battery. Every Svitch with a BLDC motor supports it — and the CSR lets you tune how aggressive it feels.' },
@@ -731,7 +731,7 @@ const BLOGS = [
     date:     'Nov 20, 2025', longDate: 'November 20, 2025', readTime: '4 min',
     excerpt:  'Every Svitch bike comes with a free first service at 1,000 km or 60 days. Here is the full checklist our technicians follow — and what you should ask them about.',
     heroImage: '/images/blog/hero-factory-media.webp', heroAlt: 'Service centre',
-    author: 'Svitch Service Desk', role: 'Field Service — Maintenance', email: 'service@svitch.bike',
+    author: 'Svitch Service Desk', role: 'Field Service — Maintenance', email: 'support@svitch.bike',
     views: '2,930 views', comments: '5 comments',
     body: [
       { type: 'p', text: 'The first 1,000 km of any new bike is the bedding-in phase. Brake pads seat against the rotors, chain stretches, and bearings settle. Our first service catches anything that needs adjustment before it becomes a problem.' },

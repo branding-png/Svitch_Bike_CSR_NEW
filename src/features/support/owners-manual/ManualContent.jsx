@@ -27,7 +27,7 @@ export default function ManualContent({
         <a href={pdfHref} className="btn-csr primary" download>
           <i className="bi bi-file-earmark-pdf"></i>
           Download Owner&apos;s Manual
-          <span className="manual-download-meta">PDF Â· ~4 MB</span>
+          <span className="manual-download-meta">PDF · ~4 MB</span>
         </a>
       </div>
     </div>

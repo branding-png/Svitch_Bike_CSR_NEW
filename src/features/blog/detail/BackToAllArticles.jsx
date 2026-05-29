@@ -1,6 +1,6 @@
 ﻿import { Link } from 'react-router-dom'
 
-// Sidebar "Back to All Articles" link â€” mirrors CSR_New_web's footer
+// Sidebar "Back to All Articles" link — mirrors CSR_New_web's footer
 // sidebar widget on the blog-detail page. Single-purpose, but kept here so
 // the sidebar is composed of consistently named widgets.
 export default function BackToAllArticles({

@@ -10,49 +10,56 @@ const DOMAIN = 'svitch.bike'
 export const EMAILS = {
   // General + sales
   hello:    { address: `hello@${DOMAIN}`,    label: 'General Enquiries' },
-  info:     { address: `info@${DOMAIN}`,     label: 'General Information' },
-  sales:    { address: `sales@${DOMAIN}`,    label: 'Sales' },
+  info:     { address: `hello@${DOMAIN}`,    label: 'General Information' },
+  sales:    { address: `hello@${DOMAIN}`,    label: 'Sales' },
 
   // Support + ops
   support:  { address: `support@${DOMAIN}`,  label: 'Customer Support' },
-  dealers:  { address: `dealers@${DOMAIN}`,  label: 'Dealer Partnerships' },
+  dealers:  { address: `support@${DOMAIN}`,  label: 'Dealer Partnerships' },
 
   // Specialist inboxes
-  privacy:        { address: `privacy@${DOMAIN}`,        label: 'Privacy / Data Protection Officer' },
-  legal:          { address: `legal@${DOMAIN}`,          label: 'Legal Department' },
-  grievance:      { address: `grievance@${DOMAIN}`,      label: 'Grievance Officer' },
-  accessibility:  { address: `accessibility@${DOMAIN}`,  label: 'Accessibility Feedback' },
+  privacy:        { address: `support@${DOMAIN}`,        label: 'Privacy / Data Protection Officer' },
+  legal:          { address: `support@${DOMAIN}`,        label: 'Legal Department' },
+  grievance:      { address: `support@${DOMAIN}`,        label: 'Grievance Officer' },
+  accessibility:  { address: `support@${DOMAIN}`,        label: 'Accessibility Feedback' },
 
   // Talent + press
   hrhead: { address: `hrhead@${DOMAIN}`, label: 'Careers / HR Head' },
-  press:  { address: `press@${DOMAIN}`,  label: 'Press' },
-  media:  { address: `media@${DOMAIN}`,  label: 'Media / Editorial' },
+  press:  { address: `hello@${DOMAIN}`,  label: 'Press' },
+  media:  { address: `hello@${DOMAIN}`,  label: 'Media / Editorial' },
 
   // International
-  international: { address: `international@${DOMAIN}`, label: 'International / Fleet Enquiries' },
+  international: { address: `support@${DOMAIN}`, label: 'International / Fleet Enquiries' },
 }
 
 export const PHONES = {
   // Toll-free customer-care line
   tollFree: {
-    phone: '+91 1800-123-456',
-    tel:   '+911800123456',
+    phone: '+91 63512 72002',
+    tel:   '+91 63512 72002',
     label: 'Toll Free Customer Care',
     hours: 'Mon–Sat · 10:00 – 19:00 IST',
   },
   // Ahmedabad head office
   headOffice: {
-    phone: '+91 635 127 2002',
-    tel:   '+916351272002',
+    phone: '+91 63512 72002',
+    tel:   '+91 63512 72002',
     label: 'Head Office (Ahmedabad)',
     hours: 'Mon–Sat · 10:00 – 19:00 IST',
   },
   // Sales / orders helpline
   sales: {
-    phone: '+91 79 4012 3456',
-    tel:   '+917940123456',
+    phone: '+91 63512 72002',
+    tel:   '+91 63512 72002',
     label: 'Sales Helpline',
     hours: 'Mon–Sun · 10:00 – 19:00 IST',
+  },
+  // WhatsApp line
+  whatsapp: {
+    phone: '+91 72270 42745',
+    tel:   '+91 72270 42745',
+    label: 'WhatsApp',
+    hours: 'Mon–Sat · 10:00 – 19:00 IST',
   },
 }
 

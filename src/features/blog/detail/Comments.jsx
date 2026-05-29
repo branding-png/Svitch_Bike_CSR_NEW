@@ -2,13 +2,13 @@
 import InputControl from '@/ui/InputControl'
 import { useToast } from '@/contexts/ToastContext'
 
-// Comments list + leave-a-comment form â€” mirrors CSR_New_web `.comments-block`.
+// Comments list + leave-a-comment form — mirrors CSR_New_web `.comments-block`.
 // New comments are added to local state on submit.
 // Pass `initial` to seed per-post comments from src/data/blog.js.
 const SEED = [
-  { name: 'Arjun Rao',     date: 'March 28, 2026 Â· 2:14 PM',  rating: 5,   text: 'Finally! Been waiting for the NXE Pro since the teasers. Ordered mine in Crimson Red.' },
-  { name: 'Priya Shah',    date: 'March 28, 2026 Â· 4:45 PM',  rating: 4.5, text: 'The dual suspension is the real game changer for me.' },
-  { name: 'Mehul Kothari', date: 'March 29, 2026 Â· 10:22 AM', rating: 5,   text: 'The Bafang motor is a huge deal. This alone justifies the â‚¹1.25L price in my opinion.' },
+  { name: 'Arjun Rao',     date: 'March 28, 2026 · 2:14 PM',  rating: 5,   text: 'Finally! Been waiting for the NXE Pro since the teasers. Ordered mine in Crimson Red.' },
+  { name: 'Priya Shah',    date: 'March 28, 2026 · 4:45 PM',  rating: 4.5, text: 'The dual suspension is the real game changer for me.' },
+  { name: 'Mehul Kothari', date: 'March 29, 2026 · 10:22 AM', rating: 5,   text: 'The Bafang motor is a huge deal. This alone justifies the ₹1.25L price in my opinion.' },
 ]
 
 function initials(name = '') {
@@ -57,7 +57,7 @@ function nowStamp() {
   const d = new Date()
   const date = d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
   const time = d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })
-  return `${date} Â· ${time}`
+  return `${date} · ${time}`
 }
 
 export default function Comments({ initial = SEED }) {
@@ -69,7 +69,7 @@ export default function Comments({ initial = SEED }) {
   const [hover, setHover]       = useState(0)
   const [busy, setBusy]         = useState(false)
 
-  // Live per-field validation â†’ green/red InputControl border as the user types.
+  // Live per-field validation → green/red InputControl border as the user types.
   const set = (key) => (v) => {
     setForm((f) => {
       const next  = { ...f, [key]: v }
@@ -104,7 +104,7 @@ export default function Comments({ initial = SEED }) {
       ])
       setForm(EMPTY)
       setBusy(false)
-      show('Comment posted â€” thanks for joining the conversation!', 'success', 4000)
+      show('Comment posted — thanks for joining the conversation!', 'success', 4000)
     }, 800)
   }
 
@@ -114,7 +114,7 @@ export default function Comments({ initial = SEED }) {
 
       {comments.length === 0 && (
         <p className="rajdhani-lbl-text-sm" style={{ opacity: 0.7, marginBottom: 24 }}>
-          No comments yet â€” be the first to share your thoughts.
+          No comments yet — be the first to share your thoughts.
         </p>
       )}
 

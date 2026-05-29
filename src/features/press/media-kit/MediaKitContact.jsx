@@ -2,7 +2,7 @@ import { EMAILS, emailHref } from '@/data/contact-info'
 
 // Press contact CTA — mirrors CSR_New_web `#mk-contact`.
 // Same `.cta-box` pattern used on careers open-application & FAQ support.
-// Defaults use the canonical press@svitch.bike address from contact-info.
+// Defaults use the canonical hello@svitch.bike address from contact-info.
 export default function MediaKitContact({
   id          = 'mk-contact',
   label       = 'Press & Editorial',

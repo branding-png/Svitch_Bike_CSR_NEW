@@ -1,8 +1,6 @@
 /* =====================================================
    CSR 762 — BOOK TEST RIDE PAGE STYLESHEET
-   Used by: book-test-ride.html
-   Follows the same page-hero / section-header pattern as
-   press.html, sustainability.html, referral.html.
+   Used by: book-test-ride
    ============================================================== */
 
 /* Reschedule banner (shown when ?reschedule=ID query param is present) */

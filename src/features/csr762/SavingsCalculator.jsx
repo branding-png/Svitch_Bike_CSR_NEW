@@ -1,23 +1,23 @@
 ﻿import { useMemo, useState } from 'react'
 
-// CSR 762 â€” Interactive savings calculator. Mirrors svitch.bike `#calculator`.
-// 3 sliders (daily km, petrol price, petrol mileage) â†’ 5 derived values
-// (5-year savings, monthly, annual, COâ‚‚/year, payback period).
+// CSR 762 — Interactive savings calculator. Mirrors svitch.bike `#calculator`.
+// 3 sliders (daily km, petrol price, petrol mileage) → 5 derived values
+// (5-year savings, monthly, annual, CO₂/year, payback period).
 // Styles live in src/styles/pages/csr762.css (.calc-* classes).
 
-// Format a rupee amount as Indian-style with lakhs (e.g. â‚¹3,82,500).
+// Format a rupee amount as Indian-style with lakhs (e.g. ₹3,82,500).
 function formatINR(n) {
-  return 'â‚¹' + Math.round(n).toLocaleString('en-IN')
+  return '₹' + Math.round(n).toLocaleString('en-IN')
 }
 
-const EV_COST_PER_KM = 0.25      // â‚¹/km â€” quoted from the cost-compare section
+const EV_COST_PER_KM = 0.25      // ₹/km — quoted from the cost-compare section
 const KG_CO2_PER_LITRE = 2.31    // standard petrol burn factor
 
 export default function SavingsCalculator({
   label        = 'Interactive Calculator',
   titleStart   = 'Calculate',
   titleEnd     = 'Your Savings',
-  pricePremium = 50000,          // CSR 762 price premium over petrol bike â†’ drives payback
+  pricePremium = 50000,          // CSR 762 price premium over petrol bike → drives payback
 }) {
   const [km, setKm]           = useState(50)
   const [petrol, setPetrol]   = useState(100)
@@ -67,7 +67,7 @@ export default function SavingsCalculator({
                 min={80}
                 max={150}
                 step={1}
-                prefix="â‚¹"
+                prefix="₹"
               />
               <SliderRow
                 id="slider-mileage"
@@ -81,7 +81,7 @@ export default function SavingsCalculator({
               />
             </div>
 
-            {/* SUMMARY â€” big 5-year number */}
+            {/* SUMMARY — big 5-year number */}
             <div className="calc-summary">
               <div className="calc-summary-inner">
                 <div className="calc-summary-label">5-Year Savings</div>
@@ -91,13 +91,13 @@ export default function SavingsCalculator({
             </div>
           </div>
 
-          {/* BREAKDOWN â€” 4 stat tiles */}
+          {/* BREAKDOWN — 4 stat tiles */}
           <div className="calc-results">
             <ResultTile value={formatINR(results.monthly)} label="Monthly Saving" />
             <ResultTile value={formatINR(results.annual)}  label="Yearly Saving" />
-            <ResultTile value={`${results.co2Tonnes.toFixed(2)} T`} label="COâ‚‚ Saved/Year" />
+            <ResultTile value={`${results.co2Tonnes.toFixed(2)} T`} label="CO₂ Saved/Year" />
             <ResultTile
-              value={isFinite(results.payback) ? `${results.payback.toFixed(1)} Yrs` : 'â€”'}
+              value={isFinite(results.payback) ? `${results.payback.toFixed(1)} Yrs` : '—'}
               label="Payback Period"
             />
           </div>

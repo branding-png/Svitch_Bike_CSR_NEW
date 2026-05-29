@@ -1,7 +1,7 @@
 ﻿import { Link } from 'react-router-dom'
 
-// Prev / Next post navigation â€” mirrors CSR_New_web `.post-nav`.
-// Each side is optional â€” if `prev` or `next` is omitted, that slot just
+// Prev / Next post navigation — mirrors CSR_New_web `.post-nav`.
+// Each side is optional — if `prev` or `next` is omitted, that slot just
 // doesn't render so the surviving link can take the full row width.
 export default function PostNav({
   prev = {

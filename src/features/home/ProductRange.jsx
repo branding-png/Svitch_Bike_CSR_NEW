@@ -75,10 +75,6 @@ function ProductCard({ variant, delayClass }) {
       <div className={`product-badge${v.badgeClass ? ' ' + v.badgeClass : ''}`}>
         {v.badge}
       </div>
-      <button className="product-wishlist" aria-label="Add to wishlist">
-        <i className="bi bi-heart"></i>
-      </button>
-
       <div className="product-img-wrap">
         <img
           className="product-img product-img-primary"

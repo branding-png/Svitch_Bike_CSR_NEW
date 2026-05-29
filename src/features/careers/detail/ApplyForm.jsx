@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 import InputControl from '@/ui/InputControl'
 import { useToast } from '@/contexts/ToastContext'
 
-// "Apply for This Role" â€” mirrors CSR_New_web `#job-apply`.
+// "Apply for This Role" — mirrors CSR_New_web `#job-apply`.
 // Mirrors the same validation/toast/spinner pattern used by ContactMain &
 // TestRideBooking. Invalid fields get .form-group.is-invalid (red border).
-const EXPERIENCE = ['0â€“1 Years', '1â€“3 Years', '3â€“5 Years', '5â€“8 Years', '8+ Years']
+const EXPERIENCE = ['0–1 Years', '1–3 Years', '3–5 Years', '5–8 Years', '8+ Years']
 const NOTICE     = ['Immediate', '15 Days', '30 Days', '60 Days', '90 Days']
 const SOURCES    = ['LinkedIn', 'Naukri', 'Svitch Website', 'Referral', 'Other']
 
@@ -33,7 +33,7 @@ export default function ApplyForm({ jobTitle = 'Senior Electrical Engineer' }) {
   const [busy, setBusy] = useState(false)
   const [success, setSuccess] = useState(null) // null | applicationId
 
-  // Live per-field validation â†’ green/red InputControl border as the user types.
+  // Live per-field validation → green/red InputControl border as the user types.
   const set = (key) => (v) => {
     setForm((f) => {
       const next  = { ...f, [key]: v }
@@ -48,7 +48,7 @@ export default function ApplyForm({ jobTitle = 'Senior Electrical Engineer' }) {
     setErrors((er) => ({ ...er, resume: undefined }))
     if (!file) { setForm((f) => ({ ...f, resume: null })); return }
     if (file.size > MAX_RESUME_MB * 1024 * 1024) {
-      setErrors((er) => ({ ...er, resume: `Resume is too large â€” max ${MAX_RESUME_MB} MB.` }))
+      setErrors((er) => ({ ...er, resume: `Resume is too large — max ${MAX_RESUME_MB} MB.` }))
       e.target.value = ''
       setForm((f) => ({ ...f, resume: null }))
       return
@@ -78,7 +78,7 @@ export default function ApplyForm({ jobTitle = 'Senior Electrical Engineer' }) {
     const errs = validate(form)
     setErrors(errs)
     if (Object.keys(errs).length) {
-      show('Please check the form â€” some fields need your attention.', 'error', 5000)
+      show('Please check the form — some fields need your attention.', 'error', 5000)
       requestAnimationFrame(() => {
         const first = formRef.current?.querySelector('.form-group.is-invalid input, .form-group.is-invalid select, .form-group.is-invalid textarea')
         first?.focus()
@@ -110,7 +110,7 @@ export default function ApplyForm({ jobTitle = 'Senior Electrical Engineer' }) {
         <>
           <p style={{ marginBottom: 22 }}>
             Fields marked with <span className="required-star">*</span> are required.
-            We'll never share your data â€” see our{' '}
+            We'll never share your data — see our{' '}
             <Link to="/legal/privacy-policy" style={{ color: 'var(--accent)', textDecoration: 'underline' }}>
               Privacy Policy
             </Link>.
@@ -141,9 +141,9 @@ export default function ApplyForm({ jobTitle = 'Senior Electrical Engineer' }) {
             </div>
 
             <div className="form-row">
-              <InputControl label="Current CTC (â‚¹ LPA)" type="number" placeholder="e.g. 10"
+              <InputControl label="Current CTC (₹ LPA)" type="number" placeholder="e.g. 10"
                 value={form.ctc} onChange={set('ctc')} min={0} step="0.1" />
-              <InputControl label="Expected CTC (â‚¹ LPA)" type="number" placeholder="e.g. 14"
+              <InputControl label="Expected CTC (₹ LPA)" type="number" placeholder="e.g. 14"
                 value={form.ectc} onChange={set('ectc')} min={0} step="0.1" />
             </div>
 
@@ -274,7 +274,7 @@ function SuccessState({ appId, jobTitle }) {
         Application ID: APP-{appId}
       </div>
       <p style={{ maxWidth: 480, marginBottom: 22 }}>
-        Our HR team will review your application and reach out within 3â€“5 business days.
+        Our HR team will review your application and reach out within 3–5 business days.
         Save your Application ID for follow-ups.
       </p>
       <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>

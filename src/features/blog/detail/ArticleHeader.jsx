@@ -1,4 +1,4 @@
-﻿// Blog detail article header + hero image â€” mirrors CSR_New_web `.article-header`
+﻿// Blog detail article header + hero image — mirrors CSR_New_web `.article-header`
 // and `.article-hero`. Avatar initials are derived from the author name so any
 // author renders consistently.
 const DEFAULT_POST = {
@@ -11,7 +11,7 @@ const DEFAULT_POST = {
   comments:   '24 comments',
   heroImage:  '/images/product/CSR-762-black-rider.webp',
   heroAlt:    'Svitch NXE Pro',
-  heroCaption: 'The all-new Svitch NXE Pro â€” available in 5 stunning colours starting March 2026',
+  heroCaption: 'The all-new Svitch NXE Pro — available in 5 stunning colours starting March 2026',
 }
 
 function initials(name = '') {

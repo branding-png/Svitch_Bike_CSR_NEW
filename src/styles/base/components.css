@@ -199,7 +199,7 @@
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
 /* Dropdown */
@@ -1206,23 +1206,6 @@ p.card-base-desc {
   margin-bottom: 8px;
 }
 
-/* — Links / back navigation — */
-.account-back-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition:
-    gap 0.3s,
-    color 0.3s;
-}
-.account-breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-bottom: 16px;
-}
-
 /* BreadCrumb component (.breadcrumb-csr) — shared style across the app */
 .breadcrumb-csr {
   display: flex;
@@ -1282,9 +1265,7 @@ p.card-base-desc {
 .form-field label,
 .test-ride-form label,
 .contact-form-main label,
-.book-service-form label,
 .calc-slider-group label,
-.checkout-progress-step .step-label,
 .pd-selector-label,
 .detail-info-label,
 .calc-result-label,
@@ -1295,12 +1276,7 @@ p.card-base-desc {
 .charger-spec-unit,
 .contact-strip-label,
 .hero-stat-label,
-.review-summary-lbl,
-.oc-info-highlight-label,
-.account-nav-title,
-.order-date,
-.track-step-when,
-.track-courier {
+.review-summary-lbl {
   display: block;
   margin-bottom: 6px;
 }
@@ -1331,19 +1307,6 @@ p.card-base-desc {
   background: var(--gray-900);
   border: 1px solid var(--border);
   margin-bottom: 12px;
-}
-
-/* — Order status (state-colored, modifiers in account.css set bg/border) — */
-.order-status {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 10px;
-  border: 1px solid var(--border);
-}
-.order-status i {
-  font-size: 12px;
-  line-height: 1;
 }
 
 /* — Article specific — */
@@ -1398,16 +1361,6 @@ p.card-base-desc {
   gap: 10px;
 }
 
-/* — Cart table head — */
-.cart-table-head {
-  display: grid;
-  grid-template-columns: 2fr 140px 120px 40px;
-  gap: 16px;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--border);
-  font-size: var(--fs-lg);
-}
-
 /* — Range / filter labels — */
 .filter-range-labels {
   display: flex;
@@ -1451,26 +1404,6 @@ p.card-base-desc {
   white-space: nowrap;
 }
 
-/* — Auth helpers — */
-.auth-promo-footer {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.auth-divider {
-  position: relative;
-  text-align: center;
-  margin: 20px 0;
-}
-.auth-footer-link {
-  text-align: center;
-  margin-top: 16px;
-}
-.otp-countdown {
-  text-align: center;
-  margin: 16px 0;
-}
-
 /* — Charging / sustainability — */
 .cn-stat-item .cn-stat-l {
   display: block;
@@ -1507,19 +1440,6 @@ p.card-base-desc {
   display: block;
   margin-top: 4px;
 }
-.account-mobile-pills a {
-  display: inline-flex;
-  align-items: center;
-  padding: 8px 14px;
-  background: var(--gray-900);
-  border: 1px solid var(--border);
-  transition: var(--transition);
-}
-#trackOrderModal .modal-subtitle {
-  display: block;
-  margin-top: 4px;
-}
-
 /* ==============================================================
  PAGE HERO — Shared hero banner for all inner pages
  Usage: <section class="page-hero"> → .page-hero-inner → .page-hero-title + .page-hero-desc
@@ -2144,9 +2064,8 @@ h3 .highlight {
 /* ==============================================================
  GLOBAL FILTER PILL — `.filter-pill`
  One canonical class for every filter-button surface on the site:
-   - blog.html (category filters)
-   - careers/career.html (department filters)
-   - account/orders.html, returns.html, notifications.html (dashboard)
+   - blog (category filters)
+   - careers (department filters)
  Base shape (padding, bg, border, cursor) is defined in the
  "Filter / clickable pills" group higher in this file (line ~755).
  Below: state styling — resting, hover, active.
@@ -2185,19 +2104,13 @@ h3 .highlight {
 .filter-pill i {
   font-size: 14px;
 }
-/* =================================================================
-   NAVBAR SHOP ICONS — moved from pages/shop.css so account + auth
-   pages also render the user dropdown + search drawer correctly.
-   Used site-wide on every page that has the shop icons in the navbar.
-   ================================================================= */
 /* ============================================================
- NAVBAR SHOP ICONS (search · cart · user)
+ NAVBAR SHOP ICONS (search button + book now)
 ============================================================ */
 .nav-shop-icons {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin-right: 8px;
 }
 .nav-icon-btn {
   position: relative;
@@ -2219,89 +2132,6 @@ h3 .highlight {
   border-color: var(--white);
   color: var(--white);
 }
-.nav-icon-btn .cart-count {
-  position: absolute;
-  top: -6px;
-  right: -6px;
-  min-width: 18px;
-  height: 18px;
-  padding: 0 5px;
-  background: var(--accent);
-  color: var(--black);
-  font-family: var(--font-label);
-  font-size: var(--fs-sm);
-  font-weight: var(--fw-bold);
-  line-height: 18px;
-  text-align: center;
-}
-/* User dropdown */
-.nav-user {
-  position: relative;
-}
-.nav-user-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 12px;
-  background: transparent;
-  border: 1px solid var(--border-bright);
-  color: var(--gray-200);
-  font-family: var(--font-label);
-  font-size: var(--fs-sm);
-  font-weight: var(--fw-semibold);
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: var(--transition);
-}
-.nav-user-toggle:hover {
-  background: var(--gray-900);
-  border-color: var(--white);
-  color: var(--white);
-}
-.nav-user-toggle i {
-  font-size: 16px;
-}
-.nav-user-menu {
-  position: absolute;
-  top: calc(100% + 8px);
-  right: 0;
-  min-width: 200px;
-  background: var(--gray-900);
-  border: 1px solid var(--border-bright);
-  padding: 8px 0;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-6px);
-  transition: var(--transition);
-  z-index: 100;
-}
-.nav-user.is-open .nav-user-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-.nav-user-menu a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 16px;
-  transition:
-    background 0.2s,
-    color 0.2s;
-}
-.nav-user-menu a:hover {
-  background: var(--gray-800);
-  color: var(--white);
-}
-.nav-user-menu a i {
-  font-size: 14px;
-  color: var(--accent);
-}
-.nav-user-menu hr {
-  border: none;
-  border-top: 1px solid var(--border);
-  margin: 6px 0;
-}
 /* ──────────────────────────────────────────────────────────────
    .nav-actions — unified button sizing
    Every interactive child (search/cart/sign-in icons, user dropdown,
@@ -2316,7 +2146,6 @@ h3 .highlight {
   --nav-btn-px: 16px;
 }
 .nav-actions .nav-icon-btn,
-.nav-actions .nav-user-toggle,
 .nav-actions .btn-csr,
 .nav-actions > a.btn-csr {
   height: var(--nav-btn-h);
@@ -2904,7 +2733,7 @@ h3 .highlight {
 
 /* ============================================================
    GLOBAL MODAL CHROME — shared by every portal modal in the app
-   (BookNowModal, QuickViewModal, future modals).
+   (BookNowModal, future modals).
    Markup convention:
      <div class="csr-modal-backdrop">
        <div class="csr-modal">
@@ -3005,184 +2834,6 @@ h3 .highlight {
   transform: rotate(90deg);
 }
 
-/* ============================================================
-   QUICK VIEW MODAL — product-specific body inside .csr-modal
-============================================================ */
-.qv-modal {
-  max-width: 920px;
-}
-.qv-close-float {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  z-index: 2;
-  margin: 0 !important;
-}
-.qv-body {
-  padding: 0;
-}
-
-.qv-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-}
-
-.qv-media {
-  background: var(--gray-950);
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.qv-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.qv-media-icon-glyph {
-  font-size: 140px;
-  color: var(--accent);
-}
-
-.qv-details {
-  padding: 32px 28px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.qv-tagline {
-  margin-bottom: 8px;
-}
-.qv-title {
-  font-size: var(--fs-3xl);
-  color: var(--white);
-  text-transform: none;
-  margin-bottom: 12px;
-}
-.qv-rating {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 14px;
-}
-.qv-reviews {
-  color: var(--gray-400);
-}
-.qv-price {
-  margin-bottom: 16px;
-}
-.qv-stock-row {
-  margin-bottom: 14px;
-}
-.qv-desc {
-  margin-bottom: 20px;
-  line-height: 1.7;
-  color: var(--gray-300);
-}
-
-.qv-qty-row {
-  margin-bottom: 14px;
-}
-.qv-qty-label {
-  display: block;
-  margin-bottom: 6px;
-}
-.qv-qty-controls {
-  display: flex;
-  align-items: stretch;
-  gap: 0px;
-  margin-bottom: 8px;
-}
-.qv-qty-input {
-  width: 96px;
-  height: 46px;
-}
-.qv-qty-input .form-group {
-  margin-bottom: 0;
-}
-.qv-qty-input .form-group input {
-  height: 46px;
-}
-.qv-qty-btn {
-  width: 42px;
-  background: var(--gray-900);
-  border: 1px solid var(--border, #2a2a2a);
-  color: var(--white);
-  font-size: 20px;
-  line-height: 1;
-  cursor: pointer;
-  transition: background 0.2s;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-.qv-qty-btn:hover {
-  background: var(--gray-800);
-}
-
-.qv-stock-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 10px;
-  font-family: var(--font-label);
-  font-size: var(--fs-xs);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-.qv-stock-pill.in-stock {
-  background: rgba(34, 197, 94, 0.15);
-  color: var(--success);
-}
-.qv-stock-pill.pre-order {
-  background: rgba(234, 179, 8, 0.15);
-  color: var(--rating-star);
-}
-.qv-stock-pill.coming-soon {
-  background: rgba(239, 68, 68, 0.15);
-  color: var(--danger);
-}
-
-.qv-actions {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  align-items: stretch;
-}
-.qv-actions .btn-csr {
-  padding: 10px 14px;
-  font-size: var(--fs-sm);
-}
-.qv-cta-primary,
-.qv-cta-secondary {
-  flex: 1;
-  justify-content: center;
-}
-.qv-cta-primary {
-  min-width: 140px;
-}
-.qv-cta-secondary {
-  min-width: 120px;
-}
-.qv-cta-wishlist {
-  flex: 0 0 42px;
-  width: 42px;
-  min-width: 42px;
-  padding: 0;
-  justify-content: center;
-}
-
-@media (max-width: 767px) {
-  .qv-grid {
-    grid-template-columns: 1fr;
-  }
-  .qv-media {
-    aspect-ratio: 16/10;
-  }
-}
-
 /* Generic CTA strip beneath a .page-hero — flex row of buttons that wraps on
    small screens. Match the page-specific variants (.cn-hero-ctas /
    .press-hero-ctas / .ref-hero-ctas) but available globally. */
@@ -3192,4 +2843,50 @@ h3 .highlight {
   gap: 14px;
   margin-top: 24px;
   justify-content: flex-start;
+}
+/* Back-to-top button — fixed bottom-right, rendered on every page by
+   <BackToTop> in AppLayout. Hidden until the scroll container is past 400px,
+   then faded in by toggling `.active`. */
+#move-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+}
+#move-top.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+#move-top button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border: 1px solid var(--gray-700);
+  border-radius: 50%;
+  background: var(--gray-900);
+  color: var(--white);
+  font-size: 1.25rem;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+#move-top button:hover {
+  background: var(--white);
+  color: var(--black);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 767px) {
+  #move-top {
+    right: 16px;
+    bottom: 16px;
+  }
 }
