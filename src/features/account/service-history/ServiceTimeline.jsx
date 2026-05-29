@@ -1,4 +1,4 @@
-import ServiceEntry from './ServiceEntry'
+﻿import ServiceEntry from './ServiceEntry'
 
 export default function ServiceTimeline({ entries }) {
   if (!entries || entries.length === 0) {
@@ -12,7 +12,7 @@ export default function ServiceTimeline({ entries }) {
   }
 
   return (
-    <div aria-label="ServiceTimeline" role="region" className="svc-timeline">
+    <div aria-label="ServiceTimeline" className="svc-timeline">
       {entries.map((e, i) => <ServiceEntry key={`${e.when}-${i}`} entry={e} />)}
     </div>
   )

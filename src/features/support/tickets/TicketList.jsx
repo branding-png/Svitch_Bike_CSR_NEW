@@ -1,4 +1,4 @@
-import TicketItem from './TicketItem'
+﻿import TicketItem from './TicketItem'
 
 export default function TicketList({ tickets, activeId, onSelect }) {
   if (tickets.length === 0) {
@@ -13,7 +13,7 @@ export default function TicketList({ tickets, activeId, onSelect }) {
     )
   }
   return (
-    <div aria-label="TicketList" role="region" className="tkt-list">
+    <div aria-label="TicketList" className="tkt-list">
       {tickets.map((t) => (
         <TicketItem
           key={t.id}

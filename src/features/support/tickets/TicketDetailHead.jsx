@@ -1,7 +1,7 @@
-export default function TicketDetailHead({ ticket }) {
+﻿export default function TicketDetailHead({ ticket }) {
   if (!ticket) return null
   return (
-    <div aria-label="TicketDetailHead" role="region" className="tkt-detail-head">
+    <div aria-label="TicketDetailHead" className="tkt-detail-head">
       <div>
         <h3>{ticket.subject}</h3>
         <div className="tkt-detail-meta">

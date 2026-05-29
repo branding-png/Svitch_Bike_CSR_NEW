@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom'
+﻿import { Link, useNavigate } from 'react-router-dom'
 import { PATHS } from '@/utils/routes'
 import { useToast } from '@/contexts/ToastContext'
 
@@ -6,11 +6,11 @@ const UPCOMING = [
   {
     id:      'TR-580412',
     bookedAt:'Booked Apr 22, 2026',
-    bike:    'CSR 762 NXE Pro — Crimson Red',
+    bike:    'CSR 762 NXE Pro â€” Crimson Red',
     colour:  'red',
     date:    '2026-05-04',                // ISO date used for prefill
     time:    '11:00 AM',                  // matches BookTestRideForm TIMES
-    when:    'Sat, May 4 · 11:00 AM — 12:00 PM',
+    when:    'Sat, May 4 Â· 11:00 AM â€” 12:00 PM',
     where:   'Svitch Centre, Bandra West, Mumbai',
     city:    'Mumbai',
     slot:    '30 minutes',
@@ -37,7 +37,7 @@ export default function TestRideUpcoming() {
   function cancel(id) { show(`Booking ${id} cancelled.`, 'success', 3000) }
 
   return (
-    <div aria-label="TestRideUpcoming" role="region" className="account-section">
+    <div aria-label="TestRideUpcoming" className="account-section">
       <div className="account-section-head">
         <h3>Upcoming</h3>
         <Link className="rajdhani-lbl-text-sm" to={PATHS.bookTestRide}>Book another</Link>

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+﻿import { useEffect, useRef, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import InputControl from '@/ui/InputControl'
 import { PATHS } from '@/utils/routes'
@@ -50,7 +50,7 @@ export default function TrackOrderForm({ onLookup }) {
     onLookup?.(form.order.trim(), form.email.trim())
   }
 
-  // Auto-lookup when both fields are populated by the URL — fires exactly once.
+  // Auto-lookup when both fields are populated by the URL â€” fires exactly once.
   const autoFiredRef = useRef(false)
   useEffect(() => {
     if (autoFiredRef.current) return
@@ -64,7 +64,7 @@ export default function TrackOrderForm({ onLookup }) {
   }, [urlOrder, urlEmail, user?.email])
 
   return (
-    <div aria-label="TrackOrderForm" role="region" className="card-base track-form-card">
+    <div aria-label="TrackOrderForm" className="card-base track-form-card">
       <h3>Track Order</h3>
       <form id="trackForm" noValidate onSubmit={submit}>
         <InputControl

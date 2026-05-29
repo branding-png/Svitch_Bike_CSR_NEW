@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import { PATHS } from '@/utils/routes'
 import { useToast } from '@/contexts/ToastContext'
 import { useState } from 'react'
@@ -10,11 +10,11 @@ export default function EmailPending({ email = 'your@email.com' }) {
   function resend() {
     if (resent) return
     setResent(true)
-    show('Verification email resent — check your inbox.', 'success', 3500)
+    show('Verification email resent â€” check your inbox.', 'success', 3500)
   }
 
   return (
-    <div aria-label="EmailPending" role="region" className="auth-centered" id="vePending">
+    <div aria-label="EmailPending" className="auth-centered" id="vePending">
       <div className="auth-icon"><i className="bi bi-envelope-check-fill"></i></div>
       <h2>Check your inbox</h2>
       <p>

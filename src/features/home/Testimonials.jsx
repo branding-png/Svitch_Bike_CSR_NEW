@@ -37,6 +37,7 @@ export default function Testimonials({
 }) {
   return (
     <Swiper
+      aria-label="Testimonials"
       className="testimonials-swiper reveal"
       modules={[Autoplay, Pagination]}
       spaceBetween={20}

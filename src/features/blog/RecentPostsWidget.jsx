@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import { getRecentPosts } from '@/data/blog'
 
-// Blog sidebar "Recent Posts" — mirrors CSR_New_web `.widget-recent`.
+// Blog sidebar "Recent Posts" â€” mirrors CSR_New_web `.widget-recent`.
 // Pulls the top N posts from the shared blog data (default 3).
 export default function RecentPostsWidget({
   title       = 'Recent Posts',
@@ -11,7 +11,7 @@ export default function RecentPostsWidget({
 }) {
   const list = posts || getRecentPosts(limit, excludeSlug)
   return (
-    <div aria-label="RecentPostsWidget" role="region" className="card-base widget">
+    <div aria-label="RecentPostsWidget" className="card-base widget">
       <h3 className="widget-title">{title}</h3>
       <div className="widget-recent">
         {list.map((p) => (

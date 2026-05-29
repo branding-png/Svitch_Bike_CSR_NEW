@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import InputControl from '@/ui/InputControl'
 import { PATHS } from '@/utils/routes'
 
@@ -12,7 +12,7 @@ const checkStyle = { textTransform: 'none' }
 
 export default function RegisterStepPreferences({ form, errors, set, busy, onBack }) {
   return (
-    <div aria-label="RegisterStepPreferences" role="region" className="step-panel is-active" data-panel="3">
+    <div aria-label="RegisterStepPreferences" className="step-panel is-active" data-panel="3">
       <div className="auth-form-fields">
         <InputControl
           label="City"
@@ -65,7 +65,7 @@ export default function RegisterStepPreferences({ form, errors, set, busy, onBac
         <button type="submit" className="btn-csr primary" disabled={busy}>
           {busy ? (
             <span className="btn-spinner">
-              <i className="bi bi-arrow-repeat spin-icon"></i> Creating…
+              <i className="bi bi-arrow-repeat spin-icon"></i> Creatingâ€¦
             </span>
           ) : (
             <span className="btn-text">

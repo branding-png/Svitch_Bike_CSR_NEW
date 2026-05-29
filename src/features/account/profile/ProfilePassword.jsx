@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { PasswordField } from '@/ui'
 import { useToast } from '@/contexts/ToastContext'
 
@@ -39,7 +39,7 @@ export default function ProfilePassword() {
   }
 
   return (
-    <div aria-label="ProfilePassword" role="region" className="card-base checkout-section">
+    <div aria-label="ProfilePassword" className="card-base checkout-section">
       <h3><i className="bi bi-shield-lock"></i> Change Password</h3>
       <form onSubmit={submit} noValidate>
         <PasswordField

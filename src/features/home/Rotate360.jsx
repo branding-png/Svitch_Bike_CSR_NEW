@@ -129,7 +129,7 @@ export default function Rotate360() {
   }, [frame])
 
   return (
-    <section id="rotate360">
+    <section id="rotate360" aria-label="Rotate360">
       <div className="container p-0">
         <SectionHeader
           label="Interactive View"

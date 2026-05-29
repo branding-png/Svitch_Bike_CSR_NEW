@@ -54,7 +54,7 @@ export default function PostGrid({
 
   return (
     <>
-      <div className="post-grid">
+      <div className="post-grid"  aria-label="PostGrid">
         {visible.length === 0 ? (
           <p className="rajdhani-lbl-text-sm" style={{ opacity: 0.7 }}>
             {query

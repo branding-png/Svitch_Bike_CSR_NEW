@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+﻿import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import InputControl from '@/ui/InputControl'
 import { PATHS } from '@/utils/routes'
@@ -38,7 +38,7 @@ export default function ForgetEmail({ email, setEmail, onSubmit }) {
   }
 
   return (
-    <div aria-label="ForgetEmail" role="region" className="auth-centered" id="fpStep1">
+    <div aria-label="ForgetEmail" className="auth-centered" id="fpStep1">
       <div className="auth-icon"><i className="bi bi-key-fill"></i></div>
       <h2>Forgot Password?</h2>
       <p>No worries. Enter your email and we&apos;ll send a 6-digit one-time password to reset it.</p>
@@ -58,7 +58,7 @@ export default function ForgetEmail({ email, setEmail, onSubmit }) {
           disabled={busy || !/^\S+@\S+\.\S+$/.test(email)}
         >
           {busy ? (
-            <span className="btn-spinner"><i className="bi bi-arrow-repeat spin-icon"></i> Sending…</span>
+            <span className="btn-spinner"><i className="bi bi-arrow-repeat spin-icon"></i> Sendingâ€¦</span>
           ) : (
             <span className="btn-text"><i className="bi bi-envelope"></i> Send OTP</span>
           )}

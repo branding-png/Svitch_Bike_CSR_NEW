@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+﻿import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import InputControl from '@/ui/InputControl'
 import { useToast } from '@/contexts/ToastContext'
@@ -6,14 +6,14 @@ import { useUser } from '@/contexts/UserContext'
 import { getOrder } from '@/data/orders-data'
 import { PATHS } from '@/utils/routes'
 
-// Return / Refund / Exchange request form — mirrors CSR_New_web `#returnForm`.
+// Return / Refund / Exchange request form â€” mirrors CSR_New_web `#returnForm`.
 // Live red/green validation through InputControl, toast feedback on submit,
 // 1.2s spinner and reset on success.
 const PRODUCTS = [
   { value: '', label: 'Select an item from this order' },
-  { value: 'helmet-black-l',  label: 'CSR Helmet — Matte Black (L)' },
+  { value: 'helmet-black-l',  label: 'CSR Helmet â€” Matte Black (L)' },
   { value: 'spare-battery',   label: 'Spare Battery Pack 2.5kWh' },
-  { value: 'gloves-carbon',   label: 'Riding Gloves — Carbon' },
+  { value: 'gloves-carbon',   label: 'Riding Gloves â€” Carbon' },
   { value: 'phone-mount',     label: 'Universal Phone Mount' },
 ]
 
@@ -68,7 +68,7 @@ export default function ReturnRequestForm() {
 
   // When arriving from OrderDetail "Return / Replace" with ?order=<id>,
   // look up the order so we can prefill the form. Only honoured for
-  // signed-in users — guests always start with an empty form.
+  // signed-in users â€” guests always start with an empty form.
   const orderParam = params.get('order') || params.get('id')
   const linkedOrder = useMemo(
     () => (isAuthed && orderParam ? getOrder(orderParam) : null),
@@ -141,7 +141,7 @@ export default function ReturnRequestForm() {
     const errs = validate(form)
     setErrors(errs)
     if (Object.keys(errs).length) {
-      show('Please check the form — some fields need your attention.', 'error', 5000)
+      show('Please check the form â€” some fields need your attention.', 'error', 5000)
       requestAnimationFrame(() => {
         formRef.current?.querySelector(
           '.form-group.is-invalid input, .form-group.is-invalid select, .form-group.is-invalid textarea',
@@ -160,7 +160,7 @@ export default function ReturnRequestForm() {
   }
 
   return (
-    <div aria-label="ReturnRequestForm" role="region" className="card-base form-card">
+    <div aria-label="ReturnRequestForm" className="card-base form-card">
       <h3 className="form-card-title">Return Request</h3>
 
       <form ref={formRef} id="returnForm" noValidate onSubmit={submit}>
@@ -200,7 +200,7 @@ export default function ReturnRequestForm() {
 
         <InputControl
           as="textarea" label="Describe the issue" rows={4}
-          placeholder="Add as much detail as you can — helps us resolve faster"
+          placeholder="Add as much detail as you can â€” helps us resolve faster"
           value={form.desc} onChange={set('desc')}
           required error={errors.desc}
         />

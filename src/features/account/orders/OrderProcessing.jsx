@@ -1,7 +1,7 @@
-import OrderCard, { useOrderActions } from './OrderCard'
+﻿import OrderCard, { useOrderActions } from './OrderCard'
 
-// Processing: View · Track · Cancel
+// Processing: View Â· Track Â· Cancel
 export default function OrderProcessing({ order, onTrack }) {
   const a = useOrderActions(order, { onTrack })
-  return <OrderCard aria-label="OrderProcessing" role="region" order={order} actions={[a.viewDetail, a.track, a.cancel]} />
+  return <OrderCard aria-label="OrderProcessing" order={order} actions={[a.viewDetail, a.track, a.cancel]} />
 }

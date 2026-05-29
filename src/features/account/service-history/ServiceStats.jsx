@@ -1,8 +1,8 @@
-import { SERVICE_STATS } from './service-history-data'
+﻿import { SERVICE_STATS } from './service-history-data'
 
 export default function ServiceStats({ stats = SERVICE_STATS }) {
   return (
-    <div aria-label="ServiceStats" role="region" className="svc-stats">
+    <div aria-label="ServiceStats" className="svc-stats">
       {stats.map((s) => (
         <div className="card-base svc-stat" key={s.label}>
           <strong>{s.value}</strong>

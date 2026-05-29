@@ -1,4 +1,4 @@
-// Card 1 — Order header + line item + carrier/AWB meta grid.
+﻿// Card 1 â€” Order header + line item + carrier/AWB meta grid.
 export default function TrackOrderHeader({ order }) {
   const badge = order.statusBadge
 
@@ -39,7 +39,7 @@ export default function TrackOrderHeader({ order }) {
 
 function Cell({ label, value }) {
   return (
-    <div aria-label="TrackOrderHeader" role="region" className="track-meta-cell">
+    <div aria-label="TrackOrderHeader" className="track-meta-cell">
       <span className="track-meta-label rajdhani-lbl-text-sm">{label}</span>
       <span className="track-meta-val">{value}</span>
     </div>

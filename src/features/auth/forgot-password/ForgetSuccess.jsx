@@ -1,9 +1,9 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import { PATHS } from '@/utils/routes'
 
 export default function ForgetSuccess() {
   return (
-    <div aria-label="ForgetSuccess" role="region" className="auth-centered" id="fpStep4">
+    <div aria-label="ForgetSuccess" className="auth-centered" id="fpStep4">
       <div className="auth-success-icon"><i className="bi bi-check2"></i></div>
       <h2>Password Reset!</h2>
       <p>Your password has been successfully reset. You can now sign in with your new credentials.</p>

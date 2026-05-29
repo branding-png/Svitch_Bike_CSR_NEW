@@ -1,8 +1,8 @@
-import { useMemo, useState } from 'react'
+﻿import { useMemo, useState } from 'react'
 import { DEALERS, STATES } from '@/data/dealers'
 import { useBookNow } from '@/contexts/BookNowContext'
 
-// Dealer locator — mirrors CSR_New_web `#dealer-finder`.
+// Dealer locator â€” mirrors CSR_New_web `#dealer-finder`.
 // Left: search + state filter + result list.
 // Right: detail panel that swaps between empty-state and the selected dealer.
 const STATUS_LABEL = {
@@ -110,14 +110,14 @@ export default function DealerFinder({ dealers = DEALERS }) {
                 const st = STATUS_LABEL[d.status]
                 const hasTestRide = d.services.includes('Test Ride')
                 return (
-                  <button aria-label="DealerFinder" role="region"
+                  <button aria-label="DealerFinder"
                     type="button"
                     key={d.id}
                     data-id={d.id}
                     className={`card-base dealer-item${pickedId === d.id ? ' is-active' : ''}`}
                     onClick={() => setPickedId(d.id)}
                   >
-                    {/* Left-side showroom thumb — clicking it opens Google Maps
+                    {/* Left-side showroom thumb â€” clicking it opens Google Maps
                         in a new tab. stopPropagation so the card's own
                         selection click doesn't also fire. <span> + role="link"
                         because nesting an <a> inside a <button> is invalid. */}
@@ -162,7 +162,7 @@ export default function DealerFinder({ dealers = DEALERS }) {
 
                     <p className="dealer-item-addr">
                       <i className="bi bi-geo-alt"></i>
-                      {' '}{d.city} · {d.address} · {d.pincode}
+                      {' '}{d.city} Â· {d.address} Â· {d.pincode}
                     </p>
 
                     <div className="dealer-item-chips">
@@ -204,7 +204,7 @@ export default function DealerFinder({ dealers = DEALERS }) {
                 <h3>Pick A Dealer</h3>
                 <p>
                   Select any dealer from the list on the left to see full
-                  details — address, phone, opening hours, services offered,
+                  details â€” address, phone, opening hours, services offered,
                   and directions.
                 </p>
                 <div className="detail-hint rajdhani-lbl-text-sm">

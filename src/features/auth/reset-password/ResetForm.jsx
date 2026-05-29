@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import PasswordField, { PASSWORD_RULES } from '@/ui/PasswordField'
 import { resetPassword } from '@/services/auth'
@@ -48,7 +48,7 @@ export default function ResetForm({ name = 'rider', resetToken, onReset }) {
   }
 
   return (
-    <div aria-label="ResetForm" role="region" className="auth-centered" id="rpFormStep">
+    <div aria-label="ResetForm" className="auth-centered" id="rpFormStep">
       <div className="auth-icon"><i className="bi bi-lock-fill"></i></div>
       <h2>Reset Your Password</h2>
       <p>
@@ -78,7 +78,7 @@ export default function ResetForm({ name = 'rider', resetToken, onReset }) {
 
         <button type="submit" className="btn-csr primary full-w" disabled={busy}>
           {busy ? (
-            <span className="btn-spinner"><i className="bi bi-arrow-repeat spin-icon"></i> Resetting…</span>
+            <span className="btn-spinner"><i className="bi bi-arrow-repeat spin-icon"></i> Resettingâ€¦</span>
           ) : (
             <><i className="bi bi-arrow-clockwise"></i> Reset Password</>
           )}

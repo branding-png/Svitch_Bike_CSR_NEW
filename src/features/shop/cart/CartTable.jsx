@@ -1,14 +1,14 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import { PATHS } from '@/utils/routes'
 import { useCart } from '@/contexts/CartContext'
 import { formatCurrency } from '@/utils/formatCurrency'
 
-// Line-items table for the cart page — mirrors CSR_New_web `.cart-table`.
+// Line-items table for the cart page â€” mirrors CSR_New_web `.cart-table`.
 export default function CartTable() {
   const { items, updateQty, removeItem, clear } = useCart()
 
   return (
-    <div aria-label="CartTable" role="region" className="card-base cart-table">
+    <div aria-label="CartTable" className="card-base cart-table">
       <div className="cart-table-head rajdhani-lbl-text-sm">
         <span>Product</span>
         <span>Quantity</span>
@@ -25,7 +25,7 @@ export default function CartTable() {
             <div className="cart-item-info">
               <h4>{it.name}</h4>
               <span className="rajdhani-lbl-text-sm">
-                {[it.color && `Color: ${it.color}`, it.sku && `SKU: ${it.sku}`].filter(Boolean).join(' · ')}
+                {[it.color && `Color: ${it.color}`, it.sku && `SKU: ${it.sku}`].filter(Boolean).join(' Â· ')}
               </span>
             </div>
           </div>
@@ -36,7 +36,7 @@ export default function CartTable() {
               className="qty-down"
               onClick={() => updateQty(it.id, it.qty - 1, it.variant, it.color)}
             >
-              −
+              âˆ’
             </button>
             <input
               type="text"

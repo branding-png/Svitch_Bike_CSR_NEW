@@ -1,9 +1,9 @@
-import { useToast } from '@/contexts/ToastContext'
+﻿import { useToast } from '@/contexts/ToastContext'
 import { useSavedJobs } from '@/contexts/SavedJobsContext'
 
-// Sticky apply bar — mirrors CSR_New_web `.apply-bar`.
+// Sticky apply bar â€” mirrors CSR_New_web `.apply-bar`.
 // "Save Job" toggles the role in the shared SavedJobs store so it shows up
-// instantly under Account → Saved Jobs.
+// instantly under Account â†’ Saved Jobs.
 export default function ApplyBar({
   job = {
     id:         'senior-electrical-engineer',
@@ -11,7 +11,7 @@ export default function ApplyBar({
     department: 'Engineering',
     location:   'Ahmedabad, Gujarat',
     type:       'Full Time',
-    experience: '3–6 Years',
+    experience: '3â€“6 Years',
     deadline:   'Apr 25, 2026',
   },
   applyHref = '#job-apply',
@@ -34,14 +34,14 @@ export default function ApplyBar({
       applyBy:   job.deadline   || job.applyBy,
     })
     show(
-      saved ? 'Removed from saved jobs' : 'Job saved. Check Account → Saved Jobs.',
+      saved ? 'Removed from saved jobs' : 'Job saved. Check Account â†’ Saved Jobs.',
       saved ? 'info' : 'success',
       2500,
     )
   }
 
   return (
-    <div aria-label="ApplyBar" role="region"
+    <div aria-label="ApplyBar"
       className="card-base apply-bar"
       data-job-id={job.id}
       data-job-title={job.title}
@@ -53,7 +53,7 @@ export default function ApplyBar({
     >
       <div className="apply-bar-info">
         <h5>{job.title}</h5>
-        <span>{job.department} · {job.location} · {job.type}</span>
+        <span>{job.department} Â· {job.location} Â· {job.type}</span>
       </div>
       <div className="apply-bar-actions">
         <button

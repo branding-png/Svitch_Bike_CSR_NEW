@@ -1,6 +1,6 @@
-// Sidebar — availability filter. Mirrors CSR_New_web `#stockFilters`.
+﻿// Sidebar â€” availability filter. Mirrors CSR_New_web `#stockFilters`.
 // Multi-select: parent owns `active` (array of stock ids) and passes
-// `onChange(nextArray)`. `counts` is optional — per-status count badge.
+// `onChange(nextArray)`. `counts` is optional â€” per-status count badge.
 const STATUSES = [
   { id: 'in-stock',    label: 'In Stock'    },
   { id: 'pre-order',   label: 'Pre-Order'   },
@@ -15,7 +15,7 @@ export default function AvailabilityFilter({ active = [], counts = {}, onChange 
   }
 
   return (
-    <div aria-label="AvailabilityFilter" role="region" className="card-base filter-widget">
+    <div aria-label="AvailabilityFilter" className="card-base filter-widget">
       <h3 className="filter-title">Availability</h3>
 
       <div className="filter-list" id="stockFilters">

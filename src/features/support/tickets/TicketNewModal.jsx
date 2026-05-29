@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import { Modal } from '@/ui'
 import InputControl from '@/ui/InputControl'
 
@@ -35,7 +35,7 @@ function validate(f) {
   return e
 }
 
-// "Raise New Ticket" modal — uses the shared .csr-modal shell via the
+// "Raise New Ticket" modal â€” uses the shared .csr-modal shell via the
 // Modal primitive, with Cancel + Submit in the footer.
 export default function TicketNewModal({ isOpen, onClose, onSubmit }) {
   const [form, setForm] = useState(EMPTY)
@@ -89,7 +89,7 @@ export default function TicketNewModal({ isOpen, onClose, onSubmit }) {
   }
 
   return (
-    <Modal aria-label="TicketNewModal" role="region"
+    <Modal aria-label="TicketNewModal"
       isOpen={isOpen}
       onClose={onClose}
       title="Raise New Ticket"
@@ -101,7 +101,7 @@ export default function TicketNewModal({ isOpen, onClose, onSubmit }) {
           </button>
           <button type="submit" form="newTicketForm" className="btn-csr primary" disabled={busy}>
             {busy ? (
-              <span className="btn-spinner"><i className="bi bi-arrow-repeat spin-icon"></i> Submitting…</span>
+              <span className="btn-spinner"><i className="bi bi-arrow-repeat spin-icon"></i> Submittingâ€¦</span>
             ) : (
               <><i className="bi bi-send-fill"></i> Submit Ticket</>
             )}
@@ -141,7 +141,7 @@ export default function TicketNewModal({ isOpen, onClose, onSubmit }) {
         <InputControl
           as="textarea" rows={5}
           label="Describe the issue"
-          placeholder="Steps to reproduce, error messages, photos…"
+          placeholder="Steps to reproduce, error messages, photosâ€¦"
           value={form.message} onChange={set('message')}
           required error={errors.message}
         />

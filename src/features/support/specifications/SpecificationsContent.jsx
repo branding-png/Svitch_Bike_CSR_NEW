@@ -1,4 +1,4 @@
-import LegalCard   from '@/features/legal/LegalCard'
+﻿import LegalCard   from '@/features/legal/LegalCard'
 import LegalBlocks  from '@/features/legal/LegalBlocks'
 import { useBookNow } from '@/contexts/BookNowContext'
 import { SPECIFICATIONS_SECTIONS } from '@/data/specifications'
@@ -13,7 +13,7 @@ export default function SpecificationsContent({
   const { open: openBookNow } = useBookNow()
 
   return (
-    <div aria-label="SpecificationsContent" role="region" className="legal-content">
+    <div aria-label="SpecificationsContent" className="legal-content">
       {sections.map((s) => (
         <LegalCard
           key={s.id}

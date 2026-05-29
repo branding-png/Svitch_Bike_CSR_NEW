@@ -1,4 +1,4 @@
-// Sidebar — category filter widget. Mirrors CSR_New_web `#categoryFilters`.
+﻿// Sidebar â€” category filter widget. Mirrors CSR_New_web `#categoryFilters`.
 // Multi-select: parent owns `value` (array of category ids, empty == "all")
 // and gets the new array via `onChange(next)`. Selecting "All Products" clears
 // every other tick; ticking any specific category un-ticks "All".
@@ -30,7 +30,7 @@ export default function CategoryFilter({ value = [], counts = {}, onChange }) {
         {CATEGORIES.map((c) => {
           const checked = c.id === 'all' ? isAllActive : value.includes(c.id)
           return (
-            <label aria-label="CategoryFilter" role="region" key={c.id} className="filter-check">
+            <label aria-label="CategoryFilter" key={c.id} className="filter-check">
               <input
                 type="checkbox"
                 data-cat={c.id}

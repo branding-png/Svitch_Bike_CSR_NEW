@@ -1,6 +1,6 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 
-// Product detail gallery — main image + clickable thumbnail strip.
+// Product detail gallery â€” main image + clickable thumbnail strip.
 // Controlled by the parent via `images` prop; the active thumbnail is local
 // since it only matters inside this component.
 //
@@ -18,7 +18,7 @@ export default function ProductDetailGallery({ images = [], productName = '' }) 
   const main = images[active]
 
   return (
-    <div aria-label="ProductDetailGallery" role="region" className="pd-gallery">
+    <div aria-label="ProductDetailGallery" className="pd-gallery">
       <div className="pd-gallery-main">
         <img
           id="pdMainImg"

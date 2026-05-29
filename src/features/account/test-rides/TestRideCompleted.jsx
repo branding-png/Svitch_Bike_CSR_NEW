@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import { PATHS } from '@/utils/routes'
 
 // Single completed test ride card used by TestRidePastRides.
-// Parent owns the feedback modal — we just bubble the click up.
+// Parent owns the feedback modal â€” we just bubble the click up.
 export default function TestRideCompleted({ ride, onFeedback }) {
   return (
-    <div aria-label="TestRideCompleted" role="region" className="card-base order-card" data-status="completed">
+    <div aria-label="TestRideCompleted" className="card-base order-card" data-status="completed">
       <div className="order-card-head">
         <div>
           <div className="order-id">Booking #{ride.id}</div>

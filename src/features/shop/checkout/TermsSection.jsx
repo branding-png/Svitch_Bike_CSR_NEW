@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import { PATHS } from '@/utils/routes'
 
-// Checkout — Terms & Privacy agreement checkbox.
+// Checkout â€” Terms & Privacy agreement checkbox.
 export default function TermsSection({ form, errors = {}, onChange }) {
   return (
-    <div aria-label="TermsSection" role="region" className="card-base checkout-section" data-field="terms">
+    <div aria-label="TermsSection" className="card-base checkout-section" data-field="terms">
       <label
         className="form-check rajdhani-lbl-text-sm"
         style={{ textTransform: 'none', display: 'flex', gap: 10, alignItems: 'flex-start' }}

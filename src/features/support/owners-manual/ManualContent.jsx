@@ -1,4 +1,4 @@
-import LegalCard   from '@/features/legal/LegalCard'
+﻿import LegalCard   from '@/features/legal/LegalCard'
 import LegalBlocks  from '@/features/legal/LegalBlocks'
 import { OWNERS_MANUAL_SECTIONS } from '@/data/owners-manual'
 
@@ -10,7 +10,7 @@ export default function ManualContent({
   pdfHref  = '/docs/csr-762-owners-manual.pdf',
 }) {
   return (
-    <div aria-label="ManualContent" role="region" className="legal-content">
+    <div aria-label="ManualContent" className="legal-content">
       {sections.map((s) => (
         <LegalCard
           key={s.id}
@@ -27,7 +27,7 @@ export default function ManualContent({
         <a href={pdfHref} className="btn-csr primary" download>
           <i className="bi bi-file-earmark-pdf"></i>
           Download Owner&apos;s Manual
-          <span className="manual-download-meta">PDF · ~4 MB</span>
+          <span className="manual-download-meta">PDF Â· ~4 MB</span>
         </a>
       </div>
     </div>

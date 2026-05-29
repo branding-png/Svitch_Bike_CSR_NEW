@@ -1,13 +1,13 @@
-// Checkout — Delivery Method radio group.
+﻿// Checkout â€” Delivery Method radio group.
 // Controlled: parent owns `form.delivery` and `onChange(key, value)`.
 const METHODS = [
-  { id: 'standard', label: 'Standard', price: 'Free', sub: '5–7 business days' },
-  { id: 'express',  label: 'Express',  price: '₹499', sub: '2–3 business days' },
+  { id: 'standard', label: 'Standard', price: 'Free', sub: '5â€“7 business days' },
+  { id: 'express',  label: 'Express',  price: 'â‚¹499', sub: '2â€“3 business days' },
 ]
 
 export default function DeliverySection({ form, onChange }) {
   return (
-    <div aria-label="DeliverySection" role="region" className="card-base checkout-section">
+    <div aria-label="DeliverySection" className="card-base checkout-section">
       <h3><i className="bi bi-box-seam"></i> Delivery Method</h3>
 
       <div className="delivery-methods">

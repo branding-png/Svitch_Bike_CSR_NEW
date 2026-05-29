@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import { MetaRow } from '@/ui'
 import { PATHS } from '@/utils/routes'
 
@@ -13,7 +13,7 @@ export default function SavedJobCard({ job, onRemove }) {
   ]
 
   return (
-    <div aria-label="SavedJobCard" role="region" className="card-base saved-job-card">
+    <div aria-label="SavedJobCard" className="card-base saved-job-card">
       <span className="saved-job-icon"><i className="bi bi-briefcase-fill"></i></span>
 
       <div className="saved-job-info">

@@ -1,11 +1,11 @@
-const STEPS = [
+﻿const STEPS = [
   { num: 1, label: 'Personal' },
   { num: 2, label: 'Security' },
   { num: 3, label: 'Preferences' },
 ]
 
 // Step indicator with a thin progress bar above the tabs. Bar fills from 0%
-// at step 1 → 50% at step 2 → 100% at step 3 so users see how far along
+// at step 1 â†’ 50% at step 2 â†’ 100% at step 3 so users see how far along
 // they are.
 export default function RegisterStepTabs({ step }) {
   const total = STEPS.length
@@ -29,7 +29,7 @@ export default function RegisterStepTabs({ step }) {
           const done = step > s.num
           const active = step === s.num
           return (
-            <div aria-label="RegisterStepTabs" role="region"
+            <div aria-label="RegisterStepTabs"
               key={s.num}
               className={
                 'step-tab rajdhani-lbl-text-sm' +

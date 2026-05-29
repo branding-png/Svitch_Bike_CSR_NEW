@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import InputControl from '@/ui/InputControl'
 import { useToast } from '@/contexts/ToastContext'
 import { useUser } from '@/contexts/UserContext'
@@ -25,7 +25,7 @@ function validate(f) {
   if (!f.firstName || f.firstName.trim().length < 2) e.firstName = 'Please enter your first name (min 2 characters).'
   if (!f.lastName  || f.lastName.trim().length  < 2) e.lastName  = 'Please enter your last name (min 2 characters).'
   if (!/^\S+@\S+\.\S+$/.test(f.email))               e.email     = 'Please enter a valid email address.'
-  if (!/^[6-9]\d{9}$/.test(f.mobile))                e.mobile    = 'Mobile must be a 10-digit number starting with 6–9.'
+  if (!/^[6-9]\d{9}$/.test(f.mobile))                e.mobile    = 'Mobile must be a 10-digit number starting with 6â€“9.'
   return e
 }
 
@@ -77,7 +77,7 @@ export default function ProfilePersonalInfo() {
   }
 
   return (
-    <div aria-label="ProfilePersonalInfo" role="region" className="card-base checkout-section">
+    <div aria-label="ProfilePersonalInfo" className="card-base checkout-section">
       <h3><i className="bi bi-person-vcard"></i> Personal Information</h3>
       <form onSubmit={save} noValidate>
         <div className="form-row">

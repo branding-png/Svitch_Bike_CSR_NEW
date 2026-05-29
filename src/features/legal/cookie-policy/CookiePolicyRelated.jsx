@@ -1,4 +1,4 @@
-import LegalRelated from '@/features/legal/LegalRelated'
+﻿import LegalRelated from '@/features/legal/LegalRelated'
 
 // "Related Policies" section for the Cookie Policy page.
 const ITEMS = [
@@ -26,5 +26,5 @@ const ITEMS = [
 ]
 
 export default function CookiePolicyRelated() {
-  return <LegalRelated aria-label="CookiePolicyRelated" role="region" items={ITEMS} />
+  return <LegalRelated aria-label="CookiePolicyRelated" items={ITEMS} />
 }

@@ -38,7 +38,7 @@ export default function VideoBanner({
   reveal = true,
 }) {
   return (
-    <section id={id} className="video-banner">
+    <section id={id} className="video-banner" aria-label="VideoBanner">
       <video
         className="vb-video"
         muted

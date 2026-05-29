@@ -1,6 +1,6 @@
-import { useToast } from '@/contexts/ToastContext'
+﻿import { useToast } from '@/contexts/ToastContext'
 
-// Top-right action row in the page header — Share + Add All to Cart.
+// Top-right action row in the page header â€” Share + Add All to Cart.
 export default function WishlistActions({ items }) {
   const { show } = useToast()
   const inStock = items.filter((p) => p.stock === 'in-stock')
@@ -27,7 +27,7 @@ export default function WishlistActions({ items }) {
   }
 
   return (
-    <div aria-label="WishlistActions" role="region" style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+    <div aria-label="WishlistActions" style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
       <button type="button" className="btn-csr secondary sm" onClick={share}>
         <i className="bi bi-share"></i> Share
       </button>

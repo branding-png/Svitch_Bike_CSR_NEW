@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import { useToast } from '@/contexts/ToastContext'
 import { useUser } from '@/contexts/UserContext'
 
@@ -15,7 +15,7 @@ const STATUS_META = {
 export default function OrderCard({ order, actions }) {
   const status = STATUS_META[order.status] || STATUS_META.processing
   return (
-    <div aria-label="OrderCard" role="region" className="card-base order-card" data-status={order.status}>
+    <div aria-label="OrderCard" className="card-base order-card" data-status={order.status}>
       <div className="order-card-head">
         <div>
           <div className="order-id">Order #{order.id}</div>
@@ -47,7 +47,7 @@ export default function OrderCard({ order, actions }) {
   )
 }
 
-// Shared action factories — used by all status-specific cards so the
+// Shared action factories â€” used by all status-specific cards so the
 // behaviour stays consistent.
 export function useOrderActions(order, { onTrack } = {}) {
   const { show } = useToast()

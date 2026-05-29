@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import { PATHS } from '@/utils/routes'
 import { useToast } from '@/contexts/ToastContext'
 
-// Thank-you booking confirmation hero — mirrors CSR_New_web `.ty-hero`.
+// Thank-you booking confirmation hero â€” mirrors CSR_New_web `.ty-hero`.
 // All booking fields are prop-driven so the route can wire real data later.
 const STEPS = [
   { num: 'Step 1', icon: 'bi-phone',         title: 'Check your SMS',     text: 'Dealer address and contact details within 10 minutes.' },
@@ -12,9 +12,9 @@ const STEPS = [
 
 const SUMMARY_DEFAULTS = {
   bookingId: 'SVT-2026-00000',
-  customer:  '—',
+  customer:  'â€”',
   model:     'CSR 762',
-  rideDate:  '—',
+  rideDate:  'â€”',
   location:  'Svitch Dealer, Ahmedabad',
   status:    'Confirmed',
 }
@@ -48,7 +48,7 @@ export default function ThankYouHero({ summary = SUMMARY_DEFAULTS }) {
         </h1>
         <p className="ty-sub">
           Your test ride has been booked successfully. A confirmation SMS and
-          email are on their way — our team will call within 2 hours to lock
+          email are on their way â€” our team will call within 2 hours to lock
           your slot.
         </p>
 
@@ -115,7 +115,7 @@ export default function ThankYouHero({ summary = SUMMARY_DEFAULTS }) {
 
 function Row({ label, value, valueClass = '' }) {
   return (
-    <div aria-label="ThankYouHero" role="region" className="ty-summary-row">
+    <div aria-label="ThankYouHero" className="ty-summary-row">
       <span className="ty-summary-label">{label}</span>
       <span className={`ty-summary-val ${valueClass}`.trim()}>{value}</span>
     </div>

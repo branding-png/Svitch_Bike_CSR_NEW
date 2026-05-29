@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import { PATHS } from '@/utils/routes'
 
-// Refund status card — only shown on the order-detail page when the order
+// Refund status card â€” only shown on the order-detail page when the order
 // is cancelled and has a `refund` block. Mirrors the timeline visual
 // language but in a more compact horizontal layout, with status colours
 // matching the rest of the app (green=done, amber=current, gray=pending).
@@ -53,7 +53,7 @@ export default function OrderRefundCard({ refund }) {
           else                              state = 'pending'
 
           return (
-            <li aria-label="OrderRefundCard" role="region" key={step.title} className={`refund-step is-${state}`}>
+            <li aria-label="OrderRefundCard" key={step.title} className={`refund-step is-${state}`}>
               <span className="refund-step-num">
                 {state === 'done' || state === 'final'
                   ? <i className="bi bi-check2"></i>
@@ -70,7 +70,7 @@ export default function OrderRefundCard({ refund }) {
 
       <div className="refund-foot">
         <span className="rajdhani-lbl-text-sm" style={{ color: 'var(--gray-400)' }}>
-          <i className="bi bi-info-circle"></i> Refunds reflect on your statement within 5–7 working days.
+          <i className="bi bi-info-circle"></i> Refunds reflect on your statement within 5â€“7 working days.
         </span>
         <Link to={PATHS.ticket} className="btn-csr secondary sm">
           <i className="bi bi-headset"></i> Raise a Ticket

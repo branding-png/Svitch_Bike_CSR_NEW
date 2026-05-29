@@ -1,8 +1,8 @@
-import LegalRelated from '@/features/legal/LegalRelated'
+﻿import LegalRelated from '@/features/legal/LegalRelated'
 import { PATHS } from '@/utils/routes'
 
 // "Related Resources" section for the Specifications page.
-// Same pattern as ManualRelated / AccessibilityRelated — different items array.
+// Same pattern as ManualRelated / AccessibilityRelated â€” different items array.
 const ITEMS = [
   {
     to:          PATHS.ownersManual,
@@ -29,7 +29,7 @@ const ITEMS = [
 
 export default function SpecificationsRelated() {
   return (
-    <LegalRelated aria-label="SpecificationsRelated" role="region"
+    <LegalRelated aria-label="SpecificationsRelated"
       items={ITEMS}
       label="Related Resources"
       titleStart="Explore"

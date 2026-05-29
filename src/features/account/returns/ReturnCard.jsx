@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import { PATHS } from '@/utils/routes'
 
-// Map a return's action.kind → real destination so card buttons go somewhere.
+// Map a return's action.kind â†’ real destination so card buttons go somewhere.
 function actionHref(item) {
   const k = item.action?.kind
   if (k === 'detail')  return `${PATHS.returnRequest}?id=${item.id}`
@@ -16,7 +16,7 @@ function actionHref(item) {
 export default function ReturnCard({ item }) {
   const showReasonPrefix = item.status !== 'refunded' && item.status !== 'rejected'
   return (
-    <div aria-label="ReturnCard" role="region" className="card-base return-card" data-status={item.status}>
+    <div aria-label="ReturnCard" className="card-base return-card" data-status={item.status}>
       <img src={item.image} alt={item.alt || item.item} loading="lazy" decoding="async" />
 
       <div>

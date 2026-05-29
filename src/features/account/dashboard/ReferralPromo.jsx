@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { PATHS } from '@/utils/routes'
 import { useToast } from '@/contexts/ToastContext'
@@ -28,7 +28,7 @@ export default function ReferralPromo({ code = REF_CODE }) {
   const emailHref = `mailto:?subject=${EMAIL_SUBJ}&body=Use%20my%20referral%20code%20${code}%20for%20%E2%82%B92%2C000%20off%20your%20CSR%20762.`
 
   return (
-    <div aria-label="ReferralPromo" role="region" className="account-section">
+    <div aria-label="ReferralPromo" className="account-section">
       <div className="card-base referral-promo">
         <div className="referral-promo-head">
           <span className="referral-promo-label"><i className="bi bi-gift-fill"></i> Refer &amp; Earn</span>

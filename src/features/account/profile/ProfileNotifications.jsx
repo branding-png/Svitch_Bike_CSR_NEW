@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import ProfileToggleRow from './ProfileToggleRow'
 
 const ITEMS = [
@@ -14,7 +14,7 @@ export default function ProfileNotifications() {
   )
 
   return (
-    <div aria-label="ProfileNotifications" role="region" className="card-base checkout-section">
+    <div aria-label="ProfileNotifications" className="card-base checkout-section">
       <h3><i className="bi bi-bell"></i> Notification Preferences</h3>
       {ITEMS.map((i) => (
         <ProfileToggleRow

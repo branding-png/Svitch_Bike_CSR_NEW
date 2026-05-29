@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import { PATHS } from '@/utils/routes'
 
 const ACTIONS = [
@@ -12,7 +12,7 @@ const ACTIONS = [
 
 export default function QuickActions() {
   return (
-    <div aria-label="QuickActions" role="region" className="account-section">
+    <div aria-label="QuickActions" className="account-section">
       <div className="account-section-head"><h3>Quick Actions</h3></div>
       <div className="quick-actions-grid">
         {ACTIONS.map((a) => (

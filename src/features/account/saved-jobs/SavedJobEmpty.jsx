@@ -1,9 +1,9 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import { PATHS } from '@/utils/routes'
 
 export default function SavedJobEmpty() {
   return (
-    <div aria-label="SavedJobEmpty" role="region" className="card-base account-empty">
+    <div aria-label="SavedJobEmpty" className="card-base account-empty">
       <i className="bi bi-bookmark-x"></i>
       <h3>No Saved Jobs</h3>
       <p>Save career openings you&apos;re interested in &mdash; we&apos;ll keep them here until you apply.</p>

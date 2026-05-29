@@ -70,7 +70,7 @@ export default function HeroSwiper() {
   const handleSwiperInit = (s) => handleSlideEnd(s)
 
   return (
-    <section id="hero">
+    <section id="hero" aria-label="HeroSwiper">
       <Swiper
         className="hero-swiper"
         modules={[Autoplay, EffectFade, Navigation, Pagination, Parallax]}

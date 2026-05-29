@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import { Modal } from '@/ui'
 import InputControl from '@/ui/InputControl'
 
@@ -66,7 +66,7 @@ export default function AddressModal({ isOpen, onClose, address, onSave }) {
   }
 
   return (
-    <Modal aria-label="AddressModal" role="region"
+    <Modal aria-label="AddressModal"
       isOpen={isOpen}
       onClose={onClose}
       size="lg"
@@ -85,7 +85,7 @@ export default function AddressModal({ isOpen, onClose, address, onSave }) {
       }
     >
       <form id="addressForm" onSubmit={submit} noValidate>
-        {/* Label picker — segmented buttons matching the addr-type-group style. */}
+        {/* Label picker â€” segmented buttons matching the addr-type-group style. */}
         <div className="form-group">
           <label className="rajdhani-lbl-text-sm">Address Type <span className="required-star">*</span></label>
           <div className="addr-type-group">

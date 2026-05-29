@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+﻿import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import SectionHeader from '@/ui/SectionHeader'
 import { MetaRow } from '@/ui'
@@ -6,7 +6,7 @@ import { JOBS, DEPTS } from '@/data/jobs'
 import { useSavedJobs } from '@/contexts/SavedJobsContext'
 import { useToast } from '@/contexts/ToastContext'
 
-// Open positions — mirrors CSR_New_web `#career-jobs`.
+// Open positions â€” mirrors CSR_New_web `#career-jobs`.
 // Department pills filter the jobs list. Each job links to the detail route
 // `/careers/{slug}` which `CareerDetail.jsx` resolves via `getJobBySlug`.
 // Bookmark icon toggles the job in the SavedJobs store; saved jobs get a
@@ -27,7 +27,7 @@ export default function JobOpenings({ jobs = JOBS, depts = DEPTS }) {
     show(
       saved
         ? `Removed "${job.title}" from saved jobs.`
-        : `Saved "${job.title}". Find it under Account → Saved Jobs.`,
+        : `Saved "${job.title}". Find it under Account â†’ Saved Jobs.`,
       'success',
       3000,
     )
@@ -60,7 +60,7 @@ export default function JobOpenings({ jobs = JOBS, depts = DEPTS }) {
           {visible.map((j) => {
             const isSaved = has(j.slug)
             return (
-              <div aria-label="JobOpenings" role="region" key={j.slug} className={`card-base job-card${isSaved ? ' is-saved' : ''}`} data-dept={j.dept}>
+              <div aria-label="JobOpenings" key={j.slug} className={`card-base job-card${isSaved ? ' is-saved' : ''}`} data-dept={j.dept}>
                 <div className="job-card-main">
                   <div className="job-card-tags">
                     <span className="job-dept-tag">{j.deptLabel}</span>

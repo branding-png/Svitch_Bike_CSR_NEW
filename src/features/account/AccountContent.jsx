@@ -1,4 +1,4 @@
-import { BreadCrumb } from '@/ui'
+﻿import { BreadCrumb } from '@/ui'
 import { PATHS } from '@/utils/routes'
 import AccountMobilePills from './AccountMobilePills'
 
@@ -14,7 +14,7 @@ export default function AccountContent({ crumbs, crumbLabel, title, description,
   ]
 
   return (
-    <div aria-label="AccountContent" role="region" className="account-main">
+    <div aria-label="AccountContent" className="account-main">
       <AccountMobilePills />
 
       <BreadCrumb items={trail} />

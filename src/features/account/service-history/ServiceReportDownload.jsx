@@ -1,4 +1,4 @@
-import { useToast } from '@/contexts/ToastContext'
+﻿import { useToast } from '@/contexts/ToastContext'
 import { useUser } from '@/contexts/UserContext'
 
 export default function ServiceReportDownload() {
@@ -11,7 +11,7 @@ export default function ServiceReportDownload() {
   }
 
   return (
-    <div aria-label="ServiceReportDownload" role="region" style={{ textAlign: 'center', marginTop: 24 }}>
+    <div aria-label="ServiceReportDownload" style={{ textAlign: 'center', marginTop: 24 }}>
       <button type="button" className="btn-csr secondary sm" onClick={download}>
         <i className="bi bi-download"></i> Download Full Service Report (PDF)
       </button>

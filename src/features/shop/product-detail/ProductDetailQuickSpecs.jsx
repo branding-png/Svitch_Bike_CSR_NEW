@@ -1,4 +1,4 @@
-// Quick-specs strip beneath the CTAs — defaults to CSR 762 numbers.
+﻿// Quick-specs strip beneath the CTAs â€” defaults to CSR 762 numbers.
 const DEFAULT_SPECS = [
   { icon: 'bi-lightning-charge-fill', value: '6.5 kW',   label: 'Peak Power' },
   { icon: 'bi-speedometer2',          value: '110 km/h', label: 'Top Speed' },
@@ -8,7 +8,7 @@ const DEFAULT_SPECS = [
 
 export default function ProductDetailQuickSpecs({ specs = DEFAULT_SPECS }) {
   return (
-    <div aria-label="ProductDetailQuickSpecs" role="region" className="pd-specs-quick">
+    <div aria-label="ProductDetailQuickSpecs" className="pd-specs-quick">
       {specs.map((s) => (
         <div key={s.label} className="pd-spec-quick">
           <i className={`bi ${s.icon}`} aria-hidden="true" />

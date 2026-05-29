@@ -1,7 +1,7 @@
-// Sustainability hero stat row — mirrors CSR_New_web `.sus-stat-row`.
+﻿// Sustainability hero stat row â€” mirrors CSR_New_web `.sus-stat-row`.
 // Optional `suffix` renders as a small accent-coloured "%" next to the value.
 const STATS = [
-  { value: '52K',  suffix: null, unit: 'Tonnes',    label: 'CO₂ avoided by Svitch riders in 2024'         },
+  { value: '52K',  suffix: null, unit: 'Tonnes',    label: 'COâ‚‚ avoided by Svitch riders in 2024'         },
   { value: '100',  suffix: '%',  unit: 'Renewable', label: 'Ahmedabad facility powered by solar & wind'   },
   { value: '2030', suffix: null, unit: 'Target',    label: 'Carbon-neutral operations across all facilities' },
   { value: '0',    suffix: '%',  unit: 'Landfill',  label: 'Zero manufacturing waste sent to landfill since 2023' },
@@ -16,7 +16,7 @@ const SUFFIX_STYLE = {
 
 export default function SusStatRow({ items = STATS }) {
   return (
-    <div aria-label="SusStatRow" role="region" className="sus-stat-row">
+    <div aria-label="SusStatRow" className="sus-stat-row">
       {items.map((s) => (
         <div key={s.label} className="card-base sus-stat">
           <span className="sus-stat-num">

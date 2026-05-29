@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 
-// Sidebar "Back to All Articles" link — mirrors CSR_New_web's footer
+// Sidebar "Back to All Articles" link â€” mirrors CSR_New_web's footer
 // sidebar widget on the blog-detail page. Single-purpose, but kept here so
 // the sidebar is composed of consistently named widgets.
 export default function BackToAllArticles({
@@ -8,7 +8,7 @@ export default function BackToAllArticles({
   to    = '/blog',
 }) {
   return (
-    <div aria-label="BackToAllArticles" role="region" className="card-base widget" style={{ textAlign: 'center' }}>
+    <div aria-label="BackToAllArticles" className="card-base widget" style={{ textAlign: 'center' }}>
       <Link to={to} className="rajdhani-lbl-text-sm btn-csr secondary sm full-w">
         <i className="bi bi-arrow-left"></i> {label}
       </Link>

@@ -1,7 +1,7 @@
-import { formatCurrency } from '@/utils/formatCurrency'
+﻿import { formatCurrency } from '@/utils/formatCurrency'
 
-// Sidebar — price-range filter. Mirrors CSR_New_web `#priceRange`.
-// Controlled: parent owns `value` (max price ₹) and passes `onChange(value)`.
+// Sidebar â€” price-range filter. Mirrors CSR_New_web `#priceRange`.
+// Controlled: parent owns `value` (max price â‚¹) and passes `onChange(value)`.
 export default function PriceFilter({
   min = 100,
   max = 200000,
@@ -10,7 +10,7 @@ export default function PriceFilter({
   onChange,
 }) {
   return (
-    <div aria-label="PriceFilter" role="region" className="card-base filter-widget">
+    <div aria-label="PriceFilter" className="card-base filter-widget">
       <h3 className="filter-title">Price Range</h3>
 
       <input

@@ -144,7 +144,7 @@ export default function ProductRange({
   viewMoreTo,
 }) {
   return (
-    <section id={id}>
+    <section id={id} aria-label="ProductRange">
       <div className="container">
         <SectionHeader
           label={label}

@@ -1,4 +1,4 @@
-import { INVOICE_YEARS, INVOICE_TYPES } from './invoices-data'
+﻿import { INVOICE_YEARS, INVOICE_TYPES } from './invoices-data'
 
 export default function InvoiceToolbar({
   query, onQueryChange,
@@ -7,7 +7,7 @@ export default function InvoiceToolbar({
   onBulkDownload,
 }) {
   return (
-    <div aria-label="InvoiceToolbar" role="region" className="inv-toolbar">
+    <div aria-label="InvoiceToolbar" className="inv-toolbar">
       <input
         type="search"
         placeholder="Search by invoice / order #"

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { useToast } from '@/contexts/ToastContext'
 
 export default function TicketReply({ ticket, onSend, onResolve }) {
@@ -18,7 +18,7 @@ export default function TicketReply({ ticket, onSend, onResolve }) {
   function emoji()  { show('Emoji picker coming soon.', 'info', 2500) }
 
   return (
-    <div aria-label="TicketReply" role="region" className="tkt-reply">
+    <div aria-label="TicketReply" className="tkt-reply">
       <label className="tkt-reply-label" htmlFor="reply">Your Reply</label>
       <textarea
         id="reply"

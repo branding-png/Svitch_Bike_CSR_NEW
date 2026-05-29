@@ -1,8 +1,8 @@
-import WishlistCard from './WishlistCard'
+﻿import WishlistCard from './WishlistCard'
 
 export default function WishlistGrid({ items, onRemove, onMoveToCart, onNotify }) {
   return (
-    <div aria-label="WishlistGrid" role="region" className="wishlist-grid">
+    <div aria-label="WishlistGrid" className="wishlist-grid">
       {items.map((p) => (
         <WishlistCard
           key={p.id}

@@ -1,13 +1,13 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import { getFeaturedPost } from '@/data/blog'
 
-// Blog "Featured" post card — mirrors CSR_New_web `.featured-post`.
+// Blog "Featured" post card â€” mirrors CSR_New_web `.featured-post`.
 // Pulls the flagged-featured post from @/data/blog so the same record
 // powers the detail page when clicked.
 export default function FeaturedPost({ post = getFeaturedPost() }) {
   if (!post) return null
   return (
-    <Link aria-label="FeaturedPost" role="region"
+    <Link aria-label="FeaturedPost"
       to={`/blog/${post.slug}`}
       className="p-0 card-base featured-post"
       data-cat={post.cat}

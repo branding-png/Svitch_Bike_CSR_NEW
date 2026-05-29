@@ -1,7 +1,7 @@
-import { useToast } from '@/contexts/ToastContext'
+﻿import { useToast } from '@/contexts/ToastContext'
 import { useSavedJobs } from '@/contexts/SavedJobsContext'
 
-// Sidebar "Ready to Apply?" widget — mirrors CSR_New_web `.apply-cta`.
+// Sidebar "Ready to Apply?" widget â€” mirrors CSR_New_web `.apply-cta`.
 // "Save Job" toggles the role in the shared SavedJobs store. If `job` is
 // not provided the save button still works as a no-op toast so the layout
 // doesn't break on pages without a current job.
@@ -32,14 +32,14 @@ export default function ApplyCta({
       applyBy:   job.applyBy || job.deadline,
     })
     show(
-      saved ? 'Removed from saved jobs' : 'Job saved. Check Account → Saved Jobs.',
+      saved ? 'Removed from saved jobs' : 'Job saved. Check Account â†’ Saved Jobs.',
       saved ? 'info' : 'success',
       2500,
     )
   }
 
   return (
-    <div aria-label="ApplyCta" role="region" className="card-base apply-cta">
+    <div aria-label="ApplyCta" className="card-base apply-cta">
       <h4>{title}</h4>
       <p>{description}</p>
       <a href={applyHref} className="btn-csr primary sm">

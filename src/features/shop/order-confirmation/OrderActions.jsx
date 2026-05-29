@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import { PATHS } from '@/utils/routes'
 import { useToast } from '@/contexts/ToastContext'
 
 // Bottom action row on the Order Confirmation page.
 // `repeat(auto-fit, minmax(...))` makes the 4 buttons sit in a row on desktop,
-// two-up on tablet, and stack full-width on mobile — no media queries needed.
+// two-up on tablet, and stack full-width on mobile â€” no media queries needed.
 export default function OrderActions({ orderId = 'SVT-847291' }) {
   const { show } = useToast()
 
@@ -14,7 +14,7 @@ export default function OrderActions({ orderId = 'SVT-847291' }) {
   }
 
   return (
-    <div aria-label="OrderActions" role="region" className="order-actions-row">
+    <div aria-label="OrderActions" className="order-actions-row">
       <Link
         to={`${PATHS.trackOrder}?id=${orderId}`}
         className="btn-csr primary"

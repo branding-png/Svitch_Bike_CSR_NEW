@@ -1,4 +1,4 @@
-import LegalRelated from '@/features/legal/LegalRelated'
+﻿import LegalRelated from '@/features/legal/LegalRelated'
 
 // "Related Policies" section for the Terms & Conditions page.
 const ITEMS = [
@@ -26,5 +26,5 @@ const ITEMS = [
 ]
 
 export default function TermConditionRelated() {
-  return <LegalRelated aria-label="TermConditionRelated" role="region" items={ITEMS} />
+  return <LegalRelated aria-label="TermConditionRelated" items={ITEMS} />
 }

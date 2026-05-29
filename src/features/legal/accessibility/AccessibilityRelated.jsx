@@ -1,4 +1,4 @@
-import LegalRelated from '@/features/legal/LegalRelated'
+﻿import LegalRelated from '@/features/legal/LegalRelated'
 
 // "Related Policies" section for the Accessibility page.
 // Lists the 3 cards specific to this page; other legal pages have their own
@@ -28,5 +28,5 @@ const ITEMS = [
 ]
 
 export default function AccessibilityRelated() {
-  return <LegalRelated aria-label="AccessibilityRelated" role="region" items={ITEMS} />
+  return <LegalRelated aria-label="AccessibilityRelated" items={ITEMS} />
 }

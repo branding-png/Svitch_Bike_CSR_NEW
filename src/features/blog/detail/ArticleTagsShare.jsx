@@ -1,6 +1,6 @@
-import { useToast } from '@/contexts/ToastContext'
+﻿import { useToast } from '@/contexts/ToastContext'
 
-// Article footer — inline tags row + share buttons. Mirrors CSR_New_web
+// Article footer â€” inline tags row + share buttons. Mirrors CSR_New_web
 // `.article-tags-share`. Share links open in new tabs with the current URL
 // prefilled; "Copy" writes the URL to clipboard and fires a toast.
 const DEFAULT_TAGS = [
@@ -35,7 +35,7 @@ export default function ArticleTagsShare({
       await navigator.clipboard.writeText(url())
       show('Article link copied to clipboard', 'success', 2500)
     } catch {
-      show('Could not copy — please copy the URL manually.', 'error', 3000)
+      show('Could not copy â€” please copy the URL manually.', 'error', 3000)
     }
   }
 
@@ -50,7 +50,7 @@ export default function ArticleTagsShare({
   ]
 
   return (
-    <div aria-label="ArticleTagsShare" role="region" className="card-base article-tags-share">
+    <div aria-label="ArticleTagsShare" className="card-base article-tags-share">
       <div className="tag-list">
         <span className="tag-label rajdhani-lbl-text-sm">Tags:</span>
         {tags.map((tag) => (

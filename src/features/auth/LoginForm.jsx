@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+﻿import { useRef, useState } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import InputControl from '@/ui/InputControl'
 import PasswordField from '@/ui/PasswordField'
@@ -7,7 +7,7 @@ import { useToast } from '@/contexts/ToastContext'
 import { useAuthRedirect } from '@/hooks/useAuthRedirect'
 import { signIn } from '@/services/auth'
 
-// Login form panel — mirrors CSR_New_web `.auth-form` for `auth/login.html`.
+// Login form panel â€” mirrors CSR_New_web `.auth-form` for `auth/login.html`.
 // Live red/green validation through InputControl; social login is a stub;
 // password visibility toggle; demo-creds hint at the bottom.
 const DEMO = { email: 'arjun@svitch.bike', password: 'svitch2026' }
@@ -52,7 +52,7 @@ export default function LoginForm() {
     const errs = validate(form)
     setErrors(errs)
     if (Object.keys(errs).length) {
-      show('Please check the form — some fields need your attention.', 'error', 4000)
+      show('Please check the form â€” some fields need your attention.', 'error', 4000)
       requestAnimationFrame(() => {
         formRef.current?.querySelector(
           '.form-group.is-invalid input, .form-group.is-invalid select',
@@ -80,12 +80,12 @@ export default function LoginForm() {
       if (form.remember) localStorage.setItem(REMEMBER_KEY, form.email)
       else                localStorage.removeItem(REMEMBER_KEY)
     } catch {}
-    show('Code sent — enter it to finish signing in.', 'info', 3500)
+    show('Code sent â€” enter it to finish signing in.', 'info', 3500)
     navigate(PATHS.twoFactor)
   }
 
   return (
-    <div aria-label="LoginForm" role="region" className="auth-form">
+    <div aria-label="LoginForm" className="auth-form">
       <img
         src="/images/logos/Svitch-LOGO-white.png"
         alt="Svitch"

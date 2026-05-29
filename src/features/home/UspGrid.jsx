@@ -62,7 +62,7 @@ export default function UspGrid({
   gallery = 'usp-gallery',
 }) {
   return (
-    <section id={id}>
+    <section id={id} aria-label="UspGrid">
       <div className="container">
         <SectionHeader label={label} titleStart={titleStart} titleAccent={titleAccent} />
 

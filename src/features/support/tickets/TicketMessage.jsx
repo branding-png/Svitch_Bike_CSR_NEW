@@ -1,4 +1,4 @@
-// Single chat bubble. `side` is 'them' (left) or 'you' (right).
+﻿// Single chat bubble. `side` is 'them' (left) or 'you' (right).
 // The avatar sits on the opposite end of the bubble per the legacy markup
 // (left of bubble for 'them', right of bubble for 'you').
 export default function TicketMessage({ msg }) {
@@ -21,7 +21,7 @@ export default function TicketMessage({ msg }) {
   )
 
   return (
-    <div aria-label="TicketMessage" role="region" className={`msg ${msg.side}`}>
+    <div aria-label="TicketMessage" className={`msg ${msg.side}`}>
       {msg.side === 'them' ? (
         <>
           <div className="msg-avatar">{avatar}</div>

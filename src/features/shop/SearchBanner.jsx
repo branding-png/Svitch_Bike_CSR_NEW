@@ -1,10 +1,10 @@
-// Shop search-results banner — mirrors CSR_New_web `#shopSearchBanner`.
+﻿// Shop search-results banner â€” mirrors CSR_New_web `#shopSearchBanner`.
 // Renders nothing when `query` is empty. `onClear` removes the search term.
 export default function SearchBanner({ query, count = 0, onClear }) {
   if (!query) return null
 
   return (
-    <div aria-label="SearchBanner" role="region" className="shop-search-banner" id="shopSearchBanner">
+    <div aria-label="SearchBanner" className="shop-search-banner" id="shopSearchBanner">
       <div className="shop-search-banner-info">
         <span className="rajdhani-lbl-text-sm shop-search-banner-label">
           Search results for

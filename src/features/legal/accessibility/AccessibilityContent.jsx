@@ -1,4 +1,4 @@
-import LegalCard from '@/features/legal/LegalCard'
+﻿import LegalCard from '@/features/legal/LegalCard'
 import LegalBlocks from '@/features/legal/LegalBlocks'
 import { ACCESSIBILITY_SECTIONS } from '@/data/accessibility'
 
@@ -7,7 +7,7 @@ import { ACCESSIBILITY_SECTIONS } from '@/data/accessibility'
 // with its `blocks` array passed through the LegalBlocks renderer.
 export default function AccessibilityContent({ sections = ACCESSIBILITY_SECTIONS }) {
   return (
-    <div aria-label="AccessibilityContent" role="region" className="legal-content">
+    <div aria-label="AccessibilityContent" className="legal-content">
       {sections.map((s) => (
         <LegalCard key={s.id} id={s.id} num={s.num} title={s.title}>
           <LegalBlocks blocks={s.blocks} />

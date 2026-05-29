@@ -1,9 +1,9 @@
-import AddressCard from './AddressCard'
+﻿import AddressCard from './AddressCard'
 import AddressAddCard from './AddressAddCard'
 
 export default function AddressGrid({ addresses, onEdit, onAdd, onMakeDefault, onRemove }) {
   return (
-    <div aria-label="AddressGrid" role="region" className="address-grid">
+    <div aria-label="AddressGrid" className="address-grid">
       {addresses.map((a) => (
         <AddressCard
           key={a.id}

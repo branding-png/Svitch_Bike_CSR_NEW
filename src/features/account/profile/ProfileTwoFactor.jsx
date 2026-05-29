@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import ProfileToggleRow from './ProfileToggleRow'
 import { PATHS } from '@/utils/routes'
@@ -12,7 +12,7 @@ export default function ProfileTwoFactor() {
   const [smsOn, setSmsOn] = useState(true)
 
   return (
-    <div aria-label="ProfileTwoFactor" role="region" className="card-base checkout-section" id="security">
+    <div aria-label="ProfileTwoFactor" className="card-base checkout-section" id="security">
       <h3><i className="bi bi-shield-lock-fill"></i> Two-Factor Authentication</h3>
       <p style={{ marginBottom: 8, color: 'var(--gray-400)', fontSize: 'var(--fs-sm)' }}>
         Add an extra layer of security to your account.
@@ -32,7 +32,7 @@ export default function ProfileTwoFactor() {
       <ProfileToggleRow
         asLabel={false}
         title="Backup Codes"
-        desc="10 single-use codes — last regenerated 2026-03-12"
+        desc="10 single-use codes â€” last regenerated 2026-03-12"
       >
         <button type="button" className="btn-csr secondary sm" onClick={() => show('New backup codes generated.', 'success', 3000)}>
           Regenerate

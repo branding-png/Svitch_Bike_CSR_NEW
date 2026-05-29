@@ -1,9 +1,9 @@
-// Cart → Checkout → Payment → Confirm progress bar. Used by Cart, Checkout,
+﻿// Cart â†’ Checkout â†’ Payment â†’ Confirm progress bar. Used by Cart, Checkout,
 // Payment, and OrderConfirmation pages.
-//   step=0 → Cart active
-//   step=1 → Cart done, Checkout active
-//   step=2 → Cart + Checkout done, Payment active
-//   step=3 → Everything done, Confirm active (all-done state)
+//   step=0 â†’ Cart active
+//   step=1 â†’ Cart done, Checkout active
+//   step=2 â†’ Cart + Checkout done, Payment active
+//   step=3 â†’ Everything done, Confirm active (all-done state)
 const STEPS = [
   { num: 1, label: 'Cart',     icon: 'bi-bag'                    },
   { num: 2, label: 'Checkout', icon: 'bi-truck'                  },
@@ -28,7 +28,7 @@ export default function CheckoutProgress({ step = 0 }) {
           active ? 'is-active' : '',
         ].filter(Boolean).join(' ')
         return (
-          <div aria-label="CheckoutProgress" role="region" key={s.num} className={cls}>
+          <div aria-label="CheckoutProgress" key={s.num} className={cls}>
             <span className="step-num">
               {done ? <i className="bi bi-check2" aria-hidden="true" /> : s.num}
             </span>

@@ -1,6 +1,6 @@
-// Renders the block-based content shape used by legal page data files
+﻿// Renders the block-based content shape used by legal page data files
 // (see src/data/accessibility.js / cookie-policy.js for the schema).
-// Keeping the renderer generic means every legal page reuses one component —
+// Keeping the renderer generic means every legal page reuses one component â€”
 // the data file is the only thing that changes per page.
 //
 // Supported block `type`s:
@@ -97,7 +97,7 @@ export default function LegalBlocks({ blocks = [] }) {
 
           case 'table':
             return (
-              <div aria-label="LegalBlocks" role="region" key={i} className="legal-table-wrap">
+              <div aria-label="LegalBlocks" key={i} className="legal-table-wrap">
                 <table className="legal-table">
                   <thead>
                     <tr>{b.headers.map((h, j) => <th key={j}>{h}</th>)}</tr>

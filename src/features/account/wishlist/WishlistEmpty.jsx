@@ -1,9 +1,9 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import { PATHS } from '@/utils/routes'
 
 export default function WishlistEmpty() {
   return (
-    <div aria-label="WishlistEmpty" role="region" className="card-base account-empty">
+    <div aria-label="WishlistEmpty" className="card-base account-empty">
       <i className="bi bi-heart"></i>
       <h3>Your wishlist is empty</h3>
       <p>Start exploring bikes and save your favorites for later.</p>

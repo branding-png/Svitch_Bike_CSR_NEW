@@ -1,21 +1,21 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 
-// CSR 762 — "Questions Answered." FAQ accordion. Mirrors svitch.bike `#faq`.
+// CSR 762 â€” "Questions Answered." FAQ accordion. Mirrors svitch.bike `#faq`.
 // Single-open behaviour: clicking an item closes any other open one. The
-// active item gets `.open` which csr762.css uses to flip + → × and expand
+// active item gets `.open` which csr762.css uses to flip + â†’ Ã— and expand
 // the answer panel.
 const FAQ_ITEMS = [
   {
     q: 'What is the real-world range of the CSR 762?',
-    a: 'The CSR 762 delivers 160+ IDC range under real-world Indian conditions. Actual range depends on rider weight, road conditions, terrain, and temperature. Most city commuters see 160–200 km per charge in daily use.',
+    a: 'The CSR 762 delivers 160+ IDC range under real-world Indian conditions. Actual range depends on rider weight, road conditions, terrain, and temperature. Most city commuters see 160â€“200 km per charge in daily use.',
   },
   {
     q: 'Can I charge at home? What does it cost?',
-    a: "Yes! The CSR 762 comes with a standard home charger that plugs into any 15A socket. A full charge (0–100%) takes approximately 5.5 hours and costs around ₹44 at ₹8/kWh grid rate. That's just ₹0.25/km — 93% cheaper than petrol. Fast DC charging cuts time to 1.5 hours.",
+    a: "Yes! The CSR 762 comes with a standard home charger that plugs into any 15A socket. A full charge (0â€“100%) takes approximately 5.5 hours and costs around â‚¹44 at â‚¹8/kWh grid rate. That's just â‚¹0.25/km â€” 93% cheaper than petrol. Fast DC charging cuts time to 1.5 hours.",
   },
   {
     q: 'Am I eligible for the FAME II government subsidy?',
-    a: 'The CSR 762 is FAME II certified, making it eligible for the central government subsidy of up to ₹25,000. Additional state-level subsidies are also available in Gujarat, Maharashtra, Delhi, Karnataka, and other states. Our dealership team will help you claim all applicable subsidies at the time of purchase.',
+    a: 'The CSR 762 is FAME II certified, making it eligible for the central government subsidy of up to â‚¹25,000. Additional state-level subsidies are also available in Gujarat, Maharashtra, Delhi, Karnataka, and other states. Our dealership team will help you claim all applicable subsidies at the time of purchase.',
   },
   {
     q: 'Can I charge at public charging stations?',
@@ -56,7 +56,7 @@ export default function Faq({
           {items.map((item, i) => {
             const isOpen = openIdx === i
             return (
-              <div aria-label="Faq" role="region" key={item.q} className={`faq-item${isOpen ? ' open' : ''}`}>
+              <div aria-label="Faq" key={item.q} className={`faq-item${isOpen ? ' open' : ''}`}>
                 <button
                   type="button"
                   className="faq-question"

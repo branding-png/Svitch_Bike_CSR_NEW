@@ -1,4 +1,4 @@
-import { useUser } from '@/contexts/UserContext'
+﻿import { useUser } from '@/contexts/UserContext'
 import { useToast } from '@/contexts/ToastContext'
 
 export default function ProfileHero({ memberSince = 'March 2026' }) {
@@ -16,7 +16,7 @@ export default function ProfileHero({ memberSince = 'March 2026' }) {
   }
 
   return (
-    <div aria-label="ProfileHero" role="region" className="card-base profile-hero">
+    <div aria-label="ProfileHero" className="card-base profile-hero">
       <div className="profile-avatar-wrap">
         <div className="account-avatar">{initial}</div>
         <label className="profile-avatar-upload" title="Upload avatar">

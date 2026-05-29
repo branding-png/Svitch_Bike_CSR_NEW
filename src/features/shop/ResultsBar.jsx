@@ -1,9 +1,9 @@
-// Shop results / sort bar — mirrors CSR_New_web `.shop-results-bar`.
+﻿// Shop results / sort bar â€” mirrors CSR_New_web `.shop-results-bar`.
 // Parent provides paging info (`start`, `end`, `total`) and sort state.
 const SORTS = [
   { id: 'featured',  label: 'Featured'              },
-  { id: 'price-asc', label: 'Price — Low to High'   },
-  { id: 'price-desc', label: 'Price — High to Low'  },
+  { id: 'price-asc', label: 'Price â€” Low to High'   },
+  { id: 'price-desc', label: 'Price â€” High to Low'  },
   { id: 'newest',    label: 'Newest First'          },
   { id: 'rated',     label: 'Best Rated'            },
 ]
@@ -16,13 +16,13 @@ export default function ResultsBar({
   onSortChange,
 }) {
   return (
-    <div aria-label="ResultsBar" role="region" className="shop-results-bar">
+    <div aria-label="ResultsBar" className="shop-results-bar">
       <span className="shop-results-count rajdhani-lbl-text-sm">
         {total === 0 ? (
           'No products match'
         ) : (
           <>
-            Showing <strong>{start}–{end}</strong> of <strong>{total}</strong> products
+            Showing <strong>{start}â€“{end}</strong> of <strong>{total}</strong> products
           </>
         )}
       </span>

@@ -1,7 +1,7 @@
-import ProductCard from './ProductCard'
+﻿import ProductCard from './ProductCard'
 import ShopEmpty   from './ShopEmpty'
 
-// Shop product-grid — renders cards or the empty state when `products` is [].
+// Shop product-grid â€” renders cards or the empty state when `products` is [].
 export default function ProductGrid({
   products = [],
   query    = '',
@@ -14,7 +14,7 @@ export default function ProductGrid({
   }
 
   return (
-    <div aria-label="ProductGrid" role="region" className="product-grid-shop" id="productGrid">
+    <div aria-label="ProductGrid" className="product-grid-shop" id="productGrid">
       {products.map((p) => (
         <ProductCard key={p.id} product={p} onQuickView={onQuickView} />
       ))}

@@ -1,4 +1,4 @@
-import { useBookNow } from '@/contexts/BookNowContext'
+﻿import { useBookNow } from '@/contexts/BookNowContext'
 
 // Convenience button that opens the global Book Now modal.
 // All standard <button> props pass through, so any caller can override
@@ -10,7 +10,7 @@ export default function BookNowButton({
 }) {
   const { open } = useBookNow()
   return (
-    <button aria-label="BookNowButton" role="region"
+    <button aria-label="BookNowButton"
       type="button"
       className={className}
       onClick={open}

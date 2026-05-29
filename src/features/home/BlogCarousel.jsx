@@ -71,7 +71,7 @@ export default function BlogCarousel({
   viewAllLabel = 'View All Posts',
 }) {
   return (
-    <section id={id}>
+    <section id={id} aria-label="BlogCarousel">
       <div className="container">
         <SectionHeader label={label} titleStart={titleStart} titleAccent={titleAccent} center />
 

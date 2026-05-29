@@ -1,4 +1,4 @@
-// Shown by ProductGrid when no products match the current filters/search.
+﻿// Shown by ProductGrid when no products match the current filters/search.
 // If `query` is present, shows a search-flavoured message and suggestion pills.
 const SUGGESTIONS = ['bike', 'battery', 'helmet', 'charger', 'accessory']
 
@@ -6,7 +6,7 @@ export default function ShopEmpty({ query = '', onReset, onSuggest }) {
   const isSearch = Boolean(query)
 
   return (
-    <div aria-label="ShopEmpty" role="region" className="card-base account-empty" id="shopEmpty" style={{ marginTop: 20 }}>
+    <div aria-label="ShopEmpty" className="card-base account-empty" id="shopEmpty" style={{ marginTop: 20 }}>
       <i id="shopEmptyIcon" className={`bi ${isSearch ? 'bi-search' : 'bi-bag-x'}`}></i>
 
       <h3 id="shopEmptyTitle" style={{ color: 'var(--white)', marginBottom: 8 }}>

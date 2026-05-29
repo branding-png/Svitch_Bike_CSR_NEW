@@ -1,11 +1,11 @@
-// Color swatch picker — controlled by parent via `value` + `onChange`.
+﻿// Color swatch picker â€” controlled by parent via `value` + `onChange`.
 // Keeps legacy .pd-color / .is-active markup so existing CSS keeps working.
 export default function ProductDetailColorSelector({ colors = [], value, onChange }) {
   if (!colors.length) return null
   const active = colors.find((c) => c.id === value) || colors[0]
 
   return (
-    <div aria-label="ProductDetailColorSelector" role="region" className="pd-selector">
+    <div aria-label="ProductDetailColorSelector" className="pd-selector">
       <label className="pd-selector-label rajdhani-lbl-text-sm">
         Color: <strong>{active.name}</strong>
       </label>

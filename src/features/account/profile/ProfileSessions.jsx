@@ -1,11 +1,11 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import ProfileToggleRow from './ProfileToggleRow'
 import { useToast } from '@/contexts/ToastContext'
 
 const INITIAL_SESSIONS = [
-  { id: 's-1', title: 'Pixel 8 · Chrome · Ahmedabad',    desc: 'Current session · last active just now',   current: true  },
-  { id: 's-2', title: 'MacBook · Safari · Pune',         desc: 'Last active 2026-05-10 16:42',             current: false },
-  { id: 's-3', title: 'iPad · Svitch App · Bengaluru',   desc: 'Last active 2026-04-29',                   current: false },
+  { id: 's-1', title: 'Pixel 8 Â· Chrome Â· Ahmedabad',    desc: 'Current session Â· last active just now',   current: true  },
+  { id: 's-2', title: 'MacBook Â· Safari Â· Pune',         desc: 'Last active 2026-05-10 16:42',             current: false },
+  { id: 's-3', title: 'iPad Â· Svitch App Â· Bengaluru',   desc: 'Last active 2026-04-29',                   current: false },
 ]
 
 export default function ProfileSessions() {
@@ -22,7 +22,7 @@ export default function ProfileSessions() {
   }
 
   return (
-    <div aria-label="ProfileSessions" role="region" className="card-base checkout-section" id="sessions">
+    <div aria-label="ProfileSessions" className="card-base checkout-section" id="sessions">
       <h3><i className="bi bi-laptop"></i> Connected Sessions</h3>
       <p style={{ marginBottom: 8, color: 'var(--gray-400)', fontSize: 'var(--fs-sm)' }}>
         Devices currently signed in to your account.

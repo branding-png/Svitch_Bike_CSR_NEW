@@ -1,4 +1,4 @@
-// Card 2 — Live tracking timeline. Mirrors CSR_New_web `.track-timeline`.
+﻿// Card 2 â€” Live tracking timeline. Mirrors CSR_New_web `.track-timeline`.
 // Each step matches the legacy markup:
 //   <li class="track-step is-{state}">
 //     <span class="track-dot"><i /></span>
@@ -31,7 +31,7 @@ export default function TrackTimeline({ stages = [] }) {
           const state = s.state || 'upcoming'
           const icon  = s.icon  || STATE_ICON[state]
           return (
-            <li aria-label="TrackTimeline" role="region" key={i} className={`track-step is-${state}`}>
+            <li aria-label="TrackTimeline" key={i} className={`track-step is-${state}`}>
               <span className="track-dot">
                 <i className={`bi ${icon}`}></i>
               </span>

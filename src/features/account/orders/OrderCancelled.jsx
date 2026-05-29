@@ -1,7 +1,7 @@
-import OrderCard, { useOrderActions } from './OrderCard'
+﻿import OrderCard, { useOrderActions } from './OrderCard'
 
-// Cancelled: View · Reorder
+// Cancelled: View Â· Reorder
 export default function OrderCancelled({ order, onTrack }) {
   const a = useOrderActions(order, { onTrack })
-  return <OrderCard aria-label="OrderCancelled" role="region" order={order} actions={[a.viewDetail, a.reorder]} />
+  return <OrderCard aria-label="OrderCancelled" order={order} actions={[a.viewDetail, a.reorder]} />
 }

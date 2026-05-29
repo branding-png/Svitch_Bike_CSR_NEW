@@ -1,4 +1,4 @@
-// Status timeline for the order-detail page. Reuses the same coloured
+﻿// Status timeline for the order-detail page. Reuses the same coloured
 // `.track-timeline` markup as the Track modal so the visual language stays
 // consistent (green=done/final, amber=current/processing, red=cancelled,
 // gray=pending).
@@ -29,7 +29,7 @@ export default function OrderDetailStatusTimeline({ order }) {
         <div>
           <div className="order-id">Status Timeline</div>
           <span className="order-date rajdhani-lbl-text-sm">
-            Tracking ID {tracking?.id || '—'} &middot; {tracking?.carrier || 'Svitch Express'}
+            Tracking ID {tracking?.id || 'â€”'} &middot; {tracking?.carrier || 'Svitch Express'}
           </span>
         </div>
         <span className={`order-status ${order.status} rajdhani-lbl-text-sm`}>
@@ -41,7 +41,7 @@ export default function OrderDetailStatusTimeline({ order }) {
         {detailedTimeline.map((step, i) => {
           const state = step.final ? 'final' : (step.state || 'pending')
           return (
-            <li aria-label="OrderDetailStatusTimeline" role="region" key={i} className={`track-step is-${state}`}>
+            <li aria-label="OrderDetailStatusTimeline" key={i} className={`track-step is-${state}`}>
               <span className="track-dot">
                 {STATE_ICON[state] && <i className={`bi bi-${STATE_ICON[state]}`}></i>}
               </span>

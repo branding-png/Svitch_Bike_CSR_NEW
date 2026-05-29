@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+﻿import { useEffect, useRef, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { PATHS } from '@/utils/routes'
 import { useToast } from '@/contexts/ToastContext'
@@ -83,7 +83,7 @@ export default function RegisterForm() {
     if (announcedRef.current) return
     announcedRef.current = true
     if (initial.step > 1 || initial.form.firstName || initial.form.email) {
-      show('Welcome back — picked up where you left off.', 'info', 4000)
+      show('Welcome back â€” picked up where you left off.', 'info', 4000)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -129,7 +129,7 @@ export default function RegisterForm() {
     const errs = validateStep(step, form)
     setErrors(errs)
     if (Object.keys(errs).length) {
-      show('Please check the form — some fields need your attention.', 'error', 4000)
+      show('Please check the form â€” some fields need your attention.', 'error', 4000)
       focusInvalid()
       return
     }
@@ -145,7 +145,7 @@ export default function RegisterForm() {
     const errs = validateStep(3, form)
     setErrors(errs)
     if (Object.keys(errs).length) {
-      show('Please check the form — some fields need your attention.', 'error', 4000)
+      show('Please check the form â€” some fields need your attention.', 'error', 4000)
       focusInvalid()
       return
     }
@@ -174,7 +174,7 @@ export default function RegisterForm() {
   }
 
   return (
-    <div aria-label="RegisterForm" role="region" className="auth-form">
+    <div aria-label="RegisterForm" className="auth-form">
       <img
         src="/images/logos/Svitch-LOGO-white.png"
         alt="Svitch"

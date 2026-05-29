@@ -1,4 +1,4 @@
-const ACTIONS = [
+﻿const ACTIONS = [
   { key: 'view',     icon: 'eye',       title: 'View' },
   { key: 'download', icon: 'download',  title: 'Download PDF' },
   { key: 'email',    icon: 'envelope',  title: 'Email' },
@@ -17,7 +17,7 @@ export default function InvoiceTable({ invoices, onAction }) {
   }
 
   return (
-    <div aria-label="InvoiceTable" role="region" style={{ overflowX: 'auto' }}>
+    <div aria-label="InvoiceTable" style={{ overflowX: 'auto' }}>
       <table className="inv-table">
         <thead>
           <tr>

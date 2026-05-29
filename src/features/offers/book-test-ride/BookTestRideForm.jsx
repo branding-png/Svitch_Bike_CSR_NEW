@@ -1,18 +1,18 @@
-import { useEffect, useRef, useState } from 'react'
+﻿import { useEffect, useRef, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import InputControl from '@/ui/InputControl'
 import { useToast } from '@/contexts/ToastContext'
 import { useUser } from '@/contexts/UserContext'
 
-// "Book Your Slot" form — mirrors CSR_New_web `.tr-form-card`.
+// "Book Your Slot" form â€” mirrors CSR_New_web `.tr-form-card`.
 // Uses the shared InputControl primitive so invalid fields get the standard
 // `.form-group.is-invalid` red-border treatment. On submit success the form is
 // replaced inline by a full booking-summary panel (`.tr-success-rich`).
 const COLOURS = [
-  { value: 'black', label: 'CSR 762 — Matte Black'   },
-  { value: 'red',   label: 'CSR 762 — Racing Red'    },
-  { value: 'grey',  label: 'CSR 762 — Graphite Grey' },
-  { value: 'blue',  label: 'CSR 762 — Ocean Blue'    },
+  { value: 'black', label: 'CSR 762 â€” Matte Black'   },
+  { value: 'red',   label: 'CSR 762 â€” Racing Red'    },
+  { value: 'grey',  label: 'CSR 762 â€” Graphite Grey' },
+  { value: 'blue',  label: 'CSR 762 â€” Ocean Blue'    },
 ]
 
 const TIMES = [
@@ -43,7 +43,7 @@ export default function BookTestRideForm() {
   // params win over context where both are present.
   const [form, setForm]     = useState(() => {
     // Only prefill personal + slot fields when the user actually arrived from
-    // a Reschedule link (identified by ?booking=…). Direct visits to this
+    // a Reschedule link (identified by ?booking=â€¦). Direct visits to this
     // page start with an empty form so new visitors aren't shown someone
     // else's session data.
     if (!params.get('booking')) return EMPTY
@@ -74,18 +74,18 @@ export default function BookTestRideForm() {
   const bookingRef = params.get('booking')
 
   // Friendly heads-up when arriving from a Reschedule link.
-  // React StrictMode runs effects twice in dev — guard with a ref so the
+  // React StrictMode runs effects twice in dev â€” guard with a ref so the
   // toast only fires once per booking reference.
   const lastBookingRef = useRef(null)
   useEffect(() => {
     if (bookingRef && lastBookingRef.current !== bookingRef) {
       lastBookingRef.current = bookingRef
-      show(`Rescheduling booking #${bookingRef} — pick a new date or time.`, 'info', 4500)
+      show(`Rescheduling booking #${bookingRef} â€” pick a new date or time.`, 'info', 4500)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [bookingRef])
 
-  // Live per-field validation on every keystroke → green/red InputControl border.
+  // Live per-field validation on every keystroke â†’ green/red InputControl border.
   const set = (key) => (v) => {
     setForm((f) => {
       const next  = { ...f, [key]: v }
@@ -115,7 +115,7 @@ export default function BookTestRideForm() {
     const errs = validate(form)
     setErrors(errs)
     if (Object.keys(errs).length) {
-      show('Please check the form — some fields need your attention.', 'error', 5000)
+      show('Please check the form â€” some fields need your attention.', 'error', 5000)
       requestAnimationFrame(() => {
         const first = formRef.current?.querySelector('.form-group.is-invalid input, .form-group.is-invalid select')
         first?.focus()
@@ -131,8 +131,8 @@ export default function BookTestRideForm() {
         bookingId,
         customer:  `${form.first.trim()} ${form.last.trim()}`,
         model:     colourLabel,
-        rideDate:  `${niceDate} · ${form.time}`,
-        location:  `${form.city} — nearest authorised dealer`,
+        rideDate:  `${niceDate} Â· ${form.time}`,
+        location:  `${form.city} â€” nearest authorised dealer`,
       })
       setBusy(false)
       show(`Test ride booked! Your booking ID is ${bookingId}.`, 'success', 4000)
@@ -182,7 +182,7 @@ export default function BookTestRideForm() {
           options={CITIES}
           value={form.city} onChange={set('city')} required error={errors.city} />
 
-        {/* Consent — custom styled box per book-test-ride.css */}
+        {/* Consent â€” custom styled box per book-test-ride.css */}
         <div className={'form-group tr-consent' + (errors.consent ? ' is-invalid' : '')}>
           <label className="tr-consent-label rajdhani-lbl-text-sm" htmlFor="trConsent">
             <input
@@ -197,7 +197,7 @@ export default function BookTestRideForm() {
             <span className="tr-consent-text">
               By booking, you agree to our{' '}
               <Link to="/legal/terms-conditions">Terms of Service</Link>.
-              We'll call to confirm your slot — no deposit required.
+              We'll call to confirm your slot â€” no deposit required.
             </span>
           </label>
           {errors.consent && (
@@ -213,7 +213,7 @@ export default function BookTestRideForm() {
         >
           {busy ? (
             <span className="btn-spinner">
-              <i className="bi bi-arrow-repeat spin-icon"></i> Booking…
+              <i className="bi bi-arrow-repeat spin-icon"></i> Bookingâ€¦
             </span>
           ) : (
             <span className="btn-text">
@@ -226,7 +226,7 @@ export default function BookTestRideForm() {
   )
 }
 
-// ─── Success panel ────────────────────────────────────────────────────────
+// â”€â”€â”€ Success panel â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const NEXT_STEPS = [
   { icon: 'bi-phone',         title: 'Check your SMS',     desc: 'Dealer address and contact details within 10 minutes.' },
   { icon: 'bi-person-check',  title: 'Bring your licence', desc: 'Valid 2-wheeler driving licence. Helmet provided by dealer.' },
@@ -260,7 +260,7 @@ function SuccessPanel({ summary }) {
         <h2 className="section-title">You're All Set to Ride.</h2>
         <p>
           Your test ride has been booked successfully. A confirmation SMS and email
-          are on their way — our team will call within 2 hours to lock your slot.
+          are on their way â€” our team will call within 2 hours to lock your slot.
         </p>
 
         {/* Booking summary */}
@@ -320,7 +320,7 @@ function SuccessPanel({ summary }) {
 
 function SummaryRow({ label, value, valueClass = '' }) {
   return (
-    <div aria-label="BookTestRideForm" role="region" className="tr-summary-row">
+    <div aria-label="BookTestRideForm" className="tr-summary-row">
       <span className="tr-summary-label">{label}</span>
       <span className={`tr-summary-val ${valueClass}`.trim()}>{value}</span>
     </div>

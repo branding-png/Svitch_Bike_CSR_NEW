@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ProductDetailPriceRow from './ProductDetailPriceRow'
 import ProductDetailTrust from './ProductDetailTrust'
@@ -17,7 +17,7 @@ const DEFAULT_COLORS = [
   { id: 'goblin-green', name: 'Goblin Green', hex: '#22c55e' },
 ]
 
-// "₹1,25,000" → 125000
+// "â‚¹1,25,000" â†’ 125000
 function parsePrice(s) {
   if (typeof s === 'number') return s
   const n = Number(String(s).replace(/[^\d.]/g, ''))
@@ -31,9 +31,9 @@ export default function ProductDetailInfo({
   productName = 'CSR 762',
   rating      = 4.8,
   reviewCount = 124,
-  price       = '₹1,25,000',
-  oldPrice    = '₹1,45,000',
-  savings     = '₹20,000',
+  price       = 'â‚¹1,25,000',
+  oldPrice    = 'â‚¹1,45,000',
+  savings     = 'â‚¹20,000',
   colors      = DEFAULT_COLORS,
   onAddToCart,
   onBuyNow,
@@ -65,9 +65,9 @@ export default function ProductDetailInfo({
   }
 
   return (
-    <div aria-label="ProductDetailInfo" role="region" className="pd-info">
+    <div aria-label="ProductDetailInfo" className="pd-info">
       <span className="product-tagline">{tagline}</span>
-      <h2>{productName}{activeColor ? ` — ${activeColor.name}` : ''}</h2>
+      <h2>{productName}{activeColor ? ` â€” ${activeColor.name}` : ''}</h2>
 
       <div className="product-rating">
         {Array.from({ length: 5 }).map((_, i) => (

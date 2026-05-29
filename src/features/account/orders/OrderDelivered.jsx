@@ -1,7 +1,7 @@
-import OrderCard, { useOrderActions } from './OrderCard'
+﻿import OrderCard, { useOrderActions } from './OrderCard'
 
-// Delivered: View · Track (history) · Reorder · Invoice
+// Delivered: View Â· Track (history) Â· Reorder Â· Invoice
 export default function OrderDelivered({ order, onTrack }) {
   const a = useOrderActions(order, { onTrack })
-  return <OrderCard aria-label="OrderDelivered" role="region" order={order} actions={[a.viewDetail, a.track, a.reorder, a.invoice]} />
+  return <OrderCard aria-label="OrderDelivered" order={order} actions={[a.viewDetail, a.track, a.reorder, a.invoice]} />
 }

@@ -1,11 +1,11 @@
-import Card from '@/ui/Card'
+﻿import Card from '@/ui/Card'
 import { formatCurrency } from '@/utils/formatCurrency'
 
 const SHIPPING_FREE_OVER = 50000
 const GST_RATE = 0.18
 
 // Shared right-rail summary block used by Cart, Checkout, Payment.
-// Computes shipping (free over ₹50k), 18% GST, and total internally so
+// Computes shipping (free over â‚¹50k), 18% GST, and total internally so
 // every page renders the same numbers from the same source of truth.
 export default function OrderSummary({
   items,
@@ -36,7 +36,7 @@ export default function OrderSummary({
                 className="rajdhani-lbl-text-sm"
                 style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--gray-300)' }}
               >
-                <span>{it.name} × {it.qty}</span>
+                <span>{it.name} Ã— {it.qty}</span>
                 <span>{formatCurrency(it.price * it.qty)}</span>
               </li>
             ))}
@@ -63,7 +63,7 @@ export default function OrderSummary({
 
 function Row({ label, value, strong }) {
   return (
-    <div aria-label="OrderSummary" role="region" style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0' }}>
+    <div aria-label="OrderSummary" style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0' }}>
       <span className="rajdhani-lbl-text-sm" style={{ color: strong ? 'var(--white)' : 'var(--gray-400)' }}>{label}</span>
       <strong style={{ color: 'var(--white)', fontWeight: strong ? 700 : 400 }}>{value}</strong>
     </div>

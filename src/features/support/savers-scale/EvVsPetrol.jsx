@@ -1,4 +1,4 @@
-// CSR 762 vs Petrol head-to-head — mirrors CSR_New_web `#comparison`.
+﻿// CSR 762 vs Petrol head-to-head â€” mirrors CSR_New_web `#comparison`.
 const EV = {
   icon:    'bi-lightning-charge-fill',
   name:    'CSR 762',
@@ -6,12 +6,12 @@ const EV = {
   cls:     'is-ev',
   bullet:  'bi-check-circle-fill',
   points: [
-    '₹0.25 per km (home-charged)',
+    'â‚¹0.25 per km (home-charged)',
     'Zero tailpipe emissions',
-    'Silent operation — no engine noise',
+    'Silent operation â€” no engine noise',
     'No oil changes, no clutch, no timing belt',
     'Instant torque from 0 RPM',
-    'Home charging — no petrol pump queues',
+    'Home charging â€” no petrol pump queues',
     'FAME-II subsidy + GST benefit',
     '3-year / 35,000 km battery warranty',
   ],
@@ -24,13 +24,13 @@ const PETROL = {
   cls:     'is-petrol',
   bullet:  'bi-exclamation-circle-fill',
   points: [
-    '₹2.80–₹3.30 per km',
-    '~100 g CO₂ per km emitted',
+    'â‚¹2.80â€“â‚¹3.30 per km',
+    '~100 g COâ‚‚ per km emitted',
     'Engine noise and vibration',
-    'Oil, filter, chain, plug every 3–6 months',
+    'Oil, filter, chain, plug every 3â€“6 months',
     'Torque depends on RPM & gear',
     'Regular petrol-pump stops',
-    'No subsidy — full GST applicable',
+    'No subsidy â€” full GST applicable',
     'Typical 2-year engine warranty',
   ],
 }
@@ -62,7 +62,7 @@ export default function EvVsPetrol() {
 
 function VsCard({ column }) {
   return (
-    <div aria-label="EvVsPetrol" role="region" className={`card-base vs-card ${column.cls}`}>
+    <div aria-label="EvVsPetrol" className={`card-base vs-card ${column.cls}`}>
       <div className="vs-head">
         <div className="vs-head-icon"><i className={`bi ${column.icon}`}></i></div>
         <div>

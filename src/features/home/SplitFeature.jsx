@@ -29,7 +29,7 @@ export default function SplitFeature({
   reverse = false,
 }) {
   return (
-    <section className="split-section">
+    <section className="split-section" aria-label="SplitFeature">
       <div className="container">
         <div className={`split-feature${reverse ? ' split-feature--reverse' : ''} reveal`}>
           <div className="split-media">

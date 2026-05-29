@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+﻿import { useEffect, useRef, useState } from 'react'
 import PasswordField, { PASSWORD_RULES } from '@/ui/PasswordField'
 import { resetPassword } from '@/services/auth'
 import { useToast } from '@/contexts/ToastContext'
@@ -53,7 +53,7 @@ export default function ForgetNewPassword({ resetToken, onReset }) {
   }
 
   return (
-    <div aria-label="ForgetNewPassword" role="region" className="auth-centered" id="fpStep3">
+    <div aria-label="ForgetNewPassword" className="auth-centered" id="fpStep3">
       <div className="auth-icon"><i className="bi bi-lock-fill"></i></div>
       <h2>New Password</h2>
       <p>Create a strong password. We recommend using 12+ characters with a mix of letters, numbers &amp; symbols.</p>
@@ -80,7 +80,7 @@ export default function ForgetNewPassword({ resetToken, onReset }) {
 
         <button type="submit" className="btn-csr primary full-w" disabled={busy}>
           {busy ? (
-            <span className="btn-spinner"><i className="bi bi-arrow-repeat spin-icon"></i> Resetting…</span>
+            <span className="btn-spinner"><i className="bi bi-arrow-repeat spin-icon"></i> Resettingâ€¦</span>
           ) : (
             <><i className="bi bi-arrow-clockwise"></i> Reset Password</>
           )}

@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+﻿import { NavLink } from 'react-router-dom'
 import { PATHS } from '@/utils/routes'
 
 const PILLS = [
@@ -18,7 +18,7 @@ const PILLS = [
 
 export default function AccountMobilePills() {
   return (
-    <div aria-label="AccountMobilePills" role="region" className="account-mobile-pills">
+    <div aria-label="AccountMobilePills" className="account-mobile-pills">
       {PILLS.map((p) => (
         <NavLink
           key={p.to}

@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react'
+﻿import { useEffect, useMemo } from 'react'
 import InputControl from '@/ui/InputControl'
 import { useAddresses } from '@/contexts/AddressContext'
 import { useUser } from '@/contexts/UserContext'
@@ -8,7 +8,7 @@ const STATES = [
   'Telangana', 'West Bengal', 'Rajasthan', 'Other',
 ]
 
-// Checkout — Shipping Address section.
+// Checkout â€” Shipping Address section.
 // Controlled: parent owns `form`/`errors` and passes `onChange(key, value)`.
 //
 // Pre-fills with the user's default saved address on first mount (and lets
@@ -25,12 +25,12 @@ export default function ShippingSection({ form, errors = {}, onChange }) {
       { value: '', label: '+ Use a new address' },
       ...addresses.map((a) => ({
         value: a.id,
-        label: `${a.label} — ${a.line1}, ${a.city}${a.isDefault ? '  · default' : ''}`,
+        label: `${a.label} â€” ${a.line1}, ${a.city}${a.isDefault ? '  Â· default' : ''}`,
       })),
     ]
   }, [addresses, isAuthed])
 
-  // Pre-fill from default address on first render — only when authenticated
+  // Pre-fill from default address on first render â€” only when authenticated
   // and the form is still empty.
   useEffect(() => {
     if (!isAuthed) return
@@ -66,7 +66,7 @@ export default function ShippingSection({ form, errors = {}, onChange }) {
   }
 
   return (
-    <div aria-label="ShippingSection" role="region" className="card-base checkout-section">
+    <div aria-label="ShippingSection" className="card-base checkout-section">
       <h3><i className="bi bi-truck"></i> Shipping Address</h3>
 
       {savedOptions && (

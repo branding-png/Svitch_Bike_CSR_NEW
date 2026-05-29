@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import { PATHS } from '@/utils/routes'
 import { useToast } from '@/contexts/ToastContext'
 import { useUser } from '@/contexts/UserContext'
@@ -21,7 +21,7 @@ export default function OrderDetailCard({ order }) {
   }
 
   return (
-    <div aria-label="OrderDetailCard" role="region" className="card-base order-card" data-status={order.status}>
+    <div aria-label="OrderDetailCard" className="card-base order-card" data-status={order.status}>
       <div className="order-card-head">
         <div>
           <div className="order-id">Order #{order.id}</div>

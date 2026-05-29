@@ -1,4 +1,4 @@
-const STATS = [
+﻿const STATS = [
   { icon: 'bag-check',     value: 3, label: 'Total Orders' },
   { icon: 'heart-fill',    value: 4, label: 'Wishlist' },
   { icon: 'geo-alt-fill',  value: 2, label: 'Addresses' },
@@ -8,7 +8,7 @@ const STATS = [
 
 export default function DashboardStats() {
   return (
-    <div aria-label="DashboardStats" role="region" className="account-stats-grid">
+    <div aria-label="DashboardStats" className="account-stats-grid">
       {STATS.map((s) => (
         <div key={s.label} className="card-base account-stat-card">
           <i className={`bi bi-${s.icon}`}></i>

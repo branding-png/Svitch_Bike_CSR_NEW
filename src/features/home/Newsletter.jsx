@@ -58,7 +58,7 @@ export default function Newsletter({
   }
 
   return (
-    <section id={id}>
+    <section id={id} aria-label="Newsletter">
       <div className="container">
         <div className="newsletter-wrap reveal">
           <div className="newsletter-content">

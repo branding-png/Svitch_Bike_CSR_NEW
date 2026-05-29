@@ -1,13 +1,13 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 
-// Interactive Saver's Scale calculator — mirrors CSR_New_web `#calculator`.
+// Interactive Saver's Scale calculator â€” mirrors CSR_New_web `#calculator`.
 // 4 range inputs feed a live cost-comparison table + headline savings card.
 // CSR 762 efficiency assumed: 0.025 kWh per km (40 km per 1 kWh charge).
 const EV_KWH_PER_KM = 0.025
 
 const DEFAULTS = { km: 40, elec: 8, petrol: 100, mileage: 35 }
 
-const inr = (n) => '₹' + Math.round(n).toLocaleString('en-IN')
+const inr = (n) => 'â‚¹' + Math.round(n).toLocaleString('en-IN')
 
 export default function SaversCalculator() {
   const [form, setForm] = useState(DEFAULTS)
@@ -45,7 +45,7 @@ export default function SaversCalculator() {
           <div className="card-base calc-inputs">
             <div className='calc-inputs-header'>
             <h3>Your Commute</h3>
-            <p className="calc-inputs-sub">Edit any value — totals update instantly.</p>
+            <p className="calc-inputs-sub">Edit any value â€” totals update instantly.</p>
 </div>
             <RangeRow
               label="Daily Travel Distance" id="inputKm"
@@ -58,15 +58,15 @@ export default function SaversCalculator() {
               label="Electricity Rate (Your City)" id="inputElec"
               value={elec} min={1} max={20} step={0.5}
               onChange={(v) => set('elec', v)}
-              displayValue={<>₹<strong>{elec}</strong> <small>/kWh</small></>}
-              metaLeft="₹1" metaRight="₹20"
+              displayValue={<>â‚¹<strong>{elec}</strong> <small>/kWh</small></>}
+              metaLeft="â‚¹1" metaRight="â‚¹20"
             />
             <RangeRow
               label="Petrol Rate" id="inputPetrol"
               value={petrol} min={50} max={150} step={0.5}
               onChange={(v) => set('petrol', v)}
-              displayValue={<>₹<strong>{petrol}</strong> <small>/L</small></>}
-              metaLeft="₹50" metaRight="₹150"
+              displayValue={<>â‚¹<strong>{petrol}</strong> <small>/L</small></>}
+              metaLeft="â‚¹50" metaRight="â‚¹150"
             />
             <RangeRow
               label="Petrol Bike Mileage" id="inputMileage"
@@ -139,7 +139,7 @@ export default function SaversCalculator() {
   )
 }
 
-// ─── Helpers ──────────────────────────────────────────────────────────────
+// â”€â”€â”€ Helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function RangeRow({ label, id, value, min, max, step, onChange, displayValue, metaLeft, metaRight }) {
   return (
     <div className="form-group range-group">
@@ -163,10 +163,10 @@ function RangeRow({ label, id, value, min, max, step, onChange, displayValue, me
 function Row({ label, petrol, ev, save, fmt }) {
   // For the "Per KM" row use 2-decimal precision; everything else rounded.
   const f = fmt === 'km'
-    ? (n) => '₹' + (Math.round(n * 100) / 100).toFixed(2)
+    ? (n) => 'â‚¹' + (Math.round(n * 100) / 100).toFixed(2)
     : inr
   return (
-    <tr aria-label="SaversCalculator" role="region">
+    <tr aria-label="SaversCalculator">
       <td>{label}</td>
       <td>{f(petrol)}</td>
       <td>{f(ev)}</td>

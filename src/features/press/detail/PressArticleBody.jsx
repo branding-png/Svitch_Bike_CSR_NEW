@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import { EMAILS, PHONES } from '@/data/contact-info'
 import { PATHS } from '@/utils/routes'
 
-// Press-release article body — block renderer for entries in data/press.js.
+// Press-release article body â€” block renderer for entries in data/press.js.
 // Block types: p (with optional `lead`), h3, quote, download, contact.
 export default function PressArticleBody({ blocks = [], image, imageAlt }) {
   return (
@@ -40,12 +40,12 @@ export default function PressArticleBody({ blocks = [], image, imageAlt }) {
                     color: 'var(--gray-300)',
                   }}
                 >
-                  “{b.text}”
+                  â€œ{b.text}â€
                   {b.author && (
                     <>
                       <br />
                       <strong style={{ display: 'block', marginTop: 10, fontStyle: 'normal', color: 'var(--white)' }}>
-                        — {b.author}
+                        â€” {b.author}
                       </strong>
                     </>
                   )}
@@ -81,7 +81,7 @@ export default function PressArticleBody({ blocks = [], image, imageAlt }) {
               const email = EMAILS[b.emailKey]
               const phone = PHONES[b.phoneKey]
               return (
-                <div aria-label="PressArticleBody" role="region" key={i} style={{ marginTop: 36 }}>
+                <div aria-label="PressArticleBody" key={i} style={{ marginTop: 36 }}>
                   <h4>Media Contact</h4>
                   <p>
                     {b.name}
@@ -91,7 +91,7 @@ export default function PressArticleBody({ blocks = [], image, imageAlt }) {
                         {email.address}
                       </a>
                     )}
-                    {email && phone && ' · '}
+                    {email && phone && ' Â· '}
                     {phone && <a href={`tel:${phone.tel}`}>{phone.phone}</a>}
                   </p>
                 </div>

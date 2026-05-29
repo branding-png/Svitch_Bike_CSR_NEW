@@ -1,4 +1,4 @@
-// Cost accent → colour: 'accent' = orange/yellow (paid), 'free' = green
+﻿// Cost accent â†’ colour: 'accent' = orange/yellow (paid), 'free' = green
 const COST_COLOUR = {
   accent: 'var(--accent)',
   free:   '#4ade80',
@@ -6,7 +6,7 @@ const COST_COLOUR = {
 
 export default function ServiceEntry({ entry }) {
   return (
-    <div aria-label="ServiceEntry" role="region" className="card-base svc-entry">
+    <div aria-label="ServiceEntry" className="card-base svc-entry">
       <div className="svc-entry-head">
         <div>
           <h4>{entry.title}</h4>

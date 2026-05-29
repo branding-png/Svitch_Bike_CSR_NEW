@@ -42,7 +42,7 @@ export default function SvitchFamily({
   brands = FAMILY_BRANDS,
 }) {
   return (
-    <section id={id}>
+    <section id={id} aria-label="SvitchFamily">
       <div className="container">
         <div className="family-head reveal">
           <span className="section-label">{label}</span>

@@ -1,4 +1,4 @@
-import { memo } from 'react'
+﻿import { memo } from 'react'
 import { Link } from 'react-router-dom'
 import { useWishlist } from '@/contexts/WishlistContext'
 import { useToast } from '@/contexts/ToastContext'
@@ -14,7 +14,7 @@ const BADGES = {
   spicy:         { label: 'Spicy',       className: 'sale' },
 }
 
-// 0–5 rating renderer using Bootstrap-Icon stars.
+// 0â€“5 rating renderer using Bootstrap-Icon stars.
 function Stars({ value = 0 }) {
   const full = Math.floor(value)
   const half = value - full >= 0.5
@@ -61,7 +61,7 @@ function ProductCard({ product, onQuickView }) {
   const ctaDisabled = product.stock === 'coming-soon'
 
   return (
-    <div aria-label="ProductCard" role="region" className="card-base product-card" data-id={product.id}>
+    <div aria-label="ProductCard" className="card-base product-card" data-id={product.id}>
       <div
         className="product-card-media"
         style={isIcon ? { background: product.bg, display: 'flex', alignItems: 'center', justifyContent: 'center' } : undefined}
@@ -120,6 +120,6 @@ function ProductCard({ product, onQuickView }) {
   )
 }
 
-// Memoised — Shop re-renders on every filter/sort tick, but each card only
+// Memoised â€” Shop re-renders on every filter/sort tick, but each card only
 // cares about its own product + handlers.
 export default memo(ProductCard)

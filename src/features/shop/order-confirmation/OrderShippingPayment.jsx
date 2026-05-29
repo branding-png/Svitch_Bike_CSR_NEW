@@ -1,4 +1,4 @@
-// Shipping + Payment two-column card pair on the Order Confirmation page.
+﻿// Shipping + Payment two-column card pair on the Order Confirmation page.
 // Mirrors CSR_New_web `.oc-info-grid`. Both cards are driven by props so the
 // route can swap in real order data later.
 const DEFAULTS = {
@@ -6,14 +6,14 @@ const DEFAULTS = {
     name:    'Arjun Rider',
     address: ['14 Sahyadri Heights, Bandra West', 'Mumbai 400050, Maharashtra'],
     phone:   '+91 98765 43210',
-    eta:     'Mar 26 – 29, 2026',
+    eta:     'Mar 26 â€“ 29, 2026',
   },
   payment: {
     method:  'UPI',
     icon:    'bi-qr-code',
     upiId:   'arjun@okhdfcbank',
     txn:     'TXN-9847123456',
-    amount:  '₹1,47,500',
+    amount:  'â‚¹1,47,500',
     status:  'Paid',
   },
 }
@@ -23,7 +23,7 @@ export default function OrderShippingPayment({
   payment  = DEFAULTS.payment,
 }) {
   return (
-    <div aria-label="OrderShippingPayment" role="region" className="oc-info-grid">
+    <div aria-label="OrderShippingPayment" className="oc-info-grid">
       {/* Shipping */}
       <div className="card-base oc-info-card">
         <div className="oc-info-head">

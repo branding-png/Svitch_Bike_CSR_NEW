@@ -33,7 +33,7 @@ export default function PhotoGallery({
   delayCycle = 4,   // .delay-0 ... .delay-3 (matches index.css stagger)
 }) {
   return (
-    <section id={id}>
+    <section id={id} aria-label="PhotoGallery">
       <div className="container">
         <SectionHeader label={label} titleStart={titleStart} titleAccent={titleAccent} />
       </div>

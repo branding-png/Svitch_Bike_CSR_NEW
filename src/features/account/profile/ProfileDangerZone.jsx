@@ -1,4 +1,4 @@
-import { useToast } from '@/contexts/ToastContext'
+﻿import { useToast } from '@/contexts/ToastContext'
 
 export default function ProfileDangerZone() {
   const { show } = useToast()
@@ -10,7 +10,7 @@ export default function ProfileDangerZone() {
   }
 
   return (
-    <div aria-label="ProfileDangerZone" role="region" className="card-base danger-zone">
+    <div aria-label="ProfileDangerZone" className="card-base danger-zone">
       <h4><i className="bi bi-exclamation-triangle-fill"></i> Danger Zone</h4>
       <p>
         Permanently delete your Svitch account and all associated data (orders, addresses, wishlists).

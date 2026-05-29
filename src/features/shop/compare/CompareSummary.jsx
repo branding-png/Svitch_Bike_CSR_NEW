@@ -1,15 +1,15 @@
-// At-a-glance summary cards — top of the Compare page.
+﻿// At-a-glance summary cards â€” top of the Compare page.
 // Mirrors CSR_New_web `.cmp-summary-grid`.
 const SUMMARY = [
   {
     icon:  'bi-speedometer2',
     num:   '160',
     unit:  'KM',
-    label: 'IDC Range — Best in Class',
+    label: 'IDC Range â€” Best in Class',
   },
   {
     icon:  'bi-piggy-bank-fill',
-    num:   '₹48k',
+    num:   'â‚¹48k',
     unit:  '/YR',
     label: 'Saved vs Petrol Bike',
   },
@@ -23,7 +23,7 @@ const SUMMARY = [
 
 export default function CompareSummary({ items = SUMMARY }) {
   return (
-    <div aria-label="CompareSummary" role="region" className="cmp-summary-grid">
+    <div aria-label="CompareSummary" className="cmp-summary-grid">
       {items.map((s) => (
         <div key={s.label} className="card-base cmp-summary-card">
           <div className="cmp-summary-icon">

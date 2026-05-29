@@ -1,13 +1,13 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import { PATHS } from '@/utils/routes'
 import { formatCurrency } from '@/utils/formatCurrency'
 
-// Order Summary card — line items + subtotal/shipping/GST/total.
+// Order Summary card â€” line items + subtotal/shipping/GST/total.
 // Prop-driven so the route can wire real order data later.
 const DEFAULT_ITEMS = [
   {
     id:    'csr-762-nxe-pro-red',
-    name:  'CSR 762 NXE Pro — Crimson Red',
+    name:  'CSR 762 NXE Pro â€” Crimson Red',
     sku:   'CSR-NXE-PRO-RED',
     qty:   1,
     price: 125000,
@@ -25,7 +25,7 @@ export default function OrderSummaryCard({
   const total    = subtotal + shipping + gst
 
   return (
-    <div aria-label="OrderSummaryCard" role="region" className="card-base" style={{ padding: 32 }}>
+    <div aria-label="OrderSummaryCard" className="card-base" style={{ padding: 32 }}>
       <div className="account-section-head">
         <h3>Order Summary</h3>
         <Link to={PATHS.orders} className="rajdhani-lbl-text-sm">
@@ -41,7 +41,7 @@ export default function OrderSummaryCard({
             </div>
             <div className="order-item-info">
               <h4>{it.name}</h4>
-              <span>Qty {it.qty} · SKU {it.sku}</span>
+              <span>Qty {it.qty} Â· SKU {it.sku}</span>
             </div>
             <div style={{ textAlign: 'right' }}>
               <div className="order-item-price">{formatCurrency(it.price * it.qty)}</div>

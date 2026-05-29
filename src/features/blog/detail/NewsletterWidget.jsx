@@ -1,13 +1,13 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import InputControl from '@/ui/InputControl'
 import { useToast } from '@/contexts/ToastContext'
 
-// Blog detail sidebar newsletter card — mirrors CSR_New_web `.widget` newsletter
+// Blog detail sidebar newsletter card â€” mirrors CSR_New_web `.widget` newsletter
 // variant. Compact vertical form using the shared <InputControl> primitive so
 // the same .form-group.is-invalid red-border treatment applies on bad input.
 export default function NewsletterWidget({
   title       = 'Newsletter',
-  description = 'Get the latest Svitch articles, launch news & riding tips — no spam, ever.',
+  description = 'Get the latest Svitch articles, launch news & riding tips â€” no spam, ever.',
 }) {
   const { show } = useToast()
   const [email, setEmail] = useState('')
@@ -25,7 +25,7 @@ export default function NewsletterWidget({
     }
     if (!/^\S+@\S+\.\S+$/.test(value)) {
       setError('Please enter a valid email address.')
-      show('That email doesn’t look right — please double-check it.', 'error', 3000)
+      show('That email doesnâ€™t look right â€” please double-check it.', 'error', 3000)
       return
     }
 
@@ -39,7 +39,7 @@ export default function NewsletterWidget({
   }
 
   return (
-    <div aria-label="NewsletterWidget" role="region" className="card-base widget">
+    <div aria-label="NewsletterWidget" className="card-base widget">
       <h3 className="widget-title">{title}</h3>
       <p style={{ marginBottom: 14 }}>{description}</p>
 

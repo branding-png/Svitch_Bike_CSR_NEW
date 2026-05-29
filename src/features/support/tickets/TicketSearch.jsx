@@ -1,6 +1,6 @@
-export default function TicketSearch({ value, onChange }) {
+﻿export default function TicketSearch({ value, onChange }) {
   return (
-    <div aria-label="TicketSearch" role="region" className="tkt-search">
+    <div aria-label="TicketSearch" className="tkt-search">
       <i className="bi bi-search"></i>
       <input
         type="search"

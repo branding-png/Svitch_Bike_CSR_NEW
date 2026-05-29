@@ -1,4 +1,4 @@
-// Blog sidebar "Popular Tags" widget — mirrors CSR_New_web `.widget-tags`.
+﻿// Blog sidebar "Popular Tags" widget â€” mirrors CSR_New_web `.widget-tags`.
 // Optionally controlled: pass `active` + `onChange` to make a tag selectable
 // (e.g. to filter the post list). Without those props it just renders inert
 // chip-style links.
@@ -14,7 +14,7 @@ export default function TagsWidget({
   onChange,
 }) {
   return (
-    <div aria-label="TagsWidget" role="region" className="card-base widget">
+    <div aria-label="TagsWidget" className="card-base widget">
       <h3 className="widget-title">{title}</h3>
       <div className="widget-tags">
         {tags.map((t) => (

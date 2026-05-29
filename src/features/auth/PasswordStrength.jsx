@@ -1,4 +1,4 @@
-export function scorePassword(pw = '') {
+﻿export function scorePassword(pw = '') {
   let s = 0
   if (pw.length >= 8)              s += 1
   if (/[A-Z]/.test(pw) && /[a-z]/.test(pw)) s += 1
@@ -10,7 +10,7 @@ export function scorePassword(pw = '') {
 export default function PasswordStrength({ value }) {
   const level = scorePassword(value)
   return (
-    <div aria-label="PasswordStrength" role="region" className="password-strength" data-level={level}>
+    <div aria-label="PasswordStrength" className="password-strength" data-level={level}>
       {[0, 1, 2, 3].map((i) => (
         <span key={i} className={i < level ? 'is-on' : ''} />
       ))}

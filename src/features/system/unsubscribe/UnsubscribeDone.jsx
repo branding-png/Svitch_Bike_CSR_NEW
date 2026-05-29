@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import { PATHS } from '@/utils/routes'
 
-// "You're unsubscribed" confirmation card — mirrors CSR_New_web `#unsubDone`.
+// "You're unsubscribed" confirmation card â€” mirrors CSR_New_web `#unsubDone`.
 export default function UnsubscribeDone({ email }) {
   return (
-    <div aria-label="UnsubscribeDone" role="region" className="card-base unsub-card">
+    <div aria-label="UnsubscribeDone" className="card-base unsub-card">
       <div className="unsub-icon is-success">
         <i className="bi bi-check2"></i>
       </div>

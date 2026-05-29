@@ -1,6 +1,6 @@
-import InputControl from '@/ui/InputControl'
+﻿import InputControl from '@/ui/InputControl'
 
-// Blog sidebar "Search" widget — mirrors CSR_New_web `.widget-search`.
+// Blog sidebar "Search" widget â€” mirrors CSR_New_web `.widget-search`.
 // Uses the shared <InputControl> primitive so any future validation styling
 // (is-invalid red border, hint text) comes for free.
 // `.widget-search` is `position: relative` and the submit button is positioned
@@ -19,7 +19,7 @@ export default function SearchWidget({
   }
 
   return (
-    <div aria-label="SearchWidget" role="region" className="card-base widget">
+    <div aria-label="SearchWidget" className="card-base widget">
       <h3 className="widget-title">{title}</h3>
       <form className="widget-search" onSubmit={submit} role="search">
         <InputControl

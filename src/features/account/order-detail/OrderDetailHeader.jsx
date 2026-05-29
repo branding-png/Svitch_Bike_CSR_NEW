@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import { PATHS } from '@/utils/routes'
 
 export default function OrderDetailHeader({ order }) {
   const itemCount = order.items.length
   return (
-    <div aria-label="OrderDetailHeader" role="region" className="account-header">
+    <div aria-label="OrderDetailHeader" className="account-header">
       <Link to={PATHS.orders} className="account-back-link rajdhani-lbl-text-sm">
         <i className="bi bi-arrow-left"></i> Back to Orders
       </Link>

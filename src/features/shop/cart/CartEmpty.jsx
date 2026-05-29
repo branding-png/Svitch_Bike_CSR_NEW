@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import { PATHS } from '@/utils/routes'
 
-// Empty-cart state — shown when the cart has zero items.
+// Empty-cart state â€” shown when the cart has zero items.
 export default function CartEmpty() {
   return (
-    <div aria-label="CartEmpty" role="region" className="card-base cart-empty">
+    <div aria-label="CartEmpty" className="card-base cart-empty">
       <i className="bi bi-cart-x"></i>
       <h3 style={{ color: 'var(--white)', marginBottom: 10 }}>Your cart is empty</h3>
       <p style={{ marginBottom: 24 }}>

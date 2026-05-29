@@ -1,10 +1,10 @@
-import { useMemo, useState } from 'react'
+﻿import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-// Interactive EMI calculator — mirrors CSR_New_web `.fin-grid`.
+// Interactive EMI calculator â€” mirrors CSR_New_web `.fin-grid`.
 // Four sliders feed into a memoised EMI calc using the standard formula:
-//   EMI = P × r × (1 + r)^n / ((1 + r)^n − 1)
-// where  P = loan amount (price − down), r = monthly rate, n = tenure months.
+//   EMI = P Ã— r Ã— (1 + r)^n / ((1 + r)^n âˆ’ 1)
+// where  P = loan amount (price âˆ’ down), r = monthly rate, n = tenure months.
 const SLIDERS = [
   { key: 'amount', label: 'On-Road Price',   min: 80000, max: 300000, step: 1000, suffix: 'currency' },
   { key: 'down',   label: 'Down Payment',    min: 0,     max: 200000, step: 1000, suffix: 'currency' },
@@ -22,7 +22,7 @@ const inr = (n) => Math.round(n).toLocaleString('en-IN')
 
 function formatSuffix(value, suffix) {
   switch (suffix) {
-    case 'currency': return `₹${inr(value)}`
+    case 'currency': return `â‚¹${inr(value)}`
     case 'months':   return `${value} months`
     case 'percent':  return `${value}%`
     default:         return value
@@ -89,9 +89,9 @@ export default function EmiCalculator() {
             ))}
 
             <div className="fin-result-row">
-              <ResultTile value={`₹${inr(principal)}`} label="Loan Amount" />
-              <ResultTile value={`₹${inr(interest)}`}  label="Total Interest" />
-              <ResultTile value={`₹${inr(total)}`}     label="Total Payable" />
+              <ResultTile value={`â‚¹${inr(principal)}`} label="Loan Amount" />
+              <ResultTile value={`â‚¹${inr(interest)}`}  label="Total Interest" />
+              <ResultTile value={`â‚¹${inr(total)}`}     label="Total Payable" />
               <ResultTile value={`${tenure} mo`}        label="Tenure" />
             </div>
           </div>
@@ -99,10 +99,10 @@ export default function EmiCalculator() {
           {/* Monthly EMI summary */}
           <div className="card-base fin-emi-card">
             <span className="fin-emi-lbl">Monthly EMI</span>
-            <span className="fin-emi-num">₹{inr(emi)}</span>
+            <span className="fin-emi-num">â‚¹{inr(emi)}</span>
             <p style={{ margin: '18px 0 24px' }}>
-              Pre-approval in under 60 seconds — no documentation needed for amounts
-              under ₹1.5L.
+              Pre-approval in under 60 seconds â€” no documentation needed for amounts
+              under â‚¹1.5L.
             </p>
             <Link
               to="/company/contact"
@@ -112,7 +112,7 @@ export default function EmiCalculator() {
               <i className="bi bi-check2-circle"></i> Apply for Pre-Approval
             </Link>
             <p style={{ marginTop: 14, color: 'var(--gray-500)' }}>
-              No impact on credit score · 0% processing fee
+              No impact on credit score Â· 0% processing fee
             </p>
           </div>
         </div>
@@ -138,7 +138,7 @@ export default function EmiCalculator() {
 
 function ResultTile({ value, label }) {
   return (
-    <div aria-label="EmiCalculator" role="region">
+    <div aria-label="EmiCalculator">
       <span className="fin-result-num">{value}</span>
       <span className="fin-result-lbl">{label}</span>
     </div>

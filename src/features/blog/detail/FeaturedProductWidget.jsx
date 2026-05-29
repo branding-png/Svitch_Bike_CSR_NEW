@@ -1,20 +1,20 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 
-// Blog detail sidebar product callout — mirrors CSR_New_web `.widget-product`.
+// Blog detail sidebar product callout â€” mirrors CSR_New_web `.widget-product`.
 // "Buy Now" deep-links to /shop by default; pass `onBuyClick` to override
-// (e.g. to open a booking modal) — the click handler short-circuits the link.
+// (e.g. to open a booking modal) â€” the click handler short-circuits the link.
 export default function FeaturedProductWidget({
   label       = 'Featured in This Article',
   image       = '/images/logos/CSR762-Logo-w.png',
   alt         = 'CSR 762',
   name        = 'NXE Pro',
-  price       = '₹1,25,000',
+  price       = 'â‚¹1,25,000',
   buyTo       = '/shop',
   detailsTo   = '/support/specifications',
   onBuyClick,
 }) {
   return (
-    <div aria-label="FeaturedProductWidget" role="region" className="card-base widget widget-product">
+    <div aria-label="FeaturedProductWidget" className="card-base widget widget-product">
       <span className="widget-product-label">{label}</span>
       <img src={image} alt={alt} loading="lazy" decoding="async" />
       <h4>{name}</h4>

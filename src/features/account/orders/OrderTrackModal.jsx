@@ -1,4 +1,4 @@
-import { Modal } from '@/ui'
+﻿import { Modal } from '@/ui'
 import { TRACK_TIMELINE } from '@/data/orders-data'
 import { PHONES, phoneHref } from '@/data/contact-info'
 
@@ -13,11 +13,11 @@ const STATE_ICON = {
 export default function OrderTrackModal({ isOpen, onClose, order }) {
   const steps = order ? TRACK_TIMELINE[order.status] || [] : []
   return (
-    <Modal aria-label="OrderTrackModal" role="region"
+    <Modal aria-label="OrderTrackModal"
       isOpen={isOpen}
       onClose={onClose}
       title="Track Your Order"
-      subtitle={order ? `Order #${order.id}` : 'Order #—'}
+      subtitle={order ? `Order #${order.id}` : 'Order #â€”'}
     >
       {!order ? null : (
         <>

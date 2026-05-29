@@ -1,13 +1,13 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import { PATHS } from '@/utils/routes'
 
-// Bottom CTA strip on the Compare page — mirrors CSR_New_web `.cmp-cta`.
+// Bottom CTA strip on the Compare page â€” mirrors CSR_New_web `.cmp-cta`.
 export default function CompareCta() {
   return (
-    <div aria-label="CompareCta" role="region" className="cmp-cta">
+    <div aria-label="CompareCta" className="cmp-cta">
       <span className="cmp-cta-eyebrow">Total Savings Calculator</span>
       <h2>
-        Switch &amp; save up to <span className="accent">₹2,10,000</span>
+        Switch &amp; save up to <span className="accent">â‚¹2,10,000</span>
         <br />
         over 5 years
       </h2>

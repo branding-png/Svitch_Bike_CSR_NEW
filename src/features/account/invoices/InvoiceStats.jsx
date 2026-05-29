@@ -1,8 +1,8 @@
-import { INVOICE_STATS } from './invoices-data'
+﻿import { INVOICE_STATS } from './invoices-data'
 
 export default function InvoiceStats({ stats = INVOICE_STATS }) {
   return (
-    <div aria-label="InvoiceStats" role="region" className="card-base gst-card">
+    <div aria-label="InvoiceStats" className="card-base gst-card">
       <div className="gst-row">
         {stats.map((s) => (
           <div className="gst-cell" key={s.label}>

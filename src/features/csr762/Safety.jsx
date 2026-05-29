@@ -1,6 +1,6 @@
-import { useGLightbox } from '@/hooks/useGLightbox'
+﻿import { useGLightbox } from '@/hooks/useGLightbox'
 
-// CSR 762 — "Stop Safe. Every Time." safety & mechanicals section.
+// CSR 762 â€” "Stop Safe. Every Time." safety & mechanicals section.
 // Mirrors svitch.bike `#safety`. 6 split cards (image + text) alternating
 // image-right / image-left. Each image is GLightbox-bound. Styles live in
 // src/styles/pages/csr762.css (.ride-card-* / .ride-grid classes).
@@ -23,7 +23,7 @@ const SAFETY_CARDS = [
     img:   `${IMG}/saree-guard.webp`,
     icon:  'bi-sliders',
     title: 'Saree Guard',
-    desc:  'Integrated saree guard prevents fabric from snagging into the rear wheel — practical safety for every rider, every ride.',
+    desc:  'Integrated saree guard prevents fabric from snagging into the rear wheel â€” practical safety for every rider, every ride.',
   },
   {
     img:   `${IMG}/grab-rail.webp`,
@@ -35,13 +35,13 @@ const SAFETY_CARDS = [
     img:   `${IMG}/LED-headlight.webp`,
     icon:  'bi-lightbulb-fill',
     title: 'LED Head Light',
-    desc:  'High-intensity LED projector with crisp DRLs — wide beam, long throw and excellent low-light visibility.',
+    desc:  'High-intensity LED projector with crisp DRLs â€” wide beam, long throw and excellent low-light visibility.',
   },
   {
     img:   `${IMG}/LED-taillight.webp`,
     icon:  'bi-lightbulb',
     title: 'LED Tail Light',
-    desc:  'Sleek LED tail and brake lamp with sharp signature lighting — instantly visible to traffic behind, day or night.',
+    desc:  'Sleek LED tail and brake lamp with sharp signature lighting â€” instantly visible to traffic behind, day or night.',
   },
 ]
 
@@ -58,7 +58,7 @@ export default function Safety({
   useGLightbox('#safety .ride-card-img-zoom.glightbox', [cards])
 
   return (
-    <section id="safety">
+    <section id="safety"  aria-label="Safety">
       <div className="container">
         <div className="safety-heading reveal">
           <span className="section-label">{label}</span>
@@ -71,11 +71,11 @@ export default function Safety({
       <div className="container">
         <div className="ride-grid">
           {cards.map((c, i) => {
-            // Even index → image on the right (body left-aligned end)
-            // Odd  index → image on the left  (body default)
+            // Even index â†’ image on the right (body left-aligned end)
+            // Odd  index â†’ image on the left  (body default)
             const imgRight = i % 2 === 0
             return (
-              <div aria-label="Safety" role="region"
+              <div aria-label="Safety"
                 key={c.title}
                 className={`ride-card ride-card--split reveal delay-${i + 1}`}
               >
@@ -84,7 +84,7 @@ export default function Safety({
                   className={`ride-card-img-wrap ride-card-img-zoom glightbox${imgRight ? ' ride-card-img--right' : ''}`}
                   data-gallery={gallery}
                   data-glightbox={`title: ${c.title}; description: ${c.desc}`}
-                  aria-label={`${c.title} — open full image`}
+                  aria-label={`${c.title} â€” open full image`}
                 >
                   <img src={c.img} alt={c.title} loading="lazy" decoding="async" />
                   <span className="ride-card-zoom-badge" aria-hidden="true">

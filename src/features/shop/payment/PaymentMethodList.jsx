@@ -1,4 +1,4 @@
-// Radio list of payment methods shown above the Pay button. Selection only
+﻿// Radio list of payment methods shown above the Pay button. Selection only
 // changes which method Razorpay opens with; final processing is identical.
 const METHODS = [
   { id: 'upi',        icon: 'phone-fill',          label: 'UPI / GPay / PhonePe', tag: 'Recommended' },
@@ -14,7 +14,7 @@ export default function PaymentMethodList({ value, onChange }) {
       {METHODS.map((m) => {
         const selected = value === m.id
         return (
-          <label aria-label="PaymentMethodList" role="region"
+          <label aria-label="PaymentMethodList"
             key={m.id}
             className={`pay-method-item${selected ? ' is-active' : ''}`}
             style={{

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import { OtpInput } from '@/ui'
 import { maskEmail } from '@/utils/mask'
 import { verifyPasswordOtp } from '@/services/auth'
@@ -61,7 +61,7 @@ export default function ForgetOTP({ email, otpToken, onChangeEmail, onVerified }
   }
 
   return (
-    <div aria-label="ForgetOTP" role="region" className="auth-centered" id="fpStep2">
+    <div aria-label="ForgetOTP" className="auth-centered" id="fpStep2">
       <div className="auth-icon"><i className="bi bi-shield-lock-fill"></i></div>
       <h2>Enter OTP</h2>
       <p>We sent a 6-digit code to <strong style={{ color: 'var(--white)' }}>{maskEmail(email)}</strong></p>
@@ -94,7 +94,7 @@ export default function ForgetOTP({ email, otpToken, onChangeEmail, onVerified }
         disabled={busy}
       >
         {busy ? (
-          <span className="btn-spinner"><i className="bi bi-arrow-repeat spin-icon"></i> Verifying…</span>
+          <span className="btn-spinner"><i className="bi bi-arrow-repeat spin-icon"></i> Verifyingâ€¦</span>
         ) : (
           <span className="btn-text"><i className="bi bi-check2-circle"></i> Verify OTP</span>
         )}

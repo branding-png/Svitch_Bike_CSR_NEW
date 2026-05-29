@@ -72,7 +72,7 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact">
+    <section id="contact" aria-label="ContactSection">
       <div className="container">
         <div className="row align-items-end">
           <div className="col-lg-6">

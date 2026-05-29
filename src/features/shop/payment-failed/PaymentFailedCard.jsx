@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import { PATHS } from '@/utils/routes'
 import { EMAILS, PHONES, emailHref, phoneHref } from '@/data/contact-info'
 
@@ -13,7 +13,7 @@ const REASONS = [
 
 export default function PaymentFailedCard({ orderRef = 'SVC-2026-04812' }) {
   return (
-    <div aria-label="PaymentFailedCard" role="region" className="card-base fail-card">
+    <div aria-label="PaymentFailedCard" className="card-base fail-card">
       <div className="fail-icon">
         <i className="bi bi-x-lg"></i>
       </div>
@@ -22,7 +22,7 @@ export default function PaymentFailedCard({ orderRef = 'SVC-2026-04812' }) {
       <p>Order reference: <strong id="orderRef">{orderRef}</strong></p>
       <p style={{ marginTop: 8 }}>
         No amount has been debited. If anything was deducted, it will be
-        auto-refunded within 5–7 business days.
+        auto-refunded within 5â€“7 business days.
       </p>
 
       <ul className="fail-reasons">

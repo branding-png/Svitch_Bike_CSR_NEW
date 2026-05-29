@@ -1,11 +1,11 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import InputControl from '@/ui/InputControl'
 import { PATHS } from '@/utils/routes'
 import { useToast } from '@/contexts/ToastContext'
 import { requestPasswordOtp } from '@/services/auth'
 
-// Reset link expired — show a brief explainer plus an inline email field so
+// Reset link expired â€” show a brief explainer plus an inline email field so
 // the user can request a new link without leaving the page.
 export default function ResetInvalid() {
   const { show } = useToast()
@@ -30,7 +30,7 @@ export default function ResetInvalid() {
   }
 
   return (
-    <div aria-label="ResetInvalid" role="region" className="auth-centered" id="rpInvalidStep">
+    <div aria-label="ResetInvalid" className="auth-centered" id="rpInvalidStep">
       <div className="auth-icon">
         <i className="bi bi-exclamation-triangle-fill" style={{ color: '#ef4444' }}></i>
       </div>
@@ -63,13 +63,13 @@ export default function ResetInvalid() {
             color: '#22c55e',
           }}
         >
-          <i className="bi bi-check2-circle"></i> Check {email} — the link expires in 30 minutes.
+          <i className="bi bi-check2-circle"></i> Check {email} â€” the link expires in 30 minutes.
         </div>
       )}
 
       <p className="auth-footer-link rajdhani-lbl-text-sm" style={{ marginTop: 16 }}>
         Prefer the full flow? <Link to={PATHS.forgotPassword}>Go to Forgot Password</Link>
-        {' · '}
+        {' Â· '}
         <Link to={PATHS.login}>Back to Sign In</Link>
       </p>
     </div>

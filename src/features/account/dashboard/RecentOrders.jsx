@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import { PATHS } from '@/utils/routes'
 
 const STATUS_MAP = {
@@ -10,29 +10,29 @@ const STATUS_MAP = {
 const ORDERS = [
   {
     id:    'SVT-847291',
-    title: 'NXE Pro — Crimson Red',
+    title: 'NXE Pro â€” Crimson Red',
     date:  'Mar 22, 2026',
     img:   '/images/product/csr-762-red.webp',
     alt:   'CSR 762 electric motorcycle in Racing Red',
-    price: '₹1,25,000',
+    price: 'â‚¹1,25,000',
     status:'delivered',
   },
   {
     id:    'SVT-731048',
-    title: 'Lite XE — Sunburst Yellow',
+    title: 'Lite XE â€” Sunburst Yellow',
     date:  'Mar 10, 2026',
     img:   '/images/product/csr-762-gray-Swappable-Battery.webp',
     alt:   'CSR 762 with swappable battery in Graphite Grey',
-    price: '₹96,950',
+    price: 'â‚¹96,950',
     status:'shipped',
   },
   {
     id:    'SVT-619204',
-    title: 'XE Foldable — Stealth',
+    title: 'XE Foldable â€” Stealth',
     date:  'Feb 28, 2026',
     img:   '/images/product/csr-762-gray-1.webp',
-    alt:   'CSR 762 in Graphite Grey — side profile',
-    price: '₹74,999',
+    alt:   'CSR 762 in Graphite Grey â€” side profile',
+    price: 'â‚¹74,999',
     status:'processing',
   },
 ]
@@ -48,7 +48,7 @@ export default function RecentOrders() {
       {ORDERS.map((o) => {
         const status = STATUS_MAP[o.status]
         return (
-          <div aria-label="RecentOrders" role="region" key={o.id} className="card-base order-card">
+          <div aria-label="RecentOrders" key={o.id} className="card-base order-card">
             <div className="order-item-row">
               <div className="order-item-img">
                 <img src={o.img} alt={o.alt} loading="lazy" decoding="async" />
