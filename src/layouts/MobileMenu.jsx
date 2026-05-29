@@ -16,13 +16,13 @@ export default function MobileMenu({ open, onClose }) {
     <div className={'mobile-menu' + (open ? ' open' : '')} id="mobileMenu">
       <ul>
         <li><Link className="rajdhani-lbl-text-sm" to={PATHS.home}>Home</Link></li>
-        <li><Link className="rajdhani-lbl-text-sm" to={PATHS.shop}>CSR 762</Link></li>
+        <li><Link className="rajdhani-lbl-text-sm" to={PATHS.csr762}>CSR 762</Link></li>
         <li><Link className="rajdhani-lbl-text-sm" to={PATHS.shop}>Products</Link></li>
         <li><Link className="rajdhani-lbl-text-sm" to={PATHS.dealers}>Dealership</Link></li>
         <li><Link className="rajdhani-lbl-text-sm" to={PATHS.saversScale}>Saver&apos;s Scale</Link></li>
         <li><Link className="rajdhani-lbl-text-sm" to={PATHS.blog}>Blog</Link></li>
-        <li><Link className="rajdhani-lbl-text-sm" to={PATHS.about}>About</Link></li>
         <li><Link className="rajdhani-lbl-text-sm" to={PATHS.career}>Career</Link></li>
+        <li><Link className="rajdhani-lbl-text-sm" to={PATHS.about}>About</Link></li>
         <li><Link className="rajdhani-lbl-text-sm" to={PATHS.contact}>Contact</Link></li>
       </ul>
     </div>

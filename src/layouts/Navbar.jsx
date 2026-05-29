@@ -44,8 +44,8 @@ export default function Navbar() {
             <li><NavLink to={PATHS.dealers} className="rajdhani-lbl-text-sm">Dealership</NavLink></li>
             <li><NavLink to={PATHS.saversScale} className="rajdhani-lbl-text-sm">Saver&apos;s Scale</NavLink></li>
             <li><NavLink to={PATHS.blog} className="rajdhani-lbl-text-sm">Blog</NavLink></li>
-            <li><NavLink to={PATHS.about} className="rajdhani-lbl-text-sm">About</NavLink></li>
             <li><NavLink to={PATHS.career} className="rajdhani-lbl-text-sm">Career</NavLink></li>
+            <li><NavLink to={PATHS.about} className="rajdhani-lbl-text-sm">About</NavLink></li>
             <li><NavLink to={PATHS.contact} className="rajdhani-lbl-text-sm">Contact</NavLink></li>
           </ul>
 
