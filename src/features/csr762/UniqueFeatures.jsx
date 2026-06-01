@@ -16,7 +16,7 @@ const UF_CARDS = [
     desc:  '3.6 kWh Li-NMC dual swappable battery pack. Hot-swap in seconds for unlimited range — no charging downtime.',
   },
   {
-    img:   `${IMG}/boot-open-port.webp`,
+    img:   `${IMG}/home-charging-mount.webp`,
     icon:  'bi-plug-fill',
     title: 'Home Charging Mount',
     desc:  'Wall-mounted charging dock for any standard 16A socket. Plug in overnight and roll out fully charged — no garage, no station, no hassle.',
@@ -28,7 +28,7 @@ const UF_CARDS = [
     desc:  'Generous 40-litre under-seat storage. Fit a full-size helmet, groceries, or your daily essentials with room to spare.',
   },
   {
-    img:   `${IMG}/PHONE-HOLDER.webp`,
+    img:   `${IMG}/phone-holder.webp`,
     icon:  'bi-phone-fill',
     title: 'Phone Holder',
     desc:  'Integrated water-resistant phone mount with USB charging port. Stay navigated, stay connected, stay powered.',
